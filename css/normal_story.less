@@ -1,0 +1,325 @@
+
+&.normal-story {
+
+  .full-width {
+    width: 100%;
+    max-height: 100vh;
+  }
+
+  > h1.headline {
+    margin-top: 2em;
+  }
+
+  .frame h1 {
+    margin: 1rem;
+  }
+
+  h1 {
+    margin: 1rem auto;
+    width: calc(~'100% - 2rem');
+  }
+
+  p,
+  .dek,
+  .subhed {
+    width: calc(~'100% - 2rem');
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    margin: auto;
+    margin-bottom: 1.5em;
+  }
+
+  .dek {
+    margin: 2em auto 1em;
+  }
+
+  // share icons to green
+  .icon-email,
+  .icon-facebook,  
+  .icon-twitter {
+    color: @green;
+  }
+
+  figure {
+    align-items: flex-start;
+  }
+  .caption.after {
+    margin: 0 0.5rem;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  img + p {
+    margin-top: 1em;
+  }
+
+  // headline on image
+  figure .frame .headline {
+    text-shadow: @headline-shadow;
+  }
+
+  // round border on the menu
+  figure .frame .share-menu .icon-share {
+    box-shadow: @headline-shadow;
+  }
+  figure .frame .share-menu .options {
+    box-shadow: @headline-shadow;
+  }
+
+
+
+  // SECTION BREAKS
+  
+  .section-start-graf {
+    padding-top: 2em;
+  }
+
+  .section-first-words {
+    font-weight: 900;
+  }
+  
+
+
+
+  // PULLQUOTE
+
+  .pullquote {
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 1.5em;
+    font-family: @sans-serif;
+
+    position: relative;
+    max-width: 400px;
+    float: right;
+    margin: 2em;
+  }
+
+  .pullquote .attribution {
+    font-family: @sans-serif;
+    font-style: normal;
+    font-size: 0.8em;
+    font-weight: 500;
+    text-align: right;
+    margin-top: .5em;
+  }
+
+  .pullquote.block p {
+    width: 100%;
+  }
+
+  // on narrower window, move it into main flow
+  @media only screen and (max-width: 1000px) {
+    .pullquote {
+      float: none;
+      width: calc(~'100% - .66666em');
+      max-width: 30rem;
+      margin: 2em auto;
+    }
+  }
+
+
+
+
+
+
+
+  // line above
+  .pullquote:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 70%;
+    border-top: 1px solid currentColor;
+    top: -0.5em;
+  }
+
+
+
+  // BIO BOX
+
+  .bio-box {
+    max-width: 30rem;
+    font-family: @sans-serif;
+    font-weight: 300;
+    border-top: 1px solid grey;
+    padding-top: 0.2em;
+    margin: 1em auto 2em;
+  }
+  .bio-box p {
+    margin: 0 0 1em;
+  }
+
+  .bio-box .name {
+    font-weight: 700;
+  }
+
+
+
+
+
+  // BYLINE BOX
+
+  .byline-box {
+    min-width: 230px;
+    font-family: @sans-serif;
+  }
+
+  @media @desktop, @desktop-xl {
+    .byline-box {
+      float: right;
+      margin: 0 2em;
+    }
+  
+    .byline-box p {
+      margin-bottom: 0;
+    }
+
+    .byline-box .story-type {
+      padding-bottom: .25em;
+      color: @green;
+      font-weight: 500;
+    }
+
+
+    .byline-box p:not(.story-type) {
+      border-top: 1px solid #bbb;
+
+      color: @text-color;
+      font-weight: 500;
+      line-height: 1;
+
+      // so these are going to take up 2 lines each or
+      // 3em in total:
+      //   padding-top .5 - 1px
+      //   border 1px
+      //   by/location/date 1
+      //   actual text 1
+      //   padding-bottom .5
+      padding-top: calc(.5em - 1px);
+      padding-bottom: .5em;
+    }
+
+    .byline-box p:last-child {
+      border-bottom: 1px solid #bbb;
+    }
+
+    .byline-box .byline:before,
+    .byline-box .location:before,
+    .byline-box .publication-date:before {
+      display: block;
+      color: #888;
+      // equivalent to line-height: 1 of parent em
+      font-size: 0.75em;
+      line-height: 1.33333;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .byline-box .byline {
+      text-transform: none;
+    }
+    .byline-box .location:before {
+      content: 'Location';
+    }
+    .byline-box .publication-date:before {
+      content: 'Date';
+    }
+  }
+
+  
+  @media @mobile, @tablet {
+
+    // in .small.codex it collapses to two lines
+    .byline-box {
+      left: 0;
+      width: calc(~'100% - 2rem');
+      max-width: 30rem;
+      margin: auto;
+      margin-bottom: 100px;
+    }
+
+    .byline-box p {
+      margin: 0;
+    }
+
+    .byline-box .story-type,
+    .byline-box .byline {
+      display: inline-block;
+    }
+
+    .byline-box .story-type {
+      margin-right: 0.3em;
+    }
+
+  }
+
+
+
+
+
+  // PHOTO CREDIT
+
+  .photo-credit {
+    font-size: 0.9em;
+    font-family: @sans-serif;
+    font-style: italic;
+    line-height: 1;
+  }
+
+  // jumps to right side when it's an after block
+  .photo-credit.after {
+    align-self: flex-end;
+  }
+
+  .photo-credit a,
+  .photo-credit a:visited {
+    color: @text-color;
+    text-decoration: none;
+  }
+
+  .photo-credit a:hover {
+    color: @green;
+  }
+
+  .frame .photo-credit a,
+  .frame .photo-credit a:visited {
+    color: white;
+  }
+
+  .frame .photo-credit a:hover {
+    color: @green;
+  }
+
+  .frame > .photo-credit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0.4em;
+  }
+
+
+
+  // END MARK
+
+  .end-mark {
+    white-space: nowrap;
+  }
+  .end-mark:after {
+    display: inline-block;
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: @green;
+    margin-left: 0.3em;
+  }
+
+}

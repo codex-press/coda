@@ -1,0 +1,221 @@
+@import 'definitions';
+
+& {
+  min-height: initial;
+  position: absolute;
+  z-index: 1000;
+  background: none;
+  overflow: visible;
+}
+
+footer, header {
+  padding: 0.5em 1.5em;
+}
+
+header {
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  font-family: @sans-serif;
+  line-height: 2em;
+  color: @text-color;
+
+  // already has .page-padding-sides to match .leaf .content
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  transition: transform 0.5s ease-out;
+}
+
+header .left { 
+  flex: 0 0 auto;
+}
+
+header .right {
+  flex: 1 0 auto;
+  text-align: right;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header .logo {
+  vertical-align: bottom;
+  height: 2em;
+  width: (2.8 * 2em);
+  border-right: 1px solid @text-color;
+  padding-right: 1em;
+  margin-right: .5em;
+  fill: @text-color;
+}
+
+// #LGBTCrisis
+header .crisis {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1.1em;
+  color: @green;
+}
+
+// makes hash tag the same size as the letters
+header .crisis .hash {
+  font-size: 1.2em;
+  line-height: 1.4;
+  vertical-align: bottom;
+}
+
+header .navigation-links a {
+  font-weight: 300;
+  margin-left: .5em;
+  color: @text-color;
+  padding: 0.2em; // helps border
+}
+
+// make the space for it on the page
+.leaf.first > .content {
+  margin-top: 4em;
+}
+
+header .navigation-links a.target {
+  border-bottom: 0.25em solid @green;
+}
+
+
+// MENU (mobile version)
+
+@media @mobile, @tablet {
+  .right .header-menu {
+    display: block;
+  }
+  .navigation-links {
+    display: none;
+  }
+}
+
+.header-menu {
+  display: none;
+  padding: 0.4em;
+  margin: -0.4em;
+}
+
+// hamburgerler icon
+.header-menu .icon-menu {
+  position: relative;
+  font-size: 2em;
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+}
+
+
+// turns green on black after it's done
+.header-menu.on .icon-menu {
+  z-index: (@menu-z-index + 1);
+  color: @green;
+}
+
+
+// the options show up on hover (with mouse only since the fake :hover on touch is awful)
+// or when toggled .on with touch
+.header-menu .options {
+  width: 100%;
+  max-width: 450px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition:
+    opacity 0.3s ease-out,
+    z-index 0ms 0.3s linear,
+    transform 0.2s ease-out;
+  transform-origin: 100% 0;
+  transform: scale(1, .90);
+  opacity: 0;
+  pointer-events: none;
+
+  padding-top: 4em;
+  z-index: -1;
+  line-height: 1;
+
+  border-bottom: 4px solid @green;
+}
+
+// shape under the menu
+.header-menu .options:before {
+  content: '';
+  display: block;
+}
+
+// lower part of the menu
+.header-menu .drawer {
+  background: black;
+  padding: 0 1em;
+}
+
+
+// background on the hamburger menu
+// square part
+.header-menu .options:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 4em;
+  height: 4em;
+  right: 0;
+  top: 0;
+  background: black;
+}
+
+// triangle part
+.header-menu .options:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 8em;
+  right: 4em;
+  top: 0;
+  border: 4em transparent solid;
+  border-right: 2em black solid;
+  border-left: none;
+  z-index: -1;
+}
+
+// expands width on .medium
+@media @tablet {
+  .header-menu .options:before {
+    width: 6em;
+  }
+  .header-menu .options:after {
+    right: 6em;
+  }
+}
+
+.header-menu .options a div {
+  display: block;
+  color: hsla(0,0%,70%,1);
+  font-weight: 300;
+  text-align: center;
+  padding: 1em 0;
+  border-bottom: 1px solid hsla(0, 0%, 20%, 1);
+}
+.header-menu .options a:last-child div {
+  border-bottom: none;
+}
+
+.header-menu.toggle.on .options {
+  transform: scale(1);
+  z-index: @menu-z-index;
+  opacity: 1;
+  pointer-events: all;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.2s ease-out;
+}
+

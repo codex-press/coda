@@ -1,0 +1,205 @@
+@import '../definitions.less';
+
+& {
+  background: @almost-black;
+  color: @almost-white;
+
+  font-family: @sans-serif;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.first.page {
+  display: flex;
+  flex-flow: row wrap;
+  height: calc(100vh - 3em);
+}
+
+.first.page .right {
+  flex: 1 1 50%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.first.page .right .article {
+  flex: 1 1 50%;
+}
+
+
+
+// moves to full width, half height on mobile
+@media @mobile, @tablet {
+  .first.page {
+    display: flex;
+    flex-flow: column nowrap;
+    height: auto !important;
+  }
+  .first.page .about {
+    flex: 0 0 auto;
+  }
+  .first.page .right {
+    flex: 0 0 100vh;
+  }
+  .first.page .article {
+    flex: 0 0 50vh;
+  }
+}
+
+
+
+
+
+.about {
+  flex: 0 0 50%;
+  padding: 6% 2% 10%;
+
+  // it is itself a flexbox so that its content is centered vertically
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+@media @mobile, @tablet {
+  .first.page .about {
+    flex-basis: auto;
+  }
+}
+
+
+
+.about h1 {
+  font-weight: normal;
+  color: @green;
+}
+
+.about .headline {
+  color: #4ade6d;
+  font-weight: normal;
+}
+
+.about .description {
+  font-weight: 200;
+}
+
+.about a:visited,
+.about a {
+  color: @green;
+}
+
+
+// subscribe form
+.about form {
+  font-family: @sans-serif;
+}
+
+.about form h2 {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.about form input[type=email] {
+  outline: none;
+}
+
+.about form input[type=submit] {
+  border-radius: 0;
+  border: 1px solid currentColor;
+  outline: none;
+}
+
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+
+.article {
+  position: relative;
+}
+
+.article.ugly {
+  width: 30%;
+}
+
+// these are articles in the main flow
+.page > .article {
+  flex: 0 0 50%;
+}
+
+// moves to full width, half height on mobile
+@media @mobile, @tablet {
+  .page > .article {
+    width: 100%;
+    flex-basis: 1 1 50%;
+  }
+}
+
+@media @desktop, @desktop-xl {
+  .page > .article {
+    width: 50vw;
+  }
+  .page > .article.tall {
+    flex-basis: 100%;
+  }
+}
+
+
+.article .cover {
+  padding: 4px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.article.image-left .cover {
+  background-position: right;
+}
+
+.article .image img {
+  width: 100%;
+}
+
+.article .headers {
+  position: absolute;
+  width: 100%;
+  bottom: 1em;
+  left: 1em;
+  color: white;
+  text-shadow: @headline-shadow;
+}
+.article.headers-top .headers {
+  top: 1em;
+}
+
+.article .headers .headline {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.article .headers p {
+  margin: 0;
+}
+
+.article .headers .byline {
+  white-space: nowrap;
+}
+
+.article .headers .story-type {
+  color: @green;
+}
+
+&.mouse .article:hover .headline {
+  text-decoration: underline;
+}
+

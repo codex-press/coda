@@ -1,0 +1,125 @@
+@import 'definitions.less';
+
+@fast: 0.4s ease-out;
+@slowDelay: 1s 0.5s ease-out;
+
+
+&.video-story {
+  background: black;
+  color: @almost-white;
+
+  figure.video {
+    width: 100%;
+    max-height: initial;
+  }
+
+  .crop:before {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    content: '';
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.8) 0%,
+      rgba(0,0,0,0.5) 40%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+
+
+
+
+  // CHATTER
+  .chatter {
+    padding: 1em;
+    z-index: 10;
+    color: @almost-white;
+  }
+
+  // HEADLINE
+  .chatter h1.headline {
+    margin: 1rem 0;
+    color: @green;
+  }
+
+  .share-menu { float: right; }
+  .share-menu { clear: both; }
+
+  .share-menu .options {
+    bottom: initial;
+    top: 1.5em;
+    transform-origin: top center;
+  }
+
+  .share-menu .options:before {
+    border: 0.4em solid transparent;
+    border-bottom-width: .25em;
+    border-bottom-color: #46c664;
+    bottom: initial;
+    top: -0.6em;
+  }
+
+
+
+  // ANIMATION
+
+  // everthing fades out
+  .crop:before,
+  .chatter {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity @fast;
+  }
+
+  figure.playing .crop:before,
+  figure.playing .chatter {
+    opacity: 0;
+  }
+
+  // inside the frame animation
+  // words go down
+  // chatter parts move down on a stagger
+  figure .frame .chatter > * {
+    transform: translateY(0);
+    transition: transform @fast;
+  }
+  figure.playing .frame .chatter > * {
+    transform: translateY(200px);
+  }
+
+  // caption is delayed coming on screen
+  figure.playing .frame .chatter > :nth-child(0) { transition-delay: 0.1s; }
+  figure.playing .frame .chatter > :nth-child(1) { transition-delay: 0s; }
+
+  // reverse stagger on the way back on screen
+  figure.playing .frame .chatter > :nth-child(0) { transition-delay: 0.1s; }
+  figure.playing .frame .chatter > :nth-child(1) { transition-delay: 0s; }
+
+
+
+  // OUTSIDE TRANSITION
+
+  figure.video > .chatter {
+    opacity: 1;
+    transition: opacity @fast;
+  }
+
+  // cannot figure out how to shrink to zero height given the inability to
+  // transition to height: auto :(
+  figure.video.playing > .chatter {
+    opacity: 0;
+  }
+
+
+  // this is how it slides to the side
+  // in .blocks-beside
+  .video.blocks-beside {
+    transition: transform @fast;
+  }
+  .codex.media-playing .video.blocks-beside {
+    transform: translateX(-200px);
+  }
+
+}
+

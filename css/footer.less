@@ -1,0 +1,158 @@
+@import 'definitions';
+
+@slow: transform 1.5s ease-in-out;
+
+footer {
+  height: 4em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+
+  font-family: @sans-serif;
+
+  z-index: 15;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  z-index: 1000;
+  overflow: hidden;
+
+  transform: translateY(100%);
+  transition: transform 0.5s ease-out;
+}
+
+
+@media @mobile { footer { font-size: 0.7em; } }
+@media @tablet { footer { font-size: 0.85em; } }
+
+footer .current-container {
+  transition: transform 0.8s ease-out;
+}
+
+footer .current {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+
+// left portion
+footer .current .label {
+  flex: 0 0 auto;
+  margin-right: 2em;
+}
+
+footer .current .word-current {
+  font-size: 0.8em;
+  font-weight: 100;
+  line-height: 1;
+}
+
+footer .current .name a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #46c664;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+// right portion
+footer .timeline-wrap {
+  flex: 1 0 auto;
+  font-size: 14px;
+  position: relative;
+  min-width: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+footer .timeline-wrap:before,
+footer .timeline-wrap:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 0.75em;
+  height: 100%;
+  background: white;
+  z-index: 5;
+  pointer-events: none;
+}
+footer .timeline-wrap:before {
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0) 100%
+  )
+}
+footer .timeline-wrap:after {
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,1) 100%
+  )
+}
+
+footer .timeline {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-top: -0.5em;
+  width: 100%;
+  position: absolute;
+  padding: 0 0.75em;
+  transition: @slow;
+}
+
+footer .article {
+  flex: 1 0 2em;
+  background-color: #333;
+  height: 1em;
+  max-width: 4em;
+}
+
+footer .article:first-child {
+  border-top-left-radius: 0.5em;  
+  border-bottom-left-radius: 0.5em;  
+}
+
+footer .article:last-child {
+  border-top-right-radius: 0.5em;  
+  border-bottom-right-radius: 0.5em;  
+  flex: 0 0 1em;
+}
+
+footer .dot {
+  width: 1em;
+  height: 1em;
+
+  border-radius: 50%;
+  background-color: #46c664;
+
+  transition: transform 0.3s ease-out;
+}
+
+footer .dot:hover {
+  transform: scale(1.3);
+  transition: transform 0.1s ease-out;
+}
+
+footer .dot:last-child {
+  margin: 0 !important;
+}
+
+
+footer .bigger.dot {
+  transform: scale(1.5);
+  border: 1px white solid;
+}
+
+

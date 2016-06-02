@@ -1,0 +1,348 @@
+@import '../definitions.less';
+
+@very-fast: .2s ease-out;
+@fast: .6s ease-out;
+@slow: .9s ease-out;
+
+& {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+// last node gets the empty line
+// pictures return
+
+// nodes are small width until they are hovered
+
+
+// CURRENT
+
+@media @desktop, @desktop-xl {
+  .current {
+    flex: 0 1 130px;
+    transition: flex-basis @slow;
+  }
+  .current:hover  {
+    flex-basis: 300px;
+  }
+}
+
+
+h2 {
+  font-size: 3em;
+  margin-left: 2%;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1;
+}
+h2 a {
+  text-decoration: none;
+  color: @currents-heading-color;
+  transition: color @fast;
+}
+
+@media @desktop, @desktop-xl {
+  .current:hover h2 a {
+    color: @green;
+  }
+}
+
+
+// mobile headers go black
+@media @mobile, @tablet {
+  h2 a {
+    color: @almost-black;
+  }
+}
+
+@media @mobile {
+  h2 {
+    font-size: 2.4em;
+  }
+}
+
+
+// angle things used for paging the timeline
+.current .arrows {
+  position: relative;
+  top: -0.3em;
+  float: right;
+  cursor: pointer;
+  user-select: none;
+  transition: color @fast;
+}
+
+&.mouse .current:hover .arrows {
+  color: @green;
+}
+
+
+@media @mobile, @tablet {
+  .current .arrows {
+    display: none;
+  }
+}
+
+
+.current .arrows .left,
+.current .arrows .right {
+  opacity: 0;
+  transition: opacity @very-fast;
+}
+
+.current.overflow-left .arrows .left,
+.current.overflow-right .arrows .right {
+  opacity: 1;
+}
+
+.current .arrows .left:before {
+  transform: rotate(180deg) translateY(-0.07em);
+}
+
+
+// INDEXES
+.index {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+@media @mobile, @tablet {
+  .index {
+    margin-top: 0.4em;
+    padding: 0 2em;
+  }
+}
+
+// when larger the stories and the line are shifted up to cover the header a bit
+@media @desktop, @desktop-xl {
+  .index {
+    padding-top: 1em;
+    padding-left: 5%;
+    overflow: hidden;
+    transform: translateY(-1.8em);
+  }
+  // this just adds some space. padding don't work. margin on last element
+  // dont work. not sure why
+  .index:after {
+    content: '';
+    display: block;
+    flex: 0 0 100px;
+  }
+}
+
+
+// LINE
+.index .line {
+  position: absolute;
+  top: 0;
+  height: 0.8em;
+  left: 0.2em;
+  width: 100%;
+  background: @currents-line-color;
+  transition: background-color @fast;
+}
+
+.index .article:first-child .line {
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+}
+
+// hollow line with outline
+.index .article:last-child .line {
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
+  border: .1em solid #999;
+  background: transparent;
+}
+
+
+@media @desktop, @desktop-xl {
+  &.mouse .current:hover .line {
+    background: @almost-black;
+  }
+
+  &.mouse .current:hover .article:last-child .line {
+    border: .1em solid @almost-black;
+    background: transparent;
+  }
+}
+
+
+
+// ARTICLE
+.article {
+  font-size: 0.8em;
+  opacity: 1;
+  position: relative;
+  flex: 0 0 270px;
+  padding-top: 0.5em;
+}
+
+@media @mobile, @tablet {
+  .article {
+    flex: 0 1 100px;
+  }
+}
+
+.article .inner {
+  position: relative;
+  left: -0.8em;
+  z-index: 10;
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 20px;
+  border-radius: 0.2em;
+  transition:
+   transform @very-fast,
+   background-color @very-fast;
+}
+
+// moves down on hover
+&.mouse .article:hover .inner {
+  transform: translateY(20px);
+}
+
+// for mobile, we get rid of titles completely
+@media @mobile, @tablet {
+  .article .inner {
+    display: none;
+  }
+}
+
+// turns black on article hover
+&.mouse .current .article:hover .inner {
+  background: @almost-black;
+}
+
+// the story dot
+.current .article:before {
+  display: block;
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: .8em;
+  height: .8em;
+
+  background: @almost-black;
+  border-radius: 50%;
+  transition:
+    background-color @fast,
+    transform @very-fast;
+}
+
+
+@media @desktop, @desktop-xl {
+  
+  // dot turns green on line hover
+  &.mouse .current:hover .article:before,
+  &.mouse .current:hover .article:before {
+    background: @green;
+  }
+
+  // dot gets bigger and adds white border on article hover
+  &.mouse .current .article:hover:before,
+  &.mouse .current .article:hover:before {
+    border: 1px solid white;
+    transform: scale(1.7);
+  }
+
+}
+
+
+// black arrow on story (hover)
+.article .inner:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: -1em;
+  left: .5em;
+  z-index: 10;
+  
+  border: solid transparent;
+  height: 0px;
+  width: 0px;
+
+  border-width: .7em;
+  border-bottom-width: .5em;
+  
+}
+
+&.mouse .article:hover .inner:before {
+  transition: border-color @very-fast;
+  border-bottom-color: @almost-black;
+}
+
+// image container gets big on hover
+.article .thumb {
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  transition: height @fast;
+}
+
+
+&.mouse .current:hover .article .thumb {
+  height: 120px;
+}
+
+.current .article .image {
+  width: 100%;
+  height: 110px;
+  position: absolute;
+  overflow: hidden;
+
+  transform-origin: 50% 0;
+  transform: scale(1, 0.9);
+  opacity: 0;
+
+  transition:
+    transform @very-fast,
+    opacity @very-fast;
+}
+
+&.mouse .current:hover .article .image {
+  transform: scale(1);
+  opacity: 1;
+
+  transition:
+    transform 0.2s 0.3s ease-out,
+    opacity 0.2s 0.3s ease-out;
+}
+
+.current .article .image img {
+  width: 100%;
+}
+
+
+// text inside the .story
+.article a {
+  text-decoration: none;
+}
+
+.article h4.headline {
+  font-size: 1em;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: @text-color;
+  margin: 0;
+  line-height: 1.2;
+  transition: color @very-fast;
+}
+
+// turns white on hover
+&.mouse .article:hover .headline {
+  color: white;
+}
+
+.article .story-type {
+  font-size: .8em;
+  font-weight: normal;
+}
+

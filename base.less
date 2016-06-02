@@ -1,0 +1,193 @@
+
+@import 'css/definitions';
+@import 'css/normal_story';
+@import 'css/video_story';
+@import 'css/share_menu';
+@import 'css/fonts';
+
+// space for header
+&.top {
+  padding-top: 4em;
+}
+
+// top page shrinks to provide for header and footer
+&.top.has-js :first-child .page,
+&.top.has-js .page:first-child,
+&.top.has-js style:first-child + .page {
+  min-height: calc(100vh - 8em);
+}
+
+@media only screen and (min-height: 700px) {
+  &.top.has-js figure:first-child,
+  &.top.has-js > :first-child figure,
+  &.top.has-js > style:first-child + figure {
+    max-height: calc(100vh - 8em);
+  }
+}
+
+
+// room for footer
+&.has-js .page {
+  min-height: calc(100vh - 4.3em);
+}
+
+@media only screen and (min-height: 700px) {
+  &.has-js figure {
+    max-height: calc(100vh - 5em);
+  }
+}
+
+&[data-title="codastory.com"] ~ article:last-child {
+  padding-bottom: 5rem;
+}
+
+
+
+article& {
+  font-family: @serif;
+  line-height: 1.5;
+  color: @text-color;
+  background-color: @page-background;
+}
+
+figure .frame {
+  color: white;
+}
+
+figure.right {
+  float: right;
+  clear: right;
+  margin: 1em;
+}
+
+figure.left {
+  float: left;
+  clear: left;
+  margin: 1em;
+}
+
+@media @mobile, @tablet {
+  figure.right,
+  figure.left {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+// DEFAULT STYLES
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @sans-serif;
+}
+
+@media @tablet     { .headline { font-size: 2.2em; } }
+@media @desktop    { .headline { font-size: 2.4em; } }
+@media @desktop-xl { .headline { font-size: 2.5em; } }
+
+
+.byline {
+  font-family: @sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  hyphens: none;
+}
+
+.byline:before {
+  content: ' by ';
+  font-size: 0.8em;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+
+
+.story-type {
+  font-family: @sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: @green;
+  hyphens: none;
+}
+
+.subhed {
+  font-weight: 700;
+  font-family: @sans-serif;
+}
+
+.subhed:not(:first-child) {
+  padding-top: 3em;
+}
+
+.publication-date {
+  font-family: @sans-serif;
+}
+
+.dek {
+  font-size: 1.5em;
+  font-family: @sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.caption {
+  font-size: .9em;
+  font-family: @sans-serif;
+  line-height: 1.1;
+}
+
+
+
+// LINKS
+
+a {
+  color: @text-color;
+}
+
+a:active, a:hover, a:focus {
+  color: @green;
+}
+
+a:visited {
+  color: @dark-green;
+}
+
+figure a {
+  color: #eee;
+}
+
+
+// JUST HELPFUL
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.secret.message {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+figure .frame .content-center {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+figure .frame .content-bottom {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+// these by default will have "flex: 0 1 auto;" which makes them shrink when
+// obviously they shouldn't because they probably have text in there
+figure .frame .content-center > p,
+figure .frame .content-bottom > p {
+  flex: 0 0 auto;
+}
+

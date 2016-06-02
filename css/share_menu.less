@@ -1,0 +1,128 @@
+
+// SHARE MENU
+
+.share-menu {
+  font-size: 1.3rem;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+// icon in a circle is the only visible thing
+.share-menu .icon-share {
+  border: .1em currentColor solid;
+  border-radius: 50%;
+  padding: 0.08em;
+  padding-left: 0.04em;
+  height: 1.5em;
+  width: 1.5em;
+  display: inline-block;
+  line-height: 1.3;
+}
+
+
+
+// the options show up on hover (with mouse only since the fake :hover on touch is awful)
+// or when toggled .on with touch
+.share-menu .options {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  bottom: 1.5em;
+  left: -0.05em;
+  transition:
+    opacity 0.3s ease-out,
+    z-index 0ms 0.3s linear,
+    transform 0.3s ease-out;
+  transform-origin: 50% 100%;
+  transform: scale(0.9);
+  opacity: 0;
+  z-index: -1;
+  color: white;
+  
+  text-shadow: none;
+}
+
+.down > .share-menu .options {
+  bottom: initial;
+  top: 1.5em;
+  transform-origin: 50% 0;
+}
+
+// fades out on a delay with mouse because we don't want the menu to
+// close while they're using it
+&.mouse .share-menu .options {
+  transition:
+    opacity 0.5s 0.3s ease-out,
+    z-index 0ms 0.8s linear,
+    transform 0.5s 0.3s ease-out;
+}
+
+
+.share-menu.toggle.on .options,
+&.mouse .share-menu:hover .options {
+  z-index: @menu-z-index;
+  transform: scale(1);
+  opacity: 1;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
+}
+
+// buttons are green
+.share-menu .options .button {
+  display: inline-block;
+  background: @green;
+  line-height: 1;
+  padding: 0.3em;
+  transition: color 0.2s ease-out;
+}
+
+.share-menu .options .share {
+  color: white;
+}
+
+// icon changes to black on hover
+// (again only on mouse so we don't get the terrible fake hover events on touch)
+&.mouse .share-menu .options .share:hover {
+  color: @text-color;
+}
+
+// every button but the last one has the line under it
+.share-menu .options .share:not(:last-child) {
+  border-bottom: 1px solid rgb(155,233,171);
+}
+
+// when menu goes down, it's the top
+.down > .share-menu .options .share:not(:first-child) {
+  border-top: 1px solid rgb(155,233,171);
+}
+
+
+// whatsapp is mobile only
+&:not(.phone) .share-menu .share.whatsapp {
+  display: none;
+}
+
+// little arrow at the top of it
+.share-menu .options:before {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: -0.6em;
+  left: 0.4em;
+  border: solid 0.4em transparent;
+  height: 0px;
+  width: 0px;
+  border-top-width: .25em;
+  border-top-color: @green;
+}
+
+.down > .share-menu .options:before {
+  top: -0.6em;
+  border: solid 0.4em transparent;
+  border-bottom-width: .25em;
+  border-bottom-color: @green;
+}
+
