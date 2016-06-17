@@ -52,7 +52,7 @@
 
 // fades out on a delay with mouse because we don't want the menu to
 // close while they're using it
-&.mouse .share-menu .options {
+body.mouse .share-menu .options {
   transition:
     opacity 0.5s 0.3s ease-out,
     z-index 0ms 0.8s linear,
@@ -61,7 +61,7 @@
 
 
 .share-menu.toggle.on .options,
-&.mouse .share-menu:hover .options {
+body.mouse .share-menu:hover .options {
   z-index: @menu-z-index;
   transform: scale(1);
   opacity: 1;
@@ -85,7 +85,7 @@
 
 // icon changes to black on hover
 // (again only on mouse so we don't get the terrible fake hover events on touch)
-&.mouse .share-menu .options .share:hover {
+body.mouse .share-menu .options .share:hover {
   color: @text-color;
 }
 
@@ -101,7 +101,7 @@
 
 
 // whatsapp is mobile only
-&:not(.phone) .share-menu .share.whatsapp {
+body:not(.phone) .share-menu .share.whatsapp {
   display: none;
 }
 

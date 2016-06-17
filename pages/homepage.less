@@ -1,6 +1,6 @@
-@import '../definitions.less';
+@import '../css/definitions.less';
 
-& {
+article {
   background: @almost-black;
   color: @almost-white;
 
@@ -163,9 +163,15 @@
   background-clip: content-box;
 }
 
-.article.image-left .cover {
+.article.image-right .cover {
   background-position: right;
 }
+
+.image-left .cover {
+  background-position: left;
+}
+
+
 
 .article .image img {
   width: 100%;
@@ -199,7 +205,38 @@
   color: @green;
 }
 
-&.mouse .article:hover .headline {
+body.mouse .article:hover .headline {
   text-decoration: underline;
 }
 
+
+.headers-black {
+
+  .headline,
+  .byline {
+    color: #333;
+  }
+
+  .headline,
+  .byline,
+  .story-type {
+   text-shadow: none;
+  }
+
+}
+
+// these are articles in the main flow
+@media @desktop, @desktop-xl {
+  .article {
+    flex: 0 0 50%;
+    height: 50vh;
+  }
+}
+
+// moves to full width, half height on mobile
+@media @mobile, @tablet {
+  .article {
+    flex: 0 0 100%;
+    height: 50vh;
+  }
+}

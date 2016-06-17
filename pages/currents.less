@@ -4,7 +4,7 @@
 @fast: .6s ease-out;
 @slow: .9s ease-out;
 
-& {
+body {
   display: flex;
   flex-flow: column nowrap;
 }
@@ -73,7 +73,7 @@ h2 a {
   transition: color @fast;
 }
 
-&.mouse .current:hover .arrows {
+body.mouse .current:hover .arrows {
   color: @green;
 }
 
@@ -160,11 +160,11 @@ h2 a {
 
 
 @media @desktop, @desktop-xl {
-  &.mouse .current:hover .line {
+  body.mouse .current:hover .line {
     background: @almost-black;
   }
 
-  &.mouse .current:hover .article:last-child .line {
+  body.mouse .current:hover .article:last-child .line {
     border: .1em solid @almost-black;
     background: transparent;
   }
@@ -201,7 +201,7 @@ h2 a {
 }
 
 // moves down on hover
-&.mouse .article:hover .inner {
+body.mouse .article:hover .inner {
   transform: translateY(20px);
 }
 
@@ -213,7 +213,7 @@ h2 a {
 }
 
 // turns black on article hover
-&.mouse .current .article:hover .inner {
+body.mouse .current .article:hover .inner {
   background: @almost-black;
 }
 
@@ -241,14 +241,14 @@ h2 a {
 @media @desktop, @desktop-xl {
   
   // dot turns green on line hover
-  &.mouse .current:hover .article:before,
-  &.mouse .current:hover .article:before {
+  body.mouse .current:hover .article:before,
+  body.mouse .current:hover .article:before {
     background: @green;
   }
 
   // dot gets bigger and adds white border on article hover
-  &.mouse .current .article:hover:before,
-  &.mouse .current .article:hover:before {
+  body.mouse .current .article:hover:before,
+  body.mouse .current .article:hover:before {
     border: 1px solid white;
     transform: scale(1.7);
   }
@@ -274,7 +274,7 @@ h2 a {
   
 }
 
-&.mouse .article:hover .inner:before {
+body.mouse .article:hover .inner:before {
   transition: border-color @very-fast;
   border-bottom-color: @almost-black;
 }
@@ -288,7 +288,7 @@ h2 a {
 }
 
 
-&.mouse .current:hover .article .thumb {
+body.mouse .current:hover .article .thumb {
   height: 120px;
 }
 
@@ -307,7 +307,7 @@ h2 a {
     opacity @very-fast;
 }
 
-&.mouse .current:hover .article .image {
+body.mouse .current:hover .article .image {
   transform: scale(1);
   opacity: 1;
 
@@ -337,7 +337,7 @@ h2 a {
 }
 
 // turns white on hover
-&.mouse .article:hover .headline {
+body.mouse .article:hover .headline {
   color: white;
 }
 
