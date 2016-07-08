@@ -1,8 +1,8 @@
-import {compile, unscopeLinks}  from './template_helpers.es6';
-import {log, constrain, alphanum} from './utility.es6';
-import player     from './player.es6';
-import dom        from './dom.es6';
-import animate    from './easing.es6';
+// import {compile, unscopeLinks}  from './template_helpers.es6';
+// import {log, constrain, alphanum} from './utility.es6';
+// import player     from './player.es6';
+// import dom        from './dom.es6';
+// import animate    from './easing.es6';
 
 
 var footerTemplate = compile(`
