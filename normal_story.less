@@ -46,8 +46,13 @@ p {
 figure {
   align-items: flex-start;
 }
+figure.page .caption.after {
+  margin: 0.3em 0.5rem;
+}
+
+
 .caption.after {
-  margin: 0 0.5rem;
+  margin: 0.3em 0;
 }
 
 img {
@@ -273,6 +278,17 @@ figure .frame .share-menu .options {
   line-height: 1;
 }
 
+body.has-js figure .photo-credit:not(.after) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+figure .photo-credit {
+  margin: 0.4em;
+}
+
+
 // jumps to right side when it's an after block
 .photo-credit.after {
   align-self: flex-end;
@@ -297,12 +313,6 @@ figure .frame .share-menu .options {
   color: @green;
 }
 
-.frame > .photo-credit {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 0.4em;
-}
 
 
 

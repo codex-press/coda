@@ -4,6 +4,11 @@
 @import 'css/share_menu';
 @import 'css/fonts';
 
+body {
+  margin: 0;
+}
+
+
 // space for header
 body.top {
   padding-top: 4em;
@@ -169,6 +174,11 @@ figure a {
   text-align: center;
 }
 
+
+
+
+
+
 figure .frame .content-center {
   display: flex;
   flex-flow: column nowrap;
@@ -187,4 +197,24 @@ figure .frame .content-center > p,
 figure .frame .content-bottom > p {
   flex: 0 0 auto;
 }
+
+figure .top    { position: absolute; top: 0; }
+figure .right  { position: absolute; right: 0; }
+figure .bottom { position: absolute; bottom: 0; }
+figure .left   { position: absolute; left: 0; }
+
+figure .frame > * { order: 0; }
+figure .before { order: -1; }
+figure .after  { order: 1; }
+
+// fill
+figure .frame .fill {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 
