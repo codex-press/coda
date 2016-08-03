@@ -5,23 +5,24 @@
   max-height: 100vh;
 }
 
-> h1.headline {
+article > h1.headline {
   margin-top: 2em;
 }
 
 .frame h1 {
-  margin: 1rem;
+  margin: 1rem 0;
+  padding: 0;
 }
 
 h1 {
-  margin: 1rem auto;
-  width: calc(~'100% - 2rem');
+  margin: 1rem 0;
+  padding: 0 1rem;
 }
 
 p,
 .dek,
 .subhed {
-  width: calc(~'100% - 2rem');
+  padding: 0 1rem;
   max-width: 30rem;
   margin-left: auto;
   margin-right: auto;
@@ -278,7 +279,7 @@ figure .frame .share-menu .options {
   line-height: 1;
 }
 
-body.has-js figure .photo-credit:not(.after) {
+html.javascript figure .photo-credit:not(.after) {
   position: absolute;
   bottom: 0;
   right: 0;

@@ -5,8 +5,8 @@
 //   'wheel .index'      : currentsScroller,
 // };
 
-// article.hook(currentsEvents, article.el);
-// article.hook({resize: updateArrows});
+// article.bind(currentsEvents, article.el);
+// article.bind({resize: updateArrows});
 // updateArrows();
 
 
@@ -50,11 +50,11 @@
 
 //   var ease = codex.animate.cubicOut(start, change, duration);
 
-//   codex.animate(
+//   codex.animate({
 //     duration: duration,
 //     tick: function(time) { index.scrollLeft = Math.round(ease(time)); },
 //     done: updateArrows
-//   );
+//   });
 
 // };
 

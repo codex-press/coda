@@ -1,3 +1,19 @@
+var handlebars = require('handlebars');
+
+
+handlebars.registerHelper('share_menu', function(options) {
+
+  return '<span class="share-menu toggle button">\
+    <span class="icon-share"></span>\
+    <span class=options>' +
+      handlebars.helpers.twitter(options) +
+      handlebars.helpers.facebook(options) +
+      handlebars.helpers.email(options) +
+    '</span>\
+  </span>'
+});
+
+
 // // import {compile, unscopeLinks}  from './template_helpers.es6';
 // // import {log, constrain, alphanum} from './utility.es6';
 // // import player     from './player.es6';

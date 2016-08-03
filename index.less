@@ -3,54 +3,14 @@
 @import 'css/definitions';
 @import 'css/share_menu';
 @import 'css/fonts';
-
-body {
-  margin: 0;
-}
-
-
-// space for header
-body.top {
-  padding-top: 4em;
-}
-
-// top page shrinks to provide for header and footer
-body.top.has-js :first-child .page,
-body.top.has-js .page:first-child,
-body.top.has-js style:first-child + .page {
-  min-height: calc(100vh - 8em);
-}
-
-@media only screen and (min-height: 700px) {
-  body.top.has-js figure:first-child,
-  body.top.has-js > :first-child figure,
-  body.top.has-js > style:first-child + figure {
-    max-height: calc(100vh - 8em);
-  }
-}
-
-
-// room for footer
-body.has-js .page {
-  min-height: calc(100vh - 4.3em);
-}
-
-@media only screen and (min-height: 700px) {
-  body.has-js figure {
-    max-height: calc(100vh - 5em);
-  }
-}
-
-body[data-title="codastory.com"] ~ article:last-child {
-  padding-bottom: 5rem;
-}
-
+@import 'css/header';
 
 body {
   font-family: @serif;
   line-height: 1.5;
   color: @text-color;
   background-color: @page-background;
+  margin: 0;
 }
 
 figure .frame {
