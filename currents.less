@@ -4,9 +4,10 @@
 @fast: .6s ease-out;
 @slow: .9s ease-out;
 
-body {
+article {
   display: flex;
   flex-flow: column nowrap;
+  margin-bottom: 10em;
 }
 
 // last node gets the empty line
@@ -73,7 +74,7 @@ h2 a {
   transition: color @fast;
 }
 
-body.mouse .current:hover .arrows {
+html.mouse .current:hover .arrows {
   color: @green;
 }
 
@@ -134,42 +135,6 @@ body.mouse .current:hover .arrows {
 }
 
 
-// LINE
-.index .line {
-  position: absolute;
-  top: 0;
-  height: 0.8em;
-  left: 0.2em;
-  width: 100%;
-  background: @currents-line-color;
-  transition: background-color @fast;
-}
-
-.index .article:first-child .line {
-  border-top-left-radius: .5em;
-  border-bottom-left-radius: .5em;
-}
-
-// hollow line with outline
-.index .article:last-child .line {
-  border-top-right-radius: .5em;
-  border-bottom-right-radius: .5em;
-  border: .1em solid #999;
-  background: transparent;
-}
-
-
-@media @desktop, @desktop-xl {
-  body.mouse .current:hover .line {
-    background: @almost-black;
-  }
-
-  body.mouse .current:hover .article:last-child .line {
-    border: .1em solid @almost-black;
-    background: transparent;
-  }
-}
-
 
 
 // ARTICLE
@@ -179,6 +144,7 @@ body.mouse .current:hover .arrows {
   position: relative;
   flex: 0 0 270px;
   padding-top: 0.5em;
+  text-decoration: none;
 }
 
 @media @mobile, @tablet {
@@ -201,7 +167,7 @@ body.mouse .current:hover .arrows {
 }
 
 // moves down on hover
-body.mouse .article:hover .inner {
+html.mouse .article:hover .inner {
   transform: translateY(20px);
 }
 
@@ -213,7 +179,7 @@ body.mouse .article:hover .inner {
 }
 
 // turns black on article hover
-body.mouse .current .article:hover .inner {
+html.mouse .current .article:hover .inner {
   background: @almost-black;
 }
 
@@ -241,14 +207,14 @@ body.mouse .current .article:hover .inner {
 @media @desktop, @desktop-xl {
   
   // dot turns green on line hover
-  body.mouse .current:hover .article:before,
-  body.mouse .current:hover .article:before {
+  html.mouse .current:hover .article:before,
+  html.mouse .current:hover .article:before {
     background: @green;
   }
 
   // dot gets bigger and adds white border on article hover
-  body.mouse .current .article:hover:before,
-  body.mouse .current .article:hover:before {
+  html.mouse .current .article:hover:before,
+  html.mouse .current .article:hover:before {
     border: 1px solid white;
     transform: scale(1.7);
   }
@@ -274,13 +240,13 @@ body.mouse .current .article:hover .inner {
   
 }
 
-body.mouse .article:hover .inner:before {
+html.mouse .article:hover .inner:before {
   transition: border-color @very-fast;
   border-bottom-color: @almost-black;
 }
 
 // image container gets big on hover
-.article .thumb {
+.article .thumb-container {
   height: 0;
   position: relative;
   overflow: hidden;
@@ -288,11 +254,11 @@ body.mouse .article:hover .inner:before {
 }
 
 
-body.mouse .current:hover .article .thumb {
+html.mouse .current:hover .article .thumb-container {
   height: 120px;
 }
 
-.current .article .image {
+.current .article .thumb {
   width: 100%;
   height: 110px;
   position: absolute;
@@ -307,7 +273,7 @@ body.mouse .current:hover .article .thumb {
     opacity @very-fast;
 }
 
-body.mouse .current:hover .article .image {
+html.mouse .current:hover .article .thumb {
   transform: scale(1);
   opacity: 1;
 
@@ -316,15 +282,11 @@ body.mouse .current:hover .article .image {
     opacity 0.2s 0.3s ease-out;
 }
 
-.current .article .image img {
+.current .article .thumb img {
   width: 100%;
 }
 
 
-// text inside the .story
-.article a {
-  text-decoration: none;
-}
 
 .article h4.headline {
   font-size: 1em;
@@ -337,12 +299,50 @@ body.mouse .current:hover .article .image {
 }
 
 // turns white on hover
-body.mouse .article:hover .headline {
+html.mouse .article:hover .headline {
   color: white;
 }
 
 .article .story-type {
   font-size: .8em;
   font-weight: normal;
+}
+
+
+
+// LINE
+.index .line {
+  position: absolute;
+  top: 0;
+  height: 0.8em;
+  left: 0.2em;
+  width: 100%;
+  background: @currents-line-color;
+  transition: background-color @fast;
+}
+
+.index .article:first-child .line {
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+}
+
+// hollow line with outline
+.index .article:last-child .line {
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
+  border: .1em solid #999;
+  background: transparent;
+}
+
+
+@media @desktop, @desktop-xl {
+  html.mouse .current:hover .line {
+    background: @almost-black;
+  }
+
+  html.mouse .current:hover .article:last-child .line {
+    border: .1em solid @almost-black;
+    background: transparent;
+  }
 }
 

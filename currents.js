@@ -1,61 +1,80 @@
-// // Currents page needs special codes....
+'use strict';
+(function() {
 
-// var currentsEvents = {
-//   'click .icon-angle' : currentsPager,
-//   'wheel .index'      : currentsScroller,
-// };
+  var dom = require('dom').default;
+  var article = require('article').default;
+  var animate = require('animate').default;
 
-// article.bind(currentsEvents, article.el);
-// article.bind({resize: updateArrows});
-// updateArrows();
+  var currentsEvents = {
+    'click .icon-angle' : currentsPager,
+    'wheel .index'      : currentsScroller,
+  };
+ 
+  var events = {
+    resize : updateArrows,
+    ready  : ready,
+  };
 
-
-// function updateArrows() {
-//   currentsArticle.select('.current').each(function(current) {
-//     var index = current.select('.index').first();
-
-//     if (index.scrollWidth - index.clientWidth - index.scrollLeft > 120)
-//       codex.dom(current).addClass('overflow-right');
-//     else
-//       codex.dom(current).removeClass('overflow-right');
-
-//     if (index.scrollLeft > 0)
-//       codex.dom(current).addClass('overflow-left');
-//     else
-//       codex.dom(current).removeClass('overflow-left');
-
-//   });
-// };
+  article.bind(events);
 
 
-// function currentsScroller(e) {
-//   codex.dom(e.target).closest('.index').scrollX(e.deltaX);
-//   updateArrows();
-//   if (!e.deltaY || (e.deltaX / e.deltaY) > .8)
-//     e.preventDefault();
-// };
+  function ready() {
+    article.bind(currentsEvents, article.el);
+    updateArrows();
+  };
 
 
-// function currentsPager(e) {
-//   e.preventDefault();
+  function updateArrows() {
+    article.select('.current').each(function(current) {
+      var index = current.select('.index').first();
 
-//   var index = codex.dom(e.target).closest('.current').select('.index').first();
+      if (index.scrollWidth - index.clientWidth - index.scrollLeft > 120)
+        dom(current).addClass('overflow-right');
+      else
+        dom(current).removeClass('overflow-right');
 
-//   var direction = codex.dom(e.target).is('.left') ? -1 : 1;
-//   var jump = window.innerWidth * .8 * direction;
-//   var start = index.scrollLeft;
-//   var max = index.scrollWidth - index.clientWidth;
-//   var change = constrain(jump, start * -1, max - start);
-//   var duration = Math.max(100, 500 * (change/jump));
+      if (index.scrollLeft > 0)
+        dom(current).addClass('overflow-left');
+      else
+        dom(current).removeClass('overflow-left');
+    });
+  };
 
-//   var ease = codex.animate.cubicOut(start, change, duration);
 
-//   codex.animate({
-//     duration: duration,
-//     tick: function(time) { index.scrollLeft = Math.round(ease(time)); },
-//     done: updateArrows
-//   });
+  function currentsScroller(e) {
+    dom.closest(e.target, '.index').scrollLeft += e.deltaX;
+    updateArrows();
+    if (!e.deltaY || (e.deltaX / e.deltaY) > .8)
+      e.preventDefault();
+  };
 
-// };
 
+  var tween = {};
+  function currentsPager(e) {
+    e.preventDefault();
+
+    var index = dom(e.target).closest('.current').select('.index').first();
+
+    // cancel the previous
+    if (tween.active)
+      tween.cancel();
+
+    var direction = dom(e.target).is('.left') ? -1 : 1;
+    var jump = window.innerWidth * .8 * direction;
+    var start = index.scrollLeft;
+    var max = index.scrollWidth - index.clientWidth;
+    var change = (jump, start * -1, max - start);
+    var change = Math.min(Math.max(jump, start * -1), max - start);
+
+    var ease = animate.cubicOut(start, change);
+
+    tween = animate({
+      duration: Math.max(100, 500 * (change/jump)),
+      tick: function(time) { index.scrollLeft = Math.round(ease(time)); },
+      done: updateArrows,
+    });
+
+  };
+
+})();
 

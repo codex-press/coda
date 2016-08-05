@@ -21,7 +21,11 @@
   line-height: 1.3;
 }
 
-
+.share-menu .icon-share:before {
+  position: relative;
+  top: 0.08em;
+  left: 0.1em;
+}
 
 // the options show up on hover (with mouse only since the fake :hover on touch is awful)
 // or when toggled .on with touch
@@ -30,11 +34,13 @@
   flex-flow: column nowrap;
   position: absolute;
   bottom: 1.5em;
-  left: -0.05em;
+  left: 0.25em;
+
   transition:
     opacity 0.3s ease-out,
     z-index 0ms 0.3s linear,
     transform 0.3s ease-out;
+
   transform-origin: 50% 100%;
   transform: scale(0.9);
   opacity: 0;
@@ -44,24 +50,22 @@
   text-shadow: none;
 }
 
-.down > .share-menu .options {
-  bottom: initial;
-  top: 1.5em;
-  transform-origin: 50% 0;
-}
-
-// fades out on a delay with mouse because we don't want the menu to
-// close while they're using it
-body.mouse .share-menu .options {
+// delay on mouse so it doesn't close immediately when you move outside
+html.mouse .share-menu .options {
   transition:
     opacity 0.5s 0.3s ease-out,
     z-index 0ms 0.8s linear,
     transform 0.5s 0.3s ease-out;
 }
 
+.down > .share-menu .options {
+  bottom: initial;
+  top: 1.5em;
+  transform-origin: 50% 0;
+}
 
-.share-menu.toggle.on .options,
-body.mouse .share-menu:hover .options {
+
+.share-menu:hover .options {
   z-index: @menu-z-index;
   transform: scale(1);
   opacity: 1;
@@ -70,8 +74,10 @@ body.mouse .share-menu:hover .options {
     transform 0.3s ease-out;
 }
 
+
+
 // buttons are green
-.share-menu .options .button {
+.share-menu .options a {
   display: inline-block;
   background: @green;
   line-height: 1;
@@ -79,18 +85,19 @@ body.mouse .share-menu:hover .options {
   transition: color 0.2s ease-out;
 }
 
-.share-menu .options .share {
+
+.share-menu .options a * {
   color: white;
 }
 
 // icon changes to black on hover
-// (again only on mouse so we don't get the terrible fake hover events on touch)
-body.mouse .share-menu .options .share:hover {
+// (only on mouse so we don't get the terrible fake hover events on touch)
+html.mouse .share-menu .options a *:hover {
   color: @text-color;
 }
 
 // every button but the last one has the line under it
-.share-menu .options .share:not(:last-child) {
+.share-menu .options a:not(:last-child) {
   border-bottom: 1px solid rgb(155,233,171);
 }
 
@@ -99,11 +106,6 @@ body.mouse .share-menu .options .share:hover {
   border-top: 1px solid rgb(155,233,171);
 }
 
-
-// whatsapp is mobile only
-body:not(.phone) .share-menu .share.whatsapp {
-  display: none;
-}
 
 // little arrow at the top of it
 .share-menu .options:before {
