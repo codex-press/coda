@@ -1,18 +1,10 @@
 @import 'definitions';
 
-body {
-  min-height: initial;
-  position: absolute;
-  z-index: 1000;
-  background: none;
-  overflow: visible;
-}
-
-footer, header {
+header.sitewide {
   padding: 0.5em 1.5em;
 }
 
-header {
+header.sitewide {
   z-index: 100;
   width: 100%;
   top: 0;
@@ -32,20 +24,20 @@ header {
   transition: transform 0.5s ease-out;
 }
 
-header .left { 
+header.sitewide .left { 
   flex: 0 0 auto;
 }
 
-header .right {
+header.sitewide .right {
   flex: 1 0 auto;
   text-align: right;
 }
 
-header a {
+header.sitewide a {
   text-decoration: none;
 }
 
-header .logo {
+header.sitewide .logo {
   vertical-align: bottom;
   height: 2em;
   width: (2.8 * 2em);
@@ -56,7 +48,7 @@ header .logo {
 }
 
 // #LGBTCrisis
-header .crisis {
+header.sitewide .crisis {
   display: inline-block;
   font-weight: 400;
   font-size: 1.1em;
@@ -64,13 +56,13 @@ header .crisis {
 }
 
 // makes hash tag the same size as the letters
-header .crisis .hash {
+header.sitewide .crisis .hash {
   font-size: 1.2em;
   line-height: 1.4;
   vertical-align: bottom;
 }
 
-header .navigation-links a {
+header.sitewide .navigation-links a {
   font-weight: 300;
   margin-left: .5em;
   color: @text-color;
@@ -82,7 +74,7 @@ header .navigation-links a {
   margin-top: 4em;
 }
 
-header .navigation-links a.target {
+header.sitewide .navigation-links a.target {
   border-bottom: 0.25em solid @green;
 }
 

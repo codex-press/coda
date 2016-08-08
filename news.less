@@ -1,34 +1,31 @@
-@import 'css/definitions.less';
+@import 'themes/coda/definitions.less';
 
 body {
   background: white;
-}
-
-article {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-article header {
+header {
   font-family: @sans-serif;
   margin-bottom: 1em;
   flex: 0 0 auto;
 }
 
-article header,
+header,
 .article {
   max-width: 900px;
 }
 
 @media @desktop-xl {
-  article header,
+  header,
   .article {
     margin-left: 200px;
   }
 }
 
 
-article h1 {
+header h1 {
   font-size: 2.5em;
   text-transform: uppercase;
   color: @currents-heading-color;
@@ -46,19 +43,18 @@ article h1 {
 
   position: relative;
 
+  // it is itself a flex container for the headline, image and text
   display: flex;
-  flex-flow: row wrap;
   align-items: flex-start;
   align-content: flex-start;
 
-
-  padding-left:2em;
-  padding-right:0em;
-  padding-top:1em;
-  padding-bottom:1em;
+  padding: 2em;
+  padding-right: 0;
 }
 
-
+.article {
+  flex-flow: row wrap;
+}
 
 @media @desktop, @desktop-xl {
   .article {
@@ -67,14 +63,6 @@ article h1 {
   }
 }
 
-.article a {
-  display: block;
-  position: absolute;
-  top: 0; right: 0; bottom: 0;
-  left: 25px;
-  z-index: 5;
-  outline: none;
-}
 
 .line {
   position: absolute;
@@ -84,9 +72,7 @@ article h1 {
   margin-left: .15em;
   height: 100%;
   background: @currents-line-color;
-  top:1em;
 }
-
 
 // last one is empty, rounded corner etc
 .article:last-child .line {
@@ -94,11 +80,12 @@ article h1 {
   border-bottom-left-radius: 0.25em;
   border: .1em solid #999;
   background-color: white;
-  width: .55em;
+  width: .6em;
   height: 50%;
 }
 
 
+// anchor is container for the image, sigh
 .image {
   position: relative;
   display: block;
@@ -197,7 +184,7 @@ article h1 {
   content: '';
 
   position: absolute;
-  top: .8em;
+  top: 2em;
   left: 0;
   z-index: 5;
 
@@ -206,5 +193,45 @@ article h1 {
 
   background: @almost-black;
   border-radius: 50%;
+}
+
+//my custom CSS
+
+body {
+ background-color:#eeeeee; 
+}
+
+h3.date, a {
+  color:#46c664;
+}
+
+.text p {
+  margin-left:10px;
+}
+
+h3.date{
+  margin-bottom:.5em;
+  margin-top:1em;
+}
+
+p.news_headline{
+  font-family: @sans-serif;
+  //font-size:1.5em;
+  //margin-left:0px;
+  font-weight:bold;
+  margin-bottom:.5em;
+}
+
+
+a:hover {
+ text-decoration:underline;
+}
+
+.article {
+  height:100%;
+  margin-left:1rem;
+  padding-top:20px;
+  padding-bottom:20px;
+  
 }
 
