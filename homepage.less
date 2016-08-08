@@ -6,7 +6,6 @@
 }
 
 
-
 //pilot notification box stuff
 #pilot_notification {
 	position:fixed;
@@ -17,10 +16,12 @@
 	z-index:200;
 }
 
-#pilot_notification a, #pilot_notification a:visited{
+#pilot_notification a,
+#pilot_notification a:visited{
 	color:#46c664;
 	text-decoration:none;
 }
+
 #dismiss{
 	display:block;
 	color:#46c664;
@@ -38,7 +39,7 @@
 }
 
 #pilot_notification.dismissed {
-	visibility:hidden;
+  visibility:hidden;
 	opacity: 0;
 	transition: visibility 0s .3s, opacity .3s linear;
 }
@@ -86,12 +87,13 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
  padding-right:1em;
 }
 
-.about a, .about a:visited{
+.about a,
+.about a:visited{
   color:white;
 }
 
 #green-link{
- color:@green; 
+  color:@green; 
 }
 
 
@@ -184,8 +186,8 @@ article {
   font-weight: 200;
 }
 
-.about a:visited,
-.about a {
+.more-news a:visited,
+.more-news a {
   color: @green;
 }
 

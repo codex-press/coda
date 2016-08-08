@@ -210,3 +210,56 @@ section.contact-us a {
 }
 
 
+
+#editorial-policy header,
+#donations header {
+  background-color:@almost-black;
+  color:@almost-white;
+  padding:0.5em;
+  margin-bottom:2em;
+}
+
+#editorial-policy,
+#donations {
+  font-family:@sans-serif;
+  font-weight:300;
+}
+
+#editorial-policy strong{
+ font-weight:900; 
+}
+
+#editorial-policy p{
+  padding-left:1em;
+  padding-right:1em;
+  margin-bottom:2em; 
+}
+
+#donations p{
+ margin-bottom:1em; 
+}
+
+section.advisors header {
+ background-color:@green;
+ color:white;
+}
+section.advisors header:after {
+  border-top-color: @green;
+}
+
+#donations header:after,
+#editorial-policy header:after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0; height: 0;
+  left: calc(50% - 3em);
+
+  //bottom: -4.9em;
+
+  border: solid transparent;
+  border-width: 3em;
+  border-top-width: 2em;
+  border-top-color: @almost-black;
+}
+

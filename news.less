@@ -1,67 +1,65 @@
 @import 'css/definitions';
 
 body {
-  background: white;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  background-color: @page-background;
 }
 
-header {
-  font-family: @sans-serif;
-  margin-bottom: 1em;
-  flex: 0 0 auto;
-}
 
-header,
 .article {
-  max-width: 900px;
+  position: relative;
+  padding: 1em 0 2em 2em; 
+  max-width: 600px;
+  margin-left: 1em;
 }
 
 @media @desktop-xl {
-  header,
   .article {
     margin-left: 200px;
   }
 }
 
 
-header h1 {
-  font-size: 2.5em;
-  text-transform: uppercase;
-  color: @currents-heading-color;
-  font-weight: 900;
+.text p {
+  margin: 0;
+  margin-left:10px;
+  padding-right: 1em;
+  font-family: @sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p.headline {
+  font-family: @sans-serif;
+  font-size:1.1em;
+  font-weight:bold;
+  margin-bottom:.5em;
+}
+
+p.date {
+  margin-bottom: .5em;
+  margin-top: .5em;
+  font-weight: 600;
+  font-size:1.3em;
+}
+
+p.date a,
+p.synopsis a {
+  color: @green;
+}
+
+.text .synopsis {
+  font-family: @sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
   line-height: 1.2;
 }
 
-
-
-
-// ENTRY
-// we're in one flex column for entries
-.article {
-  flex: 0 0 auto;
-
-  position: relative;
-
-  // it is itself a flex container for the headline, image and text
-  display: flex;
-  align-items: flex-start;
-  align-content: flex-start;
-
-  padding: 2em;
-  padding-right: 0;
+.text .synopsis a {
+  white-space: nowrap;
 }
 
-.article {
-  flex-flow: row wrap;
-}
-
-@media @desktop, @desktop-xl {
-  .article {
-    flex-flow: column wrap;
-    height: calc(200px + 2em)
-  }
-}
 
 
 .line {
@@ -74,107 +72,8 @@ header h1 {
   background: @currents-line-color;
 }
 
-// last one is empty, rounded corner etc
 .article:last-child .line {
-  border-bottom-right-radius: 0.25em;
-  border-bottom-left-radius: 0.25em;
-  border: .1em solid #999;
-  background-color: white;
-  width: .6em;
-  height: 50%;
-}
-
-
-// anchor is container for the image, sigh
-.image {
-  position: relative;
-  display: block;
-  flex: 0 0 auto;
-
-  margin-right: 0.5em;
-  width: 25%;
-  padding-bottom: 16.667%; // 2/3 ratio
-  overflow: hidden;
-
-  order: 2;
-}
-
-.image img {
-  position: absolute;
-  width: 100%;
-}
-
-@media @desktop, @desktop-xl {
-  .image {
-    width: 300px;
-    padding-bottom: 200px; // 2/3 ratio
-
-    margin-right: 1em;
-  }
-}
-
-
-// headline
-.article h3.headline {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.article h3.headline a {
-  text-decoration: none;
-  color: @text-color;
-}
-
-.article h3.headline a:hover {
-  text-decoration: underline;
-}
-
-@media @mobile, @tablet {
-  h3.headline {
-    flex: 0 0 100%;
-    order: 1;
-  }
-}
-
-@media @desktop, @desktop-xl {
-  h3.headline {
-    flex: 0 0 auto;
-    max-width: calc(100% - 300px);
-    order: 4;
-  }
-}
-
-
-
-.text {
-  flex: 0 0 auto;
-  order: 6;
-}
-
-// text to the end
-@media @mobile, @tablet {
-  .text {
-    margin-left: 0.5em;
-    flex: 1 1 30%;
-    order: 5;
-  }
-}
-
-@media @desktop, @desktop-xl {
-  .text {
-    max-width: calc(100% - 300px);
-  }
-}
-
-.text p {
-  margin: 0;
-}
-
-.byline {
-  white-space: nowrap;
-}
-.dek {
-  font-size: 1em;
+  display: none;
 }
 
 
@@ -184,7 +83,7 @@ header h1 {
   content: '';
 
   position: absolute;
-  top: 2em;
+  top: 1.8em;
   left: 0;
   z-index: 5;
 
@@ -193,45 +92,5 @@ header h1 {
 
   background: @almost-black;
   border-radius: 50%;
-}
-
-//my custom CSS
-
-body {
- background-color:#eeeeee; 
-}
-
-h3.date, a {
-  color:#46c664;
-}
-
-.text p {
-  margin-left:10px;
-}
-
-h3.date{
-  margin-bottom:.5em;
-  margin-top:1em;
-}
-
-p.news_headline{
-  font-family: @sans-serif;
-  //font-size:1.5em;
-  //margin-left:0px;
-  font-weight:bold;
-  margin-bottom:.5em;
-}
-
-
-a:hover {
- text-decoration:underline;
-}
-
-.article {
-  height:100%;
-  margin-left:1rem;
-  padding-top:20px;
-  padding-bottom:20px;
-  
 }
 
