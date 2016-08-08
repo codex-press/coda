@@ -1,43 +1,5 @@
 @import 'css/definitions.less';
-
-// this should be fixed in above @import instead of here 
-.article .headers {
-  width: calc(100% - 2em);
-  display:block;
-  text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 4px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-
-.about .subscribe-button {
-  color:white;
-  background-color: @green;
-  outline:none;
-  border:none;
-  text-transform:uppercase;
-  font-size:1em;
-  height:2em;
-  vertical-align:top;
-  font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-// added TWF 6/30/16:
-  cursor: pointer;
-}
-
-#mce-EMAIL {
-  //color: @green;
-  font-size:1em;
-  font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin-right:-5px;
-  padding:0px 6px 0px 6px;
-// added TWF 6/30/16:
-  border: none;
-  height:2em;
-  vertical-align:top;
-}
-
-.font-weight-normal {
-  font-weight:normal;
-}
-
+@import 'css/newsletter_signup.less';
 
 .kyrgyz-video .byline {
   display: none;
@@ -45,48 +7,14 @@
 
 
 
-.headers-black {
-
-  .headline,
-  .byline {
-    color: #333;
-  }
-
-  .headline,
-  .byline,
-  .story-type {
-   text-shadow: none;
-  }
-
-}
-
-
-// these are articles in the main flow
-@media @desktop, @desktop-xl {
-  article > .article {
-    flex: 0 0 50%;
-    height: 50vh;
-  }
-}
-
-// moves to full width, half height on mobile
-@media @mobile, @tablet {
-  article > .article {
-    flex: 0 0 100%;
-    height: 50vh;
-  }
-}
-
-
 //pilot notification box stuff
 #pilot_notification {
 	position:fixed;
 	bottom:0px;
-	padding:0em 1em 0em 1em;
+	padding:0em 1.8em 0em 1em;
 	background-color:#eeeeee;
 	color:#333;
 	z-index:200;
-	
 }
 
 #pilot_notification a, #pilot_notification a:visited{
@@ -99,12 +27,17 @@
 	position:absolute;
 	right:8px;
 	top:8px;
+  width: 1.3em;
+  height: 1.3em;
+  line-height: 1.1;
+  text-align: center;
 	font-weight:bold;
 	border:1px solid #46c664;
 	padding:2px;
   cursor:pointer;
 }
-div.dismissed {
+
+#pilot_notification.dismissed {
 	visibility:hidden;
 	opacity: 0;
 	transition: visibility 0s .3s, opacity .3s linear;
@@ -178,19 +111,20 @@ article {
 }
 
 
-.first.page {
+.first-page {
   display: flex;
   flex-flow: row wrap;
   height: calc(100vh - 3em);
+  width: 100%;
 }
 
-.first.page .right {
+.first-page .right {
   flex: 1 1 50%;
   display: flex;
   flex-flow: column nowrap;
 }
 
-.first.page .right .article {
+.first-page .right .article {
   flex: 1 1 50%;
 }
 
@@ -278,14 +212,10 @@ article {
 }
 
 
-.page {
-  height: 100vh;
-  display: flex;
-  flex-flow: column wrap;
-}
 
 
-// these are articles in the main flow
+
+
 .article {
   position: relative;
   flex: 0 0 50%;
@@ -299,22 +229,24 @@ article {
   z-index: 5;
 }
 
-// moves to full width, half height on mobile
-@media @mobile, @tablet {
-  .page > .article {
-    width: 100%;
-    flex-basis: 1 1 50%;
+
+// these are articles in the main flow
+@media @desktop, @desktop-xl {
+  article > .article {
+    flex: 0 0 50%;
+    height: 50vh;
   }
 }
 
-@media @desktop, @desktop-xl {
-  .page > .article {
-    width: 50vw;
-  }
-  .page > .article.tall {
-    flex-basis: 100%;
+// moves to full width, half height on mobile
+@media @mobile, @tablet {
+  article > .article {
+    flex: 0 0 100%;
+    height: 50vh;
   }
 }
+
+
 
 
 .article .cover {
@@ -346,13 +278,21 @@ article {
 }
 
 .article .headers {
+  display:block;
+  width: calc(100% - 2em);
   position: absolute;
-  width: 100%;
   bottom: 1em;
   left: 1em;
   color: white;
-  text-shadow: @headline-shadow;
+
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    4px 2px 4px rgba(0, 0, 0, 0.8);
 }
+
 .article.headers-top .headers {
   top: 1em;
 }
@@ -392,6 +332,7 @@ body.mouse .article:hover .headline {
   }
 
 }
+
 
 // these are articles in the main flow
 @media @desktop, @desktop-xl {

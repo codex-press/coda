@@ -1,6 +1,6 @@
 @import 'definitions';
 
-.button {
+.subscribe-button {
   color:white;
   background-color: @green;
   outline:none;
@@ -8,13 +8,23 @@
   text-transform:uppercase;
   font-size:1em;
   height:2em;
+  vertical-align:top;
+  font-family: @sans-serif;
+  cursor: pointer;
 }
 
-#mce-EMAIL {
-  color: @green;
-  font-size:1em;
-  margin-right:-5px;
-  padding:0px 0px 0px 6px;
-  height:2em;
-  border:none;
+.font-weight-normal {
+  font-weight:normal;
 }
+
+
+#mce-EMAIL {
+  font-size:1em;
+  font-family: @sans-serif;
+  margin-right:-5px;
+  padding:0px 6px 0px 6px;
+  border: none;
+  height:2em;
+  vertical-align:top;
+}
+

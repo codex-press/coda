@@ -5,11 +5,19 @@
 @import 'css/fonts';
 @import 'css/header';
 
-body {
+@media @mobile     { html { font-size: 15px; } }
+@media @tablet     { html { font-size: 16px; } }
+@media @desktop    { html { font-size: 18px; } }
+@media @desktop-xl { html { font-size: 20px; } }
+
+html {
   font-family: @serif;
   line-height: 1.5;
   color: @text-color;
   background-color: @page-background;
+}
+
+body {
   margin: 0;
 }
 

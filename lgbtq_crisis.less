@@ -5,31 +5,51 @@
   font-weight: normal;
 }
 
+body {
+  color: @almost-white;
+  background: @almost-black;
+}
+
+
+main {
+  margin: auto;
+  padding:20px;
+  font-weight:200
+}
+
+@media @mobile, @tablet {
+  main {
+    width: 100%;
+  }
+}
+
+@media @desktop, @desktop-xl {
+  main {
+    width: 50%;
+  }
+}
+
+
+p,
+li {  
+  font-family: @sans-serif;
+}
 
 h2 {
  text-align:center;
  color:@green; 
 }
 
-article {
-  margin-left:auto;
-  margin-right:auto;
-  padding:20px;
-}
-
-.intro {
-  font-weight:200
-}
-
 ul {
-  padding-left:0px;
-  color:@green;
-  list-style-type:none;
-  font-weight:bold;
+  padding-left: 0px;
+  color: @green;
+  list-style-type: none;
+  font-weight: bold;
 }
 
 a, a:visited {
   color:@green;
   text-decoration:none;
 }
+
 

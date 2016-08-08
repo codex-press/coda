@@ -6,26 +6,26 @@ body {
   padding-right: 1rem;
 }
 
-header {
+article header {
   font-family: @sans-serif;
   margin-bottom: 1em;
   flex: 0 0 auto;
 }
 
-header,
+article header,
 .article {
   max-width: 900px;
 }
 
 @media @desktop-xl {
-  header,
+  article header,
   .article {
     margin-left: 200px;
   }
 }
 
 
-header h1 {
+article h1 {
   font-size: 2.5em;
   text-transform: uppercase;
   color: @currents-heading-color;
@@ -43,18 +43,19 @@ header h1 {
 
   position: relative;
 
-  // it is itself a flex container for the headline, image and text
   display: flex;
+  flex-flow: row wrap;
   align-items: flex-start;
   align-content: flex-start;
 
-  padding: 2em;
-  padding-right: 0;
+
+  padding-left:2em;
+  padding-right:0em;
+  padding-top:1em;
+  padding-bottom:1em;
 }
 
-.article {
-  flex-flow: row wrap;
-}
+
 
 @media @desktop, @desktop-xl {
   .article {
@@ -72,7 +73,9 @@ header h1 {
   margin-left: .15em;
   height: 100%;
   background: @currents-line-color;
+  top:1em;
 }
+
 
 // last one is empty, rounded corner etc
 .article:last-child .line {
@@ -193,6 +196,8 @@ header h1 {
 
   background: @almost-black;
   border-radius: 50%;
+
+  padding-top: 1em;
 }
 
 
