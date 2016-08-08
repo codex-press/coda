@@ -63,14 +63,13 @@
     var jump = window.innerWidth * .8 * direction;
     var start = index.scrollLeft;
     var max = index.scrollWidth - index.clientWidth;
-    var change = (jump, start * -1, max - start);
-    var change = Math.min(Math.max(jump, start * -1), max - start);
+    var end = Math.min(Math.max(start + jump, 0), max);
 
-    var ease = animate.cubicOut(start, change);
+    var ease = animate.cubicOut(start, end);
 
     tween = animate({
       duration: Math.max(100, 500 * (change/jump)),
-      tick: function(time) { index.scrollLeft = Math.round(ease(time)); },
+      tick: time => { index.scrollLeft = Math.round(ease(time)); },
       done: updateArrows,
     });
 

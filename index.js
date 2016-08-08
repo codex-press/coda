@@ -3,7 +3,6 @@
 
   var handlebars = require('handlebars');
 
-
   handlebars.registerHelper('share_menu', function(options) {
 
     return '<span class="share-menu">\
@@ -46,4 +45,4 @@
   //     siteChrome.find('a[href="/coda/about"]').addClass('target');
   // };
 
-});
+})();

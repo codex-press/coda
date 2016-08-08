@@ -1,0 +1,220 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+
+@import 'css/definitions.less';
+
+body {
+  background: white;
+}
+
+@media @desktop-xl {
+  article {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+section {
+  clear: both;
+}
+
+figure.left,
+figure.right {
+  width: 40%;
+}
+
+
+@media @mobile {
+
+  figure.left,
+  figure.right,
+  .anonymous-box {
+    width: calc(100% - 2em) !important;
+    float: none !important;
+  }
+
+}
+
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .headline {
+    flex: 0 0 100%;
+  }
+  
+  svg {
+    width: 100%;
+    max-width: 950px;
+    display: block;
+    margin: auto;
+  
+    fill: @text-color;
+    font-family: @sans-serif;
+    font-weight: 900;
+  }
+  svg .line-one {  
+    font-size: 64px;
+  }
+
+  svg .line-two {
+    font-size: 53px;
+  }
+
+
+  .ngo-office {
+    width: 100%;
+  }
+
+  h2.dek {
+    max-width: 660px;
+    margin-left: 1rem;
+  }
+  
+  .byline-box {
+    width: 14em;
+    margin-left: 1rem;
+    margin-bottom:0;
+  }
+
+  // at 800px, the image comes right after
+  // the headline.
+  @media (min-width: 840px) {
+
+    .ngo-office {
+      order: 1;
+    }
+
+    .dek,
+    .byline-box {
+      margin-top: 0;
+      margin-right: auto;
+    }
+
+  }
+
+}
+
+
+section.one {
+  position: relative;
+
+  p {
+    margin-left: 1em;
+  }
+  
+  figure.video .frame {
+    border: 1px solid #333;
+  }
+  
+  figure.video .controls {
+        color: #333;
+  }
+  figure.video .frame >.controls .play.button {
+      color: #333;
+      font-size: 2em;
+  }
+
+
+  .first-graf {
+    margin-top: 5em;
+    font-size: 1.3em;
+    line-height: 1.8;
+  }
+  
+  .dropcap {
+    font-size: 5.5em;
+    line-height: 0.5;
+    font-family: 'Playfair Display', Bodoni, serif;
+    margin-left: 0.2em;
+    margin-right: -0.2em;
+  }
+
+  .anonymous-box {
+    float: right;
+    clear: right;
+    width: 300px;
+    border: 1px solid black;
+    font-family: @sans-serif;
+    padding: 1em;
+    margin: 1em;
+    margin-top: 2em;
+  }
+
+  @media @mobile, @tablet {
+    .right-block {
+      width: 100%;
+    }
+  }
+
+}
+
+
+section.two {
+  .dinner {
+    width: 100%;
+  }
+  
+  p {
+    margin-right: 1em;
+  }
+
+}
+
+  figure.left {
+    float: left;
+    clear: left;
+  }
+
+  figure.right {
+    float: right;
+    clear: right;
+  }
+
+
+section.three {
+  p {
+    margin-left: 1em;
+  }
+
+}
+
+
+
+section.victor {
+
+  p {
+    margin-right: 1em;
+  }
+
+}
+
+
+
+
+section.last {
+  max-width: 1000px;
+  margin: auto;
+
+  .end-image {
+    width: 100%;
+    max-height: initial;
+    shape-outside: polygon(0 0, 0 40%, 35% 40%, 35% 100%, 100% 100%, 100% 0);
+    float: right;
+  }
+
+  @media @mobile {
+    .end-image {
+      width: 150%;
+    }
+  }
+
+  p {
+    position: relative;
+    z-index: 5;
+    margin-left: 1em;
+  }
+
+}
+
