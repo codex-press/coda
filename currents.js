@@ -69,7 +69,7 @@
 
     tween = animate({
       duration: Math.max(100, 500 * (change/jump)),
-      tick: time => { index.scrollLeft = Math.round(ease(time)); },
+      tick: function(time) { index.scrollLeft = Math.round(ease(time)); },
       done: updateArrows,
     });
 
