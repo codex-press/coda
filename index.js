@@ -19,6 +19,7 @@
 
   // HEADER
   var app = require('app').default;
+  var dom = require('dom').default;
   var article = require('article').default;
 
   var header;
