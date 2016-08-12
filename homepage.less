@@ -116,6 +116,13 @@ article {
   flex-flow: row wrap;
 }
 
+// not necessary on mobile
+@media @mobile, @tablet {
+  article {
+    display: block !important;
+  }
+}
+
 
 .first-page {
   display: flex;
@@ -135,25 +142,16 @@ article {
 }
 
 
-
-// moves to full width, half height on mobile
 @media @mobile, @tablet {
-  .first.page {
-    display: flex;
-    flex-flow: column nowrap;
-    height: auto !important;
+  .first-page,
+  .first-page .about,
+  .first-page .right {
+    display: block !important;
   }
-  .first.page .about {
-    flex: 0 0 auto;
-  }
-  .first.page .right {
-    flex: 0 0 100vh;
-  }
-  .first.page .article {
-    flex: 0 0 50vh;
+  .first-page .right .article {
+    width: 100%;
   }
 }
-
 
 
 
@@ -172,6 +170,8 @@ article {
   .first-page .about {
     flex-basis: auto;
     width: 100%;
+    max-width: 800px;
+    margin: auto;
   }
 }
 
