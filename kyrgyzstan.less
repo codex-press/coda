@@ -6,36 +6,8 @@ body {
   background: white;
 }
 
-@media @desktop-xl {
-  article {
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-}
 
-section {
-  clear: both;
-}
-
-figure.left,
-figure.right {
-  width: 40%;
-}
-
-
-@media @mobile {
-
-  figure.left,
-  figure.right,
-  .anonymous-box {
-    width: calc(100% - 2em) !important;
-    float: none !important;
-  }
-
-}
-
-
-header {
+article header {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -116,7 +88,6 @@ section.one {
       font-size: 2em;
   }
 
-
   .first-graf {
     margin-top: 5em;
     font-size: 1.3em;
@@ -148,6 +119,13 @@ section.one {
     }
   }
 
+  @media @mobile {
+    .anonymous-box {
+      width: calc(100% - 2em) !important;
+      float: none !important;
+    }
+  }
+
 }
 
 
@@ -162,24 +140,13 @@ section.two {
 
 }
 
-  figure.left {
-    float: left;
-    clear: left;
-  }
-
-  figure.right {
-    float: right;
-    clear: right;
-  }
 
 
 section.three {
   p {
     margin-left: 1em;
   }
-
 }
-
 
 
 section.victor {

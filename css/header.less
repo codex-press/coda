@@ -24,6 +24,10 @@ header.sitewide {
   transition: transform 0.5s ease-out;
 }
 
+html.video-playing header.sitewide {
+  transform: translateY(-100%);
+}
+
 header.sitewide .left { 
   flex: 0 0 auto;
 }
@@ -108,7 +112,7 @@ header.sitewide .navigation-links a.target {
 
 
 // turns green on black after it's done
-.header-menu.on .icon-menu {
+.header-menu.active .icon-menu {
   z-index: (@menu-z-index + 1);
   color: @green;
 }
@@ -201,7 +205,7 @@ header.sitewide .navigation-links a.target {
   border-bottom: none;
 }
 
-.header-menu.toggle.on .options {
+.header-menu.active .options {
   transform: scale(1);
   z-index: @menu-z-index;
   opacity: 1;

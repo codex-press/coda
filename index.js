@@ -1,8 +1,8 @@
-'use strict';
 (function() {
+  'use strict';
 
+  // SHARE MENU
   var handlebars = require('handlebars');
-
   handlebars.registerHelper('share_menu', function(options) {
 
     return '<span class="share-menu">\
@@ -15,34 +15,31 @@
     </span>'
   });
 
-  // // import {compile, unscopeLinks}  from './template_helpers.es6';
-  // // import {log, constrain, alphanum} from './utility.es6';
-  // // import player     from './player.es6';
-  // // import dom        from './dom.es6';
-  // // import animate    from './easing.es6';
-
-  // var init = function init() {
-
-  //   app.on('video:play', v => {
-  //     siteChrome.find('header').transform({y: '-100%'});
-  //   });
-
-  //   app.on('video:pause', v => {
-  //     siteChrome.find('header').transform({y: ''});
-  //   });
-
-  // };
 
 
-  // var updateHeader = function updateHeader(article) {
-  //   siteChrome.select('header a.target').removeClass('target');
+  // HEADER
+  var app = require('app').default;
+  var article = require('article').default;
 
-  //   if (article.attrs.url === '/coda')
-  //     siteChrome.find('.navigation-links a[href="/coda"]').addClass('target');
-  //   else if (article.attrs.url === '/coda/currents')
-  //     siteChrome.find('a[href="/coda/currents"]').addClass('target');
-  //   else if (article.attrs.url === '/coda/about')
-  //     siteChrome.find('a[href="/coda/about"]').addClass('target');
-  // };
+  var header;
+
+  article.ready().then(function() {
+    header = dom('header.sitewide');
+
+    // Desktop: change underline on :target link
+    if (article.attrs.url === '/coda')
+      header.select('.navigation-links a[href="/coda"]').addClass('target');
+    else if (article.attrs.url === '/coda/currents')
+      header.select('a[href="/coda/currents"]').addClass('target');
+    else if (article.attrs.url === '/coda/about')
+      header.select('a[href="/coda/about"]').addClass('target');
+
+    // Mobile: toggle a dropdown menu
+    var menu = dom('header .header-menu');
+    menu.bind('click', function() {
+      menu.toggleClass('active');
+    });
+
+  });
 
 })();

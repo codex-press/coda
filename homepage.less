@@ -5,15 +5,15 @@
   display: none;
 }
 
-
 //pilot notification box stuff
 #pilot_notification {
 	position:fixed;
 	bottom:0px;
 	padding:0em 1.8em 0em 1em;
-	background-color:#eeeeee;
+	background-color: #eeeeee;
 	color:#333;
 	z-index:200;
+  transform: translate3d(0,0,0);
 }
 
 #pilot_notification a,
@@ -52,9 +52,9 @@
  border-right: 1px solid @green;
 }
 ul {
-    list-style: none;
-    padding:0;
-    margin:0;
+  list-style: none;
+  padding:0;
+  margin:0;
 }
 
 .date {
@@ -92,6 +92,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   color:white;
 }
 
+.about .lgbtq {
+  font-weight: 800;
+}
+
 #green-link{
   color:@green; 
 }
@@ -116,7 +120,7 @@ article {
 .first-page {
   display: flex;
   flex-flow: row wrap;
-  height: calc(100vh - 3em);
+  min-height: calc(100vh - 3em);
   width: 100%;
 }
 
@@ -165,8 +169,9 @@ article {
 }
 
 @media @mobile, @tablet {
-  .first.page .about {
+  .first-page .about {
     flex-basis: auto;
+    width: 100%;
   }
 }
 

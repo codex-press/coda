@@ -5,8 +5,16 @@
   max-height: 100vh;
 }
 
-.page {
+article > figure:first-child {
+  max-height: calc(100vh - 4.2em);
+}
+
+article > .page:first-child {
   height: calc(100vh - 4.2em);
+}
+
+.page {
+  height: 100%;
 }
 
 .half-page {
@@ -31,7 +39,8 @@ article > h1.headline {
 
 h1 {
   width: calc(100% - 2rem);
-  margin: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 
@@ -60,9 +69,48 @@ p {
   color: @green;
 }
 
+
+@media @desktop-xl {
+  article {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+
+section {
+  clear: both;
+}
+
+
 figure {
   align-items: flex-start;
 }
+
+figure.left {
+  float: left;
+  clear: left;
+}
+
+figure.right {
+  float: right;
+  clear: right;
+}
+
+figure.left,
+figure.right {
+  width: 40%;
+}
+
+@media @mobile {
+  figure.left,
+  figure.right {
+    width: calc(100% - 2em) !important;
+    float: none !important;
+  }
+}
+
+
 figure.page .caption.after {
   margin: 0.3em 0.5rem;
 }
