@@ -68,7 +68,7 @@
     var ease = animate.cubicOut(start, end);
 
     tween = animate({
-      duration: Math.max(100, 500 * (change/jump)),
+      duration: Math.max(100, 500 * Math.abs(start-end)/jump),
       tick: function(time) { index.scrollLeft = Math.round(ease(time)); },
       done: updateArrows,
     });
