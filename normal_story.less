@@ -1,16 +1,19 @@
 @import 'css/definitions';
 
-.full-width {
-  width: 100%;
-  max-height: 100vh;
+article {
+  padding-bottom: 3em;
 }
 
-html.javascript article > figure:first-child {
-  max-height: calc(100vh - 4.2em);
-}
+@media only screen and (min-height: 500px) {
 
-html.javascript article > .page:first-child {
-  height: calc(100vh - 4.2em);
+  html.javascript article > figure:first-child {
+    max-height: calc(100vh - 4.2em);
+  }
+
+  html.javascript article > .page:first-child {
+    height: calc(100vh - 4.2em);
+  }
+
 }
 
 .page {
@@ -39,8 +42,8 @@ article > h1.headline {
 
 h1 {
   width: calc(100% - 2rem);
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 1rem;
+  order: 2; // after caption
 }
 
 
@@ -85,6 +88,11 @@ section {
 
 figure {
   align-items: flex-start;
+}
+
+.full-width {
+  width: 100%;
+  max-height: 100vh;
 }
 
 figure.left {
