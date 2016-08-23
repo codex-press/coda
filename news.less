@@ -7,7 +7,7 @@ body {
 
 .article {
   position: relative;
-  padding: 1em 0 2em 2em; 
+  padding: 1em 0 2em 2em;
   max-width: 600px;
   margin-left: 1em;
 }
@@ -73,7 +73,13 @@ p.synopsis a {
 }
 
 .article:last-child .line {
-  display: none;
+  //display: none;
+  height: 85%;
+  border-bottom-right-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+  border: 0.1em solid rgb(153, 153, 153);
+  background-color: white;
+  width: 0.55em;
 }
 
 
@@ -93,4 +99,3 @@ p.synopsis a {
   background: @almost-black;
   border-radius: 50%;
 }
-
