@@ -67,7 +67,7 @@ p {
 
 // share icons to green
 .icon-email,
-.icon-facebook,  
+.icon-facebook,
 .icon-twitter {
   color: @green;
 }
@@ -411,3 +411,76 @@ figure .photo-credit {
   margin-left: 0.3em;
 }
 
+// Navigation sidebar - articles in current
+
+.current-name a{
+ color:#46c664;
+}
+
+.current h2{
+ font-weight:bold;
+ margin-left:1em;
+}
+
+
+.current {
+ font-family:'Graphik Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ position:relative;
+   width: calc(100% - 2rem);
+  max-width:15rem;
+  margin-left: auto;
+  margin-right: auto;
+  border:1px solid black;
+}
+
+@media @mobile, @tablet{
+  .current {
+    max-width:35rem;
+  }
+}
+
+@media @desktop, @desktop-xl{
+  .current {
+    max-width:15rem;
+  }
+}
+
+.article {
+  position: relative;
+  padding: 1em 1em 1em 0.4em;
+  margin-left: 2em;
+}
+
+.line {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: 0.5em;
+  margin-left: .15em;
+  height: 100%;
+  background: #eeeeee;
+  border:.1em solid black;
+  top:2em;
+}
+
+
+.article:last-child .line {
+  display:none;
+}
+
+.article:before {
+  display: block;
+  content: '';
+
+  position: absolute;
+  top: 1.3em;
+  left: -0.1em;
+  z-index: 5;
+
+  width: .8em;
+  height: .8em;
+
+  background: grey;
+  border:.1em solid black;
+  border-radius: 50%;
+}
