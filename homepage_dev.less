@@ -8,24 +8,25 @@ body {
 	margin:0;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 700px) {
 	.editions {
 		width:75%;
 		float:left;
 	}
-	.about {
+	.nav {
 		width:24%;
-		height:82vh;
+		height:76vh;
 		float:right;
 		margin:2vh 1% 2vh 0;
 	}
 }
 
-@media only screen and (max-width: 949px){
-	.about {
-		width:98%;
-		height:26vh;
-		margin:0 1% 2vh 1%;
+@media only screen and (max-width: 699px){
+	.nav {
+		//width:98%;
+		//height:26vh;
+		//margin:0 1% 2vh 1%;
+		display:none;
 	}
 
 }
@@ -40,7 +41,7 @@ article {
 
 .edition{
 	background-color:#eeeeee;
-	height: 26vh;
+	height: 24vh;
 	min-height: 4.5em;
 	margin:2vh 1% 2vh 1%;
 	position:relative;
@@ -54,14 +55,61 @@ article {
 }
 
 
-.about {
+.nav {
 	background-color:black;
 
 	padding:1%;
 	text-align:center;
 }
 
-.about h1 {
+.nav h1 {
 	color:#46c664;
 	font-size:1.5em;
+}
+
+.news {
+	width:100%;
+	background-color:#46c664;
+	text-align:center;
+	clear:both;
+	padding:1vh 0;
+	color:white;
+}
+
+h1:before {
+	content: '. ';
+}
+
+.news:after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0; height: 0;
+	left: calc(50% - 3em);
+	border: solid transparent;
+	border-width: 3em;
+	border-top-width: 2em;
+	border-top-color: #46c664;
+}
+
+.top-stories {
+	clear:both;
+	background-color:#eeeeee;
+	//height:80vh;
+	margin:2em 1% 2em 1%;
+	width:66%;
+	padding-top:1vh;
+	padding-bottom:1vh;
+
+}
+
+.top-stories h1{
+	margin:2vh 4%;
+}
+
+.top-story {
+	border: 2px solid black;
+	height: 35vh;
+	margin: 0 4% 4vh 4%;
+
 }
