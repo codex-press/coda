@@ -21,22 +21,79 @@ header.sitewide h1{
 	font-size:1.5em;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1129px) {
 	.editions {
 		width:75%;
 		margin-left:auto;
 		margin-right:auto;
 	}
+	.top-stories {
+		width:48%;
+		margin: 2vh .5% 2vh 13.3%;
+		float:left;
+	}
+	.recent-updates {
+		width:24%;
+		margin:2vh 13.3% 2vh .5%;
+		float:right;
+	}
+}
+
+@media only screen and  (min-width: 950px) and (max-width: 1128px) {
+	.editions {
+		width:80%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.top-stories {
+		width:50%;
+		margin: 2vh .5% 2vh 10.77%;
+		float:left;
+	}
+	.recent-updates {
+		width:27%;
+		margin:2vh 10.77% 2vh .5%;
+		float:right;
+	}
 
 }
 
-@media only screen and (max-width: 699px){
+@media only screen and (min-width: 800px) and (max-width: 949px){
+	.top-stories{
+		width:64%;
+		margin: 2vh 1%;
+		float:left;
+	}
+	.recent-updates{
+		width:32%;
+		margin:2vh 1%;
+		float:right;
+	}
+}
 
+@media only screen and (min-width: 530px) and (max-width: 799px){
+	.top-stories{
+		width:48%;
+		margin: 2vh 1%;
+		float:left;
+	}
+	.recent-updates{
+		width:48%;
+		margin:2vh 1%;
+		float:right;
+	}
+}
 
+@media only screen and (max-width:529px){
+	.top-stories,
+	.recent-updates {
+		margin:2vh 1%;
+	}
 }
 
 article {
   background-color: white;
+	overflow:auto;
 }
 
 .editions {
@@ -116,12 +173,8 @@ h1:before {
 .top-stories {
 	clear:both;
 	background-color:#eeeeee;
-	//height:80vh;
-	margin:2em 1% 2em 1%;
-	width:66%;
-	padding-top:1vh;
 	padding-bottom:1vh;
-
+	//float:left;
 }
 
 .top-stories h1{
@@ -132,5 +185,12 @@ h1:before {
 	border: 2px solid black;
 	height: 35vh;
 	margin: 0 4% 4vh 4%;
+}
 
+.recent-updates {
+	background-color: #eeeeee;
+}
+
+.recent-updates h1 {
+	margin:2vh 9%;
 }
