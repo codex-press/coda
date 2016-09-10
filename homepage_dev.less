@@ -11,6 +11,9 @@ body {
 	background-color:white;
 }
 
+a {
+	text-decoration: none;
+}
 
 header.sitewide {
 	height: 10vh;
@@ -24,83 +27,48 @@ header.sitewide h1{
 	font-size:1.5em;
 }
 
-@media @desktop-xl{ //only screen and (min-width: 1129px) {
-	.editions {
-		width:75%;
-		margin-left:auto;
-		margin-right:auto;
-	}
-	.top-stories {
-		width:48%;
-		margin: 2vh .5% 2vh 13.3%;
-		float:left;
-	}
-	.recent-updates,
-	.subscribe {
-		width:24%;
-		margin:2vh 13.3% 2vh .5%;
-		float:right;
-	}
-}
 
-@media only screen and  (min-width: 950px) and (max-width: 1128px) {
-	.editions {
-		width:80%;
-		margin-left:auto;
-		margin-right:auto;
-	}
-	.top-stories {
-		width:50%;
-		margin: 2vh .5% 2vh 10.77%;
-		float:left;
-	}
-	.recent-updates,
-	.subscribe {
-		width:27%;
-		margin:2vh 10.77% 2vh .5%;
-		float:right;
-	}
 
-}
-
-@media only screen and (min-width: 800px) and (max-width: 949px){
+@media only screen and (min-width: 800px){
 	.top-stories{
-		width:64%;
-		margin: 2vh 1%;
+		width:64.5%;
+		margin: 0 .5% 1vh 1%;
 		float:left;
 	}
 	.recent-updates,
 	.subscribe {
-		width:32%;
-		margin:2vh 1%;
+		width:32.5%;
+		margin:0 1% 1vh .5%;
 		float:right;
 	}
 }
 
 @media only screen and (min-width: 530px) and (max-width: 799px){
 	.top-stories{
-		width:48%;
-		margin: 2vh 1%;
+		width:48.5%;
+		margin: 0 .5% 1vh 1%;
 		float:left;
 	}
 	.recent-updates,
 	.subscribe {
-		width:48%;
-		margin:2vh 1%;
+		width:48.5%;
+		margin: 0 1% 1vh .5%;
 		float:right;
 	}
 }
 
-@media only screen and (max-width:529px){
+@media @mobile{
 	.top-stories,
 	.recent-updates,
 	.subscribe {
-		margin:2vh 1%;
+		margin:0 1% 1vh 1%;
+		width:98%;
+		float:left;
 	}
 }
 
 article {
-  background-color: white;
+  background-color: white;//@page-background;
 	overflow:auto;
 }
 
@@ -125,58 +93,13 @@ article {
 }
 
 
-.nav {
-	display:none;
-}
-
-.editions-banner,
-.news {
-	display:none;
-	width:100%;
-	//background-color:@green;
-	text-align:center;
-	clear:both;
-	padding:1vh 0;
-	color:white;
-}
-
-.editions-banner {
-	background-color: @almost-black;
-}
-
-.news {
-	background-color: @green;
-}
 
 h1:before {
 	content: '. ';
 }
 
-.editions-banner:after,
-.news:after {
-	content: '';
-	display: block;
-	position: absolute;
-	width: 0; height: 0;
-	left: calc(50% - 3em);
-	border: solid transparent;
-	border-width: 3em;
-	border-top-width: 2em;
-	//border-top-color: @green;
-}
 
-.editions-banner:after {
-	border-top-color:@almost-black;
-}
 
-.news:after {
-	border-top-color:@green;
-}
-
-.editions-banner h1,
-.news h1 {
-	margin:0;
-}
 
 .top-stories {
 	clear:both;
@@ -186,13 +109,13 @@ h1:before {
 }
 
 .top-stories h1{
-	margin:2vh 4%;
+	margin:2vh 2vw;
 }
 
 .top-story {
 	border: 2px solid @almost-black;
 	height: 35vh;
-	margin: 0 4% 4vh 4%;
+	margin: 0 2vw 4vh 2vw;
 }
 
 .recent-updates {
