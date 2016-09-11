@@ -439,7 +439,7 @@ figure .photo-credit {
   width: calc(100% - 2rem);
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 @media @mobile, @tablet{
@@ -474,6 +474,10 @@ figure .photo-credit {
   margin-bottom:0;
 }
 
+.current a{
+  text-decoration:none;
+}
+
 .article {
   position: relative;
   padding: 1em .5em 0em 0.1em;
@@ -487,8 +491,8 @@ figure .photo-credit {
   width: 0.5em;
   margin-left: .15em;
   height: 100%;
-  background: #eeeeee;
-  border:.1em solid black;
+  background: @currents-line-color;
+  //border:.1em solid black;
   top:2em;
 }
 
@@ -503,13 +507,13 @@ figure .photo-credit {
 
   position: absolute;
   top: 1.3em;
-  left: -0.1em;
+  left: 0;//-0.1em;
   z-index: 5;
 
   width: .8em;
   height: .8em;
 
-  background: grey;
-  border:.1em solid black;
+  background: @almost-black;
+  //border:.1em solid black;
   border-radius: 50%;
 }
