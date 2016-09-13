@@ -86,11 +86,12 @@ article {
 	position:relative;
 }
 
-.edition h1{
+.edition-name{
 	color:@green;
-	position:absolute;
-	bottom:0;
-	right:5vw;
+	margin:0;
+	//position:absolute;
+//	bottom:0;
+//right:5vw;
 
 	text-shadow:
 		-1px -1px 0 #000,
@@ -115,6 +116,46 @@ article {
 	background-position: 0% 50%;
 }
 
+.edition-info {
+	line-height: 1;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	//width: 33%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, .7);
+	padding:.3em .8em 0 .2em;
+	text-align: right;
+	overflow:auto;
+	color:black;
+}
+
+@media @desktop-xl {
+	.edition-info {
+		width:33%;
+	}
+}
+
+@media @desktop {
+	.edition-info {
+		width:33%;
+	}
+}
+
+@media @tablet {
+	.edition-info {
+		width:50%;
+	}
+}
+
+@media @mobile {
+	.edition-info {
+		width: 100%;
+	}
+	.edition-info p {
+		display:none;
+	}
+}
 
 h1:before {
 	content: '. ';
