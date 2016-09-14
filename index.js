@@ -39,8 +39,12 @@
       }
     else if (article.attrs.url === '/coda/currents')
       header.select('a[href="/coda/currents"]').addClass('target');
-    else if (article.attrs.url === '/coda/about')
+    else if (article.attrs.url === '/coda/about'){
       header.select('a[href="/coda/about"]').addClass('target');
+       var sub = header.select('.header-subtitle')[0];
+       sub.innerHTML = "About";
+       sub.href = "";
+    }
 
     // Mobile: toggle a dropdown menu
     var menu = dom('header .header-menu');
