@@ -45,6 +45,16 @@
        sub.innerHTML = "About";
        sub.removeAttribute("href");
     }
+    else if (article.attrs.url === '/coda/migrants'){
+      var sub = header.select('.header-subtitle')[0];
+      sub.innerHTML = "Migrants";
+      sub.removeAttribute("href");
+    }
+    else if (article.attrs.url === '/coda/disinformation-age'){
+      var sub = header.select('.header-subtitle')[0];
+      sub.innerHTML = "Disinformation Age";
+      sub.removeAttribute("href");
+    }
 
     // Mobile: toggle a dropdown menu
     var menu = dom('header .header-menu');
