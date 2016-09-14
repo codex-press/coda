@@ -43,7 +43,7 @@
       header.select('a[href="/coda/about"]').addClass('target');
        var sub = header.select('.header-subtitle')[0];
        sub.innerHTML = "About";
-       sub.href = "";
+       sub.removeAttr("href");
     }
 
     // Mobile: toggle a dropdown menu
