@@ -166,25 +166,7 @@ h1:before {
 }
 
 
-//Top Stories
 
-.top-stories {
-	clear:both;
-	background-color:@page-background;
-	padding-bottom:1vh;
-	//float:left;
-}
-
-.top-stories h1{
-	margin:2vh 2vw;
-}
-
-.top-story {
-	border: 2px solid @almost-black;
-	height: 35vh;
-	margin: 0 2vw 4vh 2vw;
-	position: relative;
-}
 
 //Recent Updates
 
@@ -301,6 +283,15 @@ h1:before {
 
 
 
+//Top Stories
+
+.top-stories {
+	clear:both;
+	background-color:@page-background;
+	padding-bottom:1vh;
+	//float:left;
+}
+
 
 
 //top stories
@@ -311,17 +302,29 @@ h1:before {
   object-fit: cover;
 }
 
-.top-story {
-  position:relative;
+
+.top-stories h1{
+	margin:2vh 2vw;
 }
+
+.top-story {
+	border: 2px solid @almost-black;
+	height: 35vh;
+	margin: 0 2vw 4vh 2vw;
+	position: relative;
+}
+
 
 .top-story .headers {
   display:block;
   width: calc(100% - 2em);
   position: absolute;
-  bottom: 1em;
-  left: 1em;
+  bottom: 0em;
+  left: 0em;
   color: white;
+	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
+	padding:.3em;
+
 
   text-shadow:
     -1px -1px 0 #000,
