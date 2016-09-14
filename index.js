@@ -28,8 +28,8 @@
     header = dom('header.sitewide');
 
     // Desktop: change underline on :target link
-    if (article.attrs.url === '/coda')
-      header.select('.navigation-links a[href="/coda"]').addClass('target');
+    if (article.attrs.url === '/coda'){ console.log("test succeeded");
+      header.select('.navigation-links a[href="/coda"]').addClass('target');}
     else if (article.attrs.url === '/coda/currents')
       header.select('a[href="/coda/currents"]').addClass('target');
     else if (article.attrs.url === '/coda/about')
