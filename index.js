@@ -29,11 +29,13 @@
 
     // Desktop: change underline on :target link
     if (article.attrs.url === '/coda'){
-        console.log("test succeeded");
+        //console.log("test succeeded");
         header.select('.navigation-links a[href="/coda"]').addClass('target');
+        //on the home page, change the subtitle to "stay on the story"
+        //and have it link to the about page
         var sub = header.select('.header-subtitle')[0];
         sub.innerHTML = "stay on the story";
-        sub.href = "";
+        sub.href = "/coda/about";
       }
     else if (article.attrs.url === '/coda/currents')
       header.select('a[href="/coda/currents"]').addClass('target');
