@@ -31,7 +31,7 @@
     if (article.attrs.url === '/coda'){
         console.log("test succeeded");
         header.select('.navigation-links a[href="/coda"]').addClass('target');
-        header.select('.header-subtitle').innerHTML = "stay on the story";
+        header.select('.header-subtitle')[0].innerHTML = "stay on the story";
       }
     else if (article.attrs.url === '/coda/currents')
       header.select('a[href="/coda/currents"]').addClass('target');
