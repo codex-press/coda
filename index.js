@@ -33,7 +33,7 @@
         header.select('.navigation-links a[href="/coda"]').addClass('target');
         var sub = header.select('.header-subtitle')[0];
         sub.innerHTML = "stay on the story";
-        sub.addClass('target');
+        sub.href = "";
       }
     else if (article.attrs.url === '/coda/currents')
       header.select('a[href="/coda/currents"]').addClass('target');
