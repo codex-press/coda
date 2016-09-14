@@ -35,7 +35,7 @@
         //and have it link to the about page
         var sub = header.select('.header-subtitle')[0];
         sub.innerHTML = "stay on the story";
-        sub.href = "/coda/about";
+        sub.href = "/about";
       }
     else if (article.attrs.url === '/coda/currents')
       header.select('a[href="/coda/currents"]').addClass('target');
