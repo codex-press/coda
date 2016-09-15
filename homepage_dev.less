@@ -138,17 +138,26 @@ article {
 	.edition-info {
 		width:33%;
 	}
+	.what-is {
+		width: 70%;
+	}
 }
 
 @media @desktop {
 	.edition-info {
 		width:33%;
 	}
+	.what-is {
+		width: 70%;
+	}
 }
 
 @media @tablet {
 	.edition-info {
 		width:50%;
+	}
+	.what-is {
+		width: 100%
 	}
 }
 
@@ -159,6 +168,9 @@ article {
 	.edition-info p {
 		display:none;
 	}
+	.what-is {
+		width: 100%;
+	}
 }
 
 h1:before {
@@ -167,19 +179,28 @@ h1:before {
 
 
 .what-is {
-  padding: 1px;
-	margin: 3vh 0;
-  width: 100%;
-  background-color:@almost-black;
-  text-align:center;
+  padding: .5em;
+	margin: 3vh auto;
+	background-color:@green;//@almost-black;
+  //text-align:center;
+	color:white;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .what-is a,
-.what-is a:visited {
-  color: @green;
+.what-is a:visited,
+.what-is a:hover {
+  color: @text-color;
+	display: block;
+	text-align: center;
 }
 
-
+.what-is p {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 50vw;
+}
 //Recent Updates
 
 .recent-updates {
