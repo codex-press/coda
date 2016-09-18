@@ -120,17 +120,40 @@ body {
   }
 
   .titles div {
-    width:51%;
+    background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+  }
+
+  .titles div:nth-child(odd) {
+  //  background:linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  }
+
+  .titles div:nth-child(even){
+  //  background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.4));
+  //  background-color: rgba(70, 198, 100, 0.4);
+
   }
 
   .titles h1 {
     font-size: 1.5em;
+    margin:.75em;
+  //  color: @green;
+  }
+  .expansion {
+    display:none;
   }
 }
 
 @media @tablet, @desktop, @desktop-xl {
   .titles h1 {
     font-size: 4vw;
+    margin:0;
+    position:absolute;
+    line-height: 1;
+    top: calc(50% - 2vw);
+  }
+  .titles div {
+    height: 18vh;
+    min-height:3em;
   }
 }
 
@@ -156,20 +179,17 @@ body {
 }
 
 .titles div {
-    height: 18vh;
-    min-height:3em;
+
   //  border:1px solid black;
     padding: 1vh 1vw;
     position: relative;
+
 }
 
 .titles h1 {
   text-transform:uppercase;
 //  font-size: 4vw;
-  margin:0;
-  position:absolute;
-  line-height: 1;
-  top:.5vh;
+
 }
 
 .titles div:hover {
