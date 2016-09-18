@@ -1,0 +1,54 @@
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+article {
+	border: 2px solid @almost-black;
+	height: 35vh;
+	margin: 0 2vw 4vh 2vw;
+	position: relative;
+}
+
+
+article .headers {
+  display:block;
+//  width: calc(100% - 2em);
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
+  color: white;
+//	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
+	padding:.3em;
+
+
+  /*text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    4px 2px 4px rgba(0, 0, 0, 0.8);
+		*/
+}
+
+
+article .headers .headline {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+article .headers p {
+  margin: 0;
+}
+
+article .headers .byline {
+  white-space: nowrap;
+}
+
+article .headers .story-type {
+  color: @green;
+}
