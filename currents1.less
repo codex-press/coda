@@ -1,30 +1,75 @@
 @import 'css/definitions.less';
 
+body {
+  font-family: @sans-serif;
+}
+
+
+.currents {
+  width: 100%;
+  position: relative;
+}
+
+
+
+.current-description {
+  width: 32%;
+  float: right;
+  margin-top:4em;
+}
+
+
+
+
 .cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-
-
-
-.article {
-	border: 2px solid @almost-black;
-	height: 35vh;
-	margin: 0 2vw 4vh 2vw;
-	position: relative;
+.titles div {
+    height: 18vh;
+  //  border:1px solid black;
+    padding: 1vh 1vw;
 }
 
+.titles h1 {
+  text-transform:uppercase;
+  font-size: 4vw;
+}
 
-.article .headers {
+.expansion {
+  padding-bottom: 1em;
+  background-color: @almost-black;
+  color: @almost-white;
+  width: 48.5vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height:90vh;
+}
+
+.card {
+	border: 2px solid @almost-black;
+	height: 30vh;
+	//margin: 0 2vw 4vh 2vw;
+	position: relative;
   display:block;
-//  width: calc(100% - 2em);
+  width:66%;
+}
+
+.card-dek {
+  display:none;
+}
+
+.card .headers {
+  display:block;
+  width: 100%;
   position: absolute;
   bottom: 0em;
   left: 0em;
   color: white;
-//	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
+	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.4));
 	padding:.3em;
 
 
@@ -38,18 +83,65 @@
 }
 
 
-.article .headers .headline {
+.card .headers .headline {
   font-size: 1.3em;
   font-weight: 500;
 }
-.article .headers p {
+.card .headers p {
   margin: 0;
 }
 
-.article .headers .byline {
+.card .headers .byline {
   white-space: nowrap;
 }
 
-.article .headers .story-type {
+.card .headers .story-type {
   color: @green;
+}
+
+
+.stream-item {
+  position: relative;
+  padding: 0 .5em 1em 1em;
+  margin-left: .5em;
+}
+
+.stream-item h1,
+.stream-item p{
+  margin-bottom:-.5em;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  width: 0.5em;
+  margin-left: .15em;
+  height: 100%;
+  background: @currents-line-color;
+  //border:.1em solid black;
+  top:1em;
+}
+
+
+.last-stream-item .line {
+//  display:none;
+  top:0em;
+  height:50%;
+}
+
+.stream-item:before {
+  display: block;
+  content: '';
+
+  position: absolute;
+  bottom: .8em;
+  left: 0;//-0.1em;
+  z-index: 5;
+
+  width: .8em;
+  height: .8em;
+
+  background: @green;
+  //border:.1em solid black;
+  border-radius: 50%;
 }
