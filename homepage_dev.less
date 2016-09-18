@@ -29,19 +29,7 @@ header.sitewide h1{
 
 
 
-@media only screen and (min-width: 800px){
-	.top-stories{
-		width:64.5%;
-		margin: 0 .5% 1vh 1%;
-		float:left;
-	}
-	.recent-updates,
-	.subscribe {
-		width:32.5%;
-		margin:0 1% 1vh .5%;
-		float:right;
-	}
-}
+
 
 @media only screen and (min-width: 530px) and (max-width: 799px){
 	.top-stories{
@@ -55,9 +43,43 @@ header.sitewide h1{
 		margin: 0 1% 1vh .5%;
 		float:right;
 	}
+	.top-story .headers {
+  	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0.4));
+		width: 100%;
+	}
+	.card-dek {
+		display:none;
+	}
+	.top-story {
+		min-height: 6em;
+	}
+}
+
+@media only screen and (min-width: 800px){
+	.top-stories{
+		width:64.5%;
+		margin: 0 .5% 1vh 1%;
+		float:left;
+	}
+	.recent-updates,
+	.subscribe {
+		width:32.5%;
+		margin:0 1% 1vh .5%;
+		float:right;
+	}
+
+	.top-story {
+		min-height: 6em;
+	}
+
+	.top-story .headers {
+		background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
+		width: calc(100% - 2em);
+	}
 }
 
 @media @mobile{
+
 	.top-stories,
 	.recent-updates,
 	.subscribe {
@@ -65,7 +87,83 @@ header.sitewide h1{
 		width:98%;
 		float:left;
 	}
+
+	.edition-info {
+		width: 100%;
+	}
+	.edition-info p {
+		display:none;
+	}
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 90vw;
+	}
+	.extended-about {
+		display:none;
+	}
+
+	.top-story {
+		min-height:8.25em;
+	}
+
+	.top-story .headers {
+		background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0.4));
+		width: 100%;
+	}
+
+	.card-dek {
+		display:none;
+	}
 }
+
+@media @tablet {
+	.edition-info {
+		width:50%;
+		min-width: 400px;
+	}
+	.what-is {
+		width: 100%
+	}
+	.what-is p {
+		width: 80vw;
+	}
+}
+
+@media @desktop {
+	.edition-info {
+		width:33%;
+		min-width: 400px;
+	}
+	.what-is {
+		width: 70%;
+	}
+	.what-is p {
+		width: 50vw;
+	}
+}
+
+@media @desktop-xl {
+	.edition-info {
+		width:33%;
+		min-width: 400px;
+	}
+	.what-is {
+		width: 70%;
+	}
+	.what-is p {
+		width: 50vw;
+	}
+}
+
+
+
+
+
+
+
+
 
 article {
   background-color: @page-background;
@@ -132,60 +230,6 @@ article {
 
 .edition-info h1:hover {
 	color:@green;
-}
-
-@media @desktop-xl {
-	.edition-info {
-		width:33%;
-	}
-	.what-is {
-		width: 70%;
-	}
-	.what-is p {
-		width: 50vw;
-	}
-}
-
-@media @desktop {
-	.edition-info {
-		width:33%;
-	}
-	.what-is {
-		width: 70%;
-	}
-	.what-is p {
-		width: 50vw;
-	}
-}
-
-@media @tablet {
-	.edition-info {
-		width:50%;
-	}
-	.what-is {
-		width: 100%
-	}
-	.what-is p {
-		width: 80vw;
-	}
-}
-
-@media @mobile {
-	.edition-info {
-		width: 100%;
-	}
-	.edition-info p {
-		display:none;
-	}
-	.what-is {
-		width: 100%;
-	}
-	.what-is p {
-		width: 90vw;
-	}
-	.extended-about {
-		display:none;
-	}
 }
 
 h1:before {
@@ -366,12 +410,12 @@ h1:before {
 
 .top-story .headers {
   display:block;
-  width: calc(100% - 2em);
+//  width: calc(100% - 2em);
   position: absolute;
   bottom: 0em;
   left: 0em;
   color: white;
-	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
+//	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
 	padding:.3em;
 
 
