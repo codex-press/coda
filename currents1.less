@@ -1,3 +1,4 @@
+@import 'css/definitions.less';
 
 .cover {
   width: 100%;
@@ -8,7 +9,7 @@
 
 
 
-article {
+.article {
 	border: 2px solid @almost-black;
 	height: 35vh;
 	margin: 0 2vw 4vh 2vw;
@@ -16,7 +17,7 @@ article {
 }
 
 
-article .headers {
+.article .headers {
   display:block;
 //  width: calc(100% - 2em);
   position: absolute;
@@ -37,18 +38,18 @@ article .headers {
 }
 
 
-article .headers .headline {
+.article .headers .headline {
   font-size: 1.3em;
   font-weight: 500;
 }
-article .headers p {
+.article .headers p {
   margin: 0;
 }
 
-article .headers .byline {
+.article .headers .byline {
   white-space: nowrap;
 }
 
-article .headers .story-type {
+.article .headers .story-type {
   color: @green;
 }
