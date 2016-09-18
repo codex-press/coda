@@ -113,8 +113,21 @@ body {
   .card .headers {
     top: 0;
   }
+
+  .titles div {
+    width:50%;
+  }
+
+  .titles h1 {
+    font-size: 1.5em;
+  }
 }
 
+@media @tablet, @desktop, @desktop-xl {
+  .titles h1 {
+    font-size: 4vw;
+  }
+}
 
 .currents {
   width: 98vw;
@@ -147,7 +160,7 @@ body {
 
 .titles h1 {
   text-transform:uppercase;
-  font-size: 4vw;
+//  font-size: 4vw;
   margin:0;
   position:absolute;
   line-height: 1;
