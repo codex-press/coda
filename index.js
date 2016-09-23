@@ -15,7 +15,9 @@
     </span>'
   });
 
-
+  handlebars.registerHelper('test', function(options) {
+      return '<p>success!</p>'
+  });
 
   // HEADER
   var app = require('app').default;
