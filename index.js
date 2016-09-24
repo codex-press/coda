@@ -69,7 +69,7 @@
     console.log('you have just loaded an article'); //works!
 
     var bios = dom('.bio-box');
-    bios.select('*').setAttr('class', 'test-bio-box');
+    bios[0].setAttr('class', 'test-bio-box');
 
   });
 
