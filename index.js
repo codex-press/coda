@@ -68,8 +68,8 @@
     //Testing: can I insert something into every article?
     console.log('you have just loaded an article'); //works!
 
-    var bios = dom('.bio-box');
-    bios[0].setAttr('class', 'test-bio-box');
+  //  var bios = dom('.bio-box');
+  //  bios[0].setAttr('class', 'test-bio-box');
 
   });
 
