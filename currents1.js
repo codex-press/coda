@@ -49,16 +49,24 @@
       e.preventDefault();
   };
 
-//testing access to className of titles
+//current expansion selector
   function currentsExpander(e) {
     var currentName = e.target.className;
     console.log(currentName);
+
     //remove all other .top-expansion classes
     article.select('.expansion').each(function(expansion) {
       dom(expansion).removeClass('top-expansion');
     });
+
+    article.select('.titles div').each(function(title) {
+      dom(title).removeClass('selected-title');
+    })
+
     //add .top-expansion class to the current expansion
     article.select('.expansion.' + currentName).addClass('top-expansion');
+
+    article.select('.titles .' + currentName).addClass('selected-title');
   };
 
   var tween = {};
