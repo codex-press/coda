@@ -56,7 +56,7 @@
     //remove all other .top-expansion classes
     //article.select('.expansion').removeClass('top-expansion');
     //add .top-expansion class to the current expansion
-    article.select('.expansion .' + currentName).addClass('top-expansion');
+    article.select('.expansion.' + currentName).addClass('top-expansion');
   };
 
   var tween = {};
