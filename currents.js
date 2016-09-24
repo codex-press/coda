@@ -8,7 +8,7 @@
   var currentsEvents = {
     'click .icon-angle' : currentsPager,
     'wheel .index'      : currentsScroller,
-    'mouseover .titles' : currentsExpander,
+    'mouseover h2' : currentsExpander,
   };
 
   var events = {
