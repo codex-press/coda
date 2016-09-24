@@ -51,7 +51,9 @@
 
 //testing access to className of titles
   function currentsExpander(e) {
-    console.log(e.target.closest('h1').className);
+    var currentName = e.target.closest('h1').className;
+    console.log(currentName);
+    
   };
 
   var tween = {};
