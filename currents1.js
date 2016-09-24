@@ -51,7 +51,7 @@
 
 //current expansion selector
   function currentsExpander(e) {
-    if (e.target="DIV"){
+    if (e.target == "DIV"){
     //remove all other .top-expansion classes
     article.select('.expansion').each(function(expansion) {
       dom(expansion).removeClass('top-expansion');
