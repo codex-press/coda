@@ -54,7 +54,9 @@
     var currentName = e.target.className;
     console.log(currentName);
     //remove all other .top-expansion classes
-    //article.select('.expansion').removeClass('top-expansion');
+    article.select('.expansion').each(function(expansion) {
+      dom(expansion).removeClass('top-expansion');
+    });
     //add .top-expansion class to the current expansion
     article.select('.expansion.' + currentName).addClass('top-expansion');
   };
