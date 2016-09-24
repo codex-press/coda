@@ -66,10 +66,11 @@
 
 
     //Testing: can I insert something into every article?
-    console.log('you have just loaded an article'); //works!
+    //console.log('you have just loaded an article'); //works!
 
+  // The following works!  I can manipulate the dom in every article here.
   //  var bios = dom('.bio-box');
-  //  bios[0].setAttr('class', 'test-bio-box');
+  //  bios[0].setAttribute('class', 'test-bio-box');
 
   });
 
