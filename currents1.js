@@ -62,7 +62,7 @@
     })
 
     var currentName = e.target.className;
-    console.log(currentName);
+    //console.log(currentName);
 
     //add .top-expansion class to the current expansion
     article.select('.expansion.' + currentName).addClass('top-expansion');
