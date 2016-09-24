@@ -8,8 +8,9 @@
   var currentsEvents = {
     'click .icon-angle' : currentsPager,
     'wheel .index'      : currentsScroller,
+    'mouseover titles h1': currentsExpander,
   };
- 
+
   var events = {
     resize : updateArrows,
     ready  : ready,
@@ -48,6 +49,10 @@
       e.preventDefault();
   };
 
+//testing access to className of titles
+  function currentsExpander(e) {
+    console.log(e.currentTarget.className);
+  };
 
   var tween = {};
   function currentsPager(e) {
@@ -76,4 +81,3 @@
   };
 
 })();
-
