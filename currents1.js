@@ -8,7 +8,7 @@
   var currentsEvents = {
     'click .icon-angle' : currentsPager,
     'wheel .index'      : currentsScroller,
-    'mouseover .index .article' : currentsExpander,
+    'mouseover .titles h1' : currentsExpander,
   };
 
   var events = {
@@ -51,7 +51,7 @@
 
 //testing access to className of titles
   function currentsExpander(e) {
-    console.log(e.target.closest('.article').className);
+    console.log(e.target.closest('h1').className);
   };
 
   var tween = {};
