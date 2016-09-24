@@ -51,7 +51,7 @@
 
 //testing access to className of titles
   function currentsExpander(e) {
-    var currentName = e.target.closest('h1').className;
+    var currentName = e.target.className;
     console.log(currentName);
     //remove all other .top-expansion classes
     //article.select('.expansion').removeClass('top-expansion');
