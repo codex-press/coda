@@ -51,7 +51,7 @@
 
 //current expansion selector
   function currentsExpander(e) {
-    var currentName = e.target.className;
+    var currentName = e.target.closest('div').className;
     console.log(currentName);
 
     //remove all other .top-expansion classes
