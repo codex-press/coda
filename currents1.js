@@ -51,8 +51,6 @@
 
 //current expansion selector
   function currentsExpander(e) {
-    var currentName = e.target.closest('div').className;
-    console.log(currentName);
 
     //remove all other .top-expansion classes
     article.select('.expansion').each(function(expansion) {
@@ -62,6 +60,9 @@
     article.select('.titles div').each(function(title) {
       dom(title).removeClass('selected-title');
     })
+
+    var currentName = e.target.className;
+    console.log(currentName);
 
     //add .top-expansion class to the current expansion
     article.select('.expansion.' + currentName).addClass('top-expansion');
