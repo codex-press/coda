@@ -64,6 +64,10 @@
       menu.toggleClass('active');
     });
 
+
+    //Testing: can I insert something into every article?
+    console.log('you have just loaded an article');
+
   });
 
 })();
