@@ -51,7 +51,7 @@
 
 //testing access to className of titles
   function currentsExpander(e) {
-    console.log(e.currentTarget.className);
+    console.log(e.target.className);
   };
 
   var tween = {};
