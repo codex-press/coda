@@ -51,7 +51,7 @@
 
 //current expansion selector
   function currentsExpander(e) {
-
+    if (e.target="DIV"){
     //remove all other .top-expansion classes
     article.select('.expansion').each(function(expansion) {
       dom(expansion).removeClass('top-expansion');
@@ -61,13 +61,14 @@
       dom(title).removeClass('selected-title');
     })
 
-    var currentName = e.currentTarget.className;
+    var currentName = e.target.className;
     console.log(currentName);
 
     //add .top-expansion class to the current expansion
     article.select('.expansion.' + currentName).addClass('top-expansion');
 
     article.select('.titles .' + currentName).addClass('selected-title');
+  }
   };
 
   var tween = {};
