@@ -61,7 +61,7 @@
       dom(title).removeClass('selected-title');
     })
 
-    var currentName = dom(e.target).closest('div').className;
+    var currentName = e.target.className;
     console.log(currentName);
 
     //add .top-expansion class to the current expansion
