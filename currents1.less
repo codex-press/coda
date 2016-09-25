@@ -16,7 +16,12 @@ body {
 
 //Top Boxes
 
+.featured h1 {
+  margin-left: 1vw;
+}
+
 .about {
+  clear:both;
   background-color: @green;
   color: white;
   padding: 1vh 1vw;
@@ -29,7 +34,7 @@ body {
 .top-story {
   position: relative;
 	border: 2px solid @almost-black;
-	height: 75vh;
+	height: 50vh;
 	margin: 0 1vw 4vh 1vw;
 }
 
@@ -83,6 +88,11 @@ body {
 	font-weight:300;
 }
 
+.news a {
+  color: @green;
+  text-decoration: none;
+}
+
 a.feed {
   display:block;
 }
@@ -102,13 +112,25 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 		margin: 0 .5% 1vh 1%;
 		float:left;
 	}
-	.news,
-	.about {
+	.news {
 		width:32.5%;
 		margin:0 1% 1vh .5%;
     clear:right;
 		float:right;
 	}
+  .about {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  .about p {
+    width: 70vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about h1 {
+    text-align: center;
+  }
 }
 
 
