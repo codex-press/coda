@@ -30,7 +30,7 @@ body {
   position: relative;
 	border: 2px solid @almost-black;
 	height: 75vh;
-	margin: 0 2vw 4vh 2vw;
+	margin: 0 1vw 4vh 1vw;
 }
 
 .top-story .headers {
@@ -58,6 +58,42 @@ body {
 .top-story .headers .story-type {
   color: @green;
 }
+
+
+//news feed
+.news {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+.news .date {
+  color:@green;
+  font-weight:500;
+  margin-right:.5em;
+  padding-right:.5em;
+  border-right: 1px solid @green;
+}
+
+.news p {
+	color:@text-color;
+  padding-left: 1em;
+  text-indent: -.7em;
+	margin-bottom:.75em;
+	font-weight:300;
+}
+
+a.feed {
+  display:block;
+}
+a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
+	text-decoration:none;
+	color:@text-color;
+}
+
+
+
+
 
 
 @media only screen and (min-width: 950px){
