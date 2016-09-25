@@ -74,6 +74,7 @@
   };
 
   function currentsLink(e) {
+    console.log("click");
     if (e.target.tagName == "DIV"){
       //remove all other .top-expansion classes
       article.select('.expansion').each(function(expansion) {
@@ -84,11 +85,12 @@
         dom(title).removeClass('selected-title');
       })
       var currentName = e.target.className;
+      console.log(currentName);
       var url = "/" + currentName;
       window.location.assign(url);
     }
 
-  }
+  };
 
   var tween = {};
   function currentsPager(e) {
