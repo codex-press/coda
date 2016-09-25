@@ -9,6 +9,8 @@
     'click .icon-angle' : currentsPager,
     'wheel .index'      : currentsScroller,
     'mouseover .titles div' : currentsExpander,
+    'click .titles div' : currentsLink,
+    'click .expansion' : currentsLink,
   };
 
   var events = {
@@ -52,24 +54,41 @@
 //current expansion selector
   function currentsExpander(e) {
     if (e.target.tagName == "DIV"){
-    //remove all other .top-expansion classes
-    article.select('.expansion').each(function(expansion) {
-      dom(expansion).removeClass('top-expansion');
-    });
+      //remove all other .top-expansion classes
+      article.select('.expansion').each(function(expansion) {
+        dom(expansion).removeClass('top-expansion');
+      });
 
-    article.select('.titles div').each(function(title) {
-      dom(title).removeClass('selected-title');
-    })
+      article.select('.titles div').each(function(title) {
+        dom(title).removeClass('selected-title');
+      })
 
-    var currentName = e.target.className;
-    //console.log(currentName);
+      var currentName = e.target.className;
+      //console.log(currentName);
 
-    //add .top-expansion class to the current expansion
-    article.select('.expansion.' + currentName).addClass('top-expansion');
+      //add .top-expansion class to the current expansion
+      article.select('.expansion.' + currentName).addClass('top-expansion');
 
-    article.select('.titles .' + currentName).addClass('selected-title');
-  }
+      article.select('.titles .' + currentName).addClass('selected-title');
+    }
   };
+
+  function currentsLink(e) {
+    if (e.target.tagName == "DIV"){
+      //remove all other .top-expansion classes
+      article.select('.expansion').each(function(expansion) {
+        dom(expansion).removeClass('top-expansion');
+      });
+
+      article.select('.titles div').each(function(title) {
+        dom(title).removeClass('selected-title');
+      })
+      var currentName = e.target.className;
+      var url = "/" + currentName;
+      window.location.assign(url);
+    }
+
+  }
 
   var tween = {};
   function currentsPager(e) {
