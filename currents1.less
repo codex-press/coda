@@ -360,8 +360,24 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .titles h1 {
   text-transform:uppercase;
 //  font-size: 4vw;
-
 }
+
+.titles a,
+.titles a:visited {
+  text-decoration: none;
+  color: @text-color;
+}
+
+.titles a:hover,
+.selected-title a,
+.selected-title a:visited {
+  text-decoration:none;
+  color: @green;
+}
+
+
+
+
 
 .titles div:hover,
 .selected-title {
@@ -445,6 +461,13 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 .stream-item .text {
   color: @green;
+}
+
+.stream-item a,
+.stream-item a:visited,
+.stream-item a:hover {
+  color:@green;
+  text-decoration: none;
 }
 
 .stream-item h1,
