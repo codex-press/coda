@@ -26,6 +26,38 @@ body {
   color: @text-color;
 }
 
+.top-story {
+  position: relative;
+	border: 2px solid @almost-black;
+	height: 75vh;
+	margin: 0 2vw 4vh 2vw;
+}
+
+.top-story .headers {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: .3em;
+  background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0.4));
+  width: 100%;
+}
+
+.top-story .headers .headline {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.top-story .headers p {
+  margin: 0;
+}
+
+.top-story .headers .byline {
+  white-space: nowrap;
+}
+
+.top-story .headers .story-type {
+  color: @green;
+}
 
 
 @media only screen and (min-width: 950px){
@@ -38,6 +70,7 @@ body {
 	.about {
 		width:32.5%;
 		margin:0 1% 1vh .5%;
+    clear:right;
 		float:right;
 	}
 }
