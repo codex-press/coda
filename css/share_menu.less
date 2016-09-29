@@ -3,53 +3,55 @@
 
 .share-menu {
   display: inline-block;
-  width: 1.5em;
   font-size: 1.3rem;
   position: relative;
   text-align: left;
   vertical-align: middle;
+  line-height: 1;
 }
 
 
 
 // icon in a circle is the only visible thing
-.share-menu .icon-share {
-  border: .1em currentColor solid;
-  border-radius: 50%;
-  padding: 0.05em;
-  padding-left: 0.01em;
+.share-menu .icon.share {
+  display: inline-block;
+  fill: currentColor;
+  stroke: currentColor;
   height: 1.5em;
   width: 1.5em;
-  display: inline-block;
-  line-height: 1.3;
+  position: relative;
+  left: -0.1em;
+  top: 0.1em;
 }
 
-.share-menu .icon-share:before {
-  position: relative;
-  top: 0.08em;
-  left: 0.1em;
+.share-menu .border {
+  display: inline-block;
+  border: .1em currentColor solid;
+  border-radius: 50%;
+  padding: 0.2em;
 }
+
 
 // the options show up on hover (with mouse only since the fake :hover on touch is awful)
 // or when toggled .on with touch
 .share-menu .options {
   display: flex;
   flex-flow: column nowrap;
+
   position: absolute;
-  bottom: 1.5em;
-  left: 0.25em;
+  bottom: 2em;
+
+  fill: white;
 
   transition:
     opacity 0.3s ease-out,
-    z-index 0ms 0.3s linear,
     transform 0.3s ease-out;
 
   transform-origin: 50% 100%;
   transform: scale(0.9);
-  opacity: 0;
+  // opacity: 0;
   z-index: -1;
-  color: white;
-  
+  overflow: hidden;
   text-shadow: none;
 }
 
@@ -57,13 +59,13 @@
 html.mouse .share-menu .options {
   transition:
     opacity 0.5s 0.3s ease-out,
-    z-index 0ms 0.8s linear,
+    // height 0ms 0.8s linear,
     transform 0.5s 0.3s ease-out;
 }
 
 .down > .share-menu .options {
   bottom: initial;
-  top: 1.5em;
+  top: 2em;
   transform-origin: 50% 0;
 }
 
@@ -71,6 +73,7 @@ html.mouse .share-menu .options {
 .share-menu:hover .options {
   z-index: @menu-z-index;
   transform: scale(1);
+  // height: auto;
   opacity: 1;
   transition:
     opacity 0.3s ease-out,
@@ -89,14 +92,17 @@ html.mouse .share-menu .options {
 }
 
 
-.share-menu .options a * {
-  color: white;
+// icons white
+.share-menu .options a svg {
+  fill: white;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 // icon changes to black on hover
 // (only on mouse so we don't get the terrible fake hover events on touch)
-html.mouse .share-menu .options a *:hover {
-  color: @text-color;
+html.mouse .share-menu .options a svg:hover {
+  fill: @text-color;
 }
 
 // every button but the last one has the line under it
@@ -104,30 +110,17 @@ html.mouse .share-menu .options a *:hover {
   border-bottom: 1px solid rgb(155,233,171);
 }
 
-// when menu goes down, it's the top
+// when menu goes down, it's the top that doesn't have it
 .down > .share-menu .options .share:not(:first-child) {
   border-top: 1px solid rgb(155,233,171);
 }
 
-
-// little arrow at the top of it
-.share-menu .options:before {
+// arrow
+.share-menu svg.arrow {
   display: block;
-  content: '';
-  position: absolute;
-  bottom: -0.6em;
-  left: 0.4em;
-  border: solid 0.4em transparent;
-  height: 0px;
-  width: 0px;
-  border-top-width: .25em;
-  border-top-color: @green;
-}
-
-.down > .share-menu .options:before {
-  top: -0.6em;
-  border: solid 0.4em transparent;
-  border-bottom-width: .25em;
-  border-bottom-color: @green;
+  width: 1em;
+  height: 0.5em;
+  margin: auto;
+  fill: @green;
 }
 
