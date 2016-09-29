@@ -25,33 +25,6 @@ body, body * {
   box-sizing: border-box;
 }
 
-figure .frame {
-  color: white;
-}
-
-figure.right {
-  width: 40%;
-  float: right;
-  clear: right;
-  margin: 1em;
-}
-
-figure.left {
-  width: 40%;
-  float: left;
-  clear: left;
-  margin: 1em;
-}
-
-@media @mobile, @tablet {
-  figure.right,
-  figure.left {
-    width: 100%;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 
 // DEFAULT STYLES
@@ -60,9 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: @sans-serif;
 }
 
-@media @tablet     { .headline { font-size: 2.2em; } }
-@media @desktop    { .headline { font-size: 2.4em; } }
-@media @desktop-xl { .headline { font-size: 2.5em; } }
+@media @tablet     { .hed { font-size: 2.2em; } }
+@media @desktop    { .hed { font-size: 2.4em; } }
+@media @desktop-xl { .hed { font-size: 2.5em; } }
 
 
 .byline {
@@ -130,64 +103,3 @@ a:visited {
   color: @almost-black;
 }
 
-figure a {
-  color: #eee;
-}
-
-
-// JUST HELPFUL
-
-.no-wrap {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.secret.message {
-  display: none;
-}
-
-.text-center {
-  text-align: center;
-}
-
-
-
-
-
-figure .frame .content-center {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-
-figure .frame .content-bottom {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-}
-
-// these by default will have "flex: 0 1 auto;" which makes them shrink when
-// obviously they shouldn't because they probably have text in there
-figure .frame .content-center > p,
-figure .frame .content-bottom > p {
-  flex: 0 0 auto;
-}
-
-html.javascript figure .top    { position: absolute; top: 0; }
-html.javascript figure .right  { position: absolute; right: 0; }
-html.javascript figure .bottom { position: absolute; bottom: 0; }
-html.javascript figure .left   { position: absolute; left: 0; }
-
-figure .frame > * { order: 0; }
-figure .before { order: -1; }
-figure .after  { order: 1; }
-
-// fill
-figure .frame .fill {
-  position: absolute;
-  margin: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}

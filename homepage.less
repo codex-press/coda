@@ -183,7 +183,7 @@ article {
   color: @green;
 }
 
-.about .headline {
+.about .hed {
   color: #4ade6d;
   font-weight: normal;
 }
@@ -262,18 +262,7 @@ article {
   position: absolute;
   width: 100%;
   height: 100%;
-  padding: 4px;
-  // N.B. this doesn't work in IE or Edge and generally looks terrible there.
-  // that's currently < 2% of Coda readers however
-  object-fit: cover;
-}
-
-.article.image-right .cover {
-  object-position: right;
-}
-
-.article.image-left .cover {
-  object-position: left;
+  margin: 4px;
 }
 
 
@@ -301,7 +290,7 @@ article {
   top: 1em;
 }
 
-.article .headers .headline {
+.article .headers .hed {
   font-size: 1.3em;
   font-weight: 500;
 }
@@ -317,19 +306,19 @@ article {
   color: @green;
 }
 
-body.mouse .article:hover .headline {
+body.mouse .article:hover .hed {
   text-decoration: underline;
 }
 
 
 .headers-black {
 
-  .headline,
+  .hed,
   .byline {
     color: #333;
   }
 
-  .headline,
+  .hed,
   .byline,
   .story-type {
    text-shadow: none;

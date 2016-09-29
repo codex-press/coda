@@ -4,48 +4,10 @@ article {
   padding-bottom: 3em;
 }
 
-@media only screen and (min-height: 500px) {
-
-  html.javascript article > figure:first-child {
-    max-height: calc(100vh - 4.2em);
-  }
-
-  html.javascript article > .page:first-child {
-    height: calc(100vh - 4.2em);
-  }
-
-}
-
-.page {
-  height: 100%;
-}
-
-.half-page {
-  width: 50%;
-}
-
-@media @mobile, @tablet {
-  .half-page {
-    width: 100%;
-  }
-}
-
-article > h1.headline {
-  margin-top: 2em;
-}
-
-.frame h1 {
-  margin: 1rem 0;
-  padding: 0;
-}
-
 
 h1 {
-  width: calc(100% - 2rem);
-  margin: 1rem;
-  order: 2; // after caption
+  margin: 0;
 }
-
 
 p,
 .dek,
@@ -66,33 +28,72 @@ p {
 }
 
 // share icons to green
-.icon-email,
-.icon-facebook,
-.icon-twitter {
-  color: @green;
+.icon.email,
+.icon.facebook,
+.icon.twitter {
+  fill: @green;
 }
 
 
-@media @desktop-xl {
-  article {
-    padding-left: 3%;
-    padding-right: 3%;
-  }
+// @media @desktop-xl {
+//   article {
+//     padding-left: 3%;
+//     padding-right: 3%;
+//   }
+// }
+
+.no-wrap {
+  display: inline-block;
+  white-space: nowrap;
 }
+
+
 
 
 section {
   clear: both;
 }
 
-
 figure {
-  align-items: flex-start;
+  margin: 1rem auto;
+  clear: both;
 }
 
-.full-width {
+figure .frame a {
+  color: #eee;
+}
+
+figure.full-window {
+  width: 100%;
+  height: calc(100vh - 4.2rem);
+  min-height: 500px;
+  margin: 0 auto;
+}
+
+figure.full-width {
   width: 100%;
   max-height: 100vh;
+}
+
+figure.half-width {
+  width: 50%;
+}
+
+@media @mobile, @tablet {
+  figure.half-width {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+figure .frame {
+  color: white;
+}
+
+figure.left,
+figure.right {
+  width: 40%;
+  margin: 1em;
 }
 
 figure.left {
@@ -105,40 +106,55 @@ figure.right {
   clear: right;
 }
 
-figure.left,
-figure.right {
-  width: 40%;
-}
-
 @media @mobile {
   figure.left,
   figure.right {
     width: calc(100% - 2em) !important;
     float: none !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
+figure .frame .content-center {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
 
-figure.page .caption.after {
+figure .frame .content-bottom {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+// these by default will have "flex: 0 1 auto;" which makes them shrink when
+// obviously they shouldn't because they probably have text in there
+figure .frame .content-center > p,
+figure .frame .content-bottom > p {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 500px) {
+  html.javascript figure .top    { position: absolute; top: 0; }
+  html.javascript figure .right  { position: absolute; right: 0; }
+  html.javascript figure .bottom { position: absolute; bottom: 0; }
+  html.javascript figure .left   { position: absolute; left: 0; }
+}
+
+figure.full-window > [x-cp-overlay],
+figure.full-width > [x-cp-overlay] {
   margin: 0.3em 0.5rem;
 }
 
-
-.caption.after {
-  margin: 0.3em 0;
+figure > [x-cp-overlay] * {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-img {
-  display: block;
-  margin: auto;
-}
-
-img + p {
-  margin-top: 1em;
-}
 
 // headline on image
-figure .frame .headline {
+figure .frame .hed {
   text-shadow: @headline-shadow;
 }
 
@@ -438,7 +454,7 @@ figure .photo-credit {
 }
 
 .current-name a{
-  color:@green;
+  color: @green;
 }
 
 .current h2{
