@@ -252,7 +252,7 @@ h1:before {
 .what-is a,
 .what-is a:visited,
 .what-is a:hover {
-  color: @text-color;//white;
+  color: @text-color; //white;
 	display: block;
 	text-align: center;
 	font-weight: 500;
@@ -276,6 +276,24 @@ h1:before {
 .extended-about {
 	display:none;
 }
+
+
+// header arrow
+.what-is:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0; height: 0;
+  left: calc(50% - 3em);
+
+  //bottom: -4.9em;
+
+  border: solid transparent;
+  border-width: 3em;
+  border-top-width: 2em;
+  border-top-color: @green;
+}
+
 
 
 
