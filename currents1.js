@@ -52,7 +52,12 @@
 
 //current expansion selector
   function currentsExpander(e) {
+
+
+
+
     if (e.target.tagName == "DIV"){
+    //  /*
       //remove all other .top-expansion classes
       article.select('.expansion').each(function(expansion) {
         dom(expansion).removeClass('top-expansion');
@@ -60,8 +65,8 @@
 
       article.select('.titles div').each(function(title) {
         dom(title).removeClass('selected-title');
-      })
-
+      });
+    //  */
       var currentName = e.target.className;
       //console.log(currentName);
 
