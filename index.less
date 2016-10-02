@@ -4,6 +4,7 @@
 @import 'css/share_menu';
 @import 'css/fonts';
 @import 'css/header';
+@import 'css/newsletter_signup.less';
 
 @media @mobile     { html { font-size: 15px; } }
 @media @tablet     { html { font-size: 16px; } }
@@ -192,7 +193,7 @@ figure .frame .fill {
   left: 0;
 }
 
-
+//Header Arrow
 .header-arrow:after {
   content: '';
   display: block;
@@ -203,5 +204,38 @@ figure .frame .fill {
   border: solid transparent;
   border-width: 3em;
   border-top-width: 2em;
-  border-top-color: @green;  
+  border-top-color: @green;
+}
+
+// subscribe form
+.subscribe {
+	//background-color: @almost-black;
+	padding-bottom:10px;
+	clear:right;
+}
+
+.subscribe form {
+  font-family: @sans-serif;
+	margin:1vh 9%;
+}
+
+.subscribe form h2 {
+  font-size: 1.2em;
+  font-weight: 900;
+  margin-bottom: 0;
+	color:@text-color;
+}
+
+.subscribe form input {
+	margin:5px 0;
+}
+
+.subscribe form input[type=email] {
+  outline: none;
+}
+
+.subscribe form input[type=submit] {
+  border-radius: 0;
+  border: 1px solid currentColor;
+  outline: none;
 }
