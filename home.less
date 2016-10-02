@@ -30,7 +30,6 @@ header.sitewide h1{
 
 
 
-
 @media only screen and (min-width: 530px) and (max-width: 799px){
 	.top-stories{
 		width:48.5%;
@@ -137,10 +136,11 @@ header.sitewide h1{
 		min-width: 400px;
 	}
 	.what-is {
-		width: 70%;
+		width: 100%;
 	}
 	.what-is p {
-		width: 50vw;
+		width: 70vw;
+		max-width: 800px;
 	}
 }
 
@@ -150,10 +150,11 @@ header.sitewide h1{
 		min-width: 400px;
 	}
 	.what-is {
-		width: 70%;
+		width: 100%;
 	}
 	.what-is p {
-		width: 50vw;
+		width: 70vw;
+		max-width: 800px;
 	}
 }
 
@@ -239,6 +240,7 @@ h1:before {
 
 .what-is {
   padding: .5em;
+	padding-top: .2em;
 	margin: 3vh auto;
 	background-color:@green;//@almost-black;
   //text-align:center;
@@ -250,19 +252,34 @@ h1:before {
 .what-is a,
 .what-is a:visited,
 .what-is a:hover {
-  color: @text-color;
+  color: @text-color;//white;
 	display: block;
 	text-align: center;
+	font-weight: 500;
 }
 
 .what-is p {
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: .1em;
+	margin-bottom: .1em;
+	font-weight: 400;
+	text-align: center;
 	//max-width: 50vw;
 }
+
+.what-is h1 {
+	margin-top: .1em;
+	margin-bottom: .1em;
+}
+
+.extended-about {
+	display:none;
+}
+
+
+
 //Recent Updates
-
-
 .recent-updates {
 	background-color: @page-background;
 }
