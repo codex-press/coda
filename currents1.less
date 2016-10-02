@@ -315,12 +315,20 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 @media @tablet, @desktop, @desktop-xl {
+  .titles {
+    width: 50%;
+  }
   .titles h1 {
-    font-size: 4vw;
+    font-size: 2em;
     margin:0;
-    position:absolute;
+    text-align: right;
+    //margin-left: 5vw;
+    //position:absolute;
     line-height: 1;
-    top: calc(50% - 2vw);
+    //top: calc(50% - 2vw);
+  }
+  .titles p {
+    text-align: right;
   }
   .titles div {
     height: 18vh;
@@ -362,6 +370,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 //  font-size: 4vw;
 }
 
+.titles p {
+  margin:0;
+}
+
 .titles a,
 .titles a:visited {
   text-decoration: none;
@@ -389,7 +401,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   padding-bottom: 1em;
   background-color: @almost-black;
   color: @almost-white;
-  width: 48.5vw;
+  width: 50%;
   position: absolute;
   right: 0;
   top: 0;
