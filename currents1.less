@@ -138,6 +138,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   .about h1 {
     text-align: center;
   }
+
+  .titles h1 {
+    font-size: 2em;
+  }
 }
 
 
@@ -157,6 +161,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   //  margin-left: 2vw;
   //  margin-right: 2vw;
   }
+
+  .titles h1 {
+    font-size: 2em;
+  }
 }
 
 @media @mobile {
@@ -170,6 +178,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 //Currents Nav
+
+.current-description {
+  display: none;
+}
 
 .currents-heading {
   //font-size: 3vw;
@@ -193,7 +205,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .card {
-      width:66%;
+      //width:66%;
       height:30vh;
   }
 
@@ -212,6 +224,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   //  margin-top: -.5em;
   }
 
+  .titles p {
+    display: none;
+  }
+
   .current-description {
     width: 31%;
     float: right;
@@ -220,7 +236,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .card {
-      width:66%;
+    //  width:66%;
       height:20vh;
   }
 
@@ -230,7 +246,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .card span {
-    display:none;
+    display: none;
   }
 
 }
@@ -249,13 +265,18 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   .card .headers {
     top: calc(100% - 6em);
   }
+
+  .titles h1 {
+    font-size: 1.5em;
+  }
+
 }
 
 @media only screen and (min-width: 530px) and (max-width: 799px) and (max-height:459px){
   .current-description,
   .card span {
     //margin: .3em;
-    display:none;
+    display: none;
   }
 
   .card {
@@ -267,11 +288,23 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     top: -.7em;
     font-size: .8em;
   }
+
+  .titles h1 {
+    font-size: 1.5em;
+  }
+
+  .titles p {
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 615px){
   .current-description {
-    display:none;
+    display: none;
+  }
+  .titles p {
+    display: none;
   }
 }
 
@@ -287,7 +320,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .card span {
-    display:none;
+    display: none;
   }
 
   .titles div {
@@ -310,7 +343,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   //  color: @green;
   }
   .expansion {
-    display:none;
+    display: none;
   }
 }
 
@@ -319,7 +352,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     width: 50%;
   }
   .titles h1 {
-    font-size: 2em;
+    //font-size: 2em;
     margin:0;
     text-align: right;
     //margin-left: 5vw;
@@ -424,7 +457,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 .card-dek {
-  display:none;
+  display: none;
 }
 
 .card .headers {
@@ -500,7 +533,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 
 .last-stream-item .line {
-//  display:none;
+//  display: none;
   top:0em;
   height:50%;
 }
