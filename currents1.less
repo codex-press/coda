@@ -125,10 +125,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     clear:right;
 		float:right;
 	}
-  .about {
-    //margin-left: 2vw;
-    //margin-right: 2vw;
-  }
   .about p {
     width: 70vw;
     display: block;
@@ -158,8 +154,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 	}
   .about {
     clear:both;
-  //  margin-left: 2vw;
-  //  margin-right: 2vw;
   }
 
   .titles h1 {
@@ -171,10 +165,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   .news {
     margin: 0 1% 1vh 1%;
   }
-  .about {
-  //  margin-left: 2vw;
-  //  margin-right: 2vw;
-  }
 }
 
 //Currents Nav
@@ -184,14 +174,12 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 .currents-heading {
-  //font-size: 3vw;
   clear:both;
   margin-left: 2vw;
   margin-bottom: 1vh;
 }
 
 .currents-heading .subtitle {
-  //font-size: 2.4vw;
   color: @green;
   font-weight:400;
 }
@@ -205,7 +193,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .card {
-      //width:66%;
       height:30vh;
   }
 
@@ -220,10 +207,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     font-size: 1em;
   }
 
-  .titles div {
-  //  margin-top: -.5em;
-  }
-
   .titles p {
     display: none;
   }
@@ -236,7 +219,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .card {
-    //  width:66%;
       height:20vh;
   }
 
@@ -275,7 +257,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 @media only screen and (min-width: 530px) and (max-width: 799px) and (max-height:459px){
   .current-description,
   .card span {
-    //margin: .3em;
     display: none;
   }
 
@@ -327,20 +308,9 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
   }
 
-  .titles div:nth-child(odd) {
-  //  background:linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0));
-  }
-
-  .titles div:nth-child(even){
-  //  background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.4));
-  //  background-color: rgba(70, 198, 100, 0.4);
-
-  }
-
   .titles h1 {
     font-size: 1.5em;
     margin:.75em;
-  //  color: @green;
   }
   .expansion {
     display: none;
@@ -352,25 +322,24 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     width: 50%;
   }
   .titles h1 {
-    //font-size: 2em;
     margin:0;
     text-align: right;
-    //margin-left: 5vw;
-    //position:absolute;
     line-height: 1;
-    //top: calc(50% - 2vw);
   }
   .titles p {
     text-align: right;
   }
+  // height of titles divs. Default is 5 titles. Total height: 90vh.
   .titles div {
     height: 18vh;
     min-height:3em;
   }
+  .titles.four div {
+    height: 22.5vh;
+  }
 }
 
 .currents {
-//  width: 96vw;
   margin-left: 2vw;
   margin-right: 2vw;
   position: relative;
@@ -391,17 +360,13 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 .titles div {
-
-  //  border:1px solid black;
     padding: 1vh 1vw;
     position: relative;
-
 }
 
 .titles h1 {
   text-transform:uppercase;
   margin: 1px;
-//  font-size: 4vw;
 }
 
 .titles p {
@@ -449,11 +414,8 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 .card {
 	border: 2px solid @almost-black;
-//	height: 30vh;
-	//margin: 0 2vw 4vh 2vw;
 	position: relative;
   display:block;
-//  width:66%;
   overflow: hidden;
 }
 
@@ -465,20 +427,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   display:block;
   width: 100%;
   position: absolute;
-  //top: calc(100% - 6em);
   left: 0em;
   color: white;
 	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.4));
 	padding:.3em;
-
-
-  /*text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000,
-    4px 2px 4px rgba(0, 0, 0, 0.8);
-		*/
 }
 
 
@@ -523,7 +475,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 .last-stream-item p {
   font-size: 1.25em;
-  //font-weight: bold;
 }
 
 .line {
@@ -533,13 +484,11 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   margin-left: .15em;
   height: 100%;
   background: @currents-line-color;
-  //border:.1em solid black;
   top: 1em;
 }
 
 
 .last-stream-item .line {
-//  display: none;
   top: -.25em;
   height: 50%;
 }
@@ -557,6 +506,5 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   height: .8em;
 
   background: @green;
-  //border:.1em solid black;
   border-radius: 50%;
 }
