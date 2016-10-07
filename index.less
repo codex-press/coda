@@ -12,7 +12,7 @@
 @media @desktop-xl { html { font-size: 16px; } }
 
 html {
-  font-family: @serif;
+  font-family: @sans-serif;
   line-height: 1.5;
   color: @text-color;
   background-color: @page-background;
@@ -135,6 +135,14 @@ figure a {
   color: #eee;
 }
 
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
 
 // JUST HELPFUL
 
@@ -238,4 +246,81 @@ figure .frame .fill {
   border-radius: 0;
   border: 1px solid currentColor;
   outline: none;
+}
+
+
+//what-is
+
+.what-is {
+  padding: .5em;
+	padding-top: .2em;
+	margin: 3vh auto;
+	background-color:@green;
+	color:white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.what-is a,
+.what-is a:visited,
+.what-is a:hover {
+  color: @text-color;
+	display: block;
+	text-align: center;
+	font-weight: 500;
+}
+
+.what-is p {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: .1em;
+	margin-bottom: .1em;
+	font-weight: 400;
+	text-align: center;
+}
+
+.what-is h1 {
+	margin-top: .1em;
+	margin-bottom: .1em;
+}
+
+@media @mobile{
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 90vw;
+	}
+	.extended-about {
+		display:none;
+	}
+}
+
+@media @tablet {
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 80vw;
+	}
+}
+
+@media @desktop {
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 70vw;
+		max-width: 800px;
+	}
+}
+
+@media @desktop-xl {
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 70vw;
+		max-width: 800px;
+	}
 }
