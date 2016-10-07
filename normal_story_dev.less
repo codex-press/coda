@@ -269,7 +269,7 @@ figure .frame .share-menu .options {
   padding: 0;
 }
 
-@media @desktop, @desktop-xl {
+//@media @desktop, @desktop-xl {
 
   .byline-box {
     float: right;
@@ -312,7 +312,9 @@ figure .frame .share-menu .options {
 
   .byline-box .byline:before,
   .byline-box .location:before,
-  .byline-box .publication-date:before {
+  .byline-box .publication-date:before,
+  .byline-box .byline-current:before,
+  .byline-box .byline-edition:before {
     display: block;
     color: #888;
     // equivalent to line-height: 1 of parent em
@@ -331,10 +333,16 @@ figure .frame .share-menu .options {
   .byline-box .publication-date:before {
     content: 'Date';
   }
-}
+  .byline-box .byline-current:before {
+    content: 'Current';
+  }
+  .byline-box .byline-edition:before {
+    content: 'Edition';
+  }
 
 
-@media @mobile, @tablet {
+
+@media @mobile {
 
   // in .small.codex it collapses to two lines
   .byline-box {
@@ -439,15 +447,14 @@ figure .photo-credit {
   width: calc(100% - 2rem);
   margin-left: auto;
   margin-right: auto;
-  //border: 1px solid black;
 }
 
-@media @mobile, @tablet{
+//@media @mobile, @tablet{
   .current {
     max-width:35rem;
   }
-}
-
+//}
+/*
 @media @desktop, @desktop-xl{
   .current {
     max-width:25%;
@@ -456,7 +463,7 @@ figure .photo-credit {
     margin:2em;
   }
 }
-
+*/
 .current h2 a{
   color:@green;
   text-decoration: none;
@@ -464,7 +471,6 @@ figure .photo-credit {
 
 .current h2{
   font-weight:bold;
-  //margin-left:1em;
   text-align:center;
   margin: 0;
   margin-top:.5em;
@@ -496,7 +502,6 @@ figure .photo-credit {
   margin-left: .15em;
   height: 100%;
   background: @currents-line-color;
-  //border:.1em solid black;
   top:2em;
 }
 
@@ -511,13 +516,12 @@ figure .photo-credit {
 
   position: absolute;
   top: 1.3em;
-  left: 0;//-0.1em;
+  left: 0;
   z-index: 5;
 
   width: .8em;
   height: .8em;
 
   background: @almost-black;
-  //border:.1em solid black;
   border-radius: 50%;
 }
