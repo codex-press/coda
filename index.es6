@@ -3,6 +3,10 @@ import article from 'article';
 
 article.ready.then(() => {
   let header = dom('header.sitewide');
+
+  if (!header.length)
+    return;
+
   let sub = header.first('.header-subtitle');
 
   // Desktop: change underline on :target link

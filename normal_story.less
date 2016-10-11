@@ -107,6 +107,7 @@ section {
 figure {
   margin: 1rem auto;
   clear: both;
+  max-height: 100vh;
 }
 
 figure .frame a {
@@ -127,7 +128,6 @@ html.javascript .full-window {
 
 .full-width {
   width: 100%;
-  max-height: 100vh;
 }
 
 .half-width {
@@ -199,12 +199,22 @@ figure .frame .content-bottom > p {
   flex: 0 0 auto;
 }
 
-@media (min-width: 500px) {
-  html.javascript figure .top    { position: absolute; top: 0; }
-  html.javascript figure .right  { position: absolute; right: 0; }
-  html.javascript figure .bottom { position: absolute; bottom: 0; }
-  html.javascript figure .left   { position: absolute; left: 0; }
+html.javascript {
+  figure .top    { top: 0; }
+  figure .right  { right: 0; }
+  figure .bottom { bottom: 0; }
+  figure .left   { left: 0; }
+
+  .top,
+  .right,
+  .bottom,
+  .left {
+    position: absolute;
+    width: initial;
+  }
+
 }
+
 
 figure.full-window > [x-cp-overlay],
 figure.full-width > [x-cp-overlay] {
