@@ -2,6 +2,7 @@ import dom from 'dom';
 import article from 'article';
 import animate from 'animate';
 
+
 dom(window).on({
   'click .icon-angle' : currentsPager,
   'wheel .index'      : currentsScroller,
