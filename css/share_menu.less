@@ -10,13 +10,20 @@
   line-height: 1;
 }
 
+// round border on the menu
+// figure .frame .share-menu .icon-share {
+//   box-shadow: @headline-shadow;
+//   box-shadow: @headline-shadow;
+// }
+// figure .frame .share-menu .options {
+//   // box-shadow: @headline-shadow;
+// }
+
 
 
 // icon in a circle is the only visible thing
-.share-menu .icon.share {
+.share-menu .cp-icon.share {
   display: inline-block;
-  fill: currentColor;
-  stroke: currentColor;
   height: 1.5em;
   width: 1.5em;
   position: relative;
@@ -29,6 +36,9 @@
   border: .1em currentColor solid;
   border-radius: 50%;
   padding: 0.2em;
+  width: 1.5em;
+  height: 1.5em;
+  box-sizing: content-box;
 }
 
 
@@ -45,11 +55,12 @@
 
   transition:
     opacity 0.3s ease-out,
+    z-index 0ms 1s,
     transform 0.3s ease-out;
 
   transform-origin: 50% 100%;
   transform: scale(0.9);
-  // opacity: 0;
+  opacity: 0;
   z-index: -1;
   overflow: hidden;
   text-shadow: none;
@@ -59,7 +70,7 @@
 html.mouse .share-menu .options {
   transition:
     opacity 0.5s 0.3s ease-out,
-    // height 0ms 0.8s linear,
+    z-index 0ms 1s,
     transform 0.5s 0.3s ease-out;
 }
 
@@ -73,10 +84,10 @@ html.mouse .share-menu .options {
 .share-menu:hover .options {
   z-index: @menu-z-index;
   transform: scale(1);
-  // height: auto;
   opacity: 1;
   transition:
     opacity 0.3s ease-out,
+    z-index 0ms 0ms,
     transform 0.3s ease-out;
 }
 
@@ -122,5 +133,12 @@ html.mouse .share-menu .options a svg:hover {
   height: 0.5em;
   margin: auto;
   fill: @green;
+  transform: rotate(180deg);
+  order: 1000;
+  cursor: pointer;
+}
+
+.down .share-menu svg.arrow {
+  transform: none;
 }
 
