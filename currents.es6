@@ -2,20 +2,17 @@ import dom from 'dom';
 import article from 'article';
 import animate from 'animate';
 
-var currentsEvents = {
+dom(window).on({
   'click .icon-angle' : currentsPager,
   'wheel .index'      : currentsScroller,
-};
+});
 
-var events = {
+article.on({
   resize : updateArrows,
-};
-
-article.on(events);
-
-dom(window).on(currentsEvents);
+});
 
 updateArrows();
+
 
 
 function updateArrows() {

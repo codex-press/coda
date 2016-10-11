@@ -15,7 +15,7 @@ p {
   margin: auto;
 }
 
-@media @mobile {
+@media @mobile, @tablet {
   p {
     max-width: calc(100% - 2em);
   }
@@ -94,36 +94,16 @@ section.directors header {
   color: white;
 }
 
-// advisors get black header
-section.advisors header {
-  background: @almost-black;
-  color: @almost-white;
-}
 
 
-// header arrow
-section.advisors header:after,
-section.directors header:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 0; height: 0;
-  left: calc(50% - 3em);
+// black header arrow (overrides default from index.less)
 
-  bottom: -4.9em;
-
-  border: solid transparent;
-  border-width: 3em;
-  border-top-width: 2em;
-}
-
-section.directors header:after {
-  border-top-color: @green;
-}
-
-section.advisors header:after {
+#donations header:after,
+#editorial-policy header:after{
   border-top-color: @almost-black;
 }
+
+
 
 
 
@@ -166,6 +146,10 @@ section.advisors > p {
   margin: 1em;
 }
 
+section.advisors header {
+ background-color:@green;
+ color:white;
+}
 
 
 section.directors .name,
@@ -226,40 +210,15 @@ section.contact-us a {
 }
 
 #editorial-policy strong{
- font-weight:900; 
+ font-weight:900;
 }
 
 #editorial-policy p{
   padding-left:1em;
   padding-right:1em;
-  margin-bottom:2em; 
+  margin-bottom:2em;
 }
 
 #donations p{
- margin-bottom:1em; 
+ margin-bottom:1em;
 }
-
-section.advisors header {
- background-color:@green;
- color:white;
-}
-section.advisors header:after {
-  border-top-color: @green;
-}
-
-#donations header:after,
-#editorial-policy header:after{
-  content: '';
-  display: block;
-  position: absolute;
-  width: 0; height: 0;
-  left: calc(50% - 3em);
-
-  //bottom: -4.9em;
-
-  border: solid transparent;
-  border-width: 3em;
-  border-top-width: 2em;
-  border-top-color: @almost-black;
-}
-

@@ -30,7 +30,6 @@ header.sitewide h1{
 
 
 
-
 @media only screen and (min-width: 530px) and (max-width: 799px){
 	.top-stories{
 		width:48.5%;
@@ -137,10 +136,11 @@ header.sitewide h1{
 		min-width: 400px;
 	}
 	.what-is {
-		width: 70%;
+		width: 100%;
 	}
 	.what-is p {
-		width: 50vw;
+		width: 70vw;
+		max-width: 800px;
 	}
 }
 
@@ -150,10 +150,11 @@ header.sitewide h1{
 		min-width: 400px;
 	}
 	.what-is {
-		width: 70%;
+		width: 100%;
 	}
 	.what-is p {
-		width: 50vw;
+		width: 70vw;
+		max-width: 800px;
 	}
 }
 
@@ -210,7 +211,7 @@ article {
 }
 
 .lgbt {
-  background-image: url('https://usercontent.codex.press/images/8fe112e7-9d39-4176-a7be-279fda0cc0fb/medium.jpg?1473579820');
+  background-image: url('https://usercontent.codex.press/images/06e4358c-af49-470c-af8e-a1568ab0f0aa/medium.jpg?1475852470');
 	background-position: 0% 50%;
 }
 
@@ -237,32 +238,14 @@ h1:before {
 }
 
 
-.what-is {
-  padding: .5em;
-	margin: 3vh auto;
-	background-color:@green;//@almost-black;
-  //text-align:center;
-	color:white;
-	margin-left: auto;
-	margin-right: auto;
+//what-is
+.extended-about {
+	display:none;
 }
 
-.what-is a,
-.what-is a:visited,
-.what-is a:hover {
-  color: @text-color;
-	display: block;
-	text-align: center;
-}
 
-.what-is p {
-	margin-left: auto;
-	margin-right: auto;
-	//max-width: 50vw;
-}
+
 //Recent Updates
-
-
 .recent-updates {
 	background-color: @page-background;
 }
@@ -274,8 +257,6 @@ h1:before {
 }
 
 .recent-updates p {
-	//list-style-type: none;
-	//margin-top:1.5vh;
 	margin:0;
 }
 
@@ -304,7 +285,6 @@ h1:before {
   margin-left: .15em;
   height: 100%;
   background: @currents-line-color;
-  //border:.1em solid black;
   top:1em;
 }
 
@@ -319,59 +299,14 @@ h1:before {
 
   position: absolute;
   top: .8em;
-  left: 0;//-0.1em;
+  left: 0;
   z-index: 5;
 
   width: .8em;
   height: .8em;
 
   background: @almost-black;
-  //border:.1em solid black;
   border-radius: 50%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// subscribe form
-.subscribe {
-	//background-color: @almost-black;
-	padding-bottom:10px;
-	clear:right;
-}
-
-.subscribe form {
-  font-family: @sans-serif;
-	margin:1vh 9%;
-}
-
-.subscribe form h2 {
-  font-size: 1.2em;
-  font-weight: 900;
-  margin-bottom: 0;
-	color:@text-color;
-}
-
-.subscribe form input {
-	margin:5px 0;
-}
-
-.subscribe form input[type=email] {
-  outline: none;
-}
-
-.subscribe form input[type=submit] {
-  border-radius: 0;
-  border: 1px solid currentColor;
-  outline: none;
 }
 
 
@@ -410,22 +345,11 @@ h1:before {
 
 .top-story .headers {
   display:block;
-//  width: calc(100% - 2em);
   position: absolute;
   bottom: 0em;
   left: 0em;
   color: white;
-//	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
 	padding:.3em;
-
-
-  /*text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000,
-    4px 2px 4px rgba(0, 0, 0, 0.8);
-		*/
 }
 
 
