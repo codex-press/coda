@@ -91,12 +91,17 @@ p {
   line-height: 1.2;
 }
 
+
 figcaption {
   font-size: .9em;
   font-family: @sans-serif;
   line-height: 1.1;
+  margin: 0.3em 0;
 }
 
+figure.full-window figcaption {
+  margin: 0.3em 0.5em;
+}
 
 
 
@@ -200,15 +205,16 @@ figure .frame .content-bottom > p {
 }
 
 html.javascript {
+
   figure .top    { top: 0; }
   figure .right  { right: 0; }
   figure .bottom { bottom: 0; }
   figure .left   { left: 0; }
 
-  .top,
-  .right,
-  .bottom,
-  .left {
+  figure .top,
+  figure .right,
+  figure .bottom,
+  figure .left {
     position: absolute;
     width: initial;
   }

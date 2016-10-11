@@ -24,13 +24,26 @@ figure.video {
 }
 
 
-figure.video.gradient-background {
+figure.gradient-background .frame::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
   background: linear-gradient(
     to top,
     rgba(0,0,0,0.8) 0%,
     rgba(0,0,0,0.5) 40%,
     rgba(0,0,0,0) 100%
   );
+}
+
+figure.playing.gradient-background .frame::before {
+  opacity: 0;
 }
 
 
