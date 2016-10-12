@@ -2,7 +2,6 @@
 (function() {
 
   var dom = require('dom').default;
-  var article = require('article').default;
 
   dom(window).bind({'mouseover .titles div' : currentsExpander});
 
