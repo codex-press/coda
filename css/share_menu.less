@@ -61,6 +61,7 @@
   transform-origin: 50% 100%;
   transform: scale(0.9);
   opacity: 0;
+  pointer-events: none;
   z-index: -1;
   overflow: hidden;
   text-shadow: none;
@@ -85,6 +86,7 @@ html.mouse .share-menu .options {
   z-index: @menu-z-index;
   transform: scale(1);
   opacity: 1;
+  pointer-events: all;
   transition:
     opacity 0.3s ease-out,
     z-index 0ms 0ms,
