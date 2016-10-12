@@ -16,7 +16,7 @@ article {
   min-height: 100vh;
 }
 
-figure.video {
+[x-cp-video] {
   width: 100%;
   min-height: 100%;
   max-height: initial;
@@ -25,7 +25,7 @@ figure.video {
 }
 
 
-figure.gradient-background .frame::before {
+[x-cp-video].gradient-background .frame::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -43,7 +43,7 @@ figure.gradient-background .frame::before {
   );
 }
 
-figure.playing.gradient-background .frame::before {
+[x-cp-video].playing.gradient-background .frame::before {
   opacity: 0;
 }
 
@@ -70,7 +70,7 @@ figure.playing.gradient-background .frame::before {
   transition: opacity @fast;
 }
 
-figure.playing .crop:before,
+[x-cp-video].playing .crop:before,
 html.video-playing .intro {
   opacity: 0;
 }
@@ -78,34 +78,34 @@ html.video-playing .intro {
 // inside the frame animation
 // words go down
 //.intro parts move down on a stagger
-figure .frame .intro > * {
+[x-cp-video] .frame .intro > * {
   transform: translateY(0);
   transition: transform @fast;
 }
-figure.playing .frame .intro > * {
+[x-cp-video].playing .frame .intro > * {
   transform: translateY(200px);
 }
 
 // caption is delayed coming on screen
-figure.playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
-figure.playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
+[x-cp-video].playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
+[x-cp-video].playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
 
 // reverse stagger on the way back on screen
-figure.playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
-figure.playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
+[x-cp-video].playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
+[x-cp-video].playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
 
 
 
 // OUTSIDE TRANSITION
 
-figure.video > .intro {
+[x-cp-video].video > .intro {
   opacity: 1;
   transition: opacity @fast;
 }
 
-// cannot figure out how to shrink to zero height given the inability to
+// cannot [x-cp-video] out how to shrink to zero height given the inability to
 // transition to height: auto :(
-figure.video.playing > .intro {
+[x-cp-video].video.playing > .intro {
   opacity: 0;
 }
 
