@@ -99,8 +99,17 @@ figcaption {
   margin: 0.3em 0;
 }
 
+// when it's full-width/window give it margin to keep 
+figure.full-width figcaption,
 figure.full-window figcaption {
   margin: 0.3em 0.5em;
+}
+
+// these are actually all full width on mobile and tablet
+@media @mobile, @tablet {
+  figure figcaption {
+    margin: 0.3em 0.5em;
+  }
 }
 
 
@@ -122,13 +131,13 @@ figure .frame a {
 .full-window {
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 // need Codex magic javascript for this because otherwise setting height
 // will cause things to overlap each other
 html.javascript .full-window {
   height: calc(100vh - 4.2rem);
-  min-height: 500px;
 }
 
 .full-width {

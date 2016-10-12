@@ -2,22 +2,19 @@ import dom from 'dom';
 import article from 'article';
 import animate from 'animate';
 
-
-dom(window).on({
-  'click .icon-angle' : currentsPager,
-  'wheel .index'      : currentsScroller,
+dom(window).bind({
+  'click .arrow' : currentsPager,
+  'wheel .index' : currentsScroller,
 });
 
-article.on({
+article.bind({
   resize : updateArrows,
 });
 
-updateArrows();
-
-
+article.ready.then(() => updateArrows());
 
 function updateArrows() {
-  dom('.current').each(current => {
+  dom('.current').forEach(current => {
     let index = dom.first(current, '.index');
 
     if (index.scrollWidth - index.clientWidth - index.scrollLeft > 120)
@@ -29,12 +26,13 @@ function updateArrows() {
       dom(current).addClass('overflow-left');
     else
       dom(current).removeClass('overflow-left');
+
   });
 };
 
 
 function currentsScroller(e) {
-  dom.closest(e.target, '.index').scrollLeft += e.deltaX;
+  dom(e.target).closest('.index').scrollLeft += e.deltaX;
   updateArrows();
   if (!e.deltaY || (e.deltaX / e.deltaY) > .8)
     e.preventDefault();
@@ -43,15 +41,18 @@ function currentsScroller(e) {
 
 let tween = {};
 function currentsPager(e) {
+  console.log(e);
   e.preventDefault();
 
-  let index = dom(e.target).closest('.current').first('.index');
+  let current = dom(e.target).closest('.current');
+  let arrow = dom(e.target).closest('.arrow');
+  let index = dom(current).first('.index');
 
   // cancel the previous
   if (tween.active)
     tween.cancel();
 
-  let direction = dom(e.target).is('.left') ? -1 : 1;
+  let direction = dom(arrow).is('.left') ? -1 : 1;
   let jump = window.innerWidth * .8 * direction;
   let start = index.scrollLeft;
   let max = index.scrollWidth - index.clientWidth;
@@ -60,8 +61,8 @@ function currentsPager(e) {
   let ease = animate.cubicOut(start, end);
 
   tween = animate({
-    duration: Math.max(100, 500 * Math.abs(start-end)/jump),
-    tick: (time) => { index.scrollLeft = Math.round(ease(time)); },
+    duration: Math.max(100, 500 * Math.abs((start-end)/jump)),
+    tick: time => { index.scrollLeft = Math.round(ease(time)); },
     done: updateArrows,
   });
 

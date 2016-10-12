@@ -67,17 +67,24 @@ h2 a {
 
 
 // angle things used for paging the timeline
-.current .arrows {
-  position: relative;
-  top: -0.3em;
+.current .arrow {
   float: right;
-  cursor: pointer;
-  user-select: none;
-  transition: color @fast;
+  line-height: 1;
 }
 
-html.mouse .current:hover .arrows {
-  color: @green;
+.current .arrow svg {
+  height: 1em;
+  width: 1em;
+  transition: fill @fast;
+}
+
+html.mouse .current:hover .arrow svg {
+  fill: @green;
+}
+
+.current .arrow.right svg path {
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
 }
 
 
@@ -88,14 +95,16 @@ html.mouse .current:hover .arrows {
 }
 
 
-.current .arrows .left,
-.current .arrows .right {
+.current .arrow.left,
+.current .arrow.right {
   opacity: 0;
+  cursor: default;
   transition: opacity @very-fast;
 }
 
-.current.overflow-left .arrows .left,
-.current.overflow-right .arrows .right {
+.current.overflow-left .arrow.left,
+.current.overflow-right .arrow.right {
+  cursor: pointer;
   opacity: 1;
 }
 
