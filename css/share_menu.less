@@ -55,7 +55,6 @@
 
   transition:
     opacity 0.3s ease-out,
-    z-index 0ms 1s,
     transform 0.3s ease-out;
 
   transform-origin: 50% 100%;
@@ -67,12 +66,14 @@
   text-shadow: none;
 }
 
-// delay on mouse so it doesn't close immediately when you move outside
+// delay with .mouse so it doesn't close immediately when you move outside
+// TODO sadly this z-index thing isn't working properly and you cant click
+// anything once you move outside of it
 html.mouse .share-menu .options {
   transition:
-    opacity 0.5s 0.3s ease-out,
+    opacity 0.3s 1s ease-out,
     z-index 0ms 1s,
-    transform 0.5s 0.3s ease-out;
+    transform 0.3s 1s ease-out;
 }
 
 .down > .share-menu .options {
@@ -89,8 +90,7 @@ html.mouse .share-menu .options {
   pointer-events: all;
   transition:
     opacity 0.3s ease-out,
-    z-index 0ms 0ms,
-    transform 0.3s ease-out;
+    transform 0.3s ease-out !important;
 }
 
 
@@ -141,6 +141,7 @@ html.mouse .share-menu .options a svg:hover {
 }
 
 .down .share-menu svg.arrow {
+  order: -1;
   transform: none;
 }
 
