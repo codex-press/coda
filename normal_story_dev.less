@@ -1,0 +1,584 @@
+@import 'css/_definitions';
+
+html {
+  font-family: @serif;
+}
+
+article {
+  padding-bottom: 3em;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+p,
+.dek,
+.subhed {
+  width: calc(100% - 2rem);
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin: auto;
+  margin-bottom: 1.5em;
+}
+
+.dek {
+  margin: 2em auto 1em;
+}
+
+// share icons to green
+.cp-icon.email,
+.cp-icon.facebook,
+.cp-icon.twitter {
+  fill: @green;
+}
+
+.no-wrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+@media @tablet     { .hed { font-size: 2.2em; } }
+@media @desktop    { .hed { font-size: 2.4em; } }
+@media @desktop-xl { .hed { font-size: 2.5em; } }
+
+
+.byline {
+  font-family: @sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.byline:before {
+  content: ' by ';
+  font-size: 0.8em;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+
+
+.story-type {
+  font-family: @sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: @green;
+}
+
+.subhed {
+  font-weight: 700;
+  font-family: @sans-serif;
+}
+
+.subhed:not(:first-child) {
+  padding-top: 3em;
+}
+
+.publication-date {
+  font-family: @sans-serif;
+}
+
+.dek {
+  font-size: 1.5em;
+  font-family: @sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+
+figcaption {
+  font-size: .9em;
+  font-family: @sans-serif;
+  line-height: 1.1;
+  margin: 0.3em 0;
+}
+
+// when it's full-width/window give it margin to keep from edge of screen
+figure.full-width  > figcaption,
+figure.full-window > figcaption {
+  margin: 0.3em 0.5em;
+}
+
+// these are actually all full width on mobile and tablet
+@media @mobile, @tablet {
+  figure figcaption {
+    margin: 0.3em 0.5em;
+  }
+}
+
+
+
+section {
+  clear: both;
+}
+
+figure {
+  margin: 1rem auto;
+  clear: both;
+  max-height: 100vh;
+}
+
+figure .frame a {
+  color: #eee;
+}
+
+.full-window {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+// need Codex magic javascript for this because otherwise setting height
+// will cause things to overlap each other
+html.javascript .full-window {
+  height: calc(100vh - 4.2rem);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+@media @mobile, @tablet {
+  figure.half-width {
+    width: 100%;
+  }
+}
+
+figure .frame {
+  color: white;
+}
+
+figure.left,
+figure.right {
+  width: 40%;
+  margin: 1em;
+}
+
+figure.left {
+  float: left;
+  clear: left;
+}
+
+figure.right {
+  float: right;
+  clear: right;
+}
+
+@media @desktop-xl {
+  figure.right {
+    margin-right: 8%;
+  }
+  figure.left {
+    margin-left: 8%;
+  }
+}
+
+@media @mobile {
+  figure.left,
+  figure.right {
+    width: calc(100% - 2em) !important;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+figure .frame .content-center {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+figure .frame .content-bottom {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+// these by default will have "flex: 0 1 auto;" which makes them shrink when
+// obviously they shouldn't because they probably have text in there
+figure .frame .content-center > p,
+figure .frame .content-bottom > p {
+  flex: 0 0 auto;
+}
+
+html.javascript {
+
+  figure .top    { top: 0; }
+  figure .right  { right: 0; }
+  figure .bottom { bottom: 0; }
+  figure .left   { left: 0; }
+
+  figure .top,
+  figure .right,
+  figure .bottom,
+  figure .left {
+    position: absolute;
+    width: initial;
+  }
+
+}
+
+
+figure.full-window > [x-cp-overlay],
+figure.full-width > [x-cp-overlay] {
+  margin: 0.3em 0.5rem;
+}
+
+figure > [x-cp-overlay] * {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+// headline on image
+figure .frame .hed {
+  text-shadow: @headline-shadow;
+}
+
+
+
+// SECTION BREAKS
+
+.section-start-graf {
+  padding-top: 2em;
+}
+
+.section-first-words {
+  font-weight: 900;
+}
+
+
+
+
+// PULLQUOTE
+
+.pullquote {
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 1.5em;
+  font-family: @sans-serif;
+
+  position: relative;
+  max-width: 400px;
+  float: right;
+  margin: 2em;
+}
+
+.pullquote .attribution {
+  font-family: @sans-serif;
+  font-style: normal;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.pullquote.block p {
+  width: 100%;
+}
+
+// on narrower window, move it into main flow
+@media only screen and (max-width: 1000px) {
+  .pullquote {
+    float: none;
+    width: calc(100% - 2rem);
+    max-width: 35rem;
+    margin: 2em auto;
+  }
+}
+
+
+
+
+
+
+
+// line above
+.pullquote:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 70%;
+  border-top: 1px solid currentColor;
+  top: -0.5em;
+}
+
+
+
+// BIO BOX
+
+.bio-box {
+  width: calc(100% - 2rem);
+  max-width: 35rem;
+  font-family: @sans-serif;
+  font-weight: 300;
+  border-top: 1px solid grey;
+  padding-top: 0.2em;
+  margin: 1em auto 2em;
+}
+.bio-box p {
+  margin: 0 0 1em;
+}
+
+.bio-box .name {
+  font-weight: 700;
+}
+
+
+
+
+
+// BYLINE BOX
+
+.byline-box {
+  min-width: 230px;
+  font-family: @sans-serif;
+}
+
+.byline-box p {
+  padding: 0;
+}
+
+
+@media @desktop, @desktop-xl {
+
+  .byline-box {
+    float: right;
+    margin: 0 2em;
+  }
+
+  .byline-box > * {
+    width: 100%;
+    margin: 0;
+  }
+
+  .byline-box .story-type {
+    padding-bottom: .25em;
+    color: @green;
+    font-weight: 500;
+  }
+
+
+  .byline-box > *:not(.story-type) {
+    border-top: 1px solid #bbb;
+
+    color: @text-color;
+    font-weight: 500;
+    line-height: 1;
+
+    // so these are going to take up 2 lines each or
+    // 3em in total:
+    //   padding-top .5 - 1px
+    //   border 1px
+    //   by/location/date 1
+    //   actual text 1
+    //   padding-bottom .5
+    padding-top: calc(.5em - 1px);
+    padding-bottom: .5em;
+  }
+
+  .byline-box > :last-child {
+    border-bottom: 1px solid #bbb;
+  }
+
+  .byline-box .byline:before,
+  .byline-box .location:before,
+  .byline-box .publication-date:before {
+    display: block;
+    color: #888;
+    // equivalent to line-height: 1 of parent em
+    font-size: 0.75em;
+    line-height: 1.33333;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .byline-box .byline {
+    text-transform: none;
+  }
+  .byline-box .location:before {
+    content: 'Location';
+  }
+  .byline-box .publication-date:before {
+    content: 'Date';
+  }
+}
+
+
+@media @mobile, @tablet {
+
+  // in .small.codex it collapses to two lines
+  .byline-box {
+    left: 0;
+    width: calc(~'100% - 2rem');
+    max-width: 35rem;
+    margin: auto;
+    margin-bottom: 100px;
+  }
+
+  .byline-box p {
+    margin: 0;
+  }
+
+  .byline-box .story-type,
+  .byline-box .byline {
+    display: inline-block;
+  }
+
+  .byline-box .story-type {
+    margin-right: 0.3em;
+  }
+
+}
+
+
+
+
+
+// PHOTO CREDIT
+
+.photo-credit {
+  font-size: 0.9em;
+  font-family: @sans-serif;
+  font-style: italic;
+  line-height: 1;
+}
+
+html.javascript figure .frame .photo-credit:not(.after),
+html.javascript figure > .photo-credit:not(.after) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+figure .photo-credit {
+  margin: 0.4em;
+}
+
+
+// jumps to right side when it's an after block
+.photo-credit.after {
+  align-self: flex-end;
+}
+
+.photo-credit a,
+.photo-credit a:visited {
+  color: @text-color;
+  text-decoration: none;
+}
+
+.photo-credit a:hover {
+  color: @green;
+}
+
+.frame .photo-credit a,
+.frame .photo-credit a:visited {
+  color: white;
+}
+
+.frame .photo-credit a:hover {
+  color: @green;
+}
+
+
+
+
+// END MARK
+
+.end-mark {
+  white-space: nowrap;
+}
+.end-mark:after {
+  display: inline-block;
+  content: '';
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: @green;
+  margin-left: 0.3em;
+}
+
+// Navigation sidebar - articles in current
+
+
+
+.current {
+  font-family: @sans-serif;
+  position: relative;
+  width: calc(100% - 2rem);
+  max-width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
+
+@media @mobile, @tablet{
+  .current {
+    max-width:35rem;
+  }
+}
+
+@media @desktop, @desktop-xl{
+  .current {
+    max-width:15rem;
+  }
+}
+
+.current-name a{
+  color: @green;
+}
+
+.current h2{
+  font-weight:bold;
+  margin-left:1em;
+}
+
+
+.article {
+  position: relative;
+  padding: 1em 1em 1em 0.4em;
+  margin-left: 2em;
+}
+
+.line {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: 0.5em;
+  margin-left: .15em;
+  height: 100%;
+  background: #eeeeee;
+  border:.1em solid black;
+  top:2em;
+}
+
+
+.article:last-child .line {
+  display:none;
+}
+
+.article:before {
+  display: block;
+  content: '';
+
+  position: absolute;
+  top: 1.3em;
+  left: -0.1em;
+  z-index: 5;
+
+  width: .8em;
+  height: .8em;
+
+  background: grey;
+  border:.1em solid black;
+  border-radius: 50%;
+}
