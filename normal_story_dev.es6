@@ -3,17 +3,17 @@ import article from 'article';
 
 var edition_names = {
   lgbtq-crisis : "LGBTQ Crisis";
-  "disinformation-age" : "Disinformation Age";
-  "migrants" : "Migrants"
-}
+  disinformation-age : "Disinformation Age";
+  migrants : "Migrants"
+};
 
 var current_names = {
   kremlin-influence : "Kremlin Influence";
-  "orthodox-church" : "Orthodox Church";
-  "east-west-divide" : "East-West Divide";
-  "information-war" : "Information War";
-  "rights-abuses" : "Rights Abuses"
-}
+  orthodox-church : "Orthodox Church";
+  east-west-divide : "East-West Divide";
+  information-war : "Information War";
+  rights-abuses : "Rights Abuses"
+};
 
 
 article.ready.then(() => {
@@ -27,8 +27,8 @@ article.ready.then(() => {
   var path_array = article.attrs.url.split('/');
   console.log(path_array);
   if (path_array.length == 5){
-    console.log("edition is "+ edition_names[path_array[2]]);
-    console.log("current is "+ current_names[path_array[3]]);
+    console.log("edition is "+ path_array[2]);
+    console.log("current is "+ path_array[3]);
   }
 
 });
