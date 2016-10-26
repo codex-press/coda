@@ -22,7 +22,7 @@ article.ready.then(() => {
 
 
   console.log("dev testing successful, article ready");
-  console.log("testing 2");
+  console.log("testing 2 3");
   console.log(article.attrs);
 
 
