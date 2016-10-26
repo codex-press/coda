@@ -11,18 +11,18 @@ article.ready.then(() => {
     "disinformation-age" : "Disinformation Age",
     "migrants" : "Migrants"
   };
-/*
+
   var current_names = {
-    kremlin-influence : "Kremlin Influence",
-    orthodox-church : "Orthodox Church",
-    east-west-divide : "East-West Divide",
-    information-war : "Information War",
-    rights-abuses : "Rights Abuses"
+    "kremlin-influence" : "Kremlin Influence",
+    "orthodox-church" : "Orthodox Church",
+    "east-west-divide" : "East-West Divide",
+    "information-war" : "Information War",
+    "rights-abuses" : "Rights Abuses"
   };
-*/
+
 
   console.log("dev testing successful, article ready");
-  console.log("testing 2");
+  console.log("testing 2 3");
   console.log(article.attrs);
 
 
