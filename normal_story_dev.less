@@ -351,17 +351,24 @@ figure .frame .hed {
 }
 
 
-@media @desktop, @desktop-xl {
+//@media @desktop, @desktop-xl {
 
   .byline-box {
     float: right;
-    margin: 0 2em;
+    margin: 0 2em 2em 2em;
+    width: 25%;
   }
 
+//these four lines were added in october codex update
   .byline-box > * {
     width: 100%;
     margin: 0;
   }
+
+// rm'ed in oct update
+//  .byline-box p {
+//    margin-bottom: 0;
+//  }
 
   .byline-box .story-type {
     padding-bottom: .25em;
@@ -394,7 +401,9 @@ figure .frame .hed {
 
   .byline-box .byline:before,
   .byline-box .location:before,
-  .byline-box .publication-date:before {
+  .byline-box .publication-date:before,
+  .byline-box .byline-current:before,
+  .byline-box .byline-edition:before {
     display: block;
     color: #888;
     // equivalent to line-height: 1 of parent em
@@ -413,10 +422,33 @@ figure .frame .hed {
   .byline-box .publication-date:before {
     content: 'Date';
   }
-}
+  .byline-box .byline-current:before {
+    content: 'Current';
+  }
+  .byline-box .byline-edition:before {
+    content: 'Edition';
+  }
+
+  //right arrow for links
+    .icon-angle {
+      font-size:2em;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #46c664;
+    }
+
+    .byline-box p {
+      position:relative;
+    }
+
+    .byline-box a {
+      display:block;
+    }
+//}
 
 
-@media @mobile, @tablet {
+@media @mobile {
 
   // in .small.codex it collapses to two lines
   .byline-box {
@@ -424,7 +456,7 @@ figure .frame .hed {
     width: calc(~'100% - 2rem');
     max-width: 35rem;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 2em;
   }
 
   .byline-box p {
@@ -511,43 +543,57 @@ figure .photo-credit {
 
 // Navigation sidebar - articles in current
 
-
-
 .current {
   font-family: @sans-serif;
   position: relative;
   width: calc(100% - 2rem);
-  max-width: 15rem;
+//  max-width: 15rem;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+//  border: 1px solid black;
 }
 
-@media @mobile, @tablet{
+//@media @mobile, @tablet{
   .current {
     max-width:35rem;
   }
-}
-
+//}
+/*
 @media @desktop, @desktop-xl{
   .current {
     max-width:15rem;
   }
 }
-
-.current-name a{
+*/
+.current h2 a{
   color: @green;
+  text-decoration: none;
 }
 
 .current h2{
-  font-weight:bold;
-  margin-left:1em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  margin-top:.5em;
 }
+
+.current p{
+  margin-bottom:0;
+}
+
+.current a{
+  text-decoration:none;
+}
+
+.current a:hover{
+  color:@green;
+}
+
 
 
 .article {
   position: relative;
-  padding: 1em 1em 1em 0.4em;
+  padding: 1em .5em 0em 0.1em;
   margin-left: 2em;
 }
 
@@ -558,14 +604,17 @@ figure .photo-credit {
   width: 0.5em;
   margin-left: .15em;
   height: 100%;
-  background: #eeeeee;
-  border:.1em solid black;
+  background:  @currents-line-color;
+  //border:.1em solid black;
   top:2em;
 }
 
 
 .article:last-child .line {
-  display:none;
+  //display:none;
+  background-color: @page-background;
+  border: 1px solid @almost-black;
+  //height: 50%;
 }
 
 .article:before {
@@ -574,13 +623,12 @@ figure .photo-credit {
 
   position: absolute;
   top: 1.3em;
-  left: -0.1em;
+  left: 0;
   z-index: 5;
 
   width: .8em;
   height: .8em;
 
-  background: grey;
-  border:.1em solid black;
+  background: @almost-black;
   border-radius: 50%;
 }
