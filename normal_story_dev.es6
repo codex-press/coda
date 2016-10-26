@@ -7,9 +7,9 @@ import article from 'article';
 article.ready.then(() => {
 
   var edition_names = {
-    lgbtq-crisis : "LGBTQ Crisis",
-    disinformation-age : "Disinformation Age",
-    migrants : "Migrants"
+    "lgbtq-crisis" : "LGBTQ Crisis",
+    "disinformation-age" : "Disinformation Age",
+    "migrants" : "Migrants"
   };
 /*
   var current_names = {
