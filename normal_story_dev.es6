@@ -22,7 +22,7 @@ article.ready.then(() => {
 */
 
   console.log("dev testing successful, article ready");
-  console.log("testing 2 3 4");
+  console.log("testing 2");
   console.log(article.attrs);
 
 
@@ -31,7 +31,7 @@ article.ready.then(() => {
   var path_array = article.attrs.url.split('/');
   console.log(path_array);
   if (path_array.length == 5){
-    console.log("edition is "+ path_array[2]);
+    console.log("edition is "+ edition_names[path_array[2]]);
     console.log("current is "+ path_array[3]);
   }
 
