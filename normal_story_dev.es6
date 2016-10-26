@@ -6,4 +6,8 @@ article.ready.then(() => {
   console.log("testing 2");
   console.log(article.attrs);
 
+
+  //first: identify edition and current. convert them to regular text and insert them into byline-box
+  console.log(location.pathname);
+
 });
