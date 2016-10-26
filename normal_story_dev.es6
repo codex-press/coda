@@ -5,7 +5,7 @@ import article from 'article';
 
 
 article.ready.then(() => {
-
+/*
   var edition_names = {
     lgbtq-crisis : "LGBTQ Crisis",
     disinformation-age : "Disinformation Age",
@@ -19,7 +19,7 @@ article.ready.then(() => {
     information-war : "Information War",
     rights-abuses : "Rights Abuses"
   };
-
+*/
 
   console.log("dev testing successful, article ready");
   console.log("testing 2 3");
@@ -35,6 +35,6 @@ article.ready.then(() => {
     console.log("current is "+ path_array[3]);
   }
 
-  console.log(edition_names);
+//  console.log(edition_names);
 
 });
