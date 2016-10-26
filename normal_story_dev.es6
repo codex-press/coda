@@ -30,11 +30,27 @@ article.ready.then(() => {
   console.log(location.pathname + " " + article.attrs.url);
   var path_array = article.attrs.url.split('/');
   console.log(path_array);
+  var edition_url;
+  var edition_name;
+  var current_url;
+  var current_name;
   if (path_array.length == 5){
-    console.log("edition is "+ edition_names[path_array[2]]);
-    console.log("current is "+ current_names[path_array[3]]);
+    edition_url = path_array[2];
+    edition_name = edition_names[edition_url];
+    current_url = path_array[3];
+    current_name = current_names[current_url];
+
+    console.log("edition is "+ edition_name);
+    console.log("current is "+ current_name);
   }
 
-  console.log(edition_names);
+//  console.log(edition_names);
+
+  //now: select (or first?) byline-box (how to select a class?)
+  //append two paragraphs:
+  // 1. p.byline-current (with link to current)
+  // 2. p.byline-edition (with link to edition)
+
+
 
 });
