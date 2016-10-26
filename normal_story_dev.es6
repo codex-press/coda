@@ -8,6 +8,6 @@ article.ready.then(() => {
 
 
   //first: identify edition and current. convert them to regular text and insert them into byline-box
-  console.log(location.pathname);
+  console.log(location.pathname + " " + article.attrs.url);
 
 });
