@@ -344,109 +344,97 @@ figure .frame .hed {
 .byline-box {
   min-width: 230px;
   font-family: @sans-serif;
+  float: right;
+  margin: 0 2em 2em 2em;
+  width: 25%;
 }
 
 .byline-box p {
   padding: 0;
 }
 
-
-//@media @desktop, @desktop-xl {
-
-  .byline-box {
-    float: right;
-    margin: 0 2em 2em 2em;
-    width: 25%;
-  }
-
 //these four lines were added in october codex update
-  .byline-box > * {
-    width: 100%;
-    margin: 0;
+.byline-box > * {
+  width: 100%;
+  margin: 0;
+}
+
+.byline-box .story-type {
+  padding-bottom: .25em;
+  color: @green;
+  font-weight: 500;
+}
+
+.byline-box > *:not(.story-type) {
+  border-top: 1px solid #bbb;
+
+  color: @text-color;
+  font-weight: 500;
+  line-height: 1;
+
+  // so these are going to take up 2 lines each or
+  // 3em in total:
+  //   padding-top .5 - 1px
+  //   border 1px
+  //   by/location/date 1
+  //   actual text 1
+  //   padding-bottom .5
+  padding-top: calc(.5em - 1px);
+  padding-bottom: .5em;
+}
+
+.byline-box > :last-child {
+  border-bottom: 1px solid #bbb;
+}
+
+.byline-box .byline:before,
+.byline-box .location:before,
+.byline-box .publication-date:before,
+.byline-box .byline-current:before,
+.byline-box .byline-edition:before {
+  display: block;
+  color: #888;
+  // equivalent to line-height: 1 of parent em
+  font-size: 0.75em;
+  line-height: 1.33333;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.byline-box .byline {
+  text-transform: none;
+}
+.byline-box .location:before {
+  content: 'Location';
+}
+.byline-box .publication-date:before {
+  content: 'Date';
+}
+.byline-box .byline-current:before {
+  content: 'Current';
+}
+.byline-box .byline-edition:before {
+  content: 'Edition';
+}
+
+//right arrow for links
+//this is currently obsolete!
+/*  .icon-angle {
+    font-size:2em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #46c664;
   }
 
-// rm'ed in oct update
-//  .byline-box p {
-//    margin-bottom: 0;
-//  }
-
-  .byline-box .story-type {
-    padding-bottom: .25em;
-    color: @green;
-    font-weight: 500;
+  .byline-box p {
+    position:relative;
   }
 
-
-  .byline-box > *:not(.story-type) {
-    border-top: 1px solid #bbb;
-
-    color: @text-color;
-    font-weight: 500;
-    line-height: 1;
-
-    // so these are going to take up 2 lines each or
-    // 3em in total:
-    //   padding-top .5 - 1px
-    //   border 1px
-    //   by/location/date 1
-    //   actual text 1
-    //   padding-bottom .5
-    padding-top: calc(.5em - 1px);
-    padding-bottom: .5em;
+  .byline-box a {
+    display:block;
   }
-
-  .byline-box > :last-child {
-    border-bottom: 1px solid #bbb;
-  }
-
-  .byline-box .byline:before,
-  .byline-box .location:before,
-  .byline-box .publication-date:before,
-  .byline-box .byline-current:before,
-  .byline-box .byline-edition:before {
-    display: block;
-    color: #888;
-    // equivalent to line-height: 1 of parent em
-    font-size: 0.75em;
-    line-height: 1.33333;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  .byline-box .byline {
-    text-transform: none;
-  }
-  .byline-box .location:before {
-    content: 'Location';
-  }
-  .byline-box .publication-date:before {
-    content: 'Date';
-  }
-  .byline-box .byline-current:before {
-    content: 'Current';
-  }
-  .byline-box .byline-edition:before {
-    content: 'Edition';
-  }
-
-  //right arrow for links
-    .icon-angle {
-      font-size:2em;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      color: #46c664;
-    }
-
-    .byline-box p {
-      position:relative;
-    }
-
-    .byline-box a {
-      display:block;
-    }
-//}
-
+*/
 
 @media @mobile {
 
@@ -547,24 +535,11 @@ figure .photo-credit {
   font-family: @sans-serif;
   position: relative;
   width: calc(100% - 2rem);
-//  max-width: 15rem;
   margin-left: auto;
   margin-right: auto;
-//  border: 1px solid black;
+  max-width:35rem;
 }
 
-//@media @mobile, @tablet{
-  .current {
-    max-width:35rem;
-  }
-//}
-/*
-@media @desktop, @desktop-xl{
-  .current {
-    max-width:15rem;
-  }
-}
-*/
 .current h2 a{
   color: @green;
   text-decoration: none;
@@ -605,30 +580,24 @@ figure .photo-credit {
   margin-left: .15em;
   height: 100%;
   background:  @currents-line-color;
-  //border:.1em solid black;
   top:2em;
 }
 
 
 .article:last-child .line {
-  //display:none;
   background-color: @page-background;
   border: 1px solid @almost-black;
-  //height: 50%;
 }
 
 .article:before {
   display: block;
   content: '';
-
   position: absolute;
   top: 1.3em;
   left: 0;
   z-index: 5;
-
   width: .8em;
   height: .8em;
-
   background: @almost-black;
   border-radius: 50%;
 }
