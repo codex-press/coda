@@ -2,13 +2,13 @@ import dom from 'dom';
 import article from 'article';
 
 var edition_names = {
-  "lgbtq-crisis" : "LGBTQ Crisis";
+  lgbtq-crisis : "LGBTQ Crisis";
   "disinformation-age" : "Disinformation Age";
   "migrants" : "Migrants"
 }
 
 var current_names = {
-  "kremlin-influence" : "Kremlin Influence";
+  kremlin-influence : "Kremlin Influence";
   "orthodox-church" : "Orthodox Church";
   "east-west-divide" : "East-West Divide";
   "information-war" : "Information War";
