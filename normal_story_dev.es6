@@ -31,6 +31,6 @@ article.ready.then(() => {
     console.log("current is "+ path_array[3]);
   }
 
-  console.log edition_names;
+  console.log(edition_names);
 
 });
