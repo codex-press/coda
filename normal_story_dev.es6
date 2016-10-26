@@ -5,13 +5,13 @@ import article from 'article';
 
 
 article.ready.then(() => {
-/*
+
   var edition_names = {
     lgbtq-crisis : "LGBTQ Crisis",
     disinformation-age : "Disinformation Age",
     migrants : "Migrants"
   };
-
+/*
   var current_names = {
     kremlin-influence : "Kremlin Influence",
     orthodox-church : "Orthodox Church",
@@ -22,7 +22,7 @@ article.ready.then(() => {
 */
 
   console.log("dev testing successful, article ready");
-  console.log("testing 2 3");
+  console.log("testing 2 3 4");
   console.log(article.attrs);
 
 
