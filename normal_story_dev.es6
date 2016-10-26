@@ -28,7 +28,7 @@ article.ready.then(() => {
   console.log(path_array);
   if (path_array.length == 5){
     console.log("edition is "+ edition_names[path_array[2]]);
-    console.log("current is "+ edition_names[path_array[3]]);
+    console.log("current is "+ current_names[path_array[3]]);
   }
 
 });
