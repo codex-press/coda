@@ -46,7 +46,8 @@ article.ready.then(() => {
 //  console.log(edition_names);
 
   //now: select (or first?) byline-box (how to select a class?)
-  var byline_box = dom('article').select('.byline-box');
+  //var byline_box = dom('article').select('.byline-box');
+  var byline_box = document.getElementsByClassName("byline-box")[0];
   console.log(byline_box);
   //append two paragraphs:
   // 1. p.byline-current (with link to current)
@@ -56,8 +57,8 @@ article.ready.then(() => {
   console.log("testing 2 3 4");
   var current_name_node = document.createTextNode("current_name");
   byline_current.appendChild(current_name_node);
-  //byline_box.appendChild(byline_current);
-  append(byline_box, byline_current);
+  byline_box.appendChild(byline_current);
+  //append(byline_box, byline_current);
 
 
 
