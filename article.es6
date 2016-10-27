@@ -43,12 +43,10 @@ article.ready.then(() => {
     console.log("current is "+ current_name);
 
 
-    //  console.log(edition_names);
-
-    //now: select (or first?) byline-box (how to select a class?)
-    //var byline_box = dom('article').select('.byline-box');
+    //select the byline box
     var byline_box = document.getElementsByClassName("byline-box")[0];
     console.log(byline_box);
+
     //append two paragraphs:
     // 1. p.byline-current (with link to current)
     // 2. p.byline-edition (with link to edition)
@@ -83,6 +81,17 @@ article.ready.then(() => {
       byline_box.appendChild(byline_current);
       byline_box.appendChild(byline_edition);
     }
+
+
+
+
+    //nav footer
+    var nav_footer = document.createElement("NAV");
+    document.getElementsByTagName("ARTICLE")[0].appendChild(nav_footer);
+
+
+
+
   }
 
 });
