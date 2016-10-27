@@ -63,11 +63,14 @@ article.ready.then(() => {
   current_link.appendChild(current_name_node);
   byline_box.appendChild(byline_current);
 
-  var byline_edition = document.createElement("A");
+  var byline_edition = document.createElement("P");
   byline_edition.className = "byline-edition";
+  var edition_link = document.createElement("A");
+  edition_link.setAttribute("href", edition_url + "/" + current_url);
   console.log("testing 2 4");
   var edition_name_node = document.createTextNode(edition_name);
-  byline_edition.appendChild(edition_name_node);
+  byline_edition.appendChild(edition_link)
+  byline_link.appendChild(edition_name_node);
   byline_box.appendChild(byline_edition);
 
 
