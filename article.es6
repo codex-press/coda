@@ -20,15 +20,15 @@ article.ready.then(() => {
   };
 
 
-  console.log("dev testing successful, article ready");
-  console.log("testing 2");
-  console.log(article.attrs);
+//  console.log("dev testing successful, article ready");
+//  console.log("testing 2");
+//  console.log(article.attrs);
 
 
   //first: identify edition and current. convert them to regular text and insert them into byline-box
-  console.log(location.pathname + " " + article.attrs.url);
+//  console.log(location.pathname + " " + article.attrs.url);
   var path_array = article.attrs.url.split('/');
-  console.log(path_array);
+//  console.log(path_array);
   var edition_url;
   var edition_name;
   var current_url;
@@ -39,13 +39,13 @@ article.ready.then(() => {
     current_url = path_array[3];
     current_name = current_names[current_url];
 
-    console.log("edition is "+ edition_name);
-    console.log("current is "+ current_name);
+//    console.log("edition is "+ edition_name);
+//    console.log("current is "+ current_name);
 
 
     //select the byline box
     var byline_box = document.getElementsByClassName("byline-box")[0];
-    console.log(byline_box);
+//    console.log(byline_box);
 
     //append two paragraphs:
     // 1. p.byline-current (with link to current)
@@ -55,7 +55,7 @@ article.ready.then(() => {
     byline_current.className = "byline-current";
     var current_link = document.createElement("A");
     current_link.setAttribute("href", edition_url + "/" + current_url);
-    console.log("testing 2 3");
+//    console.log("testing 2 3");
     var current_name_node = document.createTextNode(current_name);
     byline_current.appendChild(current_link);
     current_link.appendChild(current_name_node);
@@ -65,19 +65,19 @@ article.ready.then(() => {
     byline_edition.className = "byline-edition";
     var edition_link = document.createElement("A");
     edition_link.setAttribute("href", edition_url);
-    console.log("testing 2 4");
+//    console.log("testing 2 4");
     var edition_name_node = document.createTextNode(edition_name);
     byline_edition.appendChild(edition_link)
     edition_link.appendChild(edition_name_node);
 
-    console.log(byline_box.lastElementChild);
+//    console.log(byline_box.lastElementChild);
     if (byline_box.lastElementChild.className == "byline-share") {
-      console.log("insert before");
+//      console.log("insert before");
       byline_box.insertBefore(byline_current, byline_box.lastElementChild);
       byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
     }
     else {
-      console.log("insert after");
+//      console.log("insert after");
       byline_box.appendChild(byline_current);
       byline_box.appendChild(byline_edition);
     }
@@ -88,11 +88,19 @@ article.ready.then(() => {
     //nav footer
     //get previous and next article data
     var article_index = article.attrs.index;
+    var prev;
+    var next;
     for (var i=0; i<article_index.length; i++){
       if (article.attrs.url == article_index[i].url){
-        console.log("found article " + article_index[i].title);
+        //console.log("found article " + article_index[i].title);
+        prev = i-1;
+        next = i+1;
       }
     }
+
+    //need to check for edge cases.  
+    //if prev < 0 we need to replace div.previous with "back to current"
+    //if next > length we need to replace div.next with "back to current"
     //var previous_article =
 
 
