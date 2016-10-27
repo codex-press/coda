@@ -53,14 +53,15 @@ article.ready.then(() => {
   // 1. p.byline-current (with link to current)
   // 2. p.byline-edition (with link to edition)
 
-  var byline_current = document.createElement("P");
+  var byline_current = document.createElement("A");
   byline_current.className = "byline-current";
+  byline_current.setAttribute("href", "/coda/" + edition_url + "/" + current_url);
   console.log("testing 2 3 4");
   var current_name_node = document.createTextNode(current_name);
   byline_current.appendChild(current_name_node);
   byline_box.appendChild(byline_current);
 
-  var byline_edition = document.createElement("P");
+  var byline_edition = document.createElement("A");
   byline_edition.className = "byline-edition";
   console.log("testing 2 3 4");
   var edition_name_node = document.createTextNode(edition_name);
