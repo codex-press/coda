@@ -56,8 +56,8 @@ article.ready.then(() => {
   console.log("testing 2 3 4");
   var current_name_node = document.createTextNode("current_name");
   byline_current.appendChild(current_name_node);
-  byline_box.appendChild(byline_current);
-//  append(byline_box, byline_current);
+  //byline_box.appendChild(byline_current);
+  append(byline_box, byline_current);
 
 
 
