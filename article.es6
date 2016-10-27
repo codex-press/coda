@@ -44,7 +44,8 @@ article.ready.then(() => {
   }
 
 //  console.log(edition_names);
-
+  var byline-box = select('div[class=byline-box]');
+  console.log(byline-box);
   //now: select (or first?) byline-box (how to select a class?)
   //append two paragraphs:
   // 1. p.byline-current (with link to current)
