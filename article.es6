@@ -3,7 +3,6 @@ import article from 'article';
 
 
 
-
 article.ready.then(() => {
 
   var edition_names = {
