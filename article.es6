@@ -60,7 +60,12 @@ article.ready.then(() => {
   byline_current.appendChild(current_name_node);
   byline_box.appendChild(byline_current);
 
-
+  var byline_edition = document.createElement("P");
+  byline_edition.className = "byline-edition";
+  console.log("testing 2 3 4");
+  var edition_name_node = document.createTextNode(edition_name);
+  byline_edition.appendChild(edition_name_node);
+  byline_box.appendChild(byline_edition);
 
 
 });
