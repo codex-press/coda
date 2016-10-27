@@ -53,10 +53,10 @@ article.ready.then(() => {
   // 2. p.byline-edition (with link to edition)
 
   var byline_current = document.createElement("P");
-  console.log("testing 2 3");
+  console.log("testing 2 3 4");
   var current_name_node = document.createTextNode("current_name");
   byline_current.appendChild(t);
-  //byline_box.appendChild(byline_current);
+  byline_box.appendChild(byline_current);
 //  append(byline_box, byline_current);
 
 
