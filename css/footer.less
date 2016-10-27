@@ -6,7 +6,7 @@ footer.sitewide {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  background-color: #bbb;
+  background-color: #ddd;
   padding:.5em;
 
   p {
@@ -20,6 +20,15 @@ footer.sitewide {
 
   a {
     text-decoration: none;
+    color: @text-color;
+  }
+
+  a:hover {
+    color: @green;
+  }
+
+  h1 {
+    color: @text-color;
   }
 
   @media @tablet, @desktop, @desktop-xl {
