@@ -66,7 +66,7 @@ article.ready.then(() => {
   var byline_edition = document.createElement("P");
   byline_edition.className = "byline-edition";
   var edition_link = document.createElement("A");
-  edition_link.setAttribute("href", edition_url + "/" + current_url);
+  edition_link.setAttribute("href", edition_url);
   console.log("testing 2 4");
   var edition_name_node = document.createTextNode(edition_name);
   byline_edition.appendChild(edition_link)
