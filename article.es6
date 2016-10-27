@@ -70,7 +70,7 @@ article.ready.then(() => {
   console.log("testing 2 4");
   var edition_name_node = document.createTextNode(edition_name);
   byline_edition.appendChild(edition_link)
-  byline_link.appendChild(edition_name_node);
+  edition_link.appendChild(edition_name_node);
   byline_box.appendChild(byline_edition);
 
 
