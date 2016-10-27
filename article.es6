@@ -86,7 +86,17 @@ article.ready.then(() => {
 
 
     //nav footer
+    //create nav
     var nav_footer = document.createElement("NAV");
+    nav_footer.innerHTML = `
+    <div class="previous"><a href="">Previous article in ${current_name}</div>
+    <div class="next"><a href="">Next article in ${current_name}</a></div>
+
+
+    `
+
+
+    //append nav to end of article
     document.getElementsByTagName("ARTICLE")[0].appendChild(nav_footer);
 
 
