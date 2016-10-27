@@ -61,7 +61,7 @@ article.ready.then(() => {
   var current_name_node = document.createTextNode(current_name);
   byline_current.appendChild(current_link);
   current_link.appendChild(current_name_node);
-  byline_box.appendChild(byline_current);
+
 
   var byline_edition = document.createElement("P");
   byline_edition.className = "byline-edition";
@@ -71,7 +71,16 @@ article.ready.then(() => {
   var edition_name_node = document.createTextNode(edition_name);
   byline_edition.appendChild(edition_link)
   edition_link.appendChild(edition_name_node);
-  byline_box.appendChild(byline_edition);
+
+
+  if (byline_box.lastChild.className == "byline-share") {
+    byline_box.lastChild.insertBefore(byline_edition);
+    byline_box.lastChild.insertBefore(byline_current);
+  }
+  else {
+    byline_box.appendChild(byline_current);
+    byline_box.appendChild(byline_edition);
+  }
 
 
 });
