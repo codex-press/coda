@@ -44,7 +44,7 @@ article.ready.then(() => {
   }
 
 //  console.log(edition_names);
-  var byline_box = select('.byline-box');
+  var byline_box = dom.select('.byline-box');
   console.log(byline_box);
   //now: select (or first?) byline-box (how to select a class?)
   //append two paragraphs:
