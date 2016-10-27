@@ -51,7 +51,12 @@ article.ready.then(() => {
   //append two paragraphs:
   // 1. p.byline-current (with link to current)
   // 2. p.byline-edition (with link to edition)
-  append(byline_box, "test");
+
+  var byline_current = document.createElement("P");
+  var t = document.createTextNode(current_name);
+  byline_current.appendChild(t);
+
+  append(byline_box, byline_current);
 
 
 
