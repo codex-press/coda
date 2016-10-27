@@ -41,48 +41,48 @@ article.ready.then(() => {
 
     console.log("edition is "+ edition_name);
     console.log("current is "+ current_name);
+
+
+    //  console.log(edition_names);
+
+    //now: select (or first?) byline-box (how to select a class?)
+    //var byline_box = dom('article').select('.byline-box');
+    var byline_box = document.getElementsByClassName("byline-box")[0];
+    console.log(byline_box);
+    //append two paragraphs:
+    // 1. p.byline-current (with link to current)
+    // 2. p.byline-edition (with link to edition)
+
+    var byline_current = document.createElement("P");
+    byline_current.className = "byline-current";
+    var current_link = document.createElement("A");
+    current_link.setAttribute("href", edition_url + "/" + current_url);
+    console.log("testing 2 3");
+    var current_name_node = document.createTextNode(current_name);
+    byline_current.appendChild(current_link);
+    current_link.appendChild(current_name_node);
+
+
+    var byline_edition = document.createElement("P");
+    byline_edition.className = "byline-edition";
+    var edition_link = document.createElement("A");
+    edition_link.setAttribute("href", edition_url);
+    console.log("testing 2 4");
+    var edition_name_node = document.createTextNode(edition_name);
+    byline_edition.appendChild(edition_link)
+    edition_link.appendChild(edition_name_node);
+
+    console.log(byline_box.lastElementChild);
+    if (byline_box.lastElementChild.className == "byline-share") {
+      console.log("insert before");
+      byline_box.insertBefore(byline_current, byline_box.lastElementChild);
+      byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
+    }
+    else {
+      console.log("insert after");
+      byline_box.appendChild(byline_current);
+      byline_box.appendChild(byline_edition);
+    }
   }
-
-//  console.log(edition_names);
-
-  //now: select (or first?) byline-box (how to select a class?)
-  //var byline_box = dom('article').select('.byline-box');
-  var byline_box = document.getElementsByClassName("byline-box")[0];
-  console.log(byline_box);
-  //append two paragraphs:
-  // 1. p.byline-current (with link to current)
-  // 2. p.byline-edition (with link to edition)
-
-  var byline_current = document.createElement("P");
-  byline_current.className = "byline-current";
-  var current_link = document.createElement("A");
-  current_link.setAttribute("href", edition_url + "/" + current_url);
-  console.log("testing 2 3");
-  var current_name_node = document.createTextNode(current_name);
-  byline_current.appendChild(current_link);
-  current_link.appendChild(current_name_node);
-
-
-  var byline_edition = document.createElement("P");
-  byline_edition.className = "byline-edition";
-  var edition_link = document.createElement("A");
-  edition_link.setAttribute("href", edition_url);
-  console.log("testing 2 4");
-  var edition_name_node = document.createTextNode(edition_name);
-  byline_edition.appendChild(edition_link)
-  edition_link.appendChild(edition_name_node);
-
-  console.log(byline_box.lastElementChild);
-  if (byline_box.lastElementChild.className == "byline-share") {
-    console.log("insert before");
-    byline_box.insertBefore(byline_current, byline_box.lastElementChild);
-    byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
-  }
-  else {
-    console.log("insert after");
-    byline_box.appendChild(byline_current);
-    byline_box.appendChild(byline_edition);
-  }
-
 
 });
