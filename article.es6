@@ -86,6 +86,16 @@ article.ready.then(() => {
 
 
     //nav footer
+    //get previous and next article data
+    var article_index = article.attrs.index;
+    for (var i=0; i<article_index.length; i++){
+      if (article.attrs.url == article_index[i].url){
+        console.log("found article " + article_index[i].title);
+      }
+    }
+    //var previous_article =
+
+
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
