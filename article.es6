@@ -51,7 +51,7 @@ article.ready.then(() => {
   //append two paragraphs:
   // 1. p.byline-current (with link to current)
   // 2. p.byline-edition (with link to edition)
-  byline_box.append("test");
+  append(byline_box, "test");
 
 
 
