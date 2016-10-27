@@ -75,8 +75,8 @@ article.ready.then(() => {
   console.log(byline_box.lastElementChild);
   if (byline_box.lastElementChild.className == "byline-share") {
     console.log("insert before");
-    byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
     byline_box.insertBefore(byline_current, byline_box.lastElementChild);
+    byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
   }
   else {
     console.log("insert after");
