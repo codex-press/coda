@@ -54,7 +54,7 @@ article.ready.then(() => {
   // 2. p.byline-edition (with link to edition)
 
   var byline_current = document.createElement("P");
-  byline_current.addClass("byline-current");
+  byline_current.className = "byline-current";
   console.log("testing 2 3 4");
   var current_name_node = document.createTextNode(current_name);
   byline_current.appendChild(current_name_node);
