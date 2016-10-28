@@ -125,7 +125,7 @@ article.ready.then(() => {
     }
     console.log(prev_html);
 
-    if (next > article_index.length) {
+    if (next > article_index.length) { //this test doesn't work...
       next_html = `
         <div class="next-article">
           <p>View full current:

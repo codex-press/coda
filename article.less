@@ -634,7 +634,7 @@ nav {
 
   nav {
     width: 100%;
-    height: 3.75em;
+    height: 3.754em;
     position: relative;
     bottom: 0;
     background-color: @page-background;
@@ -646,12 +646,10 @@ nav {
     position: fixed;
   }
 
-
-
   nav .now,
   nav .in {
     text-transform: uppercase;
-    font-size: .75em;
+    font-size: 14px;
     font-weight: bold;
     color: #888;
   }
@@ -663,12 +661,12 @@ nav {
   }
 
   nav h1 {
-    width: 100%;
-    margin:0;
+    //width: 100%;
+    margin: .25em;
     text-align: center;
     position: absolute;
     bottom: 0;
-    left: 1.35em;
+    left: calc(40vw - 20.4px); //1.35em;
     font-weight: normal;
   }
 
@@ -684,11 +682,11 @@ nav {
   }
 
   nav .current-article {
-    width: 100%;
+    width: calc(60vw + 110px);
     position: absolute;;
-    bottom: 1em;
-    left: 0;
-    text-align: center;
+    bottom: 1.2em;
+    left: calc(40vw - 110.2px);
+    //text-align: center;
     font-size: 1.25em;
   }
 
