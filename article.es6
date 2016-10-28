@@ -148,7 +148,7 @@ article.ready.then(() => {
     var curr_html = `
       <div class="current_article">
         <p>You are reading ${article.attrs.title}
-        in <a href="/${current_url}">${current_name}</a>
+        in <a href="/${edition_url}/${current_url}">${current_name}</a>
         </p>
       </div>
     `
