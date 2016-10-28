@@ -631,15 +631,22 @@ nav {
 }
 
 @media @tablet, @desktop, @desktop-xl {
+
   nav {
     width: 100%;
     height: 3.75em;
-    position:fixed;
+    position: relative;
     bottom: 0;
     background-color: @page-background;
     padding: 0;
     box-shadow: 0 -5px 5px #888888;
   }
+
+  nav.moving {
+    position: fixed;
+  }
+
+
 
   nav .now,
   nav .in {
@@ -652,7 +659,6 @@ nav {
   nav p {
     margin: .25em;
     padding: 0;
-  //  width: 100%;
     max-width: none;
   }
 
@@ -667,20 +673,19 @@ nav {
   }
 
   nav h1 a {
-//    color: @green;
     font-weight: bold;
   }
 
   nav .previous-article {
     width: 33vw;
-    position: absolute;
+    position: absolute;;
     bottom: 0;
     left: 0;
   }
 
   nav .current-article {
     width: 100%;
-    position: absolute;
+    position: absolute;;
     bottom: 1em;
     left: 0;
     text-align: center;
@@ -689,7 +694,7 @@ nav {
 
   nav .next-article {
     width: 33%;
-    position: absolute;
+    position: absolute;;
     bottom: 0;
     right: 1%;
     text-align: right;
