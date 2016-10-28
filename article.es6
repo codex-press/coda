@@ -163,7 +163,7 @@ article.ready.then(() => {
 
     `
 
-
+    nav_footer.className = "moving";
     //append nav to end of article
     document.getElementsByTagName("ARTICLE")[0].appendChild(nav_footer);
 
