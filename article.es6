@@ -107,37 +107,58 @@ article.ready.then(() => {
     //
     if (prev < 0) {
       prev_html = `
-        <div class="previous">
-          <a href="/${current_url}">${current_name}</a>
-        </div>`;
+        <div class="previous_article">
+          <p>View full current:
+            <a href="/${current_url}">${current_name}</a>
+          </p>
+        </div>
+      `;
     }
     else {
       prev_html = `
-        <div class="previous">
-          <a href="${article_index[prev].url}">${article_index[prev].title}</a>
+        <div class="previous_article">
+          <p>Previous in current:
+            <a href="${article_index[prev].url}">${article_index[prev].title}</a>
+          </p>
+        </div>
       `;
     }
     console.log(prev_html);
 
     if (next > article_index.length) {
       next_html = `
-        <div class="next">
-          <a href="/${current_url}">${current_name}</a>
-        </div>`;
+        <div class="next_article">
+          <p>View full current:
+            <a href="/${current_url}">${current_name}</a>
+          </p>
+        </div>
+      `;
     }
     else {
       next_html = `
-        <div class="next">
-          <a href="${article_index[next].url}">${article_index[next].title}</a>
+        <div class="next_article">
+          <p>Next in current:
+            <a href="${article_index[next].url}">${article_index[next].title}</a>
+          </p>
+        </div>
       `;
     }
     console.log(next_html);
+
+    var curr_html = `
+      <div class="current_article">
+        <p>You are reading ${article.attrs.title}
+        in <a href="/${current_url}">${current_name}</a>
+        </p>
+      </div>
+    `
 
 
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
       ${prev_html}
+      ${curr_html}
       ${next_html}
 
     `
