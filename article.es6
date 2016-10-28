@@ -118,7 +118,7 @@ article.ready.then(() => {
       prev_html = `
         <div class="previous_article">
           <p>Previous in current:
-            <a href="${article_index[prev].url}">${article_index[prev].title}</a>
+            <a href="${article_index[prev].url.slice(5)}">${article_index[prev].title}</a>
           </p>
         </div>
       `;
@@ -138,7 +138,7 @@ article.ready.then(() => {
       next_html = `
         <div class="next_article">
           <p>Next in current:
-            <a href="${article_index[next].url}">${article_index[next].title}</a>
+            <a href="${article_index[next].url.slice(5)}">${article_index[next].title}</a>
           </p>
         </div>
       `;
