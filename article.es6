@@ -147,7 +147,7 @@ article.ready.then(() => {
 
     var curr_html = `
       <div class="current-article">
-        <p>${article.attrs.title}</p>
+        <p><span class="now">Now Reading:</span> ${article.attrs.title}</p>
       </div>
     `
     //in <a href="/${edition_url}/${current_url}">${current_name}</a>
@@ -156,7 +156,7 @@ article.ready.then(() => {
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
-      <h1><a href="/${edition_url}/${current_url}">${current_name}</a></h1>
+      <h1><span class="in">In:</span> <a href="/${edition_url}/${current_url}">${current_name}</a></h1>
       ${prev_html}
       ${curr_html}
       ${next_html}
