@@ -108,8 +108,11 @@ article.ready.then(() => {
     if (prev <= 0) {
       prev_html = `
         <div class="previous-article">
-          <p>View full current:
-            <a href="/${edition_url}/${current_url}">${current_name}</a>
+          <p>
+            <a href="/${edition_url}/${current_url}">
+              <span class="nav-text">View full current<span class="nav-sep">:</span></span>
+              <span class="nav-title">${current_name}</span>
+            </a>
           </p>
         </div>
       `;
@@ -117,8 +120,11 @@ article.ready.then(() => {
     else {
       prev_html = `
         <div class="previous-article">
-          <p>Previous:
-            <a href="${article_index[prev].url.slice(5)}">${article_index[prev].title}</a>
+          <p>
+            <a href="${article_index[prev].url.slice(5)}">
+              <span class="nav-text">Previous<span class="nav-sep">:</span></span>
+              <span class="nav-title">${article_index[prev].title}</span>
+            </a>
           </p>
         </div>
       `;
@@ -128,8 +134,11 @@ article.ready.then(() => {
     if (next > article_index.length) { //this test doesn't work...
       next_html = `
         <div class="next-article">
-          <p>View full current:
-            <a href="/${current_url}">${current_name}</a>
+          <p>
+            <a href="/${current_url}">
+              <span class="nav-text">View full current</span><span class="nav-sep">:</span>
+              <span class="nav-title">${current_name}</span>
+            </a>
           </p>
         </div>
       `;
@@ -137,8 +146,11 @@ article.ready.then(() => {
     else {
       next_html = `
         <div class="next-article">
-          <p>Next:
-            <a href="${article_index[next].url.slice(5)}">${article_index[next].title}</a>
+          <p>
+            <a href="${article_index[next].url.slice(5)}">
+              <span class="nav-text">Next</span><span class="nav-sep">:</span>
+              <span class="nav-title">${article_index[next].title}</span>
+            </a>
           </p>
         </div>
       `;
@@ -163,7 +175,7 @@ article.ready.then(() => {
 
     `
 
-    nav_footer.className = "moving";
+  //  nav_footer.className = "moving";
     //append nav to end of article
     document.getElementsByTagName("ARTICLE")[0].appendChild(nav_footer);
 

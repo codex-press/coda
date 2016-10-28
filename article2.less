@@ -628,27 +628,23 @@ figure .photo-credit {
 
 nav {
   font-family: @sans-serif;
-  width: 100%;
-  height: 3.754em;
-  position: fixed;
-  bottom: 0;
-  background-color: @page-background;
-  padding: 0;
-  box-shadow: 0 -5px 5px #888888;
 }
 
-nav p {
-  margin: .25em;
-  padding: 0;
-  max-width: none;
-  width: auto;
-}
+@media @tablet, @desktop, @desktop-xl {
 
-@media @desktop, @desktop-xl {
+  nav {
+    width: 100%;
+    height: 3.754em;
+    position: relative;
+    bottom: 0;
+    background-color: @page-background;
+    padding: 0;
+    box-shadow: 0 -5px 5px #888888;
+  }
 
-//  nav.moving {
-//    position: fixed;
-//  }
+  nav.moving {
+    position: fixed;
+  }
 
   nav .now,
   nav .in {
@@ -658,7 +654,11 @@ nav p {
     color: #888;
   }
 
-
+  nav p {
+    margin: .25em;
+    padding: 0;
+    max-width: none;
+  }
 
   nav h1 {
     //width: 100%;
@@ -699,94 +699,5 @@ nav p {
   }
 
 
-}
-
-@media @tablet {
-  nav .nav-title,
-  nav .nav-sep,
-  nav .in,
-  nav .now {
-    display: none;
-  }
-
-  nav h1 {
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    margin: 0;
-    bottom: 0;
-    padding: .25em;
-    z-index: -1;
-  }
-
-  nav .current-article {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav .previous-article {
-    position: absolute;
-    bottom: 0;
-    //right: 52%;
-  }
-
-  nav .next-article {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    //left: 52%;
-  }
-
-  nav .next-article .nav-text,
-  nav .previous-article .nav-text {
-    //display: block;
-    height: 100%;
-    width: 100%;
-    padding: .5em;
-  }
-
-
-}
-
-@media @mobile {
-
-  nav .nav-title,
-  nav .nav-sep,
-  nav .in {
-    display: none;
-  }
-
-  nav h1 {
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    margin: 0;
-    z-index: -1;
-  }
-
-  nav .previous-article {
-    position: absolute;
-    bottom: 0;
-    //right: 52%;
-  }
-
-  nav .next-article {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    //left: 52%;
-  }
-
-  nav .next-article .nav-text,
-  nav .previous-article .nav-text {
-    //display: block;
-    height: 100%;
-    width: 100%;
-    padding: .5em;
-  }
-
-  nav .current-article {
-    display: none;
-  }
 
 }
