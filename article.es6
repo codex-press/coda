@@ -107,7 +107,7 @@ article.ready.then(() => {
     //
     if (prev <= 0) {
       prev_html = `
-        <div class="previous_article">
+        <div class="previous-article">
           <p>View full current:
             <a href="/${edition_url}/${current_url}">${current_name}</a>
           </p>
@@ -116,8 +116,8 @@ article.ready.then(() => {
     }
     else {
       prev_html = `
-        <div class="previous_article">
-          <p>Previous in current:
+        <div class="previous-article">
+          <p>Previous:
             <a href="${article_index[prev].url.slice(5)}">${article_index[prev].title}</a>
           </p>
         </div>
@@ -127,7 +127,7 @@ article.ready.then(() => {
 
     if (next > article_index.length) {
       next_html = `
-        <div class="next_article">
+        <div class="next-article">
           <p>View full current:
             <a href="/${current_url}">${current_name}</a>
           </p>
@@ -136,8 +136,8 @@ article.ready.then(() => {
     }
     else {
       next_html = `
-        <div class="next_article">
-          <p>Next in current:
+        <div class="next-article">
+          <p>Next:
             <a href="${article_index[next].url.slice(5)}">${article_index[next].title}</a>
           </p>
         </div>
@@ -146,17 +146,17 @@ article.ready.then(() => {
     console.log(next_html);
 
     var curr_html = `
-      <div class="current_article">
-        <p>You are reading ${article.attrs.title}
-        in <a href="/${edition_url}/${current_url}">${current_name}</a>
-        </p>
+      <div class="current-article">
+        <p>${article.attrs.title}</p>
       </div>
     `
+    //in <a href="/${edition_url}/${current_url}">${current_name}</a>
 
 
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
+      <h1><a href="/${edition_url}/${current_url}">${current_name}</a></h1>
       ${prev_html}
       ${curr_html}
       ${next_html}
