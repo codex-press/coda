@@ -105,11 +105,11 @@ article.ready.then(() => {
     //if prev < 0 we need to replace div.previous with "back to current"
     //if next > length we need to replace div.next with "back to current"
     //
-    if (prev < 0) {
+    if (prev <= 0) {
       prev_html = `
         <div class="previous_article">
           <p>View full current:
-            <a href="/${current_url}">${current_name}</a>
+            <a href="/${edition_url}/${current_url}">${current_name}</a>
           </p>
         </div>
       `;
