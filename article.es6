@@ -98,18 +98,47 @@ article.ready.then(() => {
       }
     }
 
-    //need to check for edge cases.  
+    var prev_html;
+    var next_html;
+
+    //need to check for edge cases.
     //if prev < 0 we need to replace div.previous with "back to current"
     //if next > length we need to replace div.next with "back to current"
-    //var previous_article =
+    //
+    if (prev < 0) {
+      prev_html = `
+        <div class="previous">
+          <a href="/${current_url}">${current_name}</a>
+        </div>`;
+    }
+    else {
+      prev_html = `
+        <div class="previous">
+          <a href="${article_index[prev].url}">${article_index[prev].title}</a>
+      `;
+    }
+    console.log(prev_html);
+
+    if (next > article_index.length) {
+      next_html = `
+        <div class="next">
+          <a href="/${current_url}">${current_name}</a>
+        </div>`;
+    }
+    else {
+      next_html = `
+        <div class="next">
+          <a href="${article_index[next].url}">${article_index[next].title}</a>
+      `;
+    }
+    console.log(next_html);
 
 
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
-    <div class="previous"><a href="">Previous article in ${current_name}</div>
-    <div class="next"><a href="">Next article in ${current_name}</a></div>
-
+      ${prev_html}
+      ${next_html}
 
     `
 
