@@ -130,6 +130,23 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     line-height: 1;
   }
 
+  .titles a,
+  .titles a:visited {
+    color: #bbb;//@text-color;
+  }
+
+  .titles a:hover,
+  .selected-title p,
+  .selected-title a,
+  .selected-title a:visited {
+    color: @almost-black//@green;
+  }
+
+  .titles div:hover,
+  .selected-title {
+    color: @green;
+  }
+
   // height of titles divs. Default is 5 titles. Total height: 90vh.
   .titles div {
     height: 18vh;
@@ -141,6 +158,15 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
   .titles a {
     pointer-events: none;
+  }
+  .currents-heading {
+    height: 10vh;
+    min-height: 1.5em;
+    padding-top: calc(5vh - .75em);
+  }
+
+  .currents-heading .subtitle:before {
+    content: " | ";
   }
 }
 
@@ -296,6 +322,29 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     font-size: 1.5em;
     margin:.75em;
   }
+
+  .titles h1 a{
+    color: #777;
+  }
+
+  .titles a:hover,
+  .selected-title p,
+  .selected-title a,
+  .selected-title a:visited {
+  color: @almost-black;
+  }
+
+  .currents-heading {
+    min-height: 3em;
+    //font-size: 1.25em;
+  }
+  .currents-heading .subtitle {
+    display: block;
+    font-size: .75em;
+    text-align: right;
+    margin-right: 1em;
+  }
+
   .expansion {
     display: none;
   }
@@ -342,7 +391,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .titles a,
 .titles a:visited {
   text-decoration: none;
-  color: #bbb;//@text-color;
 }
 
 .titles a:hover,
@@ -350,7 +398,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .selected-title a,
 .selected-title a:visited {
   text-decoration:none;
-  color: @green;
 }
 
 .titles div:hover,
@@ -397,9 +444,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 0;
-  height: 10vh;
-  min-height: 1.5em;
-  padding-top: calc(5vh - .75em);
   padding-left: 1vw;
   background-color: @almost-black;
   color: #eee;
