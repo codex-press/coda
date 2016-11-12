@@ -5,7 +5,6 @@
 
   dom(window).bind({'mouseover .titles div' : currentsExpander});
 
-
 //current expansion selector
   function currentsExpander(e) {
     //remove all other .top-expansion classes
