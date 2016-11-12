@@ -113,96 +113,71 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 
-
-
-
-
-@media only screen and (min-width: 950px){
+@media only screen and (min-width: 530px){
   .top-container {
     margin-left: 2%;
     margin-right: 2%;
   }
-	.featured {
-		width:66%;
-		margin: 0 0 2vh 0;
-		float:right;
-	}
-	.news {
-		width:30%;
-		margin:0 0 1vh 0;
+  .featured {
+    width:66%;
+    margin: 0 0 2vh 0;
+    float:right;
+  }
+  .news {
+    width:30%;
+    margin:0 0 1vh 0;
     clear:left;
-		float:left;
-	}
+    float:left;
+  }
+
+  .titles {
+    width: 34.1%;
+  }
+
+  .titles h1 {
+    margin:0;
+    font-size: 2em;
+    line-height: 1;
+  }
+
+  // height of titles divs. Default is 5 titles. Total height: 90vh.
+  .titles div {
+    height: 18vh;
+    min-height:3em;
+  }
+  .titles.four div {
+    height: 22.5vh;
+  }
+}
+
+
+@media only screen and (min-width: 800px){
   .about p {
     width: 70vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  .about h1 {
-    text-align: center;
-  }
-
-  .titles h1 {
-    font-size: 2em;
+  .stream-item{
+    width: 30.6667%;
   }
 }
 
 
-@media only screen and (min-width: 530px) and (max-width: 950px){
-  .featured {
-    width:48.5%;
-		margin: 0 .5% 1vh 1%;
-		float:left;
-	}
-  .news {
-		width:48.5%;
-		margin: 0 1% 1vh .5%;
-		float:right;
-	}
-  .about {
-    clear:both;
-  }
 
-  .titles h1 {
-    font-size: 2em;
+@media only screen and (min-width: 530px) and (max-width: 799px){
+  .stream-item {
+    width: 47%;
+  }
+  .stream-item:nth-child(n+5) {
+    display: none;
   }
 }
 
-@media @mobile {
-  .news {
-    margin: 0 1% 1vh 1%;
-  }
-}
+
 
 //Currents Nav
 
-.current-description {
-  //display: none;
-  margin-left: 1.5em;
-  width: 96%;
-}
-
-
-.currents-heading {
-  clear:both;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-bottom: 0;
-  height: 10vh;
-  min-height: 1.5em;
-  padding-top: calc(5vh - .75em);
-  padding-left: 1vw;
-  background-color: @almost-black;
-  color: #eee;
-}
-
-
-.currents-heading .subtitle {
-  display: none;
-  color: #eee;
-  font-weight:400;
-}
 
 @media only screen and (min-width: 800px) and (min-height: 350px) {
   .card {
@@ -222,10 +197,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .stream-item:nth-child(n+4) {
-    display: none;
-  }
-
-  .titles p {
     display: none;
   }
 
@@ -250,9 +221,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 
 @media only screen and (min-width: 530px) and (max-width: 799px) and (min-height:460px){
-  .current-description {
-    margin: .3em;
-  }
 
   .card {
     width: 100%;
@@ -270,14 +238,14 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 @media only screen and (min-width: 530px) and (max-width: 799px) and (max-height:459px){
-  .current-description,
+  //.current-description,
   .card span {
     display: none;
   }
 
   .card {
     width: 100%;
-    height: 20vh;
+    height:  calc((90vh - 42px)*0.40);
   }
 
   .card .headers {
@@ -289,7 +257,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     font-size: 1.5em;
   }
 
-  .titles p {
+  .stream-item:nth-child(n+3) {
     display: none;
   }
 
@@ -299,12 +267,12 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   .current-description {
     display: none;
   }
-  .titles p {
-    display: none;
-  }
 }
 
 @media @mobile {
+  .news {
+    margin: 0 1% 1vh 1%;
+  }
   .card {
     width: 100%;
     height: 8em;
@@ -332,27 +300,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 }
 
-@media @tablet, @desktop, @desktop-xl {
-  .titles {
-    width: 34.1%;
-  }
-  .titles h1 {
-    margin:0;
-    //text-align: right;
-    line-height: 1;
-  }
-  .titles p {
-  //  text-align: right;
-  }
-  // height of titles divs. Default is 5 titles. Total height: 90vh.
-  .titles div {
-    height: 18vh;
-    min-height:3em;
-  }
-  .titles.four div {
-    height: 22.5vh;
-  }
-}
+
 
 .currents {
   margin-left: 2%;
@@ -404,15 +352,15 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   color: @green;
 }
 
-
-
-
-
 .titles div:hover,
 .selected-title {
   background-color: @almost-black;
   color: @green;
 }
+
+
+
+
 
 .expansion {
   padding-bottom: 1em;
@@ -436,11 +384,36 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   margin-left: 1em;
 }
 
+
+.current-description {
+  margin-left: 2%;
+  width: 96%;
+}
+
+
+.currents-heading {
+  clear:both;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 0;
+  height: 10vh;
+  min-height: 1.5em;
+  padding-top: calc(5vh - .75em);
+  padding-left: 1vw;
+  background-color: @almost-black;
+  color: #eee;
+}
+
+
+.currents-heading .subtitle {
+  display: none;
+  color: #eee;
+  font-weight:400;
+}
+
 .more {
   clear: both;
-//  margin-left: 1.5em;
   text-align: center;
-//  padding: 1.5em;
   font-size: 1.5em;
   background-color: #222;
   margin-left: 2%;
@@ -452,9 +425,8 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .more a:visited {
   color: white;
   display: block;
-  height: 14vh;//calc((90vh - 42px) * 0.14);
+  height: 14vh;
   padding-top: calc(7vh - .75em);
-//	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.4));
 }
 
 .more a:hover {
@@ -462,7 +434,6 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 .card {
-	//border: 2px solid @almost-black;
 	position: relative;
   display:block;
   overflow: hidden;
@@ -506,7 +477,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   //padding: 0 0 2vh 2%;
   margin-left: 2%;
   margin-bottom: 2vh;
-  width: 30.6667%;//250px;
+//  width: 30.6667%;//250px;
 }
 
 .stream-item .text {
@@ -528,38 +499,3 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .last-stream-item p {
   font-size: 1.25em;
 }
-
-/*
-.line {
-  position: absolute;
-  left: 0;
-  width: 0.5em;
-  margin-left: .15em;
-  height: 100%;
-  background: @currents-line-color;
-  top: 1em;
-}
-
-
-.last-stream-item .line {
-  top: -.25em;
-  height: 50%;
-}
-*/
-/*
-.stream-item:before {
-  display: block;
-  content: '';
-
-  position: absolute;
-  bottom: .8em;
-  left: 0;//-0.1em;
-  z-index: 5;
-
-  width: .8em;
-  height: .8em;
-
-  background: @green;
-  border-radius: 50%;
-}
-*/
