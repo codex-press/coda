@@ -53,6 +53,7 @@ body {
   left: 0;
   color: white;
   padding: .3em;
+  padding-left: 2%;
   background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0.4));
   width: 100%;
 }
@@ -220,12 +221,16 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     font-size: 1em;
   }
 
+  .stream-item:nth-child(n+4) {
+    display: none;
+  }
+
   .titles p {
     display: none;
   }
 
   .card {
-      height: calc((90vh - 42px)*0.30);
+      height: calc((90vh - 42px)*0.45);
   }
 
   .card .headers {
@@ -325,7 +330,7 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 @media @tablet, @desktop, @desktop-xl {
   .titles {
-    width: 34%;
+    width: 34.1%;
   }
   .titles h1 {
     margin:0;
