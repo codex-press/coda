@@ -1,0 +1,546 @@
+@import 'css/_definitions.less';
+
+//break-point: 800px
+//make current-description no longer float
+//make cards have full width, perhaps lower height (but at least 8em)
+
+//vertical break-point: 430 px height.  smaller and the layout starts to break
+//at lower than 800 width, it's 460 px
+//lower than 460 height: get rid of current-description and change headers
+// top:0
+
+body {
+  font-family: @sans-serif;
+}
+
+
+//Top Boxes
+
+.featured h1 {
+  margin-left: 1vw;
+}
+
+.about {
+  clear:both;
+  background-color: @green;
+  color: #eee;
+  padding: 1vh 1vw;
+  text-align: justify;
+}
+
+.about h1 {
+  display: none;
+  color: @text-color;
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
+
+.about p {
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
+
+.top-story {
+  position: relative;
+	border: 2px solid @almost-black;
+	height: 50vh;
+	margin: 0;// 1vw 4vh 1vw;
+}
+
+.top-story .headers {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: .3em;
+  padding-left: 2%;
+  background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0.4));
+  width: 100%;
+}
+
+.top-story .headers .headline {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.top-story .headers p {
+  margin: 0;
+}
+
+.top-story .headers .byline {
+  white-space: nowrap;
+}
+
+.top-story .headers .story-type {
+  color: @green;
+}
+
+
+//news feed
+.news {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+.news .date {
+  //color:@green;
+  font-weight:500;
+  margin-right:.5em;
+  padding-right:.5em;
+  border-right: 1px solid @text-color;
+}
+
+.news p {
+	color:@text-color;
+  padding-left: 1em;
+  text-indent: -.7em;
+	margin-bottom:.75em;
+	font-weight:300;
+}
+
+.news-more a,
+.news-more a:visited {
+  color: @green;
+  text-decoration: none;
+}
+
+a.feed {
+  display:block;
+}
+a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
+	text-decoration:none;
+	color:@text-color;
+}
+
+
+@media only screen and (min-width: 530px){
+  .top-container {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+
+  .titles {
+    width: 34.1%;
+  }
+
+  .titles h1 {
+    margin:0;
+    font-size: 2em;
+    line-height: 1;
+  }
+
+  .titles a,
+  .titles a:visited {
+    color: #bbb;//@text-color;
+  }
+
+  .titles a:hover,
+  .selected-title p,
+  .selected-title a,
+  .selected-title a:visited {
+    color: @almost-black//@green;
+  }
+
+  .titles div:hover,
+  .selected-title {
+    color: @green;
+  }
+
+  // height of titles divs. Default is 5 titles. Total height: 90vh.
+  .titles div {
+    height: 18vh;
+    min-height:3em;
+  }
+  .titles.four div {
+    height: 22.5vh;
+  }
+
+  .titles a {
+    pointer-events: none;
+  }
+  .currents-heading {
+    height: 10vh;
+    min-height: 1.5em;
+    padding-top: calc(5vh - .75em);
+  }
+
+  .currents-heading .subtitle:before {
+    content: " | ";
+  }
+}
+
+
+@media only screen and (min-width: 800px){
+  .featured {
+    width:66%;
+    margin: 0 0 2vh 0;
+    float:right;
+  }
+  .news {
+    width:30%;
+    margin:0 0 1vh 0;
+    clear:left;
+    float:left;
+  }
+
+  .about p {
+    width: 70vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stream-item{
+    width: 30.6667%;
+  }
+}
+
+
+
+@media only screen and (min-width: 530px) and (max-width: 799px){
+  .stream-item {
+    width: 47%;
+  }
+  .stream-item:nth-child(n+5) {
+    display: none;
+  }
+}
+
+
+
+//Currents Nav
+
+
+@media only screen and (min-width: 800px) and (min-height: 350px) {
+  .card {
+      height: calc((90vh - 42px)*0.35); //28vh;
+  }
+
+  .card .headers {
+    top: calc(100% - 6em);
+  }
+
+}
+
+@media only screen and (min-width: 800px) and (max-height:349px) {
+
+  .expansion {
+    font-size: 1em;
+  }
+
+  .stream-item:nth-child(n+4) {
+    display: none;
+  }
+
+  .titles h1 {
+    font-size: 1.5em;
+  }
+
+  .card {
+      height: calc((90vh - 42px)*0.45);
+  }
+
+  .card .headers {
+    top: 0;
+    font-size: .8em;
+  }
+
+  .card span {
+    display: none;
+  }
+
+}
+
+
+@media only screen and (min-width: 530px) and (max-width: 799px) and (min-height:460px){
+
+  .card {
+    width: 100%;
+    height: calc((90vh - 42px)*0.30);
+  }
+
+  .card .headers {
+    top: calc(100% - 6em);
+  }
+
+  .titles h1 {
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (min-width: 530px) and (max-width: 799px) and (max-height:459px){
+  //.current-description,
+  .card span {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+    height:  calc((90vh - 42px)*0.40);
+  }
+
+  .card .headers {
+    top: -.7em;
+    font-size: .8em;
+  }
+
+  .titles h1 {
+    font-size: 1.5em;
+  }
+
+  .stream-item:nth-child(n+3) {
+    display: none;
+  }
+
+}
+
+
+@media @mobile {
+  .news {
+    margin: 0 1% 1vh 1%;
+  }
+  .card {
+    width: 100%;
+    height: 8em;
+  }
+
+  .card .headers {
+    top: -.7em;
+    font-size: .8em;
+  }
+
+  .card span {
+    display: none;
+  }
+
+  .titles div {
+    background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+  }
+
+  .titles h1 {
+    font-size: 1.5em;
+    margin:.75em;
+  }
+
+  .titles h1 a{
+    color: #777;
+  }
+
+  .titles a:hover,
+  .selected-title p,
+  .selected-title a,
+  .selected-title a:visited {
+  color: @almost-black;
+  }
+
+  .currents-heading {
+    min-height: 3em;
+    //font-size: 1.25em;
+  }
+  .currents-heading .subtitle {
+    display: block;
+    font-size: .75em;
+    text-align: right;
+    margin-right: 1em;
+  }
+
+  .expansion {
+    display: none;
+  }
+}
+
+
+
+.currents {
+  margin-left: 2%;
+  margin-right: 2%;
+  position: relative;
+}
+
+
+.currents,
+.expansion,
+.titles {
+  min-height: 15em;
+}
+
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titles div {
+    padding: 1vh 1vw;
+    position: relative;
+}
+
+.titles h1 {
+  text-transform:uppercase;
+  margin: 1px;
+}
+
+.titles p {
+  display: none;
+  margin:0;
+  color: #999;
+}
+
+.titles a,
+.titles a:visited {
+  text-decoration: none;
+}
+
+.titles a:hover,
+.selected-title p,
+.selected-title a,
+.selected-title a:visited {
+  text-decoration:none;
+}
+
+.titles div:hover,
+.selected-title {
+  background-color: @page-background;
+  color: @green;
+}
+
+
+
+
+
+.expansion {
+  padding-bottom: 1em;
+  background-color: @page-background;
+  //color: @almost-white;
+  width: 66%;
+  position: absolute;
+  right: 0;
+  top: 0;//-10vh;
+  height:  90vh; //100vh;
+  overflow: hidden;
+}
+
+.top-expansion {
+  z-index:100;
+}
+
+.expansion > h1 {
+  display: none;
+  color: @green;
+  margin-left: 1em;
+}
+
+
+.current-description {
+  margin-left: 2%;
+  width: 96%;
+}
+
+
+.currents-heading {
+  clear:both;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 0;
+  padding-left: 1vw;
+  background-color: @almost-black;
+  color: #eee;
+}
+
+
+.currents-heading .subtitle {
+//  display: none;
+  color: #eee;
+  font-weight:400;
+}
+
+.more {
+  clear: both;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #222;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+}
+
+.more a,
+.more a:visited {
+  color: white;
+  display: block;
+  height: 14vh;
+  padding-top: calc(7vh - .75em);
+}
+
+.more a:hover {
+  color: @green;
+}
+
+.card {
+	position: relative;
+  display:block;
+  overflow: hidden;
+}
+
+.card-dek {
+  display: none;
+}
+
+.card .headers {
+  display:block;
+  width: 100%;
+  position: absolute;
+  left: 0em;
+  color: white;
+	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.4));
+	padding:.3em;
+}
+
+
+.card .headers .headline {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.card .headers p {
+  margin: 0;
+}
+
+.card .headers .byline {
+  white-space: nowrap;
+}
+
+.card .headers .story-type {
+  color: @green;
+}
+
+
+.stream-item {
+  float:left;
+  position: relative;
+  //padding: 0 0 2vh 2%;
+  margin-left: 2%;
+  margin-bottom: 2vh;
+//  width: 30.6667%;//250px;
+}
+
+.stream-item .text {
+  color: @green;
+}
+
+.stream-item a,
+.stream-item a:visited,
+.stream-item a:hover {
+  color:@green;
+  text-decoration: none;
+}
+
+.stream-item h1,
+.stream-item p{
+  margin-bottom:-.5em;
+}
+
+.last-stream-item p {
+  font-size: 1.25em;
+}
