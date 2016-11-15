@@ -136,7 +136,17 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     text-transform: uppercase;
   }
 
+  .more {
+    font-size: 1.5em;
+  }
 
+  .more a,
+  .more a:visited {
+    color: white;
+    display: block;
+    height: 14vh;
+    padding-top: calc(7vh - .75em);
+  }
 
 }
 
@@ -273,9 +283,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   .news {
     margin: 0 1% 1vh 1%;
   }
+
   .card {
     width: 100%;
-    height: 8em;
+    height: 35vh;
   }
 
   .card .headers {
@@ -300,6 +311,25 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   .expansion {
     //display: none;
   }
+  .current-description {
+    display: none;
+  }
+  .stream-item {
+    width: 96%;
+  }
+  .stream-item:nth-child(n+3) {
+    display: none;
+  }
+
+  .more a,
+  .more a:visited {
+    color: white;
+    display: block;
+    height: 14vh;
+    padding-top: calc(7vh - 1.5em);
+  }
+
+
 }
 
 
@@ -434,20 +464,14 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .more {
   clear: both;
   text-align: center;
-  font-size: 1.5em;
+//  font-size: 1.5em;
   background-color: #222;
   margin-left: 2%;
   margin-right: 2%;
   width: 96%;
 }
 
-.more a,
-.more a:visited {
-  color: white;
-  display: block;
-  height: 14vh;
-  padding-top: calc(7vh - .75em);
-}
+
 
 .more a:hover {
   color: @green;
