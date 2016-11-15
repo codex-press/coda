@@ -127,24 +127,15 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
 
-  .titles {
-    width: 34.1%;
-  }
+
 
   .titles h1 {
     margin:0;
     font-size: 2em;
     line-height: 1;
+    text-transform: uppercase;
   }
 
-  // height of titles divs. Default is 5 titles. Total height: 90vh.
-  .titles div {
-    height: 18vh;
-    min-height:3em;
-  }
-  .titles.four div {
-    height: 22.5vh;
-  }
 
 
 }
@@ -301,9 +292,11 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .titles h1 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin:.75em;
+    text-transform: capitalize;
   }
+
   .expansion {
     //display: none;
   }
@@ -331,13 +324,27 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   object-fit: cover;
 }
 
+.titles {
+  width: 34.1%;
+}
+
 .titles div {
     padding: 1vh 1vw;
     position: relative;
 }
 
+// height of titles divs. Default is 5 titles. Total height: 90vh.
+.titles div {
+  height: 18vh;
+  min-height:3em;
+}
+.titles.four div {
+  height: 22.5vh;
+}
+
+
 .titles h1 {
-  text-transform:uppercase;
+  //text-transform:uppercase;
   margin: 1px;
 }
 
