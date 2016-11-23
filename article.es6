@@ -125,7 +125,7 @@ article.ready.then(() => {
           <p>
             <a href="/${edition_url}/${current_url}">
               <span class="nav-arrow">&rarr;</span>
-              <span class="nav-text">Next</span><span class="nav-sep">:</span>
+              <span class="nav-text">More</span><span class="nav-sep">:</span>
               <span class="nav-title">${current_name}</span>
             </a>
           </p>
