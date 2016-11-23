@@ -42,9 +42,10 @@ body {
 
 .top-story {
   position: relative;
-	border: 2px solid @almost-black;
-	height: 50vh;
-	margin: 0;// 1vw 4vh 1vw;
+//	border: 2px solid #eee;
+  margin: 0 0 2vh 2%;
+//	height: 25vh;
+	//margin: 0;// 1vw 4vh 1vw;
 }
 
 .top-story .headers {
@@ -114,34 +115,39 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 
 @media only screen and (min-width: 530px){
+  .top-story {
+    height: 30vh;
+    width: 30.6667%;
+    float: left;
+  }
+
   .top-container {
     margin-left: 2%;
     margin-right: 2%;
   }
 
 
-  .titles {
-    width: 34.1%;
-  }
+
 
   .titles h1 {
     margin:0;
     font-size: 2em;
     line-height: 1;
+    text-transform: uppercase;
   }
 
-  // height of titles divs. Default is 5 titles. Total height: 90vh.
-  .titles div {
-    height: 18vh;
-    min-height:3em;
-  }
-  .titles.four div {
-    height: 22.5vh;
+  .more {
+    font-size: 1.5em;
   }
 
-  .titles a {
-    pointer-events: none;
+  .more a,
+  .more a:visited {
+    color: white;
+    display: block;
+    height: 14vh;
+    padding-top: calc(7vh - .75em);
   }
+
 }
 
 
@@ -271,12 +277,16 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 
 @media @mobile {
+  .top-story {
+    height: 35vh;
+  }
   .news {
     margin: 0 1% 1vh 1%;
   }
+
   .card {
     width: 100%;
-    height: 8em;
+    height: 35vh;
   }
 
   .card .headers {
@@ -289,16 +299,37 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .titles div {
-    background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+  //  background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
   }
 
   .titles h1 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin:.75em;
+    text-transform: capitalize;
   }
+
   .expansion {
+    //display: none;
+  }
+  .current-description {
     display: none;
   }
+  .stream-item {
+    width: 96%;
+  }
+  .stream-item:nth-child(n+3) {
+    display: none;
+  }
+
+  .more a,
+  .more a:visited {
+    color: white;
+    display: block;
+    height: 14vh;
+    padding-top: calc(7vh - 1.5em);
+  }
+
+
 }
 
 
@@ -323,13 +354,27 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   object-fit: cover;
 }
 
+.titles {
+  width: 34.1%;
+}
+
 .titles div {
     padding: 1vh 1vw;
     position: relative;
 }
 
+// height of titles divs. Default is 5 titles. Total height: 90vh.
+.titles div {
+  height: 18vh;
+  min-height:3em;
+}
+.titles.four div {
+  height: 22.5vh;
+}
+
+
 .titles h1 {
-  text-transform:uppercase;
+  //text-transform:uppercase;
   margin: 1px;
 }
 
@@ -337,6 +382,10 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   display: none;
   margin:0;
   color: #999;
+}
+
+.titles a {
+  pointer-events: none;
 }
 
 .titles a,
@@ -415,20 +464,14 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 .more {
   clear: both;
   text-align: center;
-  font-size: 1.5em;
+//  font-size: 1.5em;
   background-color: #222;
   margin-left: 2%;
   margin-right: 2%;
   width: 96%;
 }
 
-.more a,
-.more a:visited {
-  color: white;
-  display: block;
-  height: 14vh;
-  padding-top: calc(7vh - .75em);
-}
+
 
 .more a:hover {
   color: @green;
