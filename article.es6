@@ -111,7 +111,7 @@ article.ready.then(() => {
           <p>
             <a href="/${edition_url}/${current_url}">
               <span class="nav-arrow">&larr;</span>
-              <span class="nav-text">View full current<span class="nav-sep">:</span></span>
+              <span class="nav-text">Previous<span class="nav-sep">:</span></span>
               <span class="nav-title">${current_name}</span>
             </a>
           </p>
@@ -139,7 +139,7 @@ article.ready.then(() => {
           <p>
             <a href="/${current_url}">
               <span class="nav-arrow">&rarr;</span>
-              <span class="nav-text">View full current</span><span class="nav-sep">:</span>
+              <span class="nav-text">Next</span><span class="nav-sep">:</span>
               <span class="nav-title">${current_name}</span>
             </a>
           </p>
@@ -172,7 +172,7 @@ article.ready.then(() => {
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
-      <h1><span class="in">In:</span> <a href="/${edition_url}/${current_url}">${current_name}</a></h1>
+      <h1><span class="in">Current:</span> <a href="/${edition_url}/${current_url}">${current_name}</a></h1>
       ${prev_html}
       ${curr_html}
       ${next_html}
