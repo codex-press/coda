@@ -638,18 +638,13 @@ nav {
 }
 
 nav p {
-  margin: .25em;
+  margin: 0;//.25em;
   padding: 0;
   max-width: none;
   width: auto;
 }
 
 @media @desktop, @desktop-xl {
-
-//  nav.moving {
-//    position: fixed;
-//  }
-
   nav .now,
   nav .in {
     text-transform: uppercase;
@@ -658,10 +653,7 @@ nav p {
     color: #888;
   }
 
-
-
   nav h1 {
-    //width: 100%;
     margin: .25em;
     text-align: center;
     position: absolute;
@@ -676,9 +668,9 @@ nav p {
 
   nav .previous-article {
     width: 30vw;
-    position: absolute;;
-    bottom: 0;
-    left: 0;
+    position: fixed;
+    bottom: 50%;
+    left: 1%;
   }
 
   nav .current-article {
@@ -686,18 +678,26 @@ nav p {
     position: absolute;;
     bottom: 1.2em;
     left: calc(40vw - 110.2px);
-    //text-align: center;
     font-size: 1.25em;
   }
 
   nav .next-article {
     width: 30vw;
-    position: absolute;;
-    bottom: 0;
+    position: fixed;
+    bottom: 50%;
     right: 1%;
     text-align: right;
   }
 
+  .nav-sep,
+  .nav-title {
+    display: none;
+  }
+
+  .nav-arrow {
+    font-size: 2em;
+    display:block;
+  }
 
 }
 

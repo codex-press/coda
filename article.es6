@@ -110,6 +110,7 @@ article.ready.then(() => {
         <div class="previous-article">
           <p>
             <a href="/${edition_url}/${current_url}">
+              <span class="nav-arrow">&larr;</span>
               <span class="nav-text">View full current<span class="nav-sep">:</span></span>
               <span class="nav-title">${current_name}</span>
             </a>
@@ -122,6 +123,7 @@ article.ready.then(() => {
         <div class="previous-article">
           <p>
             <a href="${article_index[prev].url.slice(5)}">
+              <span class="nav-arrow">&larr;</span>
               <span class="nav-text">Previous<span class="nav-sep">:</span></span>
               <span class="nav-title">${article_index[prev].title}</span>
             </a>
@@ -136,6 +138,7 @@ article.ready.then(() => {
         <div class="next-article">
           <p>
             <a href="/${current_url}">
+              <span class="nav-arrow">&rarr;</span>
               <span class="nav-text">View full current</span><span class="nav-sep">:</span>
               <span class="nav-title">${current_name}</span>
             </a>
@@ -148,6 +151,7 @@ article.ready.then(() => {
         <div class="next-article">
           <p>
             <a href="${article_index[next].url.slice(5)}">
+              <span class="nav-arrow">&rarr;</span>
               <span class="nav-text">Next</span><span class="nav-sep">:</span>
               <span class="nav-title">${article_index[next].title}</span>
             </a>
