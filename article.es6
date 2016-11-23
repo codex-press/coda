@@ -179,7 +179,7 @@ article.ready.then(() => {
     //create nav
     var nav_footer = document.createElement("NAV");
     nav_footer.innerHTML = `
-      <h1><span class="in">Current:</span> <a href="/${edition_url}/${current_url}">${current_name}</a></h1>
+      <h1 class="current-current"><span class="in">Current:</span> <a href="/${edition_url}/${current_url}">${current_name}</a></h1>
       ${prev_html}
       ${curr_html}
       ${next_html}
