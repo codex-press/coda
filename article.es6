@@ -34,7 +34,7 @@ article.ready.then(() => {
     edition_name = edition_names[edition_url];
     current_url = path_array[3];
     current_name = current_names[current_url];
-
+/*
     var next_current_url;
     switch (current_url) {
       case "kremlin-influence" :
@@ -53,7 +53,8 @@ article.ready.then(() => {
         next_current_url = "kremlin-influence"
         break;
     }
-
+    var next_current_name = current_names[next_current_url];
+*/
     //select the byline box
     var byline_box = document.getElementsByClassName("byline-box")[0];
 
@@ -146,7 +147,7 @@ article.ready.then(() => {
             <a href="/${edition_url}/${current_url}">
               <span class="nav-arrow">&rarr;</span>
               <span class="nav-text">Next</span><span class="nav-sep">:</span>
-              <span class="nav-title">${next_current_name}</span>
+              <span class="nav-title">${current_name}</span>
             </a>
           </p>
         </div>
