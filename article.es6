@@ -21,6 +21,7 @@ article.ready.then(() => {
 
 
 
+
   //first: identify edition and current. convert them to regular text and insert them into byline-box
 //  console.log(location.pathname + " " + article.attrs.url);
   var path_array = article.attrs.url.split('/');
@@ -33,6 +34,25 @@ article.ready.then(() => {
     edition_name = edition_names[edition_url];
     current_url = path_array[3];
     current_name = current_names[current_url];
+
+    var next_current_url;
+    switch (current_url) {
+      case "kremlin-influence" :
+        next_current_url = "orthodox-church";
+        break;
+      case "orthodox-church" :
+        next_current_url = "east-west-divide"
+        break;
+      case "east-west-divide" :
+        next_current_url = "information-war"
+        break;
+      case "information-war" :
+        next_current_url = "rights-abuses"
+        break;
+      case "rights-abuses":
+        next_current_url = "kremlin-influence"
+        break;
+    }
 
     //select the byline box
     var byline_box = document.getElementsByClassName("byline-box")[0];
@@ -125,8 +145,8 @@ article.ready.then(() => {
           <p>
             <a href="/${edition_url}/${current_url}">
               <span class="nav-arrow">&rarr;</span>
-              <span class="nav-text">More</span><span class="nav-sep">:</span>
-              <span class="nav-title">${current_name}</span>
+              <span class="nav-text">Next</span><span class="nav-sep">:</span>
+              <span class="nav-title">${next_current_name}</span>
             </a>
           </p>
         </div>
