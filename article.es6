@@ -119,11 +119,11 @@ article.ready.then(() => {
     }
     console.log(prev_html);
 
-    if (next >= article_index.length) { //this test doesn't work...
+    if (next >= article_index.length) {
       next_html = `
         <div class="next-article">
           <p>
-            <a href="/${current_url}">
+            <a href="/${edition_url}/${current_url}">
               <span class="nav-arrow">&rarr;</span>
               <span class="nav-text">Next</span><span class="nav-sep">:</span>
               <span class="nav-title">${current_name}</span>
