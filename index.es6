@@ -25,11 +25,11 @@ article.ready.then(() => {
     sub.innerHTML = "About";
     sub.removeAttribute("href");
   }
-  else if (location.pathname === '/coda/migration-crisis'){
+  else if (location.pathname.startsWith('/coda/migration-crisis')){
     sub.innerHTML = "Migration Crisis";
     sub.removeAttribute("href");
   }
-  else if (location.pathname === '/coda/disinformation-crisis'){
+  else if (location.pathname.startsWith('/coda/disinformation-crisis')){
     sub.innerHTML = "Disinformation Crisis";
     sub.removeAttribute("href");
   }
