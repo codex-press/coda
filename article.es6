@@ -19,7 +19,6 @@ article.ready.then(() => {
     "rights-abuses" : "Rights Abuses",
     "traditional-values" : "Traditional Values",
     "foreign-proxies" : "Foreign Proxies",
-    "information-war" : "Information War",
     "armed-conflict" : "Armed Conflict",
     "fear-and-loathing" : "Fear and Loathing",
     "geopolitical-ruptures" : "Geopolitical Ruptures",
@@ -77,7 +76,7 @@ article.ready.then(() => {
   var footer_current = document.createElement("P");
   footer_current.className = "footer-current " + current_url;
   if ((current_url == "information-war") && (edition_url == "disinformation-crisis")) {
-    footer_current.classname = footer_current.classname + "-1";
+    footer_current.className = "footer-current " + current_url + "-1";
   }
   var current_link = document.createElement("A");
   current_link.setAttribute("href", edition_url + "/" + current_url);
