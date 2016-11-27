@@ -7,8 +7,8 @@ article.ready.then(() => {
 
   var edition_names = {
     "lgbtq-crisis" : "LGBTQ Crisis",
-    "disinformation-age" : "Disinformation Age",
-    "migrants" : "Migrants"
+    "disinformation-crisis" : "Disinformation Crisis",
+    "migration-crisis" : "Migration Crisis"
   };
 
   var current_names = {
