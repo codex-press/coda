@@ -25,12 +25,12 @@ article.ready.then(() => {
     sub.innerHTML = "About";
     sub.removeAttribute("href");
   }
-  else if (location.pathname === '/coda/migrants'){
-    sub.innerHTML = "Migrants";
+  else if (location.pathname === '/coda/migration-crisis'){
+    sub.innerHTML = "Migration Crisis";
     sub.removeAttribute("href");
   }
-  else if (location.pathname === '/coda/disinformation-age'){
-    sub.innerHTML = "Disinformation Age";
+  else if (location.pathname === '/coda/disinformation-crisis'){
+    sub.innerHTML = "Disinformation Crisis";
     sub.removeAttribute("href");
   }
 
