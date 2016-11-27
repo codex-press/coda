@@ -52,6 +52,8 @@ article.ready.then(() => {
 
   //select the byline box
   var byline_box = document.getElementsByClassName("byline-box")[0];
+  //select the footer logo
+  var footer_logo = document.getElementsByClassName("footer-logo")[0];
 
   //append two paragraphs:
   // 1. p.byline-current (with link to current)
@@ -65,6 +67,13 @@ article.ready.then(() => {
   byline_current.appendChild(current_link);
   current_link.appendChild(current_name_node);
 
+  var footer_current = document.createElement("P");
+  footer_current.className = "footer-current " + current_url;
+  var current_link = document.createElement("A");
+  current_link.setAttribute("href", edition_url + "/" + current_url);
+  var current_name_node = document.createTextNode(current_name);
+  footer_current.appendChild(current_link);
+  current_link.appendChild(current_name_node);
 
   var byline_edition = document.createElement("P");
   byline_edition.className = "byline-edition";
@@ -74,6 +83,13 @@ article.ready.then(() => {
   byline_edition.appendChild(edition_link)
   edition_link.appendChild(edition_name_node);
 
+  var footer_edition = document.createElement("P");
+  footer_edition.className = "footer-edition " + edition_url;
+  var edition_link = document.createElement("A");
+  edition_link.setAttribute("href", edition_url);
+  var edition_name_node = document.createTextNode(edition_name);
+  footer_edition.appendChild(edition_link)
+  edition_link.appendChild(edition_name_node);
 
   if (byline_box.lastElementChild.className == "byline-share") {
     byline_box.insertBefore(byline_current, byline_box.lastElementChild);
@@ -83,7 +99,8 @@ article.ready.then(() => {
     byline_box.appendChild(byline_current);
     byline_box.appendChild(byline_edition);
   }
-
+  footer_logo.appendChild(footer_current);
+  footer_logo.appendChild(footer_edition);
 
 
 

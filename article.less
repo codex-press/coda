@@ -420,6 +420,7 @@ figure .frame .hed {
 .byline-box .publication-date:before {
   content: 'Date';
 }
+
 .byline-box .byline-current:before {
   content: 'Current';
 }
@@ -546,6 +547,7 @@ figure .photo-credit {
 }
 
 .end-share {
+  //float:right;
   margin-left: auto;
   margin-right: auto;
   width: 12.75em;
@@ -793,8 +795,42 @@ nav p {
 }
 
 
-.logo {
-  width: 200px;
+@media @mobile {
+  .logo .logo-stay {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .footer-logo>div {
+    width: 40%;
+    min-width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-logo {
+    font-size: 14px;
+  }
+}
+
+@media @tablet, @desktop, @desktop-xl {
+  .footer-logo {
+    font-size: 15px;
+  }
+
+  .footer-logo>div {
+    width: 40%;
+    float: right;
+    margin-top: 2em;
+  }
+
+  .logo .logo-stay {
+    font-size: 18px;
+  }
+}
+
+.footer-logo .logo {
+  display:none;
 }
 
 .logo .logo-stay {
@@ -804,6 +840,120 @@ nav p {
   margin-top: 0;
   text-align: right;
 }
+
+
+
+.footer-logo {
+  font-family: @sans-serif;
+}
+
+.footer-logo .footer-edition,
+.footer-logo .footer-current {
+  width: 100%;
+  height: 25vh;
+  margin-left: 0;
+  position: relative;
+}
+
+.footer-logo .footer-current a:before {
+//  content: "Current: ";
+  display:block;
+  font-weight: normal;
+  content: "More stories in: ";
+}
+
+
+
+.footer-logo .footer-edition a:before {
+//  content: "Edition: ";
+  display: block;
+  font-weight: normal;
+  content: "More stories in: "
+}
+
+.footer-logo a {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  color: @almost-white;
+  font-weight: bold;
+  padding: .5em;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+}
+
+.footer-logo p.stay {
+  display:none;
+  color: @green;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+//edition images
+.lgbtq-crisis {
+  background:
+  //  linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/06e4358c-af49-470c-af8e-a1568ab0f0aa/medium.jpg?1475852470');
+  background-position: 0% 50%;
+}
+
+.migrants {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/8a8e2a50-e9e8-4f0c-a951-d6f3631c649a/medium.jpg?1473579822');
+  background-position: 0% 50%;
+}
+
+.disinformation-age {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/26057c30-5521-4919-9458-6dccfdcd44ed/medium.jpg?1473579821');
+  background-position: 0% 70%;
+}
+
+//current images
+.kremlin-influence {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/0cd7daef-0bde-441b-81be-20190688d66e/low.jpg');
+  background-position: 0% 70%;
+}
+
+.orthodox-church {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/2a89aa57-f3d6-47c4-ac5f-22394300201a/low.jpg');
+  background-position: 0% 70%;
+}
+
+.east-west-divide {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/f41ae3e8-0a5b-4ea9-9b93-e7dbb529fd1b/low.jpg');
+  background-position: 0% 70%;
+}
+
+.information-war {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/6f11495d-c8aa-4320-8e95-ee8c5b9df46a/low.jpg');
+  background-position: 0% 70%;
+}
+
+.rights-abuses {
+  background:
+//    linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0)),
+    url('https://usercontent.codex.press/images/19c915ab-7290-4c73-9629-a4c4c0854c6a/low.jpg');
+  background-position: 0% 70%;
+}
+
+
+
+
+
+
+
 
 /*
 @media @mobile {
