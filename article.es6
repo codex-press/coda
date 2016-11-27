@@ -16,7 +16,14 @@ article.ready.then(() => {
     "orthodox-church" : "Orthodox Church",
     "east-west-divide" : "East-West Divide",
     "information-war" : "Information War",
-    "rights-abuses" : "Rights Abuses"
+    "rights-abuses" : "Rights Abuses",
+    "traditional-values" : "Traditional Values",
+    "foreign-proxies" : "Foreign Proxies",
+    "information-war" : "Information War",
+    "armed-conflict" : "Armed Conflict",
+    "fear-and-loathing" : "Fear and Loathing",
+    "geopolitical-ruptures" : "Geopolitical Ruptures",
+    "integration-issues" : "Integration Issues"
   };
 
 
