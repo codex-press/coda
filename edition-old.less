@@ -13,6 +13,7 @@ body {
   font-family: @sans-serif;
 }
 
+//old edition page
 
 //Top Boxes
 
@@ -23,13 +24,11 @@ body {
 .about {
   clear:both;
   background-color: @green;
-  color: #eee;
+  color: white;
   padding: 1vh 1vw;
-  text-align: justify;
 }
 
 .about h1 {
-  display: none;
   color: @text-color;
   margin-top: .25em;
   margin-bottom: .25em;
@@ -42,10 +41,9 @@ body {
 
 .top-story {
   position: relative;
-//	border: 2px solid #eee;
-  margin: 0 0 2vh 2%;
-//	height: 25vh;
-	//margin: 0;// 1vw 4vh 1vw;
+	border: 2px solid @almost-black;
+	height: 50vh;
+	margin: 0 1vw 4vh 1vw;
 }
 
 .top-story .headers {
@@ -54,7 +52,6 @@ body {
   left: 0;
   color: white;
   padding: .3em;
-  padding-left: 2%;
   background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0.4));
   width: 100%;
 }
@@ -84,11 +81,11 @@ body {
 }
 
 .news .date {
-  //color:@green;
+  color:@green;
   font-weight:500;
   margin-right:.5em;
   padding-right:.5em;
-  border-right: 1px solid @text-color;
+  border-right: 1px solid @green;
 }
 
 .news p {
@@ -99,8 +96,7 @@ body {
 	font-weight:300;
 }
 
-.news-more a,
-.news-more a:visited {
+.more a, .more a:visited {
   color: @green;
   text-decoration: none;
 }
@@ -114,86 +110,91 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 
-@media only screen and (min-width: 530px){
-  .top-story {
-    height: 30vh;
-    width: 30.6667%;
-    float: left;
-  }
-
-  .top-container {
-    margin-left: 2%;
-    margin-right: 2%;
-  }
 
 
 
 
-  .titles h1 {
-    margin:0;
-    font-size: 2em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .more {
-    font-size: 1.5em;
-  }
-
-  .more a,
-  .more a:visited {
-    color: white;
-    display: block;
-    height: 14vh;
-    padding-top: calc(7vh - .75em);
-  }
-
-}
-
-
-@media only screen and (min-width: 800px){
-  .featured {
-    width:66%;
-    margin: 0 0 2vh 0;
-    float:right;
-  }
-  .news {
-    width:30%;
-    margin:0 0 1vh 0;
-    clear:left;
-    float:left;
-  }
-
+@media only screen and (min-width: 950px){
+	.featured {
+		width:64.5%;
+		margin: 0 .5% 1vh 1%;
+		float:left;
+	}
+	.news {
+		width:32.5%;
+		margin:0 1% 1vh .5%;
+    clear:right;
+		float:right;
+	}
   .about p {
     width: 70vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  .stream-item{
-    width: 30.6667%;
+  .about h1 {
+    text-align: center;
+  }
+
+  .titles h1 {
+    font-size: 2em;
   }
 }
 
 
-
-@media only screen and (min-width: 530px) and (max-width: 799px){
-  .stream-item {
-    width: 47%;
+@media only screen and (min-width: 530px) and (max-width: 950px){
+  .featured {
+    width:48.5%;
+		margin: 0 .5% 1vh 1%;
+		float:left;
+	}
+  .news {
+		width:48.5%;
+		margin: 0 1% 1vh .5%;
+		float:right;
+	}
+  .about {
+    clear:both;
   }
-  .stream-item:nth-child(n+5) {
-    display: none;
+
+  .titles h1 {
+    font-size: 2em;
   }
 }
 
-
+@media @mobile {
+  .news {
+    margin: 0 1% 1vh 1%;
+  }
+}
 
 //Currents Nav
 
+.current-description {
+  display: none;
+}
 
-@media only screen and (min-width: 800px) and (min-height: 350px) {
+.currents-heading {
+  clear:both;
+  margin-left: 2vw;
+  margin-bottom: 1vh;
+}
+
+.currents-heading .subtitle {
+  color: @green;
+  font-weight:400;
+}
+
+@media only screen and (min-width: 800px) and (min-height: 430px) {
+  .current-description {
+    width: 31%;
+    float: right;
+    margin-top:4em;
+    margin-right: 2%;
+  }
+
   .card {
-      height: calc((90vh - 42px)*0.35); //28vh;
+      height:30vh;
   }
 
   .card .headers {
@@ -202,22 +203,24 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 }
 
-@media only screen and (min-width: 800px) and (max-height:349px) {
-
+@media only screen and (min-width: 800px) and (max-height:429px) {
   .expansion {
     font-size: 1em;
   }
 
-  .stream-item:nth-child(n+4) {
+  .titles p {
     display: none;
   }
 
-  .titles h1 {
-    font-size: 1.5em;
+  .current-description {
+    width: 31%;
+    float: right;
+    margin-top:1em;
+    margin-right: 2%;
   }
 
   .card {
-      height: calc((90vh - 42px)*0.45);
+      height:20vh;
   }
 
   .card .headers {
@@ -233,10 +236,13 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 
 @media only screen and (min-width: 530px) and (max-width: 799px) and (min-height:460px){
+  .current-description {
+    margin: .3em;
+  }
 
   .card {
     width: 100%;
-    height: calc((90vh - 42px)*0.30);
+    height: 20vh;
   }
 
   .card .headers {
@@ -250,14 +256,14 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 }
 
 @media only screen and (min-width: 530px) and (max-width: 799px) and (max-height:459px){
-  //.current-description,
+  .current-description,
   .card span {
     display: none;
   }
 
   .card {
     width: 100%;
-    height:  calc((90vh - 42px)*0.40);
+    height: 20vh;
   }
 
   .card .headers {
@@ -269,24 +275,25 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
     font-size: 1.5em;
   }
 
-  .stream-item:nth-child(n+3) {
+  .titles p {
     display: none;
   }
 
 }
 
+@media only screen and (max-width: 615px){
+  .current-description {
+    display: none;
+  }
+  .titles p {
+    display: none;
+  }
+}
 
 @media @mobile {
-  .top-story {
-    height: 35vh;
-  }
-  .news {
-    margin: 0 1% 1vh 1%;
-  }
-
   .card {
     width: 100%;
-    height: 35vh;
+    height: 8em;
   }
 
   .card .headers {
@@ -299,44 +306,43 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   }
 
   .titles div {
-  //  background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+    background:linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
   }
 
   .titles h1 {
-    font-size: 1em;
+    font-size: 1.5em;
     margin:.75em;
-    text-transform: capitalize;
   }
-
   .expansion {
-    //display: none;
-  }
-  .current-description {
     display: none;
   }
-  .stream-item {
-    width: 96%;
-  }
-  .stream-item:nth-child(n+3) {
-    display: none;
-  }
-
-  .more a,
-  .more a:visited {
-    color: white;
-    display: block;
-    height: 14vh;
-    padding-top: calc(7vh - 1.5em);
-  }
-
-
 }
 
-
+@media @tablet, @desktop, @desktop-xl {
+  .titles {
+    width: 50%;
+  }
+  .titles h1 {
+    margin:0;
+    text-align: right;
+    line-height: 1;
+  }
+  .titles p {
+    text-align: right;
+  }
+  // height of titles divs. Default is 5 titles. Total height: 90vh.
+  .titles div {
+    height: 18vh;
+    min-height:3em;
+  }
+  .titles.four div {
+    height: 22.5vh;
+  }
+}
 
 .currents {
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 2vw;
+  margin-right: 2vw;
   position: relative;
 }
 
@@ -354,53 +360,36 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   object-fit: cover;
 }
 
-.titles {
-  width: 34.1%;
-}
-
 .titles div {
     padding: 1vh 1vw;
     position: relative;
 }
 
-// height of titles divs. Default is 5 titles. Total height: 90vh.
-.titles div {
-  height: 18vh;
-  min-height:3em;
-}
-.titles.four div {
-  height: 22.5vh;
-}
-
-
 .titles h1 {
-  //text-transform:uppercase;
+  text-transform:uppercase;
   margin: 1px;
 }
 
 .titles p {
-  display: none;
   margin:0;
-  color: #999;
-}
-
-.titles a {
-  pointer-events: none;
 }
 
 .titles a,
 .titles a:visited {
   text-decoration: none;
-  color: #999;//@text-color;
+  color: @text-color;
 }
 
 .titles a:hover,
-.selected-title p,
 .selected-title a,
 .selected-title a:visited {
   text-decoration:none;
   color: @green;
 }
+
+
+
+
 
 .titles div:hover,
 .selected-title {
@@ -408,19 +397,15 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   color: @green;
 }
 
-
-
-
-
 .expansion {
   padding-bottom: 1em;
   background-color: @almost-black;
   color: @almost-white;
-  width: 66%;
+  width: 50%;
   position: absolute;
   right: 0;
-  top: 0;//-10vh;
-  height:  90vh; //100vh;
+  top: 0;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -428,56 +413,8 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   z-index:100;
 }
 
-.expansion > h1 {
-  display: none;
-  color: @green;
-  margin-left: 1em;
-}
-
-
-.current-description {
-  margin-left: 2%;
-  width: 96%;
-}
-
-
-.currents-heading {
-  clear:both;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-bottom: 0;
-  height: 10vh;
-  min-height: 1.5em;
-  padding-top: calc(5vh - .75em);
-  padding-left: 1vw;
-  background-color: @almost-black;
-  color: #eee;
-}
-
-
-.currents-heading .subtitle {
-  display: none;
-  color: #eee;
-  font-weight:400;
-}
-
-.more {
-  clear: both;
-  text-align: center;
-//  font-size: 1.5em;
-  background-color: #222;
-  margin-left: 2%;
-  margin-right: 2%;
-  width: 96%;
-}
-
-
-
-.more a:hover {
-  color: @green;
-}
-
 .card {
+	border: 2px solid @almost-black;
 	position: relative;
   display:block;
   overflow: hidden;
@@ -514,17 +451,11 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   color: @green;
 }
 
-.byline {
-  display:none;
-}
 
 .stream-item {
-  float:left;
   position: relative;
-  //padding: 0 0 2vh 2%;
-  margin-left: 2%;
-  margin-bottom: 2vh;
-//  width: 30.6667%;//250px;
+  padding: 0 .5em 1em 1em;
+  margin-left: .5em;
 }
 
 .stream-item .text {
@@ -545,4 +476,36 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
 
 .last-stream-item p {
   font-size: 1.25em;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  width: 0.5em;
+  margin-left: .15em;
+  height: 100%;
+  background: @currents-line-color;
+  top: 1em;
+}
+
+
+.last-stream-item .line {
+  top: -.25em;
+  height: 50%;
+}
+
+.stream-item:before {
+  display: block;
+  content: '';
+
+  position: absolute;
+  bottom: .8em;
+  left: 0;//-0.1em;
+  z-index: 5;
+
+  width: .8em;
+  height: .8em;
+
+  background: @green;
+  border-radius: 50%;
 }
