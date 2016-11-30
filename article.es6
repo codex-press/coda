@@ -22,7 +22,8 @@ article.ready.then(() => {
     "armed-conflict" : "Armed Conflict",
     "fear-and-loathing" : "Fear and Loathing",
     "geopolitical-ruptures" : "Geopolitical Ruptures",
-    "integration-issues" : "Integration Issues"
+    "integration-issues" : "Integration Issues",
+    "news" : "News"
   };
 
 
