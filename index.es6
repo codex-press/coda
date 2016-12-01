@@ -32,7 +32,8 @@ article.ready.then(() => {
   }
   else if (location.pathname.startsWith('/coda/disinformation-crisis')){
     sub.innerHTML = "Disinformation Crisis";
-    sub.removeAttribute("href");
+    //sub.removeAttribute("href");
+    sub.href="/disinformation-crisis";
   }
 
   // Mobile: toggle a dropdown menu
