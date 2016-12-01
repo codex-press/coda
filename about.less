@@ -88,20 +88,23 @@ section.advisors header {
   margin: 1em 0 2em;
 }
 
-// directors get green header
-section.directors header {
-  background: @green;
+
+header.green {
+  background-color: @green;
   color: white;
 }
 
-
+header.black {
+  background-color: @almost-black;
+  color: @almost-white;
+}
 
 // black header arrow (overrides default from index.less)
-
-#donations header:after,
-#editorial-policy header:after{
+header.black:after {
   border-top-color: @almost-black;
 }
+
+
 
 
 
@@ -144,11 +147,6 @@ section.advisors header p {
 section.advisors > p {
   flex: 1 0 500px;
   margin: 1em;
-}
-
-section.advisors header {
- background-color:@green;
- color:white;
 }
 
 
@@ -197,8 +195,6 @@ section.contact-us a {
 
 #editorial-policy header,
 #donations header {
-  background-color:@almost-black;
-  color:@almost-white;
   padding:0.5em;
   margin-bottom:2em;
 }
