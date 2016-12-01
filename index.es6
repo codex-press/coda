@@ -27,7 +27,8 @@ article.ready.then(() => {
   }
   else if (location.pathname.startsWith('/coda/migration-crisis')){
     sub.innerHTML = "Migration Crisis";
-    sub.removeAttribute("href");
+    //sub.removeAttribute("href");
+    sub.href="/migration-crisis";
   }
   else if (location.pathname.startsWith('/coda/disinformation-crisis')){
     sub.innerHTML = "Disinformation Crisis";
