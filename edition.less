@@ -446,11 +446,22 @@ a.feed, a.feed:link, a.feed:hover, a.feed:visited a.feed:active {
   margin: 1px;
 }
 
+@media @mobile, @tablet {
+
+}
+
+@media @desktop, @desktop-xl {
+  .titles .selected-title p {
+    display: inline;
+  }
+}
+
 .titles p {
   display: none;
   margin:0;
   color: #999;
 }
+
 
 .titles a {
   pointer-events: none;
