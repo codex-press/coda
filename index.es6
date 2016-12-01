@@ -35,6 +35,10 @@ article.ready.then(() => {
     //sub.removeAttribute("href");
     sub.href="/disinformation-crisis";
   }
+  else if (location.pathname === '/coda/subscribe') {
+    sub.innerHTML = "Subscribe"
+    sub.removeAttribute("href");
+  }
 
   // Mobile: toggle a dropdown menu
   let menu = dom('header .header-menu');
