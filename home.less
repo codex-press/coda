@@ -30,7 +30,7 @@ header.sitewide h1{
 
 
 @media only screen and (min-width: 530px) and (max-width: 799px){
-	.top-stories{
+	.top-stories {
 		width:48.5%;
 		margin: 0 .5% 1vh 1%;
 		float:left;
@@ -48,14 +48,12 @@ header.sitewide h1{
 	.card-dek {
 		display:none;
 	}
-	.top-story {
-		min-height: 6em;
-	}
+
 }
 
 @media only screen and (min-width: 800px){
-	.top-stories{
-		width:64.5%;
+	.top-stories {
+	  width:64.5%;
 		margin: 0 .5% 1vh 1%;
 		float:left;
 	}
@@ -64,10 +62,6 @@ header.sitewide h1{
 		width:32.5%;
 		margin:0 1% 1vh .5%;
 		float:right;
-	}
-
-	.top-story {
-		min-height: 6em;
 	}
 
 	.top-story .headers {
@@ -100,10 +94,6 @@ header.sitewide h1{
 	}
 	.extended-about {
 		display:none;
-	}
-
-	.top-story {
-		min-height:8.25em;
 	}
 
 	.top-story .headers {
@@ -141,6 +131,10 @@ header.sitewide h1{
 		width: 70vw;
 		max-width: 800px;
 	}
+	.top-story {
+		width: 47%;
+		float: left;
+	}
 }
 
 @media @desktop-xl {
@@ -154,6 +148,10 @@ header.sitewide h1{
 	.what-is p {
 		width: 70vw;
 		max-width: 800px;
+	}
+	.top-story {
+		width: 30%;
+		float: left;
 	}
 }
 
@@ -266,7 +264,7 @@ article {
 
 
 
-.article {
+.recent-updates .article {
   position: relative;
   padding: .5em .5em 0 1em;
   margin-left: .5em;
@@ -284,11 +282,11 @@ article {
 }
 
 
-.article:last-child .line {
+.recent-updates .article:last-child .line {
   display:none;
 }
 
-.article:before {
+.recent-updates .article:before {
   display: block;
   content: '';
 
@@ -331,11 +329,12 @@ article {
 }
 
 .top-story {
-	border: 2px solid @almost-black;
+	//border: 2px solid @almost-black;
 	height: 35vh;
-	margin: 0 2vw 4vh 2vw;
+	margin: 0 2% 4vh 1%;
 	position: relative;
 	overflow: hidden;
+	min-height: 8em;
 }
 
 
@@ -350,7 +349,7 @@ article {
 
 
 .top-story .headers .headline {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 .top-story .headers p {
