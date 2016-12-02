@@ -48,9 +48,7 @@ header.sitewide h1{
 	.card-dek {
 		display:none;
 	}
-	.top-story {
-		min-height: 6em;
-	}
+
 }
 
 @media only screen and (min-width: 800px){
@@ -64,10 +62,6 @@ header.sitewide h1{
 		width:32.5%;
 		margin:0 1% 1vh .5%;
 		float:right;
-	}
-
-	.top-story {
-		min-height: 6em;
 	}
 
 	.top-story .headers {
@@ -100,10 +94,6 @@ header.sitewide h1{
 	}
 	.extended-about {
 		display:none;
-	}
-
-	.top-story {
-		min-height:8.25em;
 	}
 
 	.top-story .headers {
@@ -141,6 +131,10 @@ header.sitewide h1{
 		width: 70vw;
 		max-width: 800px;
 	}
+	.top-story {
+		width: 47%;
+		float: left;
+	}
 }
 
 @media @desktop-xl {
@@ -154,6 +148,10 @@ header.sitewide h1{
 	.what-is p {
 		width: 70vw;
 		max-width: 800px;
+	}
+	.top-story {
+		width: 30%;
+		float: left;
 	}
 }
 
@@ -336,8 +334,7 @@ article {
 	margin: 0 2% 4vh 1%;
 	position: relative;
 	overflow: hidden;
-	width: 30%;
-	float: left;
+	min-height: 8em;
 }
 
 
@@ -352,7 +349,7 @@ article {
 
 
 .top-story .headers .headline {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 .top-story .headers p {
