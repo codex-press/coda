@@ -17,9 +17,6 @@
   margin-bottom: 1em;
 }
 
-.coda-logo {
-}
-
 .disinformation-crisis {
 	background-image: url('https://usercontent.codex.press/images/26057c30-5521-4919-9458-6dccfdcd44ed/medium.jpg?1473579821');
 	background-position: 0% 70%;
@@ -35,10 +32,28 @@
   display: block;
   height: 100%;
   position: absolute;
-  right: 0;
-  bottom: 0;
   background-color: rgba(255, 255, 255, .7);
-  padding: 1em;
+}
+
+.subscribe form p{
+  margin: 0;
+}
+
+
+
+@media @tablet, @desktop, @desktop-xl{
+  .subscribe form {
+    width: 30%;
+    min-width: 22em;
+    padding: 1em;
+    right: 0;
+    bottom: 0;
+  }
+
+  .coda-logo {
+    background-image: url('https://usercontent.codex.press/images/6b21892f-0fdc-4fb9-9611-d35d44d1755d/high.jpg');
+
+  }
 }
 
 @media @desktop, @desktop-xl {
@@ -50,26 +65,16 @@
 
 @media @tablet {
   .coda-logo {
-    background-size: 90%;
-    background-position: -100% 40%;
-  }
-}
-
-@media @tablet, @desktop, @desktop-xl{
-  .subscribe form {
-    width: 30%;
-    min-width: 20em;
-  }
-
-  .coda-logo {
-    background-image: url('https://usercontent.codex.press/images/6b21892f-0fdc-4fb9-9611-d35d44d1755d/high.jpg');
-
+    background-size: 130%;
+    background-position: 90% 50%;
   }
 }
 
 @media @mobile {
   .subscribe form {
     width: 100%;
+    min-width: 20em;
+    padding: .25em;
   }
   .coda-logo {
     background-image: url('https://usercontent.codex.press/images/2570355f-2cde-4635-af49-0a58d5edc37d/high.jpg');
