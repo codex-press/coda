@@ -1,5 +1,13 @@
 @import 'css/_definitions';
 
+.hed {
+  margin-left: 1em;
+}
+
+.dek {
+  font-size: 1em;
+}
+
 .subscribe {
   height: 15em;
   width: 100%;
@@ -11,8 +19,6 @@
 
 .coda-logo {
   background-image: url('https://usercontent.codex.press/images/6b21892f-0fdc-4fb9-9611-d35d44d1755d/high.jpg');
-  background-size: 90%;
-  background-position: -30% 40%;
 }
 
 .disinformation-crisis {
@@ -27,15 +33,35 @@
 
 .subscribe form {
   margin: 0;
- display: block;
- height: 100%;
- position: absolute;
- right: 0;
- bottom: 0;
- width: 30%;
- min-width: 20em;
-	background-color: rgba(255, 255, 255, .7);
-	padding: 1em;
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, .7);
+  padding: 1em;
+}
+
+@media @tablet, @desktop, @desktop-xl{
+  .subscribe form {
+    width: 30%;
+    min-width: 20em;
+  }
+
+  .coda-logo {
+    background-size: 90%;
+    background-position: -30% 40%;
+  }
+}
+
+@media @mobile {
+  .subscribe form {
+    width: 100%;
+  }
+  .coda-logo {
+    background-size: 100%;
+    background-position: 40% 80%;
+  }
 }
 
 
@@ -48,10 +74,4 @@ h1 {
 
 h2 {
   margin:0;
-}
-
-
-
-.what-is {
-  margin-top:10vh;
 }
