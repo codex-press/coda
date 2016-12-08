@@ -406,6 +406,8 @@ figure .frame .hed {
 //  border-bottom: 1px solid #bbb;
 }
 
+.byline-box .photos-by:before,
+.byline-box .text-by:before,
 .byline-box .byline:before,
 .byline-box .location:before,
 .byline-box .publication-date:before,
@@ -423,6 +425,15 @@ figure .frame .hed {
 .byline-box .byline {
   text-transform: none;
 }
+
+.byline-box .text-by:before {
+  content: 'Text By';
+}
+
+.byline-box .photos-by:before {
+  content: 'Photos By';
+}
+
 .byline-box .location:before {
   content: 'Location';
 }
