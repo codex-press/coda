@@ -110,6 +110,10 @@ article.ready.then(() => {
     var current_link = document.createElement("A");
     current_link.setAttribute("href", edition_url + "/" + current_url);
     var current_name_node = document.createTextNode(current_name);
+    if (current_url == "news"){
+      current_name_node.textContent = edition_name + " News";
+    }
+
     footer_current.appendChild(current_link);
     current_link.appendChild(current_name_node);
 
