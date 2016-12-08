@@ -28,11 +28,11 @@ article.ready.then(() => {
 
 
   //testing
-  console.log("test 1");
-  console.log(article.attrs.metadata.current);
+  //console.log("test 1");
+  //console.log(article.attrs.metadata.current);
 
   //first: identify edition and current. convert them to regular text and insert them into byline-box
-//  console.log(location.pathname + " " + article.attrs.url);
+  //console.log(location.pathname + " " + article.attrs.url);
   var path_array = article.attrs.url.split('/');
   var edition_url;
   var edition_name;
@@ -58,59 +58,73 @@ article.ready.then(() => {
   }
 
   //select the byline box
-  var byline_box = document.getElementsByClassName("byline-box")[0];
+  var byline_boxes = document.getElementsByClassName("byline-box");
+  if (byline_boxes.length != 0) {
+    var byline_box = byline_boxes[0];
+
+    var byline_current = document.createElement("P");
+    byline_current.className = "byline-current";
+    var current_link = document.createElement("A");
+    current_link.setAttribute("href", edition_url + "/" + current_url);
+    var current_name_node = document.createTextNode(current_name);
+    byline_current.appendChild(current_link);
+    current_link.appendChild(current_name_node);
+
+    var byline_edition = document.createElement("P");
+    byline_edition.className = "byline-edition";
+    var edition_link = document.createElement("A");
+    edition_link.setAttribute("href", edition_url);
+    var edition_name_node = document.createTextNode(edition_name);
+    byline_edition.appendChild(edition_link)
+    edition_link.appendChild(edition_name_node);
+
+    if (byline_box.lastElementChild.className == "byline-share") {
+      byline_box.insertBefore(byline_current, byline_box.lastElementChild);
+      byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
+    }
+    else {
+      byline_box.appendChild(byline_current);
+      byline_box.appendChild(byline_edition);
+    }
+  }
+
+
+
+
   //select the footer logo
-  var footer_logo = document.getElementsByClassName("footer-logo")[0];
 
-  //append two paragraphs:
-  // 1. p.byline-current (with link to current)
-  // 2. p.byline-edition (with link to edition)
+  var footer_logos = document.getElementsByClassName("footer-logo");
 
-  var byline_current = document.createElement("P");
-  byline_current.className = "byline-current";
-  var current_link = document.createElement("A");
-  current_link.setAttribute("href", edition_url + "/" + current_url);
-  var current_name_node = document.createTextNode(current_name);
-  byline_current.appendChild(current_link);
-  current_link.appendChild(current_name_node);
+  if (footer_logos.length != 0) {
+    var footer_logo = footer_logos[0];
 
-  var footer_current = document.createElement("P");
-  footer_current.className = "footer-current " + current_url;
-  if ((current_url == "information-war") && (edition_url == "disinformation-crisis")) {
-    footer_current.className = "footer-current " + current_url + "-1";
+    //append two paragraphs:
+    // 1. p.byline-current (with link to current)
+    // 2. p.byline-edition (with link to edition)
+
+    var footer_current = document.createElement("P");
+    footer_current.className = "footer-current " + current_url;
+    if ((current_url == "information-war") && (edition_url == "disinformation-crisis")) {
+      footer_current.className = "footer-current " + current_url + "-1";
+    }
+    var current_link = document.createElement("A");
+    current_link.setAttribute("href", edition_url + "/" + current_url);
+    var current_name_node = document.createTextNode(current_name);
+    footer_current.appendChild(current_link);
+    current_link.appendChild(current_name_node);
+
+    var footer_edition = document.createElement("P");
+    footer_edition.className = "footer-edition " + edition_url;
+    var edition_link = document.createElement("A");
+    edition_link.setAttribute("href", edition_url);
+    var edition_name_node = document.createTextNode(edition_name);
+    footer_edition.appendChild(edition_link)
+    edition_link.appendChild(edition_name_node);
+
+    footer_logo.appendChild(footer_current);
+    footer_logo.appendChild(footer_edition);
   }
-  var current_link = document.createElement("A");
-  current_link.setAttribute("href", edition_url + "/" + current_url);
-  var current_name_node = document.createTextNode(current_name);
-  footer_current.appendChild(current_link);
-  current_link.appendChild(current_name_node);
 
-  var byline_edition = document.createElement("P");
-  byline_edition.className = "byline-edition";
-  var edition_link = document.createElement("A");
-  edition_link.setAttribute("href", edition_url);
-  var edition_name_node = document.createTextNode(edition_name);
-  byline_edition.appendChild(edition_link)
-  edition_link.appendChild(edition_name_node);
-
-  var footer_edition = document.createElement("P");
-  footer_edition.className = "footer-edition " + edition_url;
-  var edition_link = document.createElement("A");
-  edition_link.setAttribute("href", edition_url);
-  var edition_name_node = document.createTextNode(edition_name);
-  footer_edition.appendChild(edition_link)
-  edition_link.appendChild(edition_name_node);
-
-  if (byline_box.lastElementChild.className == "byline-share") {
-    byline_box.insertBefore(byline_current, byline_box.lastElementChild);
-    byline_box.insertBefore(byline_edition, byline_box.lastElementChild);
-  }
-  else {
-    byline_box.appendChild(byline_current);
-    byline_box.appendChild(byline_edition);
-  }
-  footer_logo.appendChild(footer_current);
-  footer_logo.appendChild(footer_edition);
 
 
 
