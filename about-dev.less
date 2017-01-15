@@ -1,0 +1,230 @@
+@import 'css/_definitions';
+
+a {
+  color: @green;
+}
+
+h2 {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+// headers get a cute little dot
+h2:before {
+  content: '. ';
+}
+
+p {
+  max-width: 800px;
+  margin: auto;
+}
+
+@media @mobile, @tablet {
+  p {
+    max-width: calc(100% - 2em);
+  }
+}
+
+// WHAT
+
+section.what {
+  padding-top: 3em;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  background: @almost-black;
+  color: @almost-white;
+}
+
+section.what h2 {
+  color: @green;
+}
+
+
+
+// WHO
+
+section.who {
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+
+
+// MASTHEAD
+section.masthead {
+  font-family: @sans-serif;
+  padding: 1em;
+}
+
+section.masthead {
+  padding-left: 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+section.masthead .title {
+  text-transform: uppercase;
+  color: @green;
+}
+
+
+
+
+// DIRECTORS and ADVISORS
+
+section.directors,
+section.advisors {
+  font-family: @sans-serif;
+  font-weight: 300;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+
+header {
+  flex: 0 0 100%;
+  position: relative;
+  margin: 1em 0 2em;
+  padding:0.5em;
+  margin-bottom: 2em;
+}
+
+
+header.green {
+  background-color: @green;
+  color: white;
+}
+
+header.black {
+  background-color: @almost-black;
+  color: @almost-white;
+}
+
+// black header arrow (overrides default from index.less)
+header.black:after {
+  border-top-color: @almost-black;
+}
+
+
+
+
+
+
+
+
+// DIRECTORS
+section.directors .director {
+  flex: 0 1 400px;
+  margin: 2em;
+}
+section.directors .director p {
+  margin: 0;
+}
+
+// director photo
+section.directors .director figure {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  margin-right: 0.5em;
+  filter: saturate(0);
+}
+
+
+section.directors .director a {
+  color: @green;
+  text-decoration: none;
+}
+
+
+
+// ADVISORS
+
+section.advisors header p {
+  margin-bottom: 1em;
+}
+
+section.advisors > p {
+  flex: 1 0 500px;
+  margin: 1em;
+}
+
+
+section.directors .name,
+section.advisors  .name {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+
+
+
+// PATRONS BENEFACTORS
+section.patrons-benefactors {
+  text-align: center;
+  line-height: 1.8;
+  font-family: @sans-serif;
+  font-weight: 300;
+}
+
+
+
+// CONTACT US
+section.contact-us {
+  background: @green;
+  color: white;
+
+  text-align: center;
+  font-family: @sans-serif;
+  font-weight: 300;
+
+  padding: 1em 1em 2em;
+  margin-top: 2em;
+}
+
+section.contact-us h2 {
+  color: @text-color;
+}
+
+section.contact-us a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+#editorial-policy,
+#donations {
+  font-family:@sans-serif;
+  font-weight:300;
+}
+
+#editorial-policy strong{
+ font-weight:900;
+}
+
+#editorial-policy p{
+  padding-left:1em;
+  padding-right:1em;
+  margin-bottom:2em;
+}
+
+#donations p{
+ margin-bottom:1em;
+}
+
+
+.partner-logo {
+  //width: 65px;
+  float: left;
+  height: 65px;
+  margin: 1em 5%;
+}
+
+section.directors {
+  clear: both;
+}
