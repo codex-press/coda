@@ -25,12 +25,7 @@ article.ready.then(() => {
     sub.innerHTML = "About";
     sub.removeAttribute("href");
   }
-  else if (location.pathname.startsWith('/coda/lgbt-crisis')){
-    sub.innerHTML = "LGBTQ Crisis";
-    //sub.removeAttribute("href");
-    sub.href="/lgbtq-crisis";
-  }
-  else if (location.pathname.startsWith('/coda/lgbtq-crisis')){
+  else if (location.pathname.startsWith('/coda/lgbt-crisis') || location.pathname.startsWith('/coda/lgbtq-crisis') || location.pathname.startsWith('/coda/news')){
     sub.innerHTML = "LGBTQ Crisis";
     //sub.removeAttribute("href");
     sub.href="/lgbtq-crisis";
