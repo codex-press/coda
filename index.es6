@@ -30,6 +30,11 @@ article.ready.then(() => {
     //sub.removeAttribute("href");
     sub.href="/lgbtq-crisis";
   }
+  else if (location.pathname.startsWith('/coda/lgbtq-crisis')){
+    sub.innerHTML = "LGBTQ Crisis";
+    //sub.removeAttribute("href");
+    sub.href="/lgbtq-crisis";
+  }
   else if (location.pathname.startsWith('/coda/migration-crisis')){
     sub.innerHTML = "Migration Crisis";
     //sub.removeAttribute("href");
