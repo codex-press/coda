@@ -1,0 +1,124 @@
+@import 'css/_definitions.less';
+
+@fast: 0.4s ease-out;
+@slowDelay: 1s 0.5s ease-out;
+
+html {
+//  background: black !important;
+//  color: @almost-white !important;
+}
+
+a,
+a:visited {
+  color: @almost-white;
+}
+
+article {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+[x-cp-video] {
+  width: 100%;
+  min-height: 100%;
+  max-height: initial;
+  margin: 0 auto 30vh;
+}
+
+
+[x-cp-video].gradient-background .frame::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.5) 40%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+[x-cp-video].playing.gradient-background .frame::before {
+  opacity: 0;
+}
+
+
+// INTRO
+.intro {
+  padding: 1em;
+  z-index: 30;
+}
+
+.intro h1.hed {
+  margin: 1rem 0;
+  color: @green;
+}
+
+
+// ANIMATION
+
+// everthing fades out
+.crop:before,
+.intro {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity @fast;
+}
+
+[x-cp-video].playing .crop:before,
+html.video-playing .intro {
+  opacity: 0;
+}
+
+// inside the frame animation
+// words go down
+//.intro parts move down on a stagger
+[x-cp-video] .frame .intro > * {
+  transform: translateY(0);
+  transition: transform @fast;
+}
+[x-cp-video].playing .frame .intro > * {
+  transform: translateY(200px);
+}
+
+// caption is delayed coming on screen
+[x-cp-video].playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
+[x-cp-video].playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
+
+// reverse stagger on the way back on screen
+[x-cp-video].playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
+[x-cp-video].playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
+
+
+
+// OUTSIDE TRANSITION
+
+[x-cp-video].video > .intro {
+  opacity: 1;
+  transition: opacity @fast;
+}
+
+// cannot [x-cp-video] out how to shrink to zero height given the inability to
+// transition to height: auto :(
+[x-cp-video].video.playing > .intro {
+  opacity: 0;
+}
+
+
+
+.intro {
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+@media @mobile {
+  .intro {
+    max-width: calc(100% - 2em);
+  }
+}
