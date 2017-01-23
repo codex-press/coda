@@ -125,6 +125,26 @@ html.video-playing .intro {
 }
 
 
+.end-share {
+  //float:right;
+  margin-left: auto;
+  margin-right: auto;
+  width: 12.75em;
+}
+
+.end-share svg {
+  width: 2em;
+  height: 2em;
+  margin: 1em;
+}
+
+// share icons to green
+.cp-icon.email,
+.cp-icon.facebook,
+.cp-icon.twitter {
+  fill: @green;
+}
+
 .footer-logo .logo {
   display:none;
 }
@@ -135,6 +155,13 @@ html.video-playing .intro {
 
 .footer-logo {
   font-family: @sans-serif;
+}
+article>p,
+.footer-logo {
+  width: calc(100% - 2rem);
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-logo .footer-edition,
