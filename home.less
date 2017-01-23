@@ -108,6 +108,12 @@ header.sitewide h1{
 	.card-dek {
 		display:none;
 	}
+	.top-story {
+		height: 35vh;
+	}
+	.big.top-story {
+		height: 70vh;
+	}
 }
 
 @media @tablet {
@@ -120,6 +126,12 @@ header.sitewide h1{
 	}
 	.what-is p {
 		width: 80vw;
+	}
+	.top-story {
+		height: 35vh;
+	}
+	.big.top-story {
+		height: 60vh;
 	}
 }
 
@@ -138,6 +150,12 @@ header.sitewide h1{
 	.top-story {
 		width: 47%;
 		float: left;
+		height: 35vh;
+	}
+	.big.top-story {
+		width: 97%;
+		float: left;
+		height: 35vh;
 	}
 }
 
@@ -154,7 +172,13 @@ header.sitewide h1{
 		max-width: 800px;
 	}
 	.top-story {
+		height: 35vh;
 		width: 30%;
+		float: left;
+	}
+	.top-story.big {
+		height: 35vh;
+		width: 63%;
 		float: left;
 	}
 }
@@ -370,7 +394,7 @@ article {
 
 .top-story {
 	//border: 2px solid @almost-black;
-	height: 35vh;
+
 	margin: 0 2% 4vh 1%;
 	position: relative;
 	overflow: hidden;
