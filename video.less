@@ -13,6 +13,7 @@ a:visited {
   color: @almost-white;
 }
 
+
 article {
   min-height: 100vh;
   overflow: hidden;
@@ -22,7 +23,7 @@ article {
   width: 100%;
   min-height: 100%;
   max-height: initial;
-  margin: 0 auto 30vh;
+  margin: 0 auto 0;
 }
 
 
@@ -205,6 +206,7 @@ nav {
   position: fixed;
   bottom: 0;
   padding: 0;
+  z-index: 1000;
 }
 
 nav p {
@@ -250,6 +252,7 @@ nav p {
     position: fixed;
     bottom: 50%;
     left: 1%;
+  //  z-index:100;
   }
 
   nav .current-article {
@@ -295,6 +298,11 @@ nav p {
     background-color: @page-background;
     box-shadow: 0 -5px 5px #888888;
     height: 1.8em;
+  }
+
+  nav a,
+  nav a:visited {
+    color: @text-color;
   }
 
   nav h1 {
