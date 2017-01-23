@@ -4,8 +4,8 @@
 @slowDelay: 1s 0.5s ease-out;
 
 html {
-//  background: black !important;
-//  color: @almost-white !important;
+  background: @almost-black !important;
+  color: @almost-white !important;
 }
 
 a,
@@ -51,12 +51,13 @@ article {
 
 // INTRO
 .intro {
-  padding: 1em;
+  padding: 0 1em;
   z-index: 30;
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .intro h1.hed {
-  margin: 1rem 0;
+//  margin: 1rem 0;
   color: @green;
 }
 
@@ -121,4 +122,326 @@ html.video-playing .intro {
   .intro {
     max-width: calc(100% - 2em);
   }
+}
+
+
+.footer-logo .logo {
+  display:none;
+}
+
+.footer-logo p.stay {
+  display:none;
+}
+
+.footer-logo {
+  font-family: @sans-serif;
+}
+
+.footer-logo .footer-edition,
+.footer-logo .footer-current {
+  width: 100%;
+  height: 25vh;
+  margin-left: 0;
+  position: relative;
+}
+
+.footer-logo .footer-current a:before {
+  display:block;
+  font-weight: normal;
+  content: "More stories in: ";
+}
+
+
+
+.footer-logo .footer-edition a:before {
+  display: block;
+  font-weight: normal;
+  content: "More stories in: "
+}
+
+.footer-logo a {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  color: @almost-white;
+  font-weight: bold;
+  padding: .5em;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+}
+
+//nav
+
+nav {
+  font-family: @sans-serif;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+}
+
+nav p {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  width: auto;
+}
+
+.nav-arrow {
+  font-size: 2em;
+  font-family: @serif;
+}
+
+@media @desktop, @desktop-xl {
+  nav .now,
+  nav .in {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: #888;
+  }
+
+  nav h1 {
+    margin: .25em;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: calc(40vw - 20.4px);
+    font-weight: normal;
+  }
+
+  nav h1 a {
+    font-weight: bold;
+  }
+
+  .nav-arrow {
+    display:block;
+  }
+
+
+  nav .previous-article {
+    position: fixed;
+    bottom: 50%;
+    left: 1%;
+  }
+
+  nav .current-article {
+    display:none;
+    width: calc(60vw + 110px);
+    position: absolute;;
+    bottom: 1.2em;
+    left: calc(40vw - 110.2px);
+    font-size: 1.25em;
+  }
+
+  nav .next-article {
+  //  width: 30vw;
+    position: fixed;
+    bottom: 50%;
+    right: 1%;
+    text-align: right;
+  }
+
+  nav .current-current,
+  .nav-sep,
+  .nav-title {
+    display: none;
+  }
+
+
+
+}
+
+@media @mobile, @tablet {
+
+  nav .current-current,
+  nav .current-article,
+  .nav-sep,
+  nav .nav-title,
+  nav .nav-sep,
+  nav .in,
+  nav .now {
+    display: none;
+  }
+
+  nav {
+    background-color: @page-background;
+    box-shadow: 0 -5px 5px #888888;
+    height: 1.8em;
+  }
+
+  nav h1 {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    bottom: 0;
+    padding: .25em;
+    z-index: -1;
+  }
+
+  nav .current-article {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .previous-article {
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+  }
+
+  nav .previous-article .nav-text {
+    position: relative;
+    top: -.1em;
+  }
+
+  nav .next-article {
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    text-align: right;
+  }
+
+  nav .next-article .nav-text {
+    position: relative;
+    right: 2.1em;
+    top: -.1em;
+  }
+
+  nav .next-article .nav-arrow {
+    position: relative;
+    left: 1.3em;
+  }
+
+  nav .next-article .nav-text,
+  nav .previous-article .nav-text {
+    height: 100%;
+    width: 100%;
+  }
+
+  nav .nav-arrow {
+    line-height: 1em;
+  }
+
+
+}
+
+
+@media @mobile {
+  .logo .logo-stay {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .footer-logo>div {
+    width: 40%;
+    min-width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-logo {
+    font-size: 14px;
+  }
+}
+
+@media @tablet, @desktop, @desktop-xl {
+  .footer-logo {
+    font-size: 15px;
+  }
+
+  .footer-logo>div {
+    width: 40%;
+    float: right;
+    margin-top: 2em;
+  }
+
+  .logo .logo-stay {
+    font-size: 18px;
+  }
+}
+
+
+//edition images
+.lgbtq-crisis {
+  background: url('https://usercontent.codex.press/images/06e4358c-af49-470c-af8e-a1568ab0f0aa/medium.jpg?1475852470');
+  background-position: 0% 50%;
+}
+
+.migration-crisis {
+  background: url('https://usercontent.codex.press/images/8a8e2a50-e9e8-4f0c-a951-d6f3631c649a/medium.jpg?1473579822');
+  background-position: 0% 50%;
+}
+
+.disinformation-crisis {
+  background: url('https://usercontent.codex.press/images/26057c30-5521-4919-9458-6dccfdcd44ed/medium.jpg?1473579821');
+  background-position: 0% 70%;
+}
+
+//current images
+.kremlin-influence {
+  background: url('https://usercontent.codex.press/images/0cd7daef-0bde-441b-81be-20190688d66e/low.jpg');
+  background-position: 0% 70%;
+}
+
+.orthodox-church {
+  background: url('https://usercontent.codex.press/images/2a89aa57-f3d6-47c4-ac5f-22394300201a/low.jpg');
+  background-position: 0% 70%;
+}
+
+.east-west-divide {
+  background: url('https://usercontent.codex.press/images/f41ae3e8-0a5b-4ea9-9b93-e7dbb529fd1b/low.jpg');
+  background-position: 0% 40%;
+}
+
+.information-war {
+  background: url('https://usercontent.codex.press/images/6f11495d-c8aa-4320-8e95-ee8c5b9df46a/low.jpg');
+  background-position: 0% 70%;
+}
+
+.rights-abuses {
+  background: url('https://usercontent.codex.press/images/19c915ab-7290-4c73-9629-a4c4c0854c6a/low.jpg');
+  background-position: 0% 70%;
+}
+
+.traditional-values {
+  background: url('https://usercontent.codex.press/images/73860fed-e037-4961-8f3c-d1b1f4ebf2e1/low.jpg');
+  background-position: 0% 40%;
+}
+
+.foreign-proxies {
+  background: url('https://usercontent.codex.press/images/0bf88777-a616-4c93-a1f7-e4905040c148/low.jpg');
+  background-position: 0 40%;
+
+}
+
+.information-war-1 {
+  background: url('https://usercontent.codex.press/images/e0acc1eb-dbd0-4beb-b954-ff6c9d7283f3/low.jpg');
+  background-position: 0 15%;
+}
+
+.armed-conflict {
+  background: url('https://usercontent.codex.press/images/0534e54b-1f96-4a9a-83ad-a4fd317edc4b/low.jpg');
+  background-position: 40% 30%;
+}
+
+.integration-issues {
+  background: url('https://usercontent.codex.press/images/4a23e42e-4c08-4532-bc0c-7708c1da20a7/low.jpg');
+  background-position: 30% 20%;
+}
+
+.fear-and-loathing {
+  background: url('https://usercontent.codex.press/images/31149eed-2b4c-417c-adf4-69f1a18c0eb8/low.jpg');
+  background-position: 30% 60%;
+}
+
+.geopolitical-ruptures {
+  background: url('https://usercontent.codex.press/images/cbb0f7fd-de88-44f8-b513-ed559480ca02/low.jpg');
+  background-position: 10% 60%;
+}
+
+
+.cyrillic * {
+  font-family: @cyrillic;
 }
