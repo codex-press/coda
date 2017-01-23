@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.donately-btn.donately-submit {
+  border: none;
+  background-image: none;
+  background-color: #46c664;
+  border-radius: 0px;
+  text-shadow: none;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .2em;
+  padding: 12px 40px;
+}
