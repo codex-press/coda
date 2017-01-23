@@ -178,7 +178,7 @@ article.ready.then(() => {
       </div>
     `;
   }
-  console.log(prev_html);
+  //console.log(prev_html);
 
   if (next >= article_index.length) {
     next_html = `
@@ -206,7 +206,7 @@ article.ready.then(() => {
       </div>
     `;
   }
-  console.log(next_html);
+  //console.log(next_html);
 
   var curr_html = `
     <div class="current-article">
