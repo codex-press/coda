@@ -4,7 +4,7 @@
   var dom = require('dom').default;
 
   dom(window).bind({'mouseover .titles div' : currentsExpander});
-
+  dom(window).bind({'click .titles div' : currentsExpander});
 
 //current expansion selector
   function currentsExpander(e) {
