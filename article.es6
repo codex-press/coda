@@ -1,5 +1,5 @@
 import dom from 'dom';
-import env from 'env';
+import * as env from 'env';
 import article from 'article';
 
 
