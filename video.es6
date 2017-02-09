@@ -5,6 +5,9 @@ import article from 'article';
 
 article.ready.then(() => {
 
+  if (env.topOrigin !== 'https://codastory.com')
+    return;
+
   var edition_names = {
     "lgbtq-crisis" : "LGBTQ Crisis",
     "disinformation-crisis" : "Disinformation Crisis",
