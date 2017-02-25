@@ -492,6 +492,48 @@ figure .frame .hed {
 
 
 
+//related stories cards
+
+.related {
+  position: relative;
+  min-width: 230px;
+  width: 25%;
+  /*max-width: 400px;*/
+  float: left;
+  margin: 2em;
+}
+
+.card .headers {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding:.3em;
+	background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.4));
+	width: 100%;
+
+}
+
+.related img {
+  width: 100%;
+}
+
+.headline {
+ margin:0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .related {
+    float: none;
+    width: calc(100% - 2rem);
+    max-width: 35rem;
+    margin: 2em auto;
+  }
+}
+
+
+
+
 
 // PHOTO CREDIT
 
