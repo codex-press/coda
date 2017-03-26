@@ -73,9 +73,7 @@ article header {
 section.one {
   position: relative;
 
-  p {
-    margin-left: 6em;
-  }
+
 
   figure.video .frame {
     border: 1px solid #333;
@@ -117,6 +115,13 @@ section.one {
   @media @mobile, @tablet {
     .right-block {
       width: 100%;
+      margin-left: 1em;
+    }
+  }
+
+  @media @desktop, @desktop-xl {
+    p {
+      margin-left: 6em;
     }
   }
 
@@ -145,20 +150,28 @@ section.two {
     }
   }
 
+  @media @mobile, @tablet {
+    margin-left: 1em;
+  }
+
+
 }
 
 
 
 section.three {
-  p {
-    margin-left: 6em;
-  }
 
-  @media @desktop-xl {
+  @media @mobile, @tablet {
     p {
-      //margin-left: 5%;
+      margin-left: 1em;
     }
   }
+  @media @desktop, @desktop-xl {
+    p {
+      margin-left: 6em;
+    }
+  }
+
 }
 
 
@@ -172,6 +185,10 @@ section.victor {
     p {
       margin-right: 5%;
     }
+  }
+
+  @media @mobile, @tablet {
+    margin-left: 1em;
   }
 }
 
@@ -198,7 +215,16 @@ section.last {
   p {
     position: relative;
     z-index: 5;
-    margin-left: 6em;
+  }
+
+  @media @mobile, @tablet {
+    margin-left: 1em;
+  }
+
+  @media @desktop {
+    p {
+      margin-left: 6em;
+    }
   }
 
   @media @desktop-xl {
