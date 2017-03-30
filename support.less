@@ -1,11 +1,14 @@
+@import 'css/_definitions';
+
 #one-time-amount {
-font-size: 1em;
-    height: 2em;
-    width: 4em;
-    color: #46c664;
-    border: 1px solid #46c664;
-    padding-left: 6px;
+  font-size: 1em;
+  height: 2em;
+  width: 4em;
+  color: #46c664;
+  border: 1px solid #46c664;
+  padding-left: 6px;
 }
+
 h1, p, div {
   display: block;
   margin-left: auto;
@@ -19,22 +22,35 @@ h1, p, div {
   margin-right: auto;
 }
 
-.membership,
-.donations {
-  float:left;
-  max-width: 400px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
 
-.intro {
-  max-width: 550px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
+
+
 
 figure {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+
+@media @mobile, @tablet {
+  article {
+    padding: 1em;
+  }
+}
+
+@media @desktop, @desktop-xl {
+  .intro {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .membership,
+  .donations {
+    float:left;
+    max-width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }
