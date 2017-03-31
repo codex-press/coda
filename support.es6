@@ -2,7 +2,7 @@ import article from 'article';
 
 article.ready.then(() => {
 
-  document.getElementById("one-time-amount").addEventListener("input", setButtonAmount);
+  //document.getElementById("one-time-amount").addEventListener("input", setButtonAmount);
 
   function setButtonAmount(){
 
