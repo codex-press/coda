@@ -21,17 +21,11 @@ h1, p, .intro {
   margin-right: auto;
 }
 
-
-
-
-
 figure {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 @media @mobile, @tablet {
   article {
@@ -52,4 +46,28 @@ figure {
     margin-left: 50px;
     margin-right: 50px;
   }
+}
+
+header {
+  flex: 0 0 100%;
+  position: relative;
+  margin: 1em 0 2em;
+  padding:0.5em;
+  margin-bottom: 2em;
+}
+
+
+header.green {
+  background-color: @green;
+  color: white;
+}
+
+header.black {
+  background-color: @almost-black;
+  color: @almost-white;
+}
+
+// black header arrow (overrides default from index.less)
+header.black:after {
+  border-top-color: @almost-black;
 }
