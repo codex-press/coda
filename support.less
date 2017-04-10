@@ -31,6 +31,11 @@ figure {
   article {
     padding: 1em;
   }
+
+  .half * {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media @desktop, @desktop-xl {
@@ -49,12 +54,28 @@ figure {
   .half {
     width: 50%;
     float:left;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .half.right * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .half.left * {
+    margin-left:auto;
+    margin-right:0;
   }
 }
 
 @media @tablet, @desktop, @desktop-xl {
   .related {
     height:20em;
+  }
+  .buttons a {
+    font-size: 1.5em;
+    //font-weight: bold;
   }
 }
 
@@ -163,23 +184,9 @@ h2 {
   margin: 0.5em 0;
 }
 
-.half {
-  padding: 2em;
-}
+
 
 
 header {
   clear:both;
-}
-
-
-
-.half.right a {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.half.left a {
-  margin-left:auto;
-  margin-right:0;
 }
