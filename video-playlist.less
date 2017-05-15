@@ -1,20 +1,99 @@
-.sidebar {
-  width: 440px;
-  margin-left: auto;
-  margin-right: 4%;
-  height: 90vh;
-  overflow: auto;
+@import 'css/_definitions';
+
+body {
+  background-color: @almost-black;
+  color: @almost-white;
 }
 
-.now-playing {
-  position: absolute;
-  //position: fixed;
-  left: 4%;
-  top: 4em;
-  margin-left: 0;
-  width: calc(92% - 420px);
-  min-width: 420px;
+
+@media @desktop-xl {
+  .sidebar {
+    width: 420px;
+    margin-left: auto;
+    margin-right: 2%;
+//    height: 90vh;
+//    overflow: auto;
+  }
+
+  .now-playing {
+    position: absolute;
+    left: 0;
+    top: 3.8em;
+    margin-left: 0;
+    width: calc(98% - 360px);
+    min-width: 420px;
+  }
+
+  .playlist {
+    margin-left: auto;
+    margin-right: 0;
+    width: 400px;
+  }
+
+  .playlist .intro {
+    height: 260px;
+    position: absolute;
+    top: 0;
+    width: 339.5px;
+  }
+
+  .playlist {
+    height: 260px;
+  }
+
+  .playlist .hed {
+    position: relative;
+    top: 160px;
+    font-size: 1.25em;
+  }
 }
+
+@media @desktop {
+  .sidebar {
+    width: 280px;
+    margin-left: auto;
+    margin-right: 1%;
+//    height: 90vh;
+    overflow: auto;
+  }
+
+  .now-playing {
+    position: absolute;
+    left: 1%;
+    top: 4.75em;
+    margin-left: 0;
+    width: calc(98% - 260px);
+    min-width: 330px;
+  }
+
+  .playlist {
+    margin-left: auto;
+    margin-right: 1%;
+    width: 240px;
+  }
+
+  figure {
+    margin: .5em;
+  }
+
+  .playlist .intro {
+    height: 170px;
+    position: absolute;
+    top: 0;
+    width: 220px;
+  }
+
+  .playlist {
+    height: 180px;
+  }
+
+  .playlist .hed {
+    position: relative;
+    top: 105px;
+    font-size: 1em;
+  }
+}
+
 
 .now-playing .controls {
   display: block;
@@ -25,12 +104,6 @@
 }
 
 
-.playlist {
-  margin-left: auto;
-  margin-right: 4%;
-  width: 420px;
-}
-
 .playlist .controls {
   display: none;
 }
@@ -40,34 +113,16 @@
 }
 
 
-.playlist figure {
-//  width: 180px;
+
+.intro {
+  margin-left:0;
 }
-
-
-.playlist .intro {
-  height: 270px;
-  position: absolute;
-  top: 0;
-  width: 339.5px;
-}
-
-.playlist {
-  height: 270px;
-}
-
-.playlist .hed {
-  position: relative;
-  top: 170px;
-}
-
-
-
 
 .intro .share {
   display: inline-block;
   width: 9.6em;
 }
+
 
 .share a {
  margin-left: .5em;
