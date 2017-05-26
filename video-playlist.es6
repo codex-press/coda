@@ -29,16 +29,26 @@
     dom(targ).addClass('now-playing');
 
     var targVid = targ.getElementsByTagName("VIDEO")[0];
-    targVid.play();
+//    targVid.play();
 
     //create and dispatch a resize event to force reflow
     var resizeEvent = new Event('resize');
     window.dispatchEvent(resizeEvent);
+
+//scroll window to coordinates of targVid
+    var rect = targVid.getBoundingClientRect();
+    console.log(rect.left, rect.top);
+    setTimeout(function(){ window.scrollTo(rect.left, rect.top); }, 800);
+    //window.scrollTo(rect.top, rect.right);
+    targVid.play();
+
+
     //window.scrollTo(0,0);
-    setTimeout(function(){ window.scrollTo(0,0); }, 500);
+//    setTimeout(function(){ window.scrollTo(0,0); }, 500);
   //  setTimeout(window.scrollBy(0, -10000), 300);
     //window.scrollTo(0,0);
-    console.log("scrolling?");
+  //  console.log("scrolling?");
+    //setTimeout(function(){ targVid.play(); }, 5000);
 
   }
   };
