@@ -36,9 +36,9 @@
     window.dispatchEvent(resizeEvent);
 
 //scroll window to coordinates of targVid
-    var rect = targVid.getBoundingClientRect();
-    console.log(rect.left, rect.top);
-    setTimeout(function(){ window.scrollTo(rect.left, rect.top); }, 800);
+//    var rect = targVid.getBoundingClientRect();
+//    console.log(rect.left, rect.top);
+//    setTimeout(function(){ window.scrollTo(rect.left, rect.top); }, 800);
     //window.scrollTo(rect.top, rect.right);
     targVid.play();
 
