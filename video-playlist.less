@@ -46,6 +46,10 @@ body {
     top: 160px;
     font-size: 1.25em;
   }
+
+  .playlist figcaption {
+    display: none;
+  }
 }
 
 @media @desktop {
@@ -92,8 +96,17 @@ body {
     top: 105px;
     font-size: 1em;
   }
+
+  .playlist figcaption {
+    display: none;
+  }
 }
 
+@media @mobile, @tablet {
+  figure {
+    margin:0.5em;;
+  }
+}
 
 .now-playing .controls {
   display: block;
@@ -108,9 +121,7 @@ body {
   display: none;
 }
 
-.playlist figcaption {
-  display: none;
-}
+
 
 
 
