@@ -1,0 +1,482 @@
+@import 'css/_definitions.less';
+
+@fast: 0.4s ease-out;
+@slowDelay: 1s 0.5s ease-out;
+
+html {
+  background: @almost-black !important;
+  color: @almost-white;
+}
+
+a,
+a:visited {
+  color: @almost-white;
+}
+.previous-article:hover,
+a:hover,
+a:hover * {
+  text-color: @green;
+}
+
+article {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+[x-cp-video] {
+  width: 100%;
+  min-height: 100%;
+  max-height: initial;
+  margin: 0 auto 0;
+}
+
+
+[x-cp-video].gradient-background .frame::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.5) 40%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+[x-cp-video].playing.gradient-background .frame::before {
+  opacity: 0;
+}
+
+
+// INTRO
+.intro {
+  padding: 0 1em;
+  z-index: 30;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.intro h1.hed {
+//  margin: 1rem 0;
+  color: @green;
+}
+
+
+// ANIMATION
+
+// everthing fades out
+.crop:before,
+.intro {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity @fast;
+}
+
+html.video-playing nav,
+[x-cp-video].playing .crop:before,
+html.video-playing .intro {
+  opacity: 0;
+  pointer-events: none;
+}
+
+// inside the frame animation
+// words go down
+//.intro parts move down on a stagger
+[x-cp-video] .frame .intro > * {
+  transform: translateY(0);
+  transition: transform @fast;
+}
+[x-cp-video].playing .frame .intro > * {
+  transform: translateY(200px);
+}
+
+// caption is delayed coming on screen
+[x-cp-video].playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
+[x-cp-video].playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
+
+// reverse stagger on the way back on screen
+[x-cp-video].playing .frame .intro > :nth-child(0) { transition-delay: 0.1s; }
+[x-cp-video].playing .frame .intro > :nth-child(1) { transition-delay: 0s; }
+
+
+
+// OUTSIDE TRANSITION
+
+[x-cp-video].video > .intro {
+  opacity: 1;
+  transition: opacity @fast;
+}
+
+// cannot [x-cp-video] out how to shrink to zero height given the inability to
+// transition to height: auto :(
+[x-cp-video].video.playing > .intro {
+  opacity: 0;
+}
+
+
+
+.intro {
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+@media @mobile {
+  .intro {
+    max-width: calc(100% - 2em);
+  }
+}
+
+
+.end-share {
+  //float:right;
+  margin-left: auto;
+  margin-right: auto;
+  width: 12.75em;
+}
+
+.end-share svg {
+  width: 2em;
+  height: 2em;
+  margin: 1em;
+}
+
+// share icons to green
+.cp-icon.email,
+.cp-icon.facebook,
+.cp-icon.twitter {
+  fill: @green;
+}
+
+.footer-logo .logo {
+  display:none;
+}
+
+.footer-logo p.stay {
+  display:none;
+}
+
+.footer-logo {
+  font-family: @sans-serif;
+}
+article>p,
+.footer-logo {
+  width: calc(100% - 2rem);
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-logo .footer-edition,
+.footer-logo .footer-current {
+  width: 100%;
+  height: 25vh;
+  margin-left: 0;
+  position: relative;
+}
+
+.footer-logo .footer-current a:before {
+  display:block;
+  font-weight: normal;
+  content: "More stories in: ";
+}
+
+
+
+.footer-logo .footer-edition a:before {
+  display: block;
+  font-weight: normal;
+  content: "More stories in: "
+}
+
+.footer-logo a {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  color: @almost-white;
+  font-weight: bold;
+  padding: .5em;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+}
+
+//nav
+
+nav {
+  font-family: @sans-serif;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+  z-index: 1000;
+}
+
+nav p {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  width: auto;
+}
+
+.nav-arrow {
+  font-size: 2em;
+  font-family: @serif;
+}
+
+@media @desktop, @desktop-xl {
+  nav .now,
+  nav .in {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: #888;
+  }
+
+  nav h1 {
+    margin: .25em;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: calc(40vw - 20.4px);
+    font-weight: normal;
+  }
+
+  nav h1 a {
+    font-weight: bold;
+  }
+
+  .nav-arrow {
+    display:block;
+  }
+
+
+  nav .previous-article {
+    position: fixed;
+    bottom: 50%;
+    left: 1%;
+  }
+
+  nav .current-article {
+    display:none;
+
+  }
+
+  nav .next-article {
+    position: fixed;
+    bottom: 50%;
+    right: 1%;
+    text-align: right;
+  }
+
+  nav .current-current,
+  .nav-sep,
+  .nav-title {
+    display: none;
+  }
+
+
+
+}
+
+@media @mobile, @tablet {
+
+  nav .current-current,
+  nav .current-article,
+  .nav-sep,
+  nav .nav-title,
+  nav .nav-sep,
+  nav .in,
+  nav .now {
+    display: none;
+  }
+
+  nav {
+    background-color: @page-background;
+    box-shadow: 0 -5px 5px #888888;
+    height: 1.8em;
+  }
+
+  nav a,
+  nav a:visited {
+    color: @text-color;
+  }
+
+  nav h1 {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    bottom: 0;
+    padding: .25em;
+    z-index: -1;
+  }
+
+  nav .current-article {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .previous-article {
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+  }
+
+  nav .previous-article .nav-text {
+    position: relative;
+    top: -.1em;
+  }
+
+  nav .next-article {
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    text-align: right;
+  }
+
+  nav .next-article .nav-text {
+    position: relative;
+    right: 2.1em;
+    top: -.1em;
+  }
+
+  nav .next-article .nav-arrow {
+    position: relative;
+    left: 1.3em;
+  }
+
+  nav .next-article .nav-text,
+  nav .previous-article .nav-text {
+    height: 100%;
+    width: 100%;
+  }
+
+  nav .nav-arrow {
+    line-height: 1em;
+  }
+
+
+}
+
+
+@media @mobile {
+  .logo .logo-stay {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .footer-logo>div {
+    width: 40%;
+    min-width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-logo {
+    font-size: 14px;
+  }
+}
+
+@media @tablet, @desktop, @desktop-xl {
+  .footer-logo {
+    font-size: 15px;
+  }
+
+  .footer-logo>div {
+    width: 40%;
+    float: right;
+    margin-top: 2em;
+  }
+
+  .logo .logo-stay {
+    font-size: 18px;
+  }
+}
+
+
+//edition images
+.lgbtq-crisis {
+  background: url('https://usercontent.codex.press/images/06e4358c-af49-470c-af8e-a1568ab0f0aa/i1000.jpg?1475852470');
+  background-position: 0% 50%;
+}
+
+.migration-crisis {
+  background: url('https://usercontent.codex.press/images/8a8e2a50-e9e8-4f0c-a951-d6f3631c649a/i1000.jpg?1473579822');
+  background-position: 0% 50%;
+}
+
+.disinformation-crisis {
+  background: url('https://usercontent.codex.press/images/26057c30-5521-4919-9458-6dccfdcd44ed/i1000.jpg?1473579821');
+  background-position: 0% 70%;
+}
+
+//current images
+.kremlin-influence {
+  background: url('https://usercontent.codex.press/images/0cd7daef-0bde-441b-81be-20190688d66e/i1000.jpg');
+  background-position: 0% 70%;
+}
+
+.orthodox-church {
+  background: url('https://usercontent.codex.press/images/2a89aa57-f3d6-47c4-ac5f-22394300201a/i1000.jpg');
+  background-position: 0% 70%;
+}
+
+.east-west-divide {
+  background: url('https://usercontent.codex.press/images/f41ae3e8-0a5b-4ea9-9b93-e7dbb529fd1b/i1000.jpg');
+  background-position: 0% 40%;
+}
+
+.information-war {
+  background: url('https://usercontent.codex.press/images/6f11495d-c8aa-4320-8e95-ee8c5b9df46a/i1000.jpg');
+  background-position: 0% 70%;
+}
+
+.rights-abuses {
+  background: url('https://usercontent.codex.press/images/19c915ab-7290-4c73-9629-a4c4c0854c6a/i1000.jpg');
+  background-position: 0% 70%;
+}
+
+.traditional-values {
+  background: url('https://usercontent.codex.press/images/73860fed-e037-4961-8f3c-d1b1f4ebf2e1/i1000.jpg');
+  background-position: 0% 40%;
+}
+
+.foreign-proxies {
+  background: url('https://usercontent.codex.press/images/0bf88777-a616-4c93-a1f7-e4905040c148/i1000.jpg');
+  background-position: 0 40%;
+
+}
+
+.information-war-1 {
+  background: url('https://usercontent.codex.press/images/e0acc1eb-dbd0-4beb-b954-ff6c9d7283f3/i1000.jpg');
+  background-position: 0 15%;
+}
+
+.armed-conflict {
+  background: url('https://usercontent.codex.press/images/0534e54b-1f96-4a9a-83ad-a4fd317edc4b/i1000.jpg');
+  background-position: 40% 30%;
+}
+
+.integration-issues {
+  background: url('https://usercontent.codex.press/images/4a23e42e-4c08-4532-bc0c-7708c1da20a7/i1000.jpg');
+  background-position: 30% 20%;
+}
+
+.fear-and-loathing {
+  background: url('https://usercontent.codex.press/images/31149eed-2b4c-417c-adf4-69f1a18c0eb8/i1000.jpg');
+  background-position: 30% 60%;
+}
+
+.geopolitical-ruptures {
+  background: url('https://usercontent.codex.press/images/cbb0f7fd-de88-44f8-b513-ed559480ca02/i1000.jpg');
+  background-position: 10% 60%;
+}
+
+
+.cyrillic * {
+  font-family: @cyrillic;
+}
