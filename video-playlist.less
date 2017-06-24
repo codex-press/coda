@@ -119,14 +119,29 @@ a {
   display: inline;
 }
 
+.now-playing .hed {
+  color: @green;
+}
 
 .playlist .controls {
   display: none;
 }
 
+//attempt flexbox solution for moving video intro to top while playing
+.now-playing {
+  display: flex;
+  flex-direction: column;
+}
+.now-playing .intro {
+  order: 1;
+}
+.now-playing .frame {
+  order: 2;
+}
 
-
-
+.now-playing figure {
+  margin:2em;
+}
 
 .intro {
   margin-left:0;
@@ -144,7 +159,9 @@ a {
 }
 
 article > .hed {
-  margin-left: 2em;
+  margin-left: 1em;
+  font-size: 2em;
+  margin-bottom: 0;
 }
 
 article {
