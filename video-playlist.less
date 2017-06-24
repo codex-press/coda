@@ -10,6 +10,11 @@ a {
 }
 
 @media @desktop-xl {
+  article > .hed {
+    margin-left: 1em;
+    font-size: 2em;
+    margin-bottom: 3em;
+  }
   .sidebar {
     width: 420px;
     margin-left: auto;
@@ -25,6 +30,16 @@ a {
     margin-left: 0;
     width: calc(98% - 360px);
     min-width: 420px;
+  }
+
+  .now-playing .hed {
+    color: @green;
+  }
+
+
+
+  .now-playing figure {
+    margin:2em;
   }
 
   .playlist {
@@ -56,6 +71,11 @@ a {
 }
 
 @media @desktop {
+  article > .hed {
+    margin-left: 1em;
+    font-size: 2em;
+    margin-bottom: 3em;
+  }
   .sidebar {
     width: 280px;
     margin-left: auto;
@@ -66,11 +86,19 @@ a {
 
   .now-playing {
     position: absolute;
-    left: 1%;
+    left: 0;
     top: 4.75em;
     margin-left: 0;
     width: calc(98% - 260px);
     min-width: 330px;
+  }
+
+  .now-playing .hed {
+    color: @green;
+  }
+
+  .now-playing figure {
+    margin:2em;
   }
 
   .playlist {
@@ -109,6 +137,24 @@ a {
   figure {
     margin:0.5em;;
   }
+  article > .hed {
+    margin: 0.25em;
+    font-size: 2em;
+  }
+  .playlist {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro {
+    order: 1;
+  }
+  .frame {
+    order: 2;
+  }
+  .now-playing .hed,
+  .playlist .hed {
+    color: @green;
+  }
 }
 
 .now-playing .controls {
@@ -117,10 +163,6 @@ a {
 
 .now-playing figcaption {
   display: inline;
-}
-
-.now-playing .hed {
-  color: @green;
 }
 
 .playlist .controls {
@@ -139,9 +181,7 @@ a {
   order: 2;
 }
 
-.now-playing figure {
-  margin:2em;
-}
+
 
 .intro {
   margin-left:0;
@@ -158,11 +198,7 @@ a {
  margin-right: .5em;
 }
 
-article > .hed {
-  margin-left: 1em;
-  font-size: 2em;
-  margin-bottom: 0;
-}
+
 
 article {
   margin-bottom: 5em;
