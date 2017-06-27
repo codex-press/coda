@@ -1,6 +1,7 @@
 import dom from 'dom';
 import article from 'article';
 
+
 article.ready.then(() => {
 
 //input: an array of words
@@ -34,6 +35,7 @@ article.ready.then(() => {
         }
       }
       texts[i].innerHTML = result;
+      result = "";
     }
   }
 
@@ -60,12 +62,18 @@ article.ready.then(() => {
   for (var i = 0; i<texts.length; i++){
     //right now this just does them all at once
     //need to change it so it only does them when the user views them
+    //I think I can just bind it to an "onscreen" even per Codex
+    //but how!
     addClassAtInterval(texts[i], "word", 200);
   }
 
+  var animate = function(e){
+    console.log("animating");
+    addClassAtInterval(dom(e.target).closest('.word-by-word'), "word", 200);
+  }
 
-
-
+//  dom(window).bind({'click .word-by-word' : animate}); //works
+  dom(window).bind({'onscreen .word-by-word' : animate}); //does not work!
 
 
 });
