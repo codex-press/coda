@@ -79,7 +79,7 @@ article.ready.then(() => {
       //but how!
       if (isInViewport(texts[i]))
       {
-        addClassAtInterval(texts[i], "word", 200);
+        addClassAtInterval(texts[i], "word", 100);
       }
     }
   }
