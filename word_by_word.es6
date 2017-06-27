@@ -1,5 +1,6 @@
 import dom from 'dom';
 import article from 'article';
+import Plugin from 'plugin';
 
 
 article.ready.then(() => {
@@ -54,26 +55,45 @@ article.ready.then(() => {
       }
   }
 
+  var isInViewport = function(element){
+    var rect = element.getBoundingClientRect();
+//this section copied from https://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+    return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
+    //return true;
+  }
 
 
 
   var texts = document.getElementsByClassName("word-by-word");
   spanify(texts);
-  for (var i = 0; i<texts.length; i++){
-    //right now this just does them all at once
-    //need to change it so it only does them when the user views them
-    //I think I can just bind it to an "onscreen" even per Codex
-    //but how!
-    addClassAtInterval(texts[i], "word", 200);
+  var runAnimations = function(){
+    for (var i = 0; i<texts.length; i++){
+      //right now this just does them all at once
+      //need to change it so it only does them when the user views them
+      //I think I can just bind it to an "onscreen" even per Codex
+      //but how!
+      if (isInViewport(texts[i]))
+      {
+        addClassAtInterval(texts[i], "word", 200);
+      }
+    }
   }
+
+  dom(window).bind({'scroll' : runAnimations});
 
   var animate = function(e){
     console.log("animating");
-    addClassAtInterval(dom(e.target).closest('.word-by-word'), "word", 200);
+  //  addClassAtInterval(dom(e.target).closest('.word-by-word'), "word", 200);
   }
 
-//  dom(window).bind({'click .word-by-word' : animate}); //works
-  dom(window).bind({'onscreen .word-by-word' : animate}); //does not work!
 
+//  dom(window).bind({'click .word-by-word' : animate}); //works
+//  dom(window).bind({'onscreen .word-by-word' : animate}); //does not work!
+  //dom(window).bind({'scroll' : animate}); //works! Just have to write a function to check for animated elements
 
 });
