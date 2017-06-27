@@ -1,14 +1,27 @@
-@import '_definitions';
+@import 'css/_definitions.less';
 
 @keyframes slideInFromBottom {
   0% {
     transform: translateY(100%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 .word {
-  animation: 1s ease-out 0s 1 slideInFromBottom;
+  display: inline-block;
+  margin-right: 0.25em;
+  animation: .25s ease-out 0s 1 slideInFromBottom;
+  //color: @text-color;
+}
+
+.green {
+  color: @green;
+}
+
+.word-by-word *:not(.word) {
+  opacity: 0;
 }

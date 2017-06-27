@@ -3,9 +3,8 @@ import article from 'article';
 
 article.ready.then(() => {
 
-  console.log("opening word-by-word");
-
-
+//input: an array of words
+//output: a string with each of those words in its own span
   var addSpans = function(words){
     var line = "";
     var spanBegin = "<span>";
@@ -16,30 +15,36 @@ article.ready.then(() => {
     return line;
   }
 
+//takes an element and puts all of its words into spans.  Leaves other elements alone.
   var spanify = function(texts){
+    var result = "";
     for (var i = 0; i<texts.length; i++) {
-      var split = texts[i].innerHTML.split(" ");
-      var spanned = addSpans(split);
-      texts[i].innerHTML = spanned;
+      //here, instead of splitting the innerHTML, I should split + spanify all text nodes
+      //var split = texts[i].innerHTML.split(" ");
+      //var spanned = addSpans(split);
+      var nodes = texts[i].childNodes;
+      for (var j = 0; j < nodes.length; j++) {
+        if (nodes[j].nodeType == 3) {
+          var split = nodes[j].nodeValue.trim().split(" ");
+          var spanned = addSpans(split);
+          result += spanned;
+        }
+        else {
+          result += nodes[j].outerHTML;
+        }
+      }
+      texts[i].innerHTML = result;
     }
   }
 
-
-  var texts = document.getElementsByClassName("word-by-word");
-  spanify(texts);
-
-
-  //function animateChildren (what is it actually doing?)
-  //precondition: given an element with some number of children
-  //to do: animate children of the element by adding a CSS animation class to each one in sequence
-  //function addClassInSequence
-  //input: takes an element with some children, a class name, and an interval
-  //output: addes a class to each child element at the interval
 
   var addClass = function(element, className) {
     element.classList.add(className);
   }
 
+  //function addClassAtInterval
+  //input: takes an element, a class name, and an interval
+  //output: addes a class to each child element at the interval
   var addClassAtInterval = function(element, className, interval) {
     var children = element.children;
     for (var i = 0; i<children.length; i++) {
@@ -47,9 +52,17 @@ article.ready.then(() => {
       }
   }
 
+
+
+
+  var texts = document.getElementsByClassName("word-by-word");
+  spanify(texts);
   for (var i = 0; i<texts.length; i++){
-    addClassAtInterval(texts[i], "word", 300);
+    //right now this just does them all at once
+    //need to change it so it only does them when the user views them
+    addClassAtInterval(texts[i], "word", 200);
   }
+
 
 
 
