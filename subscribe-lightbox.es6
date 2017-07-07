@@ -44,7 +44,7 @@ article.ready.then(() => {
   }
   */
 
-  var mq = window.matchMedia('@media @mobile');
+  var mq = window.matchMedia('@media only screen and (max-width: 529px)');
   if(mq.matches) {
       // mobile
       console.log("mobile");
