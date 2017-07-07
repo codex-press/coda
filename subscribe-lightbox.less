@@ -1,0 +1,45 @@
+@import 'css/_definitions';
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.subscribe-popup {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+  background-color: @almost-white; //@page-background;
+  color: @text-color;
+  max-width: 425px;
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 2%;
+  z-index: 100;
+  padding: .5em;
+}
+
+.subscribe-popup h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.subscribe-popup p {
+  width: 100%;
+  margin-top: .5em;
+  font-size: .8em;
+}
+
+#dismiss {
+  position: absolute;
+  right: .5em;
+}
+
+.dismissed {
+  visibility:hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
+}
