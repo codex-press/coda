@@ -61,12 +61,23 @@
   top: 0;
   font-size: 2em;
   line-height: .75em;
-  padding: 1em;
-  
 }
 
 .dismissed {
   visibility:hidden;
   opacity: 0;
   transition: visibility 0s .3s, opacity .3s linear;
+}
+
+
+@media @desktop, @desktop-xl {
+  #dismiss {
+    padding: 1em;
+  }
+}
+
+@media @tablet {
+  #dismiss {
+    padding: .5em;
+  }
 }
