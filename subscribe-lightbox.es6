@@ -44,7 +44,7 @@ article.ready.then(() => {
   }
   */
 
-  var mq = window.matchMedia('max-width: 529px');
+  var mq = window.matchMedia('(max-width: 529px)');
   console.log(mq);
   if(mq.matches) {
       // mobile
