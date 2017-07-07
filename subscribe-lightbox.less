@@ -9,28 +9,49 @@
   }
 }
 
-.subscribe-popup {
+.subscribe-lightbox {
   animation: 1s ease-out 0s 1 slideInFromBottom;
-  background-color: @almost-white; //@page-background;
+  background-color: rgba(70,198,100,.5);
   color: @text-color;
-  max-width: 425px;
   display: block;
   position: fixed;
-  bottom: 0px;
-  left: 2%;
+  bottom: 0;
+  left: 0;
   z-index: 100;
-  padding: .5em;
-}
-
-.subscribe-popup h2 {
-  font-size: 1.2em;
-  margin: 0;
-}
-
-.subscribe-popup p {
   width: 100%;
-  margin-top: .5em;
-  font-size: .8em;
+  height: 100%;
+  padding: 25vh 20vw;
+}
+
+.subscribe-lightbox form {
+  background-color: @page-background;
+  padding: 2em;
+  height: 100%;
+}
+
+.subscribe-lightbox h2 {
+  font-size: 1.2em;
+  max-width: 35rem;
+  display: block;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscribe-lightbox .field {
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscribe-lightbox .email {
+  width: 20rem;
+}
+
+.subscribe-lightbox p {
+  width: 100%;
+  margin-top: 1em;
+
 }
 
 #dismiss {

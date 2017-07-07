@@ -6,8 +6,8 @@ function subscribePrompt() {
     subscribeBox.classList.add("dismissed");
   }
   var subscribeBox = document.createElement("div");
-  subscribeBox.className="subscribe-popup";
-  subscribeBox.id="subscribe-popup";
+  subscribeBox.className="subscribe-lightbox";
+  subscribeBox.id="subscribe-lightbox";
   subscribeBox.innerHTML = `
     <form action="//codastory.us12.list-manage.com/subscribe/post?u=2917466ad5ae7d0be32196119&amp;id=610841f0e2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <span id="dismiss">&times;</span>
