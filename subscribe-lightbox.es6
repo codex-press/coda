@@ -47,8 +47,10 @@ article.ready.then(() => {
   var mq = window.matchMedia('@media @mobile');
   if(mq.matches) {
       // mobile
+      console.log("mobile");
   } else {
       // not mobile
+      console.log("not mobile");
       subscribePrompt();
   }
 
