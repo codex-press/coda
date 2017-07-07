@@ -43,7 +43,16 @@ article.ready.then(() => {
     subscribePrompt();
   }
   */
-  subscribePrompt(); //comment this out to only display box on first ever visit to site
+
+  var mq = window.matchMedia('@media @mobile');
+  if(mq.matches) {
+      // mobile
+  } else {
+      // not mobile
+      subscribePrompt();
+  }
+
+//  subscribePrompt(); //comment this out to only display box on first ever visit to site
 
 
 
