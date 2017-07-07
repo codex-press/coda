@@ -52,10 +52,10 @@ article.ready.then(() => {
   } else {
       // not mobile
       console.log("not mobile");
-      subscribePrompt();
+  //    subscribePrompt();
   }
 
-//  subscribePrompt(); //comment this out to only display box on first ever visit to site
+  subscribePrompt(); //comment this out to only display box on first ever visit to site
 
 
 
