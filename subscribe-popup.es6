@@ -1,10 +1,7 @@
 import dom from 'dom';
 import article from 'article';
 
-
-
 function subscribePrompt() {
-  //alert("subscribe!");
   function dismiss(){
     subscribeBox.classList.add("dismissed");
   }
@@ -32,6 +29,7 @@ function subscribePrompt() {
 
   dom(window).bind({'click #dismiss' : dismiss});
 }
+
 
 article.ready.then(() => {
   //console.log("testing successful, article ready");
