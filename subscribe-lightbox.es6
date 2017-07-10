@@ -44,17 +44,19 @@ article.ready.then(() => {
   }
   */
 
+/*
+  Checks to see if the page is mobile-sized or not, in case a different popup needs to be loaded
   var mq = window.matchMedia('(max-width: 529px)');
   console.log(mq);
   if(mq.matches) {
       // mobile
-      console.log("mobile");
+    //  console.log("mobile");
   } else {
       // not mobile
-      console.log("not mobile");
+  //    console.log("not mobile");
   //    subscribePrompt();
   }
-
+*/
   subscribePrompt(); //comment this out to only display box on first ever visit to site
 
 
