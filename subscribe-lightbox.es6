@@ -34,6 +34,7 @@ function subscribePrompt() {
 article.ready.then(() => {
   //console.log("testing successful, article ready");
 
+  console.log(document.documentElement);
 
   //calls the function to show the Subscribe Popup Prompt
   //commented out until we are go for live deployment
