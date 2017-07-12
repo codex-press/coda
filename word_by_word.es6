@@ -84,8 +84,8 @@ article.ready.then(() => {
     }
   }
 
-  dom(window).bind({'scroll' : runAnimations});
-
+//  dom(window).bind({'scroll' : runAnimations});
+  article.on('scroll', runAnimations);
   var animate = function(e){
     console.log("animating");
   //  addClassAtInterval(dom(e.target).closest('.word-by-word'), "word", 200);
