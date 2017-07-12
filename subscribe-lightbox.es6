@@ -66,6 +66,7 @@ article.ready.then(() => {
 
   var prompted = false;
   var checkPrompt = function() {
+    console.log("checking scroll");
     var body = document.getElementsByTagName("BODY")[0];
     var bodyHeight = body.getBoundingClientRect.height;
     var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
