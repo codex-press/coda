@@ -62,7 +62,26 @@ article.ready.then(() => {
   //    subscribePrompt();
   }
 */
-  subscribePrompt(); //comment this out to only display box on first ever visit to site
+
+
+  var prompted = false;
+  var checkPrompt = function() {
+    var body = document.getElementsByTagName("BODY")[0];
+    var bodyHeight = body.getBoundingClientRect.height;
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
+
+    var trigger = (bodyHeight - windowHeight) * 2 / 3;
+
+
+    if ( (window.pageYOffset >= trigger) && !prompted ) {
+      subscribePrompt();
+      promted = true;
+    }
+  }
+
+  article.on('scroll', checkPrompt);
+
+//  subscribePrompt(); //comment this out to only display box on first ever visit to site
 
 
 
