@@ -69,11 +69,12 @@ article.ready.then(() => {
     console.log("checking scroll");
     var body = document.getElementsByTagName("BODY")[0];
     var bodyHeight = body.getBoundingClientRect.height;
+    console.log("body height is: " + bodyHeight);
     var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
-
+    console.log("window height is: " + windowHeight)
     var trigger = (bodyHeight - windowHeight) * 2 / 3;
-
-
+    console.log("trigger point is: " + trigger);
+    console.log("window Y offset is: " + window.pageYOffset);
     if ( (window.pageYOffset >= trigger) && !prompted ) {
       subscribePrompt();
       promted = true;
