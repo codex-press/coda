@@ -73,10 +73,6 @@ article.ready.then(() => {
   spanify(texts);
   var runAnimations = function(){
     for (var i = 0; i<texts.length; i++){
-      //right now this just does them all at once
-      //need to change it so it only does them when the user views them
-      //I think I can just bind it to an "onscreen" even per Codex
-      //but how!
       if (isInViewport(texts[i]))
       {
         addClassAtInterval(texts[i], "word", 100);
@@ -87,13 +83,6 @@ article.ready.then(() => {
 //  dom(window).bind({'scroll' : runAnimations}); //does not work on iOS Safari
   article.on('scroll', runAnimations); //works on Firefox for Win7, Chrome for Android, Safari for iOS
 
-
-/* //obsolete?
-  var animate = function(e){
-    console.log("animating");
-  //  addClassAtInterval(dom(e.target).closest('.word-by-word'), "word", 200);
-  }
-*/
 
 
 
