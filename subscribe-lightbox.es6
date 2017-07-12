@@ -25,7 +25,8 @@ function subscribePrompt() {
       <p>Sign up for a monthly update from Coda for news about our deployments and our latest stories.</p>
     </form>
   `
-  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox);
+//  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox);
+  document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
 
   dom(window).bind({'click #dismiss' : dismiss});
 }
@@ -34,7 +35,7 @@ function subscribePrompt() {
 article.ready.then(() => {
   //console.log("testing successful, article ready");
 
-  console.log(document.documentElement.innerHTML);
+  //console.log(document.documentElement.innerHTML);
 
   //calls the function to show the Subscribe Popup Prompt
   //commented out until we are go for live deployment
