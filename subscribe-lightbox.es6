@@ -29,7 +29,7 @@ function subscribePrompt() {
   document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
 
 //  dom(window).bind({'click #dismiss' : dismiss});
-  document.getElementById('dismiss').addEventListener(dismiss);
+  document.getElementById('dismiss').addEventListener('click', dismiss);
   //article.on('click #dismiss', dismiss); //does not work!!!
 }
 
