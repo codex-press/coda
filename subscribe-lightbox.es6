@@ -74,7 +74,7 @@ article.ready.then(() => {
     console.log("body height is: " + bodyHeight);
     var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
     console.log("window height is: " + windowHeight)
-    var trigger = (bodyHeight - windowHeight) * 2 / 3;
+    var trigger = (bodyHeight - windowHeight) * 2 / 4;
     console.log("trigger point is: " + trigger);
     console.log("window Y offset is: " + window.pageYOffset);
     if ( (window.pageYOffset >= trigger) && !prompted ) {
