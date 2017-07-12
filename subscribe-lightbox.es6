@@ -79,7 +79,7 @@ article.ready.then(() => {
     console.log("window Y offset is: " + window.pageYOffset);
     if ( (window.pageYOffset >= trigger) && !prompted ) {
       subscribePrompt();
-      promted = true;
+      prompted = true;
     }
   }
 
