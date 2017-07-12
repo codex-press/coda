@@ -28,8 +28,9 @@ function subscribePrompt() {
 //  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox);
   document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
 
-  //dom(window).bind({'click #dismiss' : dismiss});
-  article.on('click #dismiss', dismiss);
+//  dom(window).bind({'click #dismiss' : dismiss});
+  document.getElementById('dismiss').addEventListener(dismiss);
+  //article.on('click #dismiss', dismiss); //does not work!!!
 }
 
 
