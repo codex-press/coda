@@ -84,16 +84,17 @@ article.ready.then(() => {
     }
   }
 
-//  dom(window).bind({'scroll' : runAnimations});
-  article.on('scroll', runAnimations);
+//  dom(window).bind({'scroll' : runAnimations}); //does not work on iOS Safari
+  article.on('scroll', runAnimations); //works on Firefox for Win7, Chrome for Android, Safari for iOS
+
+
+/* //obsolete?
   var animate = function(e){
     console.log("animating");
   //  addClassAtInterval(dom(e.target).closest('.word-by-word'), "word", 200);
   }
+*/
 
 
-//  dom(window).bind({'click .word-by-word' : animate}); //works
-//  dom(window).bind({'onscreen .word-by-word' : animate}); //does not work!
-  //dom(window).bind({'scroll' : animate}); //works! Just have to write a function to check for animated elements
 
 });

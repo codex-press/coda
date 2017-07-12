@@ -25,12 +25,12 @@ function subscribePrompt() {
       <p>Sign up for a monthly update from Coda for news about our deployments and our latest stories.</p>
     </form>
   `
-//  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox);
+//  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox); //does not work on iOS Safari
   document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
 
-//  dom(window).bind({'click #dismiss' : dismiss});
+//  dom(window).bind({'click #dismiss' : dismiss}); //does not work on iOS Safari
   document.getElementById('dismiss').addEventListener('click', dismiss);
-  //article.on('click #dismiss', dismiss); //does not work!!!
+  //article.on('click #dismiss', dismiss); //does not work at all!
 }
 
 
