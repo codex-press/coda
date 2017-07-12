@@ -26,7 +26,8 @@ function subscribePrompt() {
     </form>
   `
 //  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox); //does not work on iOS Safari
-  document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
+  //document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
+  document.documentElement.appendChild(subscribeBox);
 
 //  dom(window).bind({'click #dismiss' : dismiss}); //does not work on iOS Safari
   document.getElementById('dismiss').addEventListener('click', dismiss);
