@@ -83,11 +83,11 @@ article.ready.then(() => {
     }
   }
 
-  console.log(document.referrer);
+//  console.log(document.referrer);
 
-  if ()!(document.referrer.startsWith("https://codastory.com"))) {
+//  if ()!(document.referrer.startsWith("https://codastory.com"))) {
     article.on('scroll', checkPrompt);
-  }
+//  }
 
 //  subscribePrompt(); //comment this out to only display box on first ever visit to site
 
