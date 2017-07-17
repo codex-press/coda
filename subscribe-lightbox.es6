@@ -84,12 +84,33 @@ article.ready.then(() => {
   }
 
   console.log("article is ready");
-  console.log(document.referrer);
-  console.log(!(document.referrer.startsWith("https://codastory.com")))
 
-//  if ()!(document.referrer.startsWith("https://codastory.com"))) {
-    article.on('scroll', checkPrompt);
-//  }
+
+//cookie check code from
+//https://stackoverflow.com/questions/14196671/session-only-cookies-with-javascript
+  document.cookie = "cookiename=subscribe; expires=0; path=/";
+
+    //get cookie
+  var cookiename = getCookie("cookiename");
+  if (cookiename == "subscribe") {
+     //write your script
+         article.on('scroll', checkPrompt);
+  }
+
+  //function getCookie
+  function getCookie(cname) {
+     var name = cname + "=";
+     var ca = document.cookie.split(';');
+     for (var i = 0; i < ca.length; i++) {
+         var c = ca[i];
+         while (c.charAt(0) == ' ') c = c.substring(1);
+         if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+     }
+     return "";
+  }
+
+//    article.on('scroll', checkPrompt);
+
 
 //  subscribePrompt(); //comment this out to only display box on first ever visit to site
 
