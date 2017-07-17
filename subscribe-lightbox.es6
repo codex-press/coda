@@ -84,6 +84,7 @@ article.ready.then(() => {
   }
 
   console.log(document.referrer);
+  console.log(!(document.referrer.startsWith("https://codastory.com")))
 
 //  if ()!(document.referrer.startsWith("https://codastory.com"))) {
     article.on('scroll', checkPrompt);
