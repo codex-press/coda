@@ -83,6 +83,7 @@ article.ready.then(() => {
     }
   }
 
+  console.log("article is ready");
   console.log(document.referrer);
   console.log(!(document.referrer.startsWith("https://codastory.com")))
 
