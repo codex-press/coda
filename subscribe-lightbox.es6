@@ -66,17 +66,17 @@ article.ready.then(() => {
 
   var prompted = false;
   var checkPrompt = function() {
-    console.log("checking scroll");
+    //console.log("checking scroll");
     var body = document.getElementsByTagName("BODY")[0];
-    console.log(body);
-    console.log(body.getBoundingClientRect());
+    //console.log(body);
+    //console.log(body.getBoundingClientRect());
     var bodyHeight = body.getBoundingClientRect().height;
-    console.log("body height is: " + bodyHeight);
+    //console.log("body height is: " + bodyHeight);
     var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
-    console.log("window height is: " + windowHeight)
+    //console.log("window height is: " + windowHeight)
     var trigger = (bodyHeight - windowHeight) * 4 / 12;
-    console.log("trigger point is: " + trigger);
-    console.log("window Y offset is: " + window.pageYOffset);
+    //console.log("trigger point is: " + trigger);
+    //console.log("window Y offset is: " + window.pageYOffset);
     if ( (window.pageYOffset >= trigger) && !prompted ) {
       subscribePrompt();
       prompted = true;
