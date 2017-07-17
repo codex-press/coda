@@ -85,11 +85,20 @@ article.ready.then(() => {
 
   console.log("article is ready");
 
+if (!sessionStorage.getItem('firstVisit') == '1'){
+  article.on('scroll', checkPrompt);
+  sessionStorage.setItem('firstVisit', '1');
+}
+
+
+
+
+
 
 //cookie check code from
 //https://stackoverflow.com/questions/14196671/session-only-cookies-with-javascript
-
-
+//appears to work on firefox but not on Chrome
+/*
     //get cookie
   var cookiename = getCookie("cookiename");
   if (cookiename != "subscribe") {
@@ -109,6 +118,8 @@ article.ready.then(() => {
      }
      return "";
   }
+
+*/
 
 //    article.on('scroll', checkPrompt);
 
