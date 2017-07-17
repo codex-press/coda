@@ -83,7 +83,9 @@ article.ready.then(() => {
     }
   }
 
-  if (!document.referrer.startsWith("https://codastory.com")) {
+  console.log(document.referrer);
+
+  if ()!(document.referrer.startsWith("https://codastory.com"))) {
     article.on('scroll', checkPrompt);
   }
 
