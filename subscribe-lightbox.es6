@@ -88,13 +88,14 @@ article.ready.then(() => {
 
 //cookie check code from
 //https://stackoverflow.com/questions/14196671/session-only-cookies-with-javascript
-  document.cookie = "cookiename=subscribe; expires=0; path=/";
+
 
     //get cookie
   var cookiename = getCookie("cookiename");
-  if (cookiename == "subscribe") {
+  if (cookiename != "subscribe") {
      //write your script
-         article.on('scroll', checkPrompt);
+    article.on('scroll', checkPrompt);
+    document.cookie = "cookiename=subscribe; expires=0; path=/";
   }
 
   //function getCookie
