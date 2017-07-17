@@ -83,7 +83,9 @@ article.ready.then(() => {
     }
   }
 
-  article.on('scroll', checkPrompt);
+  if (!document.referrer.startsWith("https://codastory.com")) {
+    article.on('scroll', checkPrompt);
+  }
 
 //  subscribePrompt(); //comment this out to only display box on first ever visit to site
 
