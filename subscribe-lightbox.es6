@@ -25,107 +25,27 @@ function subscribePrompt() {
       <p>Sign up for a monthly update from Coda for news about our deployments and our latest stories.</p>
     </form>
   `
-//  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox); //does not work on iOS Safari
-  //document.getElementsByTagName("BODY")[0].appendChild(subscribeBox);
   document.documentElement.appendChild(subscribeBox);
-
-//  dom(window).bind({'click #dismiss' : dismiss}); //does not work on iOS Safari
   document.getElementById('dismiss').addEventListener('click', dismiss);
-  //article.on('click #dismiss', dismiss); //does not work at all!
 }
 
 
 article.ready.then(() => {
-  //console.log("testing successful, article ready");
-
-  //console.log(document.documentElement.innerHTML);
-
-  //calls the function to show the Subscribe Popup Prompt
-  //commented out until we are go for live deployment
-  /*
-  if (!localStorage['subscriptionPrompted']) {
-    localStorage['subscriptionPrompted'] = 'yes';
-    subscribePrompt();
-  }
-  */
-
-/*
-  Checks to see if the page is mobile-sized or not, in case a different popup needs to be loaded
-  var mq = window.matchMedia('(max-width: 529px)');
-  console.log(mq);
-  if(mq.matches) {
-      // mobile
-    //  console.log("mobile");
-  } else {
-      // not mobile
-  //    console.log("not mobile");
-  //    subscribePrompt();
-  }
-*/
-
 
   var prompted = false;
   var checkPrompt = function() {
-    //console.log("checking scroll");
     var body = document.getElementsByTagName("BODY")[0];
-    //console.log(body);
-    //console.log(body.getBoundingClientRect());
     var bodyHeight = body.getBoundingClientRect().height;
-    //console.log("body height is: " + bodyHeight);
     var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
-    //console.log("window height is: " + windowHeight)
-    var trigger = (bodyHeight - windowHeight) * 4 / 12;
-    //console.log("trigger point is: " + trigger);
-    //console.log("window Y offset is: " + window.pageYOffset);
+    var trigger = (bodyHeight - windowHeight) * 3 / 12;
     if ( (window.pageYOffset >= trigger) && !prompted ) {
       subscribePrompt();
       prompted = true;
     }
   }
-
-  console.log("article is ready");
-
-if (!sessionStorage.getItem('firstVisit') == '1'){
-  article.on('scroll', checkPrompt);
-  sessionStorage.setItem('firstVisit', '1');
-}
-
-
-
-
-
-
-//cookie check code from
-//https://stackoverflow.com/questions/14196671/session-only-cookies-with-javascript
-//appears to work on firefox but not on Chrome
-/*
-    //get cookie
-  var cookiename = getCookie("cookiename");
-  if (cookiename != "subscribe") {
-     //write your script
+  if (!sessionStorage.getItem('firstVisit') == '1'){
     article.on('scroll', checkPrompt);
-    document.cookie = "cookiename=subscribe; expires=0; path=/";
+    sessionStorage.setItem('firstVisit', '1');
   }
-
-  //function getCookie
-  function getCookie(cname) {
-     var name = cname + "=";
-     var ca = document.cookie.split(';');
-     for (var i = 0; i < ca.length; i++) {
-         var c = ca[i];
-         while (c.charAt(0) == ' ') c = c.substring(1);
-         if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-     }
-     return "";
-  }
-
-*/
-
-//    article.on('scroll', checkPrompt);
-
-
-//  subscribePrompt(); //comment this out to only display box on first ever visit to site
-
-
 
 });
