@@ -4,6 +4,12 @@ import Plugin from 'plugin';
 
 
 article.ready.then(() => {
+//***********************************
+//Animated Pullquotes
+//
+//***********************************
+
+//Separate pullquote into spans
 
 //input: an array of words
 //output: a string with each of those words in its own span
@@ -83,6 +89,11 @@ article.ready.then(() => {
 //  dom(window).bind({'scroll' : runAnimations}); //does not work on iOS Safari
   article.on('scroll', runAnimations); //works on Firefox for Win7, Chrome for Android, Safari for iOS
 
+
+//***********************************
+//End of Animated Pullquotes
+//
+//***********************************
 
 
 
