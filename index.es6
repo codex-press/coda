@@ -1,16 +1,13 @@
 import dom from 'dom';
 import article from 'article';
 
-
-
 function subscribePrompt() {
-  //alert("subscribe!");
   function dismiss(){
     subscribeBox.classList.add("dismissed");
   }
   var subscribeBox = document.createElement("div");
-  subscribeBox.className="subscribe-popup";
-  subscribeBox.id="subscribe-popup";
+  subscribeBox.className="subscribe-lightbox";
+  subscribeBox.id="subscribe-lightbox";
   subscribeBox.innerHTML = `
     <form action="//codastory.us12.list-manage.com/subscribe/post?u=2917466ad5ae7d0be32196119&amp;id=610841f0e2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <span id="dismiss">&times;</span>
@@ -28,24 +25,28 @@ function subscribePrompt() {
       <p>Sign up for a monthly update from Coda for news about our deployments and our latest stories.</p>
     </form>
   `
-  document.getElementsByTagName("ARTICLE")[0].appendChild(subscribeBox);
-
-  dom(window).bind({'click #dismiss' : dismiss});
+  document.documentElement.appendChild(subscribeBox);
+  document.getElementById('dismiss').addEventListener('click', dismiss);
 }
 
+
 article.ready.then(() => {
-  //console.log("testing successful, article ready");
 
-
-  //calls the function to show the Subscribe Popup Prompt
-  //commented out until we are go for live deployment
-  /*
-  if (!localStorage['subscriptionPrompted']) {
-    localStorage['subscriptionPrompted'] = 'yes';
-    subscribePrompt();
+  var prompted = false;
+  var checkPrompt = function() {
+    var body = document.getElementsByTagName("BODY")[0];
+    var bodyHeight = body.getBoundingClientRect().height;
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
+    var trigger = (bodyHeight - windowHeight) * 3 / 12;
+    if ( (window.pageYOffset >= trigger) && !prompted ) {
+      subscribePrompt();
+      prompted = true;
+    }
   }
-  subscribePrompt(); //comment this out to only display box on first ever visit to site
-  */
+  if (!sessionStorage.getItem('firstVisit') == '1'){
+    article.on('scroll', checkPrompt);
+    sessionStorage.setItem('firstVisit', '1');
+  }
 
   let header = dom('header.sitewide');
 
