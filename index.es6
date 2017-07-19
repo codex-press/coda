@@ -41,11 +41,12 @@ article.ready.then(() => {
     if ( (window.pageYOffset >= trigger) && !prompted ) {
       subscribePrompt();
       prompted = true;
+      sessionStorage.setItem('firstVisit', '1');
     }
   }
   if (!sessionStorage.getItem('firstVisit') == '1'){
     article.on('scroll', checkPrompt);
-    sessionStorage.setItem('firstVisit', '1');
+    //sessionStorage.setItem('firstVisit', '1');
   }
 
   let header = dom('header.sitewide');
