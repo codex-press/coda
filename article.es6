@@ -80,7 +80,7 @@ article.ready.then(() => {
 
 
 
-      var texts = document.getElementsByClassName("word-by-word");
+      var texts = document.getElementsByClassName("pullquote");
       spanify(texts);
       var runAnimations = function(){
         for (var i = 0; i<texts.length; i++){
