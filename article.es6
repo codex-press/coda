@@ -79,9 +79,11 @@ article.ready.then(() => {
       }
 
 
-
+      console.log("before we get the texts");
       var texts = document.getElementsByClassName("pullquote");
+      console.log("texts retrieved");
       spanify(texts);
+      console.log("texts spanified");
       var runAnimations = function(){
         for (var i = 0; i<texts.length; i++){
           if (isInViewport(texts[i]))
