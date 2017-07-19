@@ -4,6 +4,7 @@ import article from 'article';
 import Plugin from 'plugin';
 
 article.ready.then(() => {
+  console.log("article ready");
 
   if (env.topOrigin !== 'https://codastory.com')
     return;
