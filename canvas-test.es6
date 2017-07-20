@@ -10,14 +10,12 @@ article.ready.then(() => {
   ctx.lineWidth=3;
   ctx.beginPath();
   ctx.moveTo(0,0);
-  ctx.lineTo(200,200);
-  ctx.moveTo(0,200);
-  ctx.lineTo(200,0);
+  ctx.lineTo(1200,1200);
+  ctx.moveTo(0,1200);
+  ctx.lineTo(1200,0);
   ctx.stroke();
-
 //end of hard-coded canvas test-canvas
 
-//try programmatically replacing a section with a canvas!
 
 
 
