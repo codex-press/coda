@@ -1,3 +1,5 @@
+@import 'css/_definitions';
+
 @keyframes first-spin {
   0% {
     transform: rotate(-61deg);
@@ -98,4 +100,16 @@ canvas {
 svg * {
   //position: absolute;
   //animation: 1s linear 0s 1 move-left;
+}
+
+.nautilus-container {
+  position: relative;
+}
+
+@media @mobile {
+  .nautilus-container {
+    transform: scale(.5);
+    transform-origin: left;
+}
+
 }
