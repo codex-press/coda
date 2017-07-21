@@ -52,64 +52,38 @@
 
 }
 
-canvas {
-  background-color: #eee;
-}
-
-
-
-#rotate-test {
-  display: block;
-  width: 200px;
-  height: 150px;
-  background-color: green;
-  border: 1px solid black;
-  transform: rotate(60deg);
-  transform-origin: bottom right;
-  cursor: pointer;
-  margin: 10em;
-}
 
 #first-circle {
-  animation: 5s linear 0s 1 first-spin;
+  animation: 2s linear 0s 1 first-spin;
 }
 
 #second-circle {
-  animation: 5s linear 0s 1 second-spin;
+  animation: 2s linear 0s 1 second-spin;
 }
 
 #third-circle {
-  animation: 5s linear 0s 1 third-spin;
+  animation: 2s linear 0s 1 third-spin;
+}
+
+
+.nautilus-container {
+  position: relative;
 }
 
 .membership-nautilus {
   display: block;
   height: 900px;
   background-color: #eee;
-  animation: 5s linear 0s 1 move-left;
+  animation: 2s linear 0s 1 move-left;
 }
 
 .memberships {
   background-color: rgba(0,0,0,0);
   position: absolute;
   top: 0px;
-
+  width:80%; //works
 }
 
 
-svg * {
-  //position: absolute;
-  //animation: 1s linear 0s 1 move-left;
-}
-
-.nautilus-container {
-  position: relative;
-}
-
-@media @mobile {
-  .nautilus-container {
-    transform: scale(.5);
-    transform-origin: left;
-}
 
 }
