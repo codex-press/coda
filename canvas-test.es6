@@ -16,7 +16,9 @@ article.ready.then(() => {
   ctx.stroke();
 //end of hard-coded canvas test-canvas
 
-
+  ctx.beginPath();
+  ctx.arc(600, 600, 200, 0, 0);
+  ctx.stroke();
 
 
 });

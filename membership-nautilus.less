@@ -1,0 +1,101 @@
+@keyframes first-spin {
+  0% {
+    transform: rotate(-61deg);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes second-spin
+  {
+  0% {
+    transform: rotate(-121deg) scale(0.8236);
+    transform-origin: bottom;
+    }
+  50% {
+    transform: rotate(-60.5deg) scale(0.835);
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes third-spin {
+  0% {
+    transform: rotate(-181deg) scale(0.7);
+    //-webkit-transform-origin: 61.11% 66.66%;
+    transform-origin: bottom;
+  }
+  33.33% {
+    transform: rotate(-120.66deg) scale(0.7);
+  }
+  100% {
+    transform: rotate(0deg);
+    //-webkit-transform-origin: 61.11% 66.66%;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(15%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+canvas {
+  background-color: #eee;
+}
+
+
+
+#rotate-test {
+  display: block;
+  width: 200px;
+  height: 150px;
+  background-color: green;
+  border: 1px solid black;
+  transform: rotate(60deg);
+  transform-origin: bottom right;
+  cursor: pointer;
+  margin: 10em;
+}
+
+#first-circle {
+  animation: 1s linear 0s 1 first-spin;
+}
+
+#second-circle {
+  animation: 1s linear 0s 1 second-spin;
+}
+
+#third-circle {
+  animation: 1s linear 0s 1 third-spin;
+}
+
+.membership-nautilus {
+  display: block;
+  height: 900px;
+  background-color: #eee;
+  animation: 1s linear 0s 1 move-left;
+}
+
+.memberships {
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  top: 0px;
+
+}
+
+
+svg * {
+  //position: absolute;
+  //animation: 1s linear 0s 1 move-left;
+}
