@@ -4,6 +4,11 @@
   0% {
     transform: rotate(-61deg);
     transform-origin: bottom;
+    animation-timing-function:ease-in;
+  }
+  33.33% {
+    transform: rotate(-40.66deg);
+    animation-timing-function:ease-out;
   }
   100% {
     transform: rotate(0deg);
@@ -16,10 +21,15 @@
   0% {
     transform: rotate(-121deg) scale(0.8236);
     transform-origin: bottom;
+    animation-timing-function:ease-in;
     }
-  50% {
-    transform: rotate(-60.5deg) scale(0.835);
+  33.33% {
+    transform: rotate(-80.66deg) scale(0.83);
+    animation-timing-function:ease-out;
   }
+  //50% {
+  //	transform: rotate(-60.5deg) scale(0.835);
+  //}
   100% {
     transform: rotate(0deg);
     transform-origin: bottom;
@@ -29,15 +39,15 @@
 @keyframes third-spin {
   0% {
     transform: rotate(-181deg) scale(0.7);
-    //-webkit-transform-origin: 61.11% 66.66%;
     transform-origin: bottom;
+    animation-timing-function:ease-in;
   }
   33.33% {
     transform: rotate(-120.66deg) scale(0.7);
+    animation-timing-function:ease-out;
   }
   100% {
     transform: rotate(0deg);
-    //-webkit-transform-origin: 61.11% 66.66%;
     transform-origin: bottom;
   }
 }
