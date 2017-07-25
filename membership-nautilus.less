@@ -1,6 +1,5 @@
 @import 'css/_definitions';
 
-
 @keyframes small-sector-spin {
   0% {
     transform: rotate(-61deg);
@@ -86,6 +85,8 @@
 .nautilus-container {
   position: relative;
   height: 120vw;
+  display: block;
+  width:100%;
 }
 
 .membership-nautilus {
@@ -99,7 +100,7 @@
   background-color: rgba(0,0,0,0);
   position: absolute;
   top: 0px;
-  width:80vw; //works
+ // width:80vw; //works
  // pointer-events: auto;
  // visibility: visible;
  pointer-events: none;
@@ -112,17 +113,57 @@
 .starting-text {
 	position: absolute;
 	left: 60%;
-	top: 40vw;
+	//top: 40vw;
 	animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
 }
 
 .active-text {
 	position: absolute;
 	left: 60%;
-	top: 40vw;
+	//top: 40vw;
 	animation: 1.3s ease-in-out 0s 1 move-down backwards;
 }
 
 .hidden-text {
 	display:none;
+}
+
+@media only screen and (max-width: 529px) {
+	.memberships {
+		width: 85vw;
+	}
+	.starting-text,
+	.active-text {
+		top: 42.5vw;
+	}
+}
+
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+	.memberships {
+		width: 85vw;
+	}
+	.starting-text,
+	.active-text {
+		top: 42.5vw;
+	}
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+	.memberships {
+		width: 700px;
+	}
+	.starting-text,
+	.active-text {
+		top: 350px;
+	}
+}
+
+@media only screen and (min-width: 1129px){
+	.memberships {
+		width: 800px;
+	}
+	.starting-text,
+	.active-text {
+		top: 400px;
+	}
 }
