@@ -1,6 +1,7 @@
 @import 'css/_definitions';
 
-@keyframes first-spin {
+
+@keyframes small-sector-spin {
   0% {
     transform: rotate(-61deg);
     transform-origin: bottom;
@@ -16,7 +17,7 @@
   }
 }
 
-@keyframes second-spin
+@keyframes medium-sector-spin
   {
   0% {
     transform: rotate(-121deg) scale(0.8236);
@@ -27,16 +28,13 @@
     transform: rotate(-80.66deg) scale(0.83);
     animation-timing-function:ease-out;
   }
-  //50% {
-  //	transform: rotate(-60.5deg) scale(0.835);
-  //}
   100% {
     transform: rotate(0deg);
     transform-origin: bottom;
   }
 }
 
-@keyframes third-spin {
+@keyframes large-sector-spin {
   0% {
     transform: rotate(-181deg) scale(0.7);
     transform-origin: bottom;
@@ -62,17 +60,26 @@
 
 }
 
-
-#first-circle {
-  animation: 2s linear 0s 1 first-spin;
+@keyframes move-down {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
-#second-circle {
-  animation: 2s linear 0s 1 second-spin;
+
+#small-sector {
+  animation: 2s linear 0s 1 small-sector-spin;
 }
 
-#third-circle {
-  animation: 2s linear 0s 1 third-spin;
+#medium-sector {
+  animation: 2s linear 0s 1 medium-sector-spin;
+}
+
+#large-sector {
+  animation: 2s linear 0s 1 large-sector-spin;
 }
 
 
@@ -82,7 +89,7 @@
 
 .membership-nautilus {
   display: block;
-  height: 900px;
+  //height: 900px;
   background-color: #eee;
   animation: 2s linear 0s 1 move-left;
 }
@@ -91,5 +98,31 @@
   background-color: rgba(0,0,0,0);
   position: absolute;
   top: 0px;
-  width:80%; //works
+  width:80vw; //works
+ // pointer-events: auto;
+ // visibility: visible;
+ pointer-events: none;
 }
+
+ a {
+ pointer-events: auto;
+ }
+
+.starting-text {
+	position: absolute;
+	left: 60%;
+	top: 40vw;
+	animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
+}
+
+.active-text {
+	position: absolute;
+	left: 60%;
+	top: 40vw;
+	animation: 1.3s ease-in-out 0s 1 move-down backwards;
+}
+
+.hidden-text {
+	display:none;
+}
+	
