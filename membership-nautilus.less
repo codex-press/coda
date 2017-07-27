@@ -68,6 +68,27 @@
 	}
 }
 
+@keyframes move-down-mobile {
+	0% {
+		transform: translateY(-125%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes remove-mask {
+	0% {
+		opacity: 1;
+	}
+	33.33% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+
+}
 
 #small-sector {
   animation: 2s linear 0s 1 small-sector-spin;
@@ -81,6 +102,9 @@
   animation: 2s linear 0s 1 large-sector-spin;
 }
 
+#sector-mask {
+  animation: 2s linear 0s 1 remove-mask forwards;
+}
 
 .nautilus-container {
   position: relative;
@@ -106,21 +130,17 @@
  pointer-events: none;
 }
 
-a {
-  pointer-events: auto;
-}
+ a {
+ pointer-events: auto;
+ }
 
 .starting-text {
 	position: absolute;
-	left: 60%;
-	//top: 40vw;
-	animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
+//	animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
 }
 
 .active-text {
 	position: absolute;
-	left: 60%;
-	//top: 40vw;
 	animation: 1.3s ease-in-out 0s 1 move-down backwards;
 }
 
@@ -137,36 +157,52 @@ a {
 }
 
 #text-div {
-  position:absolute;
-  overflow:hidden;
-  height: 1000px;
+	position:absolute;
+	overflow:hidden;
+	height: 1000px;
 }
 
 .membership-nautilus ul {
-  padding-left: 20px;
+	padding-left: 20px;
 }
 .membership-nautilus h1 {
-  margin-left: 20px;
+	margin-left: 20px;
 }
 
 
-@media only screen and (max-width: 529px) {
+
+@media only screen and (max-width: 699px) {
 	.memberships {
 		width: 85vw;
 	}
 	.starting-text,
 	.active-text {
 		top: 42.5vw;
+		left: 15%;
+	}
+	.starting-text h1,
+	.active-text h1 {
+		min-height: 15vw;
+		margin-left: 50%;
+		text-align: right;
+		font-size: 5vw;
+	}
+	.starting-text {
+		animation: 1.3s ease-in-out 1.7s 1 move-down-mobile backwards;
 	}
 }
 
-@media only screen and (min-width: 530px) and (max-width: 949px) {
+@media only screen and (min-width: 700px) and (max-width: 949px) {
 	.memberships {
 		width: 85vw;
 	}
 	.starting-text,
 	.active-text {
 		top: 42.5vw;
+		left: 60%;
+	}
+	.starting-text {
+		animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
 	}
 }
 
@@ -177,6 +213,10 @@ a {
 	.starting-text,
 	.active-text {
 		top: 350px;
+		left: 60%;
+	}
+	.starting-text {
+		animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
 	}
 }
 
@@ -187,5 +227,9 @@ a {
 	.starting-text,
 	.active-text {
 		top: 400px;
+		left: 60%;
+	}
+	.starting-text {
+		animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
 	}
 }
