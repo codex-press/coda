@@ -37,26 +37,26 @@ figure {
   }
 
   .buttons a {
-    //max-width: 300px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
 
-@media only screen and (min-width: 700px) and (max-width: 949px) {
-  .donations,
+
+@media @mobile {
   .stories {
-    width: 50%;
-    float:left;
+    width: 100%;
+  }
+
+  .buttons a {
+    max-width: 400px;
   }
 }
-
 
 @media @tablet {
   .donations,
   .stories {
-//    width: 50%;
     float: left;
   }
 
