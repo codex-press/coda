@@ -110,13 +110,12 @@
   position: relative;
   height: 1000px;
   display: block;
-  //width:100%;
   float: left;
 }
 
 .membership-nautilus {
   display: block;
-  //height: 900px;
+  position: relative;
   background-color: #eee;
   animation: 2s linear 0s 1 move-left forwards;
 }
@@ -125,10 +124,22 @@
   background-color: rgba(0,0,0,0);
   position: absolute;
   top: 0px;
- // width:80vw; //works
- // pointer-events: auto;
- // visibility: visible;
- pointer-events: none;
+  pointer-events: none;
+}
+
+.memberships a,
+.memberships a:hover,
+.memberships a:visited,
+.memberships a:active {
+  text-align: center;
+  color: white;
+  background-color: #46c664;
+  font-size: 1.2em;
+  padding: .3em;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
  a {
