@@ -108,7 +108,7 @@ figure {
   }
 }
 
-@media @desktop-xl {
+@media only screen and (min-width: 1350px) {
   .donations {
     width: calc(50% - 450px);
     min-width: 201px;
@@ -119,8 +119,17 @@ figure {
     min-width: 250px;
     margin:0;
   }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1149px) {
+  .donations,
+  .stories {
+    width: calc(100% - 800px);
+    
+  }
 
 }
+
 
 header {
   clear: both;
