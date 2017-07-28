@@ -108,7 +108,7 @@
 
 .nautilus-container {
   position: relative;
-  height: 1000px;
+//  height: 1000px;
   display: block;
   float: left;
 }
@@ -188,6 +188,9 @@
 
 
 @media only screen and (max-width: 699px) {
+  .nautilus-container{
+    height: 850px;
+  }
 	.nautilus-container,
 	.memberships {
 		width: 100%;
@@ -207,6 +210,12 @@
 	.starting-text {
 		animation: 1.3s ease-in-out 1.7s 1 move-down-mobile backwards;
 	}
+}
+
+@media only screen and (min-width: 700px) {
+  .nautilus-container {
+    height: 1075px;
+  }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 949px) {
