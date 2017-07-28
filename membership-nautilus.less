@@ -51,10 +51,10 @@
 
 @keyframes move-left {
   0% {
-    transform: translateX(15%);
+    transform: translateX(10%);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-5%);
   }
 
 }
@@ -117,7 +117,7 @@
   display: block;
   //height: 900px;
   background-color: #eee;
-  animation: 2s linear 0s 1 move-left;
+  animation: 2s linear 0s 1 move-left forwards;
 }
 
 .memberships {
@@ -175,8 +175,8 @@
 }
 
 
-
 @media only screen and (max-width: 699px) {
+	.nautilus-container,
 	.memberships {
 		width: 85vw;
 	}
@@ -198,6 +198,7 @@
 }
 
 @media only screen and (min-width: 700px) and (max-width: 949px) {
+	.nautilus-container,
 	.memberships {
 		width: 85vw;
 	}
@@ -216,7 +217,8 @@
 }
 
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
-	.memberships {
+    .nautilus-container,
+    .memberships {
 		width: 700px;
 	}
 	.starting-text,
@@ -234,6 +236,7 @@
 }
 
 @media only screen and (min-width: 1129px){
+	.nautilus-container,
 	.memberships {
 		width: 800px;
 	}
@@ -250,5 +253,3 @@
 		animation: 1.3s ease-in-out 1.7s 1 move-down backwards;
 	}
 }
-
-	
