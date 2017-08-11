@@ -130,12 +130,35 @@ figure {
 
 
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
+  .memberships-container {
+    width: 700px;
+    float: left;
+  }
   .stories {
     width: calc(100% - 700px);
+    float: left;
   }
   .donations {
     width: 100%;
   }
+  .donations .buttons {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .donations .buttons>div {
+    width: 50%;
+    float: left;
+  }
+
+  .donations .buttons div a {
+    display: block;
+    float: left;
+    width: 32.33%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+
 }
 
 @media only screen and (min-width: 1129px) and (max-width: 1229px) {
