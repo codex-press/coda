@@ -148,15 +148,31 @@ figure {
     float: left;
   }
   .donations {
-//    width: 100%;
+    width: 100%;
   }
+  .donations .buttons {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .donations .buttons>div {
+    width: 50%;
+    float: left;
+  }
+
+  .donations .buttons div a {
+    display: block;
+    float: left;
+    width: 32.33%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+
 }
 
 @media only screen and (min-width: 1230px) {
   .donations {
-    //width: calc(50% - 450px);
     width: 100%;
-    min-width: 150px;
   }
 
   .donations .buttons {
