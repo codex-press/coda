@@ -67,12 +67,10 @@ figure {
   article {
     padding: 1em;
   }
-
   .half * {
     margin-left: auto;
     margin-right: auto;
   }
-
 }
 
 
@@ -88,7 +86,6 @@ figure {
   .stories {
     float: left;
   }
-
   .stories {
     width: 65%;
   }
@@ -108,11 +105,24 @@ figure {
     margin-left: auto;
     margin-right: auto;
   }
-
   .donations {
-    float:left;
+    width: 100%;
   }
-
+  .donations .buttons {
+    display: inline-block;
+    width: 100%;
+  }
+  .donations .buttons>div {
+    width: 50%;
+    float: left;
+  }
+  .donations .buttons div a {
+    display: block;
+    float: left;
+    width: 32.33%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
   .half {
     float:none;
     padding-left: .25em;
@@ -120,12 +130,10 @@ figure {
     margin-left: auto;
     margin-right: auto;
   }
-
   .buttons {
     padding-left: 1.25em;
     padding-right: 1.25em;
   }
-
 }
 
 
@@ -138,27 +146,6 @@ figure {
     width: calc(100% - 700px);
     float: left;
   }
-  .donations {
-    width: 100%;
-  }
-  .donations .buttons {
-    display: inline-block;
-    width: 100%;
-  }
-
-  .donations .buttons>div {
-    width: 50%;
-    float: left;
-  }
-
-  .donations .buttons div a {
-    display: block;
-    float: left;
-    width: 32.33%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-  }
-
 }
 
 @media only screen and (min-width: 1129px) and (max-width: 1229px) {
@@ -170,79 +157,24 @@ figure {
     width: calc(100% - 800px);
     float: left;
   }
-  .donations {
-    width: 100%;
-  }
-  .donations .buttons {
-    display: inline-block;
-    width: 100%;
-  }
-
-  .donations .buttons>div {
-    width: 50%;
-    float: left;
-  }
-
-  .donations .buttons div a {
-    display: block;
-    float: left;
-    width: 32.33%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-  }
-
 }
 
 @media only screen and (min-width: 1230px) {
-  .donations {
-    width: 100%;
-  }
-
-  .donations .buttons {
-    display: inline-block;
-    width: 100%;
-  }
-
-  .donations .buttons>div {
-    width: 50%;
-    float: left;
-  }
-
-  .donations .buttons div a {
-    display: block;
-    float: left;
-    width: 32.33%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-  }
-
   .memberships-container {
     width: 66%;
     float: left;
   }
-
   .nautilus-container {
     margin-left: auto;
     margin-right: auto;
-//    float: none;
   }
-
   .stories {
-//    width: calc(50% - 350px);
     width: 34%;
     float: left;
     min-width: 250px;
     margin:0;
   }
-
-  .related .headers p {
-    //  font-size: 1.25em;
-  }
-
 }
-
-
-
 
 
 header {
@@ -272,18 +204,8 @@ header.black:after {
 
 
 
-
-/*
-.donations {
-  margin-left: auto;
-  margin-right: auto;
-  float:none;
-}
-*/
-
 .subscribe-button {
   padding:.5em;
-  //min-width: 18em;
   height: auto;
   display: block;
   text-align:center;
@@ -303,8 +225,6 @@ figure {
 .buttons a {
   display:block;
   margin-bottom: 1em;
-//  max-width: 400px;
-
 }
 
 
@@ -316,7 +236,6 @@ figure {
   margin-right: auto;
   position: relative;
   margin-bottom: 2em;
-  //box-shadow: -1px -1px 5px #555;
 }
 
 .card .headers {
@@ -336,13 +255,11 @@ figure {
 
 .related .headers p {
   margin: 0;
-  //font-size: 1.2em;
 }
 
 .story-type {
   color: @green;
 }
-
 
 
 h2 {
@@ -352,11 +269,8 @@ h2 {
 
 .membership {
   display: block;
-  //height: 167px;
   background-color: #ddd;
-  //max-width: 860px;
   text-align: center;
-  //height: 15em;
   margin-bottom: 27.5px;
   margin-left: auto;
   margin-right: auto;
@@ -369,15 +283,6 @@ h2 {
   margin:0;
 }
 
-.membership a {
-//  background-color: @green;
-//  color: @almost-white;
-
-//  position: absolute;
-  //bottom: .5em;
-  //bottom: 0;
-//  left: calc(50% - 6.3444em);
-}
 
 .membership a,
 .membership a:hover,
