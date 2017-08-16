@@ -30,7 +30,8 @@ article.ready.then(() => {
     )
     plugin.props.media.srcset.push({
       url: `/images/${ imageID }/i1000.jpg`,
-      type: "image", 
+      type: "image",
+      width: 1000,
     })
     const poster = dom.first(`[x-cp-id="${ videoID }"] .poster`)
     if (!poster) return
