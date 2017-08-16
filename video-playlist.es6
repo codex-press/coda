@@ -14,18 +14,28 @@ article.ready.then(() => {
     [ "8bf82006-0097-4a1e-abee-215937d5fa6c",
         "e63d27d0-97f4-4e5c-a12f-750a432dafd2" ],
     // jailed for a like Ep. 4
-    [ "aad9af70-1525-423e-ecea-f631547695c5",
+    [ "9492aa30-0f13-4613-e9e8-78111c8d580a",
         "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
       // jailed for a like ep 5. 
-      // doesnt exist yet
-      // "d689a425-222f-45bd-9056-adf520d5888c"
+    [ "4348f100-d798-47e9-c676-04533c9c7c44",
+      "d689a425-222f-45bd-9056-adf520d5888c" ],
   ]
 
   const replacePoster = (videoID, imageID) => {
-    let el = dom.first(`[x-cp-id="${ videoID }"] .poster`)
-    if (!el) return
-    el.srcset = ''
-    el.src = `https://usercontent.codex.press/images/${ imageID }/i1000.jpg`;
+    let plugin = article.plugins.find(([el, p]) => p.props.id == videoID)
+    if (!plugin) return
+    plugin = plugin[1]
+    plugin.props.media.srcset = plugin.props.media.srcset.filter(s =>
+      s.type !== 'image'
+    )
+    plugin.props.media.srcset.push({
+      url: `/images/${ imageID }/i1000.jpg`,
+      type: "image", 
+    })
+    const poster = dom.first(`[x-cp-id="${ videoID }"] .poster`)
+    if (!poster) return
+    poster.srcset = ''
+    poster.src = `https://usercontent.codex.press/images/${ imageID }/i1000.jpg`;
   }
 
   posters.map(([videoID, imageID]) => replacePoster(videoID, imageID));
