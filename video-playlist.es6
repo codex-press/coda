@@ -20,16 +20,16 @@ article.ready.then(() => {
     [ "4348f100-d798-47e9-c676-04533c9c7c44",
       "d689a425-222f-45bd-9056-adf520d5888c" ],
       // russia/dagestan
-    [ "a4d138dc-2c21-409f-81b2-9b64ed4cd592",
+    [ "161e5ee8-625f-46c0-ecff-6dd658a68fc2",
       "55eec69a-6fde-4936-9a75-364db69314f0" ],
       // bianca
-    [ "38c272cf-2089-45d3-a5ae-839eaf0cdd0c",
+    [ "49bc75a7-09d9-4eb9-9963-269a8bb3f870",
       "aa02501c-0e4e-40bb-8396-fce6d1cbb577" ],
       // bart
-    [ "bf6e196e-bb4e-4e89-816a-a5afe53bcf12",
+    [ "30ebf290-3778-47e5-da71-49baf88e7aa5",
       "f52e391a-6756-40e5-8318-52c7c96aa973" ],
       // terror in central asia
-    [ "fa799925-3130-4b89-8256-4bb54ec585c6",
+    [ "d12baa96-4ab0-4c30-c9de-690b6ba24c0e",
       "5d5ef281-3fb9-45e3-b63d-668ce5361c34" ],
   ]
 
