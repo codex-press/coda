@@ -16,9 +16,21 @@ article.ready.then(() => {
     // jailed for a like Ep. 4
     [ "9492aa30-0f13-4613-e9e8-78111c8d580a",
         "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
-      // jailed for a like ep 5. 
+      // jailed for a like ep 5.
     [ "4348f100-d798-47e9-c676-04533c9c7c44",
       "d689a425-222f-45bd-9056-adf520d5888c" ],
+      // russia/dagestan
+    [ "a4d138dc-2c21-409f-81b2-9b64ed4cd592",
+      "55eec69a-6fde-4936-9a75-364db69314f0" ],
+      // bianca
+    [ "38c272cf-2089-45d3-a5ae-839eaf0cdd0c",
+      "aa02501c-0e4e-40bb-8396-fce6d1cbb577" ],
+      // bart
+    [ "bf6e196e-bb4e-4e89-816a-a5afe53bcf12",
+      "f52e391a-6756-40e5-8318-52c7c96aa973" ],
+      // terror in central asia
+    [ "fa799925-3130-4b89-8256-4bb54ec585c6",
+      "5d5ef281-3fb9-45e3-b63d-668ce5361c34" ],
   ]
 
   const replacePoster = (videoID, imageID) => {
