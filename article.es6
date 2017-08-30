@@ -222,9 +222,9 @@ article.ready.then(() => {
 
 
     var footer_subscribe = document.createElement("div");
-    subscribeBox.className="footer-subscribe";
-    subscribeBox.id="footer-subscribe";
-    subscribeBox.innerHTML = `
+    footer_subscribe.className="footer-subscribe";
+    footer_subscribe.id="footer-subscribe";
+    footer_subscribe.innerHTML = `
       <form action="//codastory.us12.list-manage.com/subscribe/post?u=2917466ad5ae7d0be32196119&amp;id=610841f0e2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <span id="dismiss">&times;</span>
         <h2>Subscribe <span class="font-weight-normal">to Coda Email Briefings</span></h2>
@@ -240,7 +240,7 @@ article.ready.then(() => {
 
         <p>Sign up for a monthly update from Coda for news about our deployments and our latest stories.</p>
       </form>
-    `
+    `;
 
 
 
