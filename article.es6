@@ -226,7 +226,6 @@ article.ready.then(() => {
     footer_subscribe.id="footer-subscribe";
     footer_subscribe.innerHTML = `
       <form action="//codastory.us12.list-manage.com/subscribe/post?u=2917466ad5ae7d0be32196119&amp;id=610841f0e2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <span id="dismiss">&times;</span>
         <h2>Subscribe <span class="font-weight-normal">to Coda Email Briefings</span></h2>
         <div class="field container" style="margin-top:.5em;">
           <label for="mce-EMAIL" style="display:none">Email Address</label>
