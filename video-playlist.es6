@@ -37,7 +37,10 @@ article.ready.then(() => {
         "b5d65f62-c467-4e40-bb82-ea939209a0cd"],
       //Ivan Terrible Terrific
     [ "080116a9-2129-42c9-faa7-f2b0188b7a5b",
-        "eed2d151-d70b-4abf-be77-e4b1d9995371"]
+        "eed2d151-d70b-4abf-be77-e4b1d9995371"],
+      //In St. Petersburg
+    [ "06815230-2488-4c37-f251-36a0beb63de3",
+        "a79de17b-a2b0-449c-840c-520d6d9a3a3f"],
   ]
 
   const replacePoster = (videoID, imageID) => {
