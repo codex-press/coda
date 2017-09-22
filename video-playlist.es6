@@ -19,22 +19,25 @@ article.ready.then(() => {
         "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
       // jailed for a like ep 5.
     [ "4348f100-d798-47e9-c676-04533c9c7c44",
-      "d689a425-222f-45bd-9056-adf520d5888c" ],
+        "d689a425-222f-45bd-9056-adf520d5888c" ],
       // russia/dagestan
     [ "161e5ee8-625f-46c0-ecff-6dd658a68fc2",
-      "55eec69a-6fde-4936-9a75-364db69314f0" ],
+        "55eec69a-6fde-4936-9a75-364db69314f0" ],
       // bianca
     [ "49bc75a7-09d9-4eb9-9963-269a8bb3f870",
-      "aa02501c-0e4e-40bb-8396-fce6d1cbb577" ],
+        "aa02501c-0e4e-40bb-8396-fce6d1cbb577" ],
       // bart
     [ "30ebf290-3778-47e5-da71-49baf88e7aa5",
-      "f52e391a-6756-40e5-8318-52c7c96aa973" ],
+        "f52e391a-6756-40e5-8318-52c7c96aa973" ],
       // terror in central asia
     [ "d12baa96-4ab0-4c30-c9de-690b6ba24c0e",
-      "5d5ef281-3fb9-45e3-b63d-668ce5361c34" ],
+        "5d5ef281-3fb9-45e3-b63d-668ce5361c34" ],
       // russia north korea fashion
     [ "eade569f-0030-4112-a044-8c4ae28b6d28",
-      "b5d65f62-c467-4e40-bb82-ea939209a0cd"]
+        "b5d65f62-c467-4e40-bb82-ea939209a0cd"],
+      //Ivan Terrible Terrific
+    [ "1f85478d-acdc-4103-80c4-4084cc92a092",
+        "eed2d151-d70b-4abf-be77-e4b1d9995371"]
   ]
 
   const replacePoster = (videoID, imageID) => {
