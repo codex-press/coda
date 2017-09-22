@@ -5,6 +5,65 @@ import article from 'article';
 
 
 article.ready.then(() => {
+//***Insert Tim's video cover code here
+
+//posters: "video id", "poster id"
+
+  const posters = [
+    // jailed for a like Ep. 1
+    ["4823427a-6640-4544-b2f4-ed7ef412dabd",
+      "76e7dcd1-a088-4ddf-b848-ea580fb0d2bf" ],
+    // jailed for a like Ep. 2
+    [ "db3f1900-5dee-44f1-9974-abbf2106c52b",
+        "4f8bed93-800e-4e8a-ad48-8d2e6639b959" ],
+    // jailed for a like Ep. 3
+    [ "8bf82006-0097-4a1e-abee-215937d5fa6c",
+        "e63d27d0-97f4-4e5c-a12f-750a432dafd2" ],
+    // jailed for a like Ep. 4
+    [ "9492aa30-0f13-4613-e9e8-78111c8d580a",
+        "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
+      // jailed for a like ep 5.
+    [ "4348f100-d798-47e9-c676-04533c9c7c44",
+      "d689a425-222f-45bd-9056-adf520d5888c" ],
+      // russia/dagestan
+    [ "161e5ee8-625f-46c0-ecff-6dd658a68fc2",
+      "55eec69a-6fde-4936-9a75-364db69314f0" ],
+      // bianca
+    [ "49bc75a7-09d9-4eb9-9963-269a8bb3f870",
+      "aa02501c-0e4e-40bb-8396-fce6d1cbb577" ],
+      // bart
+    [ "30ebf290-3778-47e5-da71-49baf88e7aa5",
+      "f52e391a-6756-40e5-8318-52c7c96aa973" ],
+      // terror in central asia
+    [ "d12baa96-4ab0-4c30-c9de-690b6ba24c0e",
+      "5d5ef281-3fb9-45e3-b63d-668ce5361c34" ],
+      // russia north korea fashion
+    [ "eade569f-0030-4112-a044-8c4ae28b6d28",
+      "b5d65f62-c467-4e40-bb82-ea939209a0cd"]
+  ]
+
+  const replacePoster = (videoID, imageID) => {
+    let plugin = article.plugins.find(([el, p]) => p.props.id == videoID)
+    if (!plugin) return
+    plugin = plugin[1]
+    plugin.props.media.srcset = plugin.props.media.srcset.filter(s =>
+      s.type !== 'image'
+    )
+    plugin.props.media.srcset.push({
+      url: `/images/${ imageID }/i1000.jpg`,
+      type: "image",
+      width: 1000,
+    })
+    const poster = dom.first(`[x-cp-id="${ videoID }"] .poster`)
+    if (!poster) return
+    poster.srcset = ''
+    poster.src = `https://usercontent.codex.press/images/${ imageID }/i1000.jpg`;
+  }
+
+  posters.map(([videoID, imageID]) => replacePoster(videoID, imageID));
+
+// ***End of Tim's video cover code
+
 
   if (env.topOrigin !== 'https://codastory.com')
     return;
