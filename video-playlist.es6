@@ -2,6 +2,7 @@ import article from 'article'
 import dom from 'dom'
 
 article.ready.then(() => {
+//posters: "video id", "poster id"
 
   const posters = [
     // jailed for a like Ep. 1
@@ -31,6 +32,9 @@ article.ready.then(() => {
       // terror in central asia
     [ "d12baa96-4ab0-4c30-c9de-690b6ba24c0e",
       "5d5ef281-3fb9-45e3-b63d-668ce5361c34" ],
+      // russia north korea fashion
+    [ "eade569f-0030-4112-a044-8c4ae28b6d28",
+      "b5d65f62-c467-4e40-bb82-ea939209a0cd"]
   ]
 
   const replacePoster = (videoID, imageID) => {
