@@ -11,7 +11,7 @@ article.ready.then(() => {
 
   const posters = [
     // jailed for a like Ep. 1
-    ["4823427a-6640-4544-b2f4-ed7ef412dabd",
+    ["cc431c57-0925-4b1a-c75e-0d15381c1a78",
       "76e7dcd1-a088-4ddf-b848-ea580fb0d2bf" ],
     // jailed for a like Ep. 2
     [ "77f9eab0-4639-42a6-f557-bfce584c1e60",
