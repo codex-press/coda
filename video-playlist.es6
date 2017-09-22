@@ -36,7 +36,7 @@ article.ready.then(() => {
     [ "eade569f-0030-4112-a044-8c4ae28b6d28",
         "b5d65f62-c467-4e40-bb82-ea939209a0cd"],
       //Ivan Terrible Terrific
-    [ "080116a9-2129-42c9-faa7-f2b0188b7a5b",
+    [ "962aa6e3-415b-4b47-9a94-e21e5ad58a8a",
         "eed2d151-d70b-4abf-be77-e4b1d9995371"]
   ]
 
