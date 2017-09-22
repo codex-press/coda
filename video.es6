@@ -24,6 +24,10 @@ article.ready.then(() => {
         "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
     [ "ad79acde-78c4-4c63-a0af-3f88f7121683",
         "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
+    [ "9492aa30-0f13-4613-e9e8-78111c8d580a",
+        "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
+    [ "385ed3b1-c4df-401d-81dc-e6c065d0fe65",
+        "8b863508-87c0-44a7-932b-1c114dbf7dfd" ],
       // jailed for a like ep 5.
     [ "63f0a097-49d6-4605-bae3-9a894bf0cfa0",
         "d689a425-222f-45bd-9056-adf520d5888c" ],
