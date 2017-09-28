@@ -51,14 +51,14 @@ article.ready.then(() => {
       s.type !== 'image'
     )
     plugin.props.media.srcset.push({
-      url: `/images/${ imageID }/i1000.jpg`,
+      url: `/images/${ imageID }/i500.jpg`,
       type: "image",
-      width: 1000,
+      width: 500,
     })
     const poster = dom.first(`[x-cp-id="${ videoID }"] .poster`)
     if (!poster) return
     poster.srcset = ''
-    poster.src = `https://usercontent.codex.press/images/${ imageID }/i1000.jpg`;
+    poster.src = `https://usercontent.codex.press/images/${ imageID }/i500.jpg`;
   }
 
   posters.map(([videoID, imageID]) => replacePoster(videoID, imageID));
