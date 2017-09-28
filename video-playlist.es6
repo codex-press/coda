@@ -41,6 +41,10 @@ article.ready.then(() => {
       //In St. Petersburg
     [ "06815230-2488-4c37-f251-36a0beb63de3",
         "a79de17b-a2b0-449c-840c-520d6d9a3a3f"],
+        //War of Words
+    [ "66752b0d-f194-4460-e91d-7fa4e346fd65",
+          "eb69930c-2d1b-4ea3-a3d5-2ad4ca63bcde"],
+
   ]
 
   const replacePoster = (videoID, imageID) => {
