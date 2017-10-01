@@ -45,13 +45,13 @@ article.ready.then(() => {
   var pauseButton = document.getElementById('pause');
 
   function pauseSlideshow() {
-      pauseButton.innerHTML = 'Play';
+      pauseButton.innerHTML = '&#9658;';
       playing = false;
       clearInterval(slideInterval);
   }
 
   function playSlideshow() {
-      pauseButton.innerHTML = 'Pause';
+      pauseButton.innerHTML = '&#10074;&#10074;';
       playing = true;
       slideInterval = setInterval(nextSlide,3000);
   }
@@ -63,7 +63,7 @@ article.ready.then(() => {
       playSlideshow();
     }
   };
-  
+
   var next = document.getElementById('next');
   var previous = document.getElementById('previous');
 
