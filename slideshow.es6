@@ -16,6 +16,7 @@ article.ready.then(() => {
 
   function nextSlide() {
       slides[currentSlide].className = 'slide';
+      slides[currentSlide].style.position = "absolute";
       currentSlide = (currentSlide+1)%slides.length;
       slides[currentSlide].className = 'slide showing';
   }
