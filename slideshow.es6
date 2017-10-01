@@ -14,6 +14,11 @@ article.ready.then(() => {
   var currentSlide = 0;
   var slideInterval = setInterval(nextSlide,1000);
 
+//disappear the slides except the first one
+  for (var i=1; i<slides.length; i++){
+    slides[i].style.display="none";
+  }
+
   function nextSlide() {
 //      slides[currentSlide].className = 'slide';
       slides[currentSlide].style.display = "none";
