@@ -14,18 +14,27 @@ article.ready.then(() => {
   var currentSlide = 0;
   var slideInterval = setInterval(nextSlide,3000);
 
-//disappear the slides except the first one
-  for (var i=1; i<slides.length; i++){
-//    slides[i].style.display="none";
-      slides[i].style.position="absolute";
+//absolutely position the slides
+  function positionSlides(){
+    for (var i=0; i<slides.length; i++){
+        slides[i].style.position="absolute";
+    }
   }
+  positionSlides();
+  window.addEventListener("resize", positionSlides);
 
   function nextSlide() {
+      goToSlide(currentSlide+1);
+  }
+
+  function previousSlide() {
+      goToSlide(currentSlide-1);
+  }
+
+  function goToSlide(n) {
       slides[currentSlide].className = 'slide';
-//      slides[currentSlide].style.display = "none";
-      currentSlide = (currentSlide+1)%slides.length;
+      currentSlide = (n+slides.length)%slides.length;
       slides[currentSlide].className = 'slide showing';
-//      slides[currentSlide].style.display = "flex";
   }
 
 
