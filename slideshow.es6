@@ -10,7 +10,7 @@ article.ready.then(() => {
 //The following code works with a hard-coded canvas:
   console.log("slideshow test working");
 
-  var slides = document.querySelectorAll('#slides .slide');
+  var slides = document.querySelectorAll('.slideshow .slide');
   var currentSlide = 0;
   var slideInterval = setInterval(nextSlide,2000);
 
