@@ -15,10 +15,11 @@ article.ready.then(() => {
   var slideInterval = setInterval(nextSlide,1000);
 
   function nextSlide() {
-      slides[currentSlide].className = 'slide';
-      //slides[currentSlide].style.position = "absolute";
+//      slides[currentSlide].className = 'slide';
+      slides[currentSlide].style.display = "flex";
       currentSlide = (currentSlide+1)%slides.length;
-      slides[currentSlide].className = 'slide showing';
+//      slides[currentSlide].className = 'slide showing';
+      slides[currentSlide].style.display = "none";
   }
 
 
