@@ -17,6 +17,7 @@ article.ready.then(() => {
 //disappear the slides except the first one
   for (var i=1; i<slides.length; i++){
 //    slides[i].style.display="none";
+      slides[i].style.position="absolute";
   }
 
   function nextSlide() {
