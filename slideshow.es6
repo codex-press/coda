@@ -23,6 +23,8 @@ article.ready.then(() => {
   positionSlides();
   window.addEventListener("resize", positionSlides);
 
+
+//functions for controlling the slideshow
   function nextSlide() {
       goToSlide(currentSlide+1);
   }
@@ -36,6 +38,45 @@ article.ready.then(() => {
       currentSlide = (n+slides.length)%slides.length;
       slides[currentSlide].className = 'slide showing';
   }
+
+
+//stuff to pause the slideshow
+  var playing = true;
+  var pauseButton = document.getElementById('pause');
+
+  function pauseSlideshow() {
+      pauseButton.innerHTML = 'Play';
+      playing = false;
+      clearInterval(slideInterval);
+  }
+
+  function playSlideshow() {
+      pauseButton.innerHTML = 'Pause';
+      playing = true;
+      slideInterval = setInterval(nextSlide,3000);
+  }
+
+  pauseButton.onclick = function() {
+    if(playing) {
+      pauseSlideshow();
+    } else {
+      playSlideshow();
+    }
+  };
+  
+  var next = document.getElementById('next');
+  var previous = document.getElementById('previous');
+
+  next.onclick = function() {
+      pauseSlideshow();
+      nextSlide();
+  };
+  previous.onclick = function() {
+      pauseSlideshow();
+      previousSlide();
+  };
+
+
 
 
 });
