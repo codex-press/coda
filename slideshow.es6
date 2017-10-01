@@ -12,7 +12,7 @@ article.ready.then(() => {
 
   var slides = document.querySelectorAll('.slideshow .slide');
   var currentSlide = 0;
-  var slideInterval = setInterval(nextSlide,10000);
+  var slideInterval = setInterval(nextSlide,1000);
 
   function nextSlide() {
       slides[currentSlide].className = 'slide';
