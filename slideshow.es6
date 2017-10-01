@@ -16,10 +16,10 @@ article.ready.then(() => {
 
   function nextSlide() {
 //      slides[currentSlide].className = 'slide';
-      slides[currentSlide].style.display = "flex";
+      slides[currentSlide].style.display = "none";
       currentSlide = (currentSlide+1)%slides.length;
 //      slides[currentSlide].className = 'slide showing';
-      slides[currentSlide].style.display = "none";
+      slides[currentSlide].style.display = "flex";
   }
 
 
