@@ -12,7 +12,7 @@ article.ready.then(() => {
 
   var slides = document.querySelectorAll('.slideshow .slide');
   var currentSlide = 0;
-  var slideInterval = setInterval(nextSlide,1000);
+  var slideInterval = setInterval(nextSlide,3000);
 
 //disappear the slides except the first one
   for (var i=1; i<slides.length; i++){
