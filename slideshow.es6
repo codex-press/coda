@@ -16,15 +16,15 @@ article.ready.then(() => {
 
 //disappear the slides except the first one
   for (var i=1; i<slides.length; i++){
-    slides[i].style.display="none";
+//    slides[i].style.display="none";
   }
 
   function nextSlide() {
-//      slides[currentSlide].className = 'slide';
-      slides[currentSlide].style.display = "none";
+      slides[currentSlide].className = 'slide';
+//      slides[currentSlide].style.display = "none";
       currentSlide = (currentSlide+1)%slides.length;
-//      slides[currentSlide].className = 'slide showing';
-      slides[currentSlide].style.display = "flex";
+      slides[currentSlide].className = 'slide showing';
+//      slides[currentSlide].style.display = "flex";
   }
 
 
