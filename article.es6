@@ -118,7 +118,8 @@ article.ready.then(() => {
     "fear-and-loathing" : "Fear and Loathing",
     "geopolitical-ruptures" : "Geopolitical Ruptures",
     "integration-issues" : "Integration Issues",
-    "news" : "News"
+    "news" : "News",
+    "rewriting-history" : "Rewriting History"
   };
 
 
