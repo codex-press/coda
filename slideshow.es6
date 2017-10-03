@@ -10,9 +10,11 @@ article.ready.then(() => {
 //The following code works with a hard-coded canvas:
   console.log("slideshow test working");
 
+  var speed = 9000;
+
   var slides = document.querySelectorAll('.slideshow .slide');
   var currentSlide = 0;
-  var slideInterval = setInterval(nextSlide,3000);
+  var slideInterval = setInterval(nextSlide, speed);
 
 //absolutely position the slides
   function positionSlides(){
@@ -53,7 +55,7 @@ article.ready.then(() => {
   function playSlideshow() {
       pauseButton.innerHTML = '&#10074;&#10074;';
       playing = true;
-      slideInterval = setInterval(nextSlide,3000);
+      slideInterval = setInterval(nextSlide, speed);
   }
 
   pauseButton.onclick = function() {
