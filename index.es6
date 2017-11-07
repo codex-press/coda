@@ -45,7 +45,7 @@ article.ready.then(() => {
     }
   }
   if (!sessionStorage.getItem('firstVisit') == '1'){
-    article.on('scroll', checkPrompt);
+  //  article.on('scroll', checkPrompt);
     //sessionStorage.setItem('firstVisit', '1');
   }
 
