@@ -51,8 +51,8 @@ article.ready.then(() => {
 
   if (!sessionStorage.getItem('firstVisit') == '1'){
     var counter = '0';
-    if (localStorage.getItem('counter') != null){
-      counter = localStorage.getItem('counter');
+    if (localStorage.getItem('subscribe_counter') != null){
+      counter = localStorage.getItem('subscribe_counter');
       console.log(counter + 'retrieved from local storage');
     }
     if (counter.length == 1){
@@ -62,7 +62,7 @@ article.ready.then(() => {
       counter = '';
       console.log("counter reset");
     }
-    localStorage.setItem('counter', counter + '0')
+    localStorage.setItem('subscribe_counter', counter + '0')
     //sessionStorage.setItem('firstVisit', '1');
   }
 
