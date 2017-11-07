@@ -50,12 +50,14 @@ article.ready.then(() => {
     var counter = '0';
     if (localStorage.getItem('counter') != null){
       counter = localStorage.getItem('counter');
+      console.log(counter + 'retrieved from local storage');
     }
     if (counter.length == 1){
       article.on('scroll', checkPrompt);
     }
     if (counter.length > 5){
       counter = '';
+      console.log("counter reset");
     }
     localStorage.setItem('counter', counter + '0')
     sessionStorage.setItem('firstVisit', '1');
