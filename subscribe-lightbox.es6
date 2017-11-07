@@ -43,8 +43,21 @@ article.ready.then(() => {
       prompted = true;
     }
   }
+
+
+
   if (!sessionStorage.getItem('firstVisit') == '1'){
-    article.on('scroll', checkPrompt);
+    var counter = '0';
+    if (localStorage.getItem('counter') != null){
+      counter = localStorage.getItem('counter');
+    }
+    if (counter.length == 1){
+      article.on('scroll', checkPrompt);
+    }
+    if (counter.length > 5){
+      counter = '';
+    }
+    localStorage.setItem('counter', counter + '0')
     sessionStorage.setItem('firstVisit', '1');
   }
 
