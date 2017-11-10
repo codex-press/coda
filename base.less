@@ -1,0 +1,246 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700:latin);
+
+@import 'css/_definitions';
+@import 'css/_share_menu';
+@import 'css/fonts';
+@import 'css/header';
+@import 'css/footer';
+@import 'css/newsletter_signup.less';
+
+@media @mobile     { html { font-size: 14px; } }
+@media @tablet     { html { font-size: 14px; } }
+@media @desktop    { html { font-size: 15px; } }
+@media @desktop-xl { html { font-size: 15px; } }
+
+html {
+  font-family: @sans-serif;
+  line-height: 1.5;
+  color: @text-color;
+  background-color: @page-background;
+}
+
+.cyrillic *,
+.cyrillic {
+  font-family: @cyrillic;
+}
+
+
+
+html body {
+  margin: 0;
+  padding: 0;
+}
+
+body, body * {
+  box-sizing: border-box;
+}
+
+
+
+// DEFAULT STYLES
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @sans-serif;
+}
+
+
+// LINKS
+
+a {
+//  color: @text-color;
+}
+
+a:active, a:hover, a:focus {
+  color: @green;
+}
+
+figure a {
+//  color: #eee;
+}
+
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
+
+// JUST HELPFUL
+
+.no-wrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.secret.message {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+
+
+
+figure .frame .content-center {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+figure .frame .content-bottom {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+// these by default will have "flex: 0 1 auto;" which makes them shrink when
+// obviously they shouldn't because they probably have text in there
+figure .frame .content-center > p,
+figure .frame .content-bottom > p {
+  flex: 0 0 auto;
+}
+
+html.javascript figure .top    { position: absolute; top: 0; }
+html.javascript figure .right  { position: absolute; right: 0; }
+html.javascript figure .bottom { position: absolute; bottom: 0; }
+html.javascript figure .left   { position: absolute; left: 0; }
+
+figure .frame > * { order: 0; }
+figure .before { order: -1; }
+figure .after  { order: 1; }
+
+// fill
+figure .frame .fill {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+//Header Arrow
+.header-arrow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0; height: 0;
+  left: calc(50% - 3em);
+
+  border: solid transparent;
+  border-width: 3em;
+  border-top-width: 2em;
+  border-top-color: @green;
+}
+
+// subscribe form
+.subscribe {
+	//background-color: @almost-black;
+	padding-bottom:10px;
+	clear:right;
+}
+
+
+
+.subscribe form h2 {
+  font-size: 1.2em;
+  font-weight: 900;
+  margin-bottom: 0;
+	color:@text-color;
+}
+
+.subscribe form input {
+	margin:5px 0;
+}
+
+.subscribe form input[type=email] {
+  outline: none;
+}
+
+.subscribe form input[type=submit] {
+  border-radius: 0;
+  border: 1px solid currentColor;
+  outline: none;
+}
+
+
+//what-is
+
+.what-is {
+  padding: .5em;
+	padding-top: .2em;
+	margin: 3vh auto;
+	background-color:@green;
+	color:white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.what-is a,
+.what-is a:visited,
+.what-is a:hover {
+  color: @text-color;
+	display: block;
+	text-align: center;
+	font-weight: 500;
+}
+
+.what-is p {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: .1em;
+	margin-bottom: .1em;
+	font-weight: 400;
+	text-align: center;
+}
+
+.what-is h1 {
+	margin-top: .1em;
+	margin-bottom: .1em;
+}
+
+@media @mobile{
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 90vw;
+	}
+	.extended-about {
+		display:none;
+	}
+}
+
+@media @tablet {
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 80vw;
+	}
+}
+
+@media @desktop {
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 70vw;
+		max-width: 800px;
+	}
+}
+
+@media @desktop-xl {
+	.what-is {
+		width: 100%;
+	}
+	.what-is p {
+		width: 70vw;
+		max-width: 800px;
+	}
+}

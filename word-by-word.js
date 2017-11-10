@@ -1,6 +1,4 @@
-import dom from 'dom';
-import article from 'article';
-import Plugin from 'plugin';
+import { article, dom } from '/app/index.js';
 
 
 article.ready.then(() => {

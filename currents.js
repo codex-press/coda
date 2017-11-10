@@ -1,6 +1,4 @@
-import dom from 'dom';
-import article from 'article';
-import animate from 'animate';
+import { dom, article, animate } from '/app/index.js';
 
 dom(window).bind({
   'click .arrow' : currentsPager,

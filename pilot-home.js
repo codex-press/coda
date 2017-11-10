@@ -1,5 +1,4 @@
-import dom from 'dom';
-import article from 'article';
+import { dom, article } from '/app/index.js';
 
 article.ready.then(() => {
   dom('#dismiss').on('click', e => {

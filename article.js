@@ -1,7 +1,4 @@
-import dom from 'dom';
-import * as env from 'env';
-import article from 'article';
-//import Plugin from 'plugin';
+import { article, env } from '/app/index.js';
 
 article.ready.then(() => {
   console.log("article ready");

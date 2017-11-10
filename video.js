@@ -1,6 +1,4 @@
-import dom from 'dom';
-import * as env from 'env';
-import article from 'article';
+import { dom, env, article } from '/app/index.js';
 
 
 

@@ -1,4 +1,4 @@
-import article from 'article';
+import { article } from '/app/index.js';
 
 article.ready.then(() => {
 
