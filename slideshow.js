@@ -2,7 +2,7 @@
 slideshow courtesy of https://www.sitepoint.com/make-a-simple-javascript-slideshow-without-jquery/
 */
 
-import { dom, article } from '/app/article.js';
+import { dom, article } from '/app/index.js';
 
 article.ready.then(() => {
 
