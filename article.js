@@ -132,15 +132,15 @@ article.ready.then(() => {
   var current_url;
   var current_name;
   if (path_array.length == 5){
-    edition_url = path_array[2];
+    edition_url = 'https://codastory.com' + path_array[2];
     edition_name = edition_names[edition_url];
     current_url = path_array[3];
     current_name = current_names[current_url];
 
   }
   else if (path_array.length == 4){
-    edition_url = path_array[2];
-    if (edition_url == "lgbt-crisis") edition_url = "lgbtq-crisis";
+    edition_url = 'https://codastory.com' + path_array[2];
+    if (edition_url == "lgbt-crisis") edition_url = "https://codastory.com/lgbtq-crisis";
     edition_name = edition_names[edition_url];
     current_name = article.attrs.metadata.current;
     for (var url in current_names){
