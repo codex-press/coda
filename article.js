@@ -158,7 +158,7 @@ article.ready.then(() => {
     var byline_current = document.createElement("P");
     byline_current.className = "byline-current";
     var current_link = document.createElement("A");
-    current_link.setAttribute("href", 'https://codastory.com' + edition_url + "/" + current_url);
+    current_link.setAttribute("href", 'https://codastory.com/' + edition_url + "/" + current_url);
     var current_name_node = document.createTextNode(current_name);
     byline_current.appendChild(current_link);
     current_link.appendChild(current_name_node);
@@ -166,7 +166,7 @@ article.ready.then(() => {
     var byline_edition = document.createElement("P");
     byline_edition.className = "byline-edition";
     var edition_link = document.createElement("A");
-    edition_link.setAttribute("href", 'https://codastory.com' + edition_url);
+    edition_link.setAttribute("href", 'https://codastory.com/' + edition_url);
     var edition_name_node = document.createTextNode(edition_name);
     byline_edition.appendChild(edition_link)
     edition_link.appendChild(edition_name_node);
@@ -201,7 +201,7 @@ article.ready.then(() => {
       footer_current.className = "footer-current " + current_url + "-1";
     }
     var current_link = document.createElement("A");
-    current_link.setAttribute("href", 'https://codastory.com' + edition_url + "/" + current_url);
+    current_link.setAttribute("href", 'https://codastory.com/' + edition_url + "/" + current_url);
     var current_name_node = document.createTextNode(current_name);
     if (current_url == "news"){
       current_name_node.textContent = edition_name + " News";
@@ -213,7 +213,7 @@ article.ready.then(() => {
     var footer_edition = document.createElement("P");
     footer_edition.className = "footer-edition " + edition_url;
     var edition_link = document.createElement("A");
-    edition_link.setAttribute("href", 'https://codastory.com' + edition_url);
+    edition_link.setAttribute("href", 'https://codastory.com/' + edition_url);
     var edition_name_node = document.createTextNode(edition_name);
     footer_edition.appendChild(edition_link)
     edition_link.appendChild(edition_name_node);
