@@ -48,7 +48,11 @@ article.ready.then(() => {
         "b8e5439f-93bb-4a2f-a1df-f3b10127a3c1"],
       //How Russia Weaponized Primetime
     [ "90486f24-aa0a-4ab6-922b-4e06bf1fd6cb",
-        "ebb85b99-f20e-44c8-b9aa-ca994433235b"]
+        "ebb85b99-f20e-44c8-b9aa-ca994433235b"],
+        // russia north korea fashion for main video page
+    [ "f90cc03d-407c-4f66-ed4a-264d7e9e3e13",
+        "b5d65f62-c467-4e40-bb82-ea939209a0cd"]
+
 
   ]
 
