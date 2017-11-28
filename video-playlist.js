@@ -45,7 +45,10 @@ article.ready.then(() => {
         "eb69930c-2d1b-4ea3-a3d5-2ad4ca63bcde"],
       //Murder in St. Petersburg
     [ "a1a68b0f-e3ab-4650-ff0e-91de46a80688",
-        "b8e5439f-93bb-4a2f-a1df-f3b10127a3c1"]
+        "b8e5439f-93bb-4a2f-a1df-f3b10127a3c1"],
+      //How Russia Weaponized Primetime
+    [ "50bef23e-df04-427a-a3be-30cb83c27ba7",
+        "ebb85b99-f20e-44c8-b9aa-ca994433235b"]
 
   ]
 
@@ -113,4 +116,3 @@ function nowPlaying(e) {
 
 }
 };
-
