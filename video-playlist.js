@@ -47,7 +47,7 @@ article.ready.then(() => {
     [ "a1a68b0f-e3ab-4650-ff0e-91de46a80688",
         "b8e5439f-93bb-4a2f-a1df-f3b10127a3c1"],
       //How Russia Weaponized Primetime
-    [ "50bef23e-df04-427a-a3be-30cb83c27ba7",
+    [ "90486f24-aa0a-4ab6-922b-4e06bf1fd6cb",
         "ebb85b99-f20e-44c8-b9aa-ca994433235b"]
 
   ]
