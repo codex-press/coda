@@ -187,26 +187,32 @@ figure.right {
   margin: 1em;
 }
 
+figure.custom-left,
 figure.left {
   float: left;
   clear: left;
 }
 
+figure.custom-right,
 figure.right {
   float: right;
   clear: right;
 }
 
 @media @desktop-xl {
+  figure.custom-right,
   figure.right {
     margin-right: 8%;
   }
+  figure.custom-left,
   figure.left {
     margin-left: 8%;
   }
 }
 
 @media @mobile {
+  figure.custom-left,
+  figure.custom-right,
   figure.left,
   figure.right {
     width: calc(100% - 2em) !important;
