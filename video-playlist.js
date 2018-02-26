@@ -19,6 +19,9 @@ article.ready.then(() => {
       // jailed for a like ep 5.
     [ "4348f100-d798-47e9-c676-04533c9c7c44",
         "d689a425-222f-45bd-9056-adf520d5888c" ],
+      // jailed for a like ep 6. 
+    [ "ecf1c2d4-a7e1-4e4d-a05e-4ac122715f88", 
+        "0a58c5ce-7cd2-409c-83db-bba06cb6be79" ], 
       // russia/dagestan
     [ "161e5ee8-625f-46c0-ecff-6dd658a68fc2",
         "55eec69a-6fde-4936-9a75-364db69314f0" ],
